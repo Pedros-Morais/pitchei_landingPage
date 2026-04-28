@@ -1,0 +1,78 @@
+---
+type Props = {
+  variant?: "default" | "mono-paper" | "mono-ink";
+  height?: number;
+  class?: string;
+  withWordmark?: boolean;
+  ariaLabel?: string;
+};
+
+const {
+  variant = "default",
+  height = 32,
+  class: className = "",
+  withWordmark = true,
+  ariaLabel = "Pitchei",
+} = Astro.props;
+
+const stroke =
+  variant === "mono-paper"
+    ? "#F7F3EE"
+    : variant === "mono-ink"
+      ? "#1C0F09"
+      : "#1C0F09";
+const bubble = variant === "mono-paper" || variant === "mono-ink" ? stroke : "#E85D26";
+---
+
+{withWordmark ? (
+  <svg
+    role="img"
+    aria-label={ariaLabel}
+    viewBox="0 0 240 64"
+    height={height}
+    class={className}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <ellipse cx="38" cy="10" rx="6" ry="6" fill={bubble} />
+    <path d="M33 16 L38 24 L44 16 Z" fill={bubble} />
+    <path
+      d="M14 56 L14 22 C14 22 14 16 22 16 C30 16 35 21 35 30 C35 39 30 43 22 43 L14 43"
+      stroke={stroke}
+      stroke-width="5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+    />
+    <text
+      x="60"
+      y="50"
+      font-family="Fraunces, serif"
+      font-weight="900"
+      font-size="38"
+      fill={stroke}
+      letter-spacing="-1"
+    >itchei</text>
+  </svg>
+) : (
+  <svg
+    role="img"
+    aria-label={ariaLabel}
+    viewBox="0 0 56 64"
+    height={height}
+    class={className}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <ellipse cx="38" cy="10" rx="6" ry="6" fill={bubble} />
+    <path d="M33 16 L38 24 L44 16 Z" fill={bubble} />
+    <path
+      d="M14 56 L14 22 C14 22 14 16 22 16 C30 16 35 21 35 30 C35 39 30 43 22 43 L14 43"
+      stroke={stroke}
+      stroke-width="5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+    />
+  </svg>
+)}

@@ -1,0 +1,113 @@
+---
+import Base from "~/layouts/Base.astro";
+import { breadcrumbSchema } from "~/lib/schema";
+import { SITE } from "~/lib/site";
+
+const updated = "2026-04-28";
+const jsonLd = breadcrumbSchema([
+  { name: "Início", url: "/" },
+  { name: "Privacidade", url: "/privacidade" },
+]);
+---
+
+<Base
+  title="Política de Privacidade"
+  description="Como o Pitchei trata áudio, transcrição e dados pessoais. LGPD por padrão."
+  path="/privacidade"
+  jsonLd={jsonLd}
+>
+  <article class="mx-auto max-w-3xl px-6 py-20 md:py-28">
+    <p class="text-sm font-semibold uppercase tracking-wider text-orange">
+      Legal
+    </p>
+    <h1 class="mt-3 font-display text-4xl font-black leading-tight text-ink md:text-5xl">
+      Política de Privacidade
+    </h1>
+    <p class="mt-3 text-sm text-ink-soft">Atualizada em {updated}.</p>
+
+    <div class="prose mt-12 max-w-none text-ink-muted">
+      <p class="text-lg">
+        Esta política descreve como o {SITE.name} trata o áudio das suas
+        reuniões, a transcrição gerada e qualquer dado pessoal coletado pela
+        landing page e pelo aplicativo de mesa.
+      </p>
+
+      <h2 class="mt-10 font-display text-2xl font-bold text-ink">
+        O que tratamos
+      </h2>
+      <ul class="mt-3 list-disc space-y-2 pl-6">
+        <li>
+          <strong class="text-ink">Áudio da reunião:</strong> capturado
+          localmente no seu Mac e enviado em streaming para o serviço de
+          transcrição (Deepgram). Não é gravado em disco nem em nuvem.
+        </li>
+        <li>
+          <strong class="text-ink">Texto transcrito:</strong> existe apenas na
+          memória do aplicativo durante a sessão. É descartado quando você
+          encerra a reunião.
+        </li>
+        <li>
+          <strong class="text-ink">Sugestões geradas:</strong> produzidas
+          pelo modelo de linguagem que você escolher (Neuralake, OpenAI ou
+          Gemini), usando a chave de API que você fornece. Não passam por
+          servidor proprietário do Pitchei.
+        </li>
+        <li>
+          <strong class="text-ink">Email da lista de espera:</strong> usado
+          exclusivamente para te avisar quando seu acesso ao beta for
+          liberado. Você pode pedir remoção a qualquer momento.
+        </li>
+      </ul>
+
+      <h2 class="mt-10 font-display text-2xl font-bold text-ink">
+        O que não fazemos
+      </h2>
+      <ul class="mt-3 list-disc space-y-2 pl-6">
+        <li>Não gravamos sua reunião.</li>
+        <li>Não persistimos o texto da transcrição depois da sessão.</li>
+        <li>Não vendemos dados para terceiros.</li>
+        <li>Não treinamos modelos com sua conversa.</li>
+      </ul>
+
+      <h2 class="mt-10 font-display text-2xl font-bold text-ink">
+        Seus direitos (LGPD)
+      </h2>
+      <p class="mt-3">
+        Você tem direito a saber quais dados pessoais tratamos sobre você,
+        pedir cópia, correção, exclusão e portabilidade. Para exercer
+        qualquer um desses direitos, escreva para
+        <a href={`mailto:${SITE.email}`} class="text-orange hover:text-orange-hover">{SITE.email}</a>.
+      </p>
+
+      <h2 class="mt-10 font-display text-2xl font-bold text-ink">
+        Subprocessadores
+      </h2>
+      <p class="mt-3">
+        Para o app funcionar, alguns serviços de terceiros tratam dados em
+        nosso nome:
+      </p>
+      <ul class="mt-3 list-disc space-y-2 pl-6">
+        <li>
+          <strong class="text-ink">Deepgram</strong> — transcrição de áudio em
+          tempo real. Áudio enviado por WebSocket criptografado.
+        </li>
+        <li>
+          <strong class="text-ink">Provedor de LLM (escolha do usuário)</strong>
+           — Neuralake, OpenAI ou Google (Gemini). Texto da transcrição
+          enviado para gerar sugestões.
+        </li>
+        <li>
+          <strong class="text-ink">Supabase</strong> — autenticação e
+          persistência opcional de configurações. Sem áudio, sem
+          transcrição.
+        </li>
+      </ul>
+
+      <h2 class="mt-10 font-display text-2xl font-bold text-ink">Contato</h2>
+      <p class="mt-3">
+        Dúvidas, pedidos ou notificação de incidente:
+        <a href={`mailto:${SITE.email}`} class="text-orange hover:text-orange-hover">{SITE.email}</a>.
+      </p>
+    </div>
+  </article>
+</Base>

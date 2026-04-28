@@ -1,0 +1,48 @@
+---
+import "~/styles/tokens.css";
+import SEO from "~/components/SEO.astro";
+import Nav from "~/components/Nav.astro";
+import Footer from "~/components/Footer.astro";
+import { SITE } from "~/lib/site";
+
+type Props = {
+  title: string;
+  description?: string;
+  path?: string;
+  image?: string;
+  type?: "website" | "article";
+  noindex?: boolean;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+};
+
+const props = Astro.props;
+---
+
+<!doctype html>
+<html lang={SITE.locale} class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <SEO {...props} />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body class="bg-paper text-ink antialiased font-sans">
+    <a
+      href="#conteudo"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-paper"
+    >
+      Pular para o conteúdo
+    </a>
+    <Nav />
+    <main id="conteudo">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

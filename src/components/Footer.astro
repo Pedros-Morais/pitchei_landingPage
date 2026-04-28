@@ -1,0 +1,48 @@
+---
+import Logo from "./Logo.astro";
+import { SITE } from "~/lib/site";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-ink-faint bg-paper-muted">
+  <div class="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-4">
+    <div class="md:col-span-2">
+      <Logo height={28} />
+      <p class="mt-4 max-w-md text-sm text-ink-muted">
+        {SITE.tagline}. Aplicativo de mesa para macOS, em português, que
+        intervém durante a reunião — não depois.
+      </p>
+      <p class="mt-2 text-xs text-ink-soft">
+        Feito no Brasil · pt-BR · macOS 13+
+      </p>
+    </div>
+    <div>
+      <h2 class="text-xs font-semibold uppercase tracking-wider text-ink-soft">
+        Produto
+      </h2>
+      <ul class="mt-4 space-y-2 text-sm text-ink-muted">
+        <li><a href="#como-funciona" class="transition-colors hover:text-ink">Como funciona</a></li>
+        <li><a href="#para-quem" class="transition-colors hover:text-ink">Para quem é</a></li>
+        <li><a href="#faq" class="transition-colors hover:text-ink">Perguntas frequentes</a></li>
+        <li><a href="#cadastro" class="transition-colors hover:text-ink">Lista de espera</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="text-xs font-semibold uppercase tracking-wider text-ink-soft">
+        Legal
+      </h2>
+      <ul class="mt-4 space-y-2 text-sm text-ink-muted">
+        <li><a href="/privacidade" class="transition-colors hover:text-ink">Privacidade</a></li>
+        <li><a href="/termos" class="transition-colors hover:text-ink">Termos de uso</a></li>
+        <li><a href={`mailto:${SITE.email}`} class="transition-colors hover:text-ink">{SITE.email}</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-ink-faint">
+    <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-2 px-6 py-6 text-xs text-ink-soft md:flex-row md:items-center">
+      <p>© {year} {SITE.name}. Todos os direitos reservados.</p>
+      <p>Pitchei não grava sua reunião. O áudio é processado em tempo real e descartado depois da sessão.</p>
+    </div>
+  </div>
+</footer>

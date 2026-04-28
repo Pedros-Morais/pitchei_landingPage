@@ -1,0 +1,70 @@
+---
+import { SITE } from "~/lib/site";
+
+type Props = {
+  title: string;
+  description?: string;
+  path?: string;
+  image?: string;
+  type?: "website" | "article";
+  noindex?: boolean;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+};
+
+const {
+  title,
+  description = SITE.shortDescription,
+  path = "/",
+  image = SITE.ogImage,
+  type = "website",
+  noindex = false,
+  jsonLd,
+} = Astro.props;
+
+const fullTitle = title === SITE.name ? `${SITE.name} — ${SITE.tagline}` : `${title} · ${SITE.name}`;
+const canonical = new URL(path, SITE.url).toString();
+const ogImage = image.startsWith("http") ? image : new URL(image, SITE.url).toString();
+const schemas = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
+---
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<meta name="robots" content={noindex ? "noindex,nofollow" : "index,follow,max-image-preview:large"} />
+<meta name="googlebot" content={noindex ? "noindex,nofollow" : "index,follow"} />
+<meta http-equiv="content-language" content={SITE.locale} />
+<meta name="author" content={SITE.name} />
+<meta name="theme-color" content="#1C0F09" />
+<meta name="color-scheme" content="light" />
+
+{/* Open Graph */}
+<meta property="og:type" content={type} />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:site_name" content={SITE.name} />
+<meta property="og:url" content={canonical} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={`${SITE.name} — ${SITE.tagline}`} />
+
+{/* Twitter / X */}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content={SITE.twitter} />
+<meta name="twitter:creator" content={SITE.twitter} />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+{/* Discoverability for AI engines */}
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable sitemap" />
+
+{/* JSON-LD structured data */}
+{schemas.map((schema) => (
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(schema)}
+  />
+))}

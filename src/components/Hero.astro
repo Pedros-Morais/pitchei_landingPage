@@ -1,0 +1,55 @@
+---
+import HudMockup from "./HudMockup.astro";
+---
+
+<section
+  class="relative overflow-hidden border-b border-ink-faint"
+  aria-labelledby="hero-titulo"
+>
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 -z-10"
+    style="background: radial-gradient(circle at 20% -10%, rgba(232,93,38,0.10) 0%, transparent 55%), radial-gradient(circle at 90% 10%, rgba(255,179,71,0.08) 0%, transparent 55%);"
+  ></div>
+
+  <div class="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:py-28 lg:grid-cols-12">
+    <div class="lg:col-span-7">
+      <p class="mb-6 inline-flex items-center gap-2 rounded-full border border-ink-faint bg-paper px-3 py-1 text-xs font-medium uppercase tracking-wider text-ink-muted">
+        <span class="inline-block h-1.5 w-1.5 rounded-full bg-orange"></span>
+        Em desenvolvimento — beta fechado em maio
+      </p>
+      <h1
+        id="hero-titulo"
+        class="font-display text-5xl font-black leading-[1.05] text-ink md:text-6xl lg:text-7xl"
+      >
+        O co-piloto que <em class="font-display italic text-orange">fala</em> quando você precisa.
+      </h1>
+      <p class="mt-6 max-w-xl text-lg leading-relaxed text-ink-muted md:text-xl">
+        Pitchei ouve sua reunião em tempo real e sugere o que dizer — em
+        português, durante a conversa, sem ninguém saber. Para quando você
+        sabe a resposta, mas não está achando.
+      </p>
+      <div class="mt-10 flex flex-col gap-3 sm:flex-row">
+        <a
+          href="#cadastro"
+          class="inline-flex items-center justify-center rounded-full bg-ink px-7 py-3.5 text-base font-semibold text-paper transition-colors hover:bg-ink/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange"
+        >
+          Entrar na lista de espera
+        </a>
+        <a
+          href="#como-funciona"
+          class="inline-flex items-center justify-center rounded-full border border-ink-faint px-7 py-3.5 text-base font-semibold text-ink transition-colors hover:bg-paper-muted"
+        >
+          Ver como funciona
+        </a>
+      </div>
+      <p class="mt-6 text-sm text-ink-soft">
+        macOS 13 ou superior · sem cartão · cancela quando quiser
+      </p>
+    </div>
+
+    <div class="relative flex justify-center lg:col-span-5 lg:justify-end">
+      <HudMockup class="animate-fade-up" />
+    </div>
+  </div>
+</section>

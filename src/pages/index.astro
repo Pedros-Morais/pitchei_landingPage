@@ -1,0 +1,40 @@
+---
+import Base from "~/layouts/Base.astro";
+import Hero from "~/components/Hero.astro";
+import ProblemaVsScribe from "~/components/ProblemaVsScribe.astro";
+import Personas from "~/components/Personas.astro";
+import ComoFunciona from "~/components/ComoFunciona.astro";
+import Privacidade from "~/components/Privacidade.astro";
+import FAQ from "~/components/FAQ.astro";
+import CTAFinal from "~/components/CTAFinal.astro";
+import {
+  organizationSchema,
+  softwareApplicationSchema,
+  faqSchema,
+  webSiteSchema,
+} from "~/lib/schema";
+import { FAQ_ITEMS } from "~/lib/faq";
+import { SITE } from "~/lib/site";
+
+const jsonLd = [
+  organizationSchema(),
+  webSiteSchema(),
+  softwareApplicationSchema(),
+  faqSchema(FAQ_ITEMS),
+];
+---
+
+<Base
+  title={SITE.name}
+  description={SITE.shortDescription}
+  path="/"
+  jsonLd={jsonLd}
+>
+  <Hero />
+  <ProblemaVsScribe />
+  <Personas />
+  <ComoFunciona />
+  <Privacidade />
+  <FAQ />
+  <CTAFinal />
+</Base>

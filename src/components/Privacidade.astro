@@ -1,0 +1,63 @@
+---
+const garantias = [
+  {
+    titulo: "Áudio não é gravado",
+    desc: "O áudio é processado em streaming. Nenhuma gravação é salva em disco, nem na nuvem.",
+  },
+  {
+    titulo: "Texto descartado após a sessão",
+    desc: "A transcrição existe só na memória do app durante a reunião. Encerrou? Some.",
+  },
+  {
+    titulo: "Você escolhe o modelo",
+    desc: "Conecta sua chave do Neuralake, OpenAI ou Gemini. Não passamos dados por servidor próprio.",
+  },
+  {
+    titulo: "LGPD por padrão",
+    desc: "Tratamento mínimo de dados. Política de privacidade transparente. DPO designado.",
+  },
+];
+---
+
+<section
+  id="privacidade"
+  class="border-b border-ink-faint"
+  aria-labelledby="privacidade-titulo"
+>
+  <div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+    <div class="grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <p class="text-sm font-semibold uppercase tracking-wider text-orange">
+          Privacidade
+        </p>
+        <h2
+          id="privacidade-titulo"
+          class="mt-3 font-display text-4xl font-black leading-tight text-ink md:text-5xl"
+        >
+          Sua reunião sai de você. E volta para você. Pronto.
+        </h2>
+        <p class="mt-5 text-lg text-ink-muted">
+          Pitchei foi feito para conversas confidenciais — vendas, pitch,
+          negociação. Tratamos privacidade como requisito de produto, não
+          como aviso jurídico no rodapé.
+        </p>
+        <a
+          href="/privacidade"
+          class="mt-6 inline-flex items-center gap-2 text-base font-semibold text-orange transition-colors hover:text-orange-hover"
+        >
+          Ler política completa
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <ul class="grid gap-4 sm:grid-cols-2 lg:col-span-7">
+        {garantias.map((g) => (
+          <li class="rounded-2xl border border-ink-faint bg-paper-muted p-6">
+            <h3 class="font-display text-lg font-bold text-ink">{g.titulo}</h3>
+            <p class="mt-2 text-sm text-ink-muted">{g.desc}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

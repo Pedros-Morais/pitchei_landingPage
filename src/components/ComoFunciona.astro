@@ -1,0 +1,58 @@
+---
+const passos = [
+  {
+    n: "01",
+    titulo: "Você abre o Pitchei e entra na sua reunião",
+    desc: "Pitchei roda em segundo plano no macOS. Captura o áudio do sistema (o que o outro lado fala) e do microfone (você), localmente. Não gera link, não entra na call, ninguém vê.",
+  },
+  {
+    n: "02",
+    titulo: "Transcrição em tempo real, em português",
+    desc: "Cada frase é convertida em texto pela Deepgram via WebSocket criptografado. A latência é de menos de 1 segundo. O texto fica em memória durante a sessão e é descartado depois.",
+  },
+  {
+    n: "03",
+    titulo: "Sugestões aparecem só quando importam",
+    desc: "Quando o outro termina de falar, ou quando você silencia por um instante, o Pitchei pensa e mostra uma sugestão glanceável. Você usa, troca por outra, ou ignora — em meio segundo.",
+  },
+];
+---
+
+<section
+  id="como-funciona"
+  class="border-b border-ink-faint bg-paper-muted"
+  aria-labelledby="como-titulo"
+>
+  <div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+    <div class="max-w-3xl">
+      <p class="text-sm font-semibold uppercase tracking-wider text-orange">
+        Como funciona
+      </p>
+      <h2
+        id="como-titulo"
+        class="mt-3 font-display text-4xl font-black leading-tight text-ink md:text-5xl"
+      >
+        Três passos. Menos de um segundo da fala à sugestão.
+      </h2>
+    </div>
+
+    <ol class="mt-14 grid gap-8 md:grid-cols-3">
+      {passos.map((p) => (
+        <li class="relative flex flex-col rounded-2xl border border-ink-faint bg-paper p-8 shadow-card">
+          <span class="font-display text-5xl font-black text-orange">
+            {p.n}
+          </span>
+          <h3 class="mt-4 font-display text-xl font-bold text-ink">
+            {p.titulo}
+          </h3>
+          <p class="mt-3 text-sm leading-relaxed text-ink-muted">{p.desc}</p>
+        </li>
+      ))}
+    </ol>
+
+    <p class="mt-10 max-w-2xl text-sm text-ink-soft">
+      Construído com Tauri, Rust e React. Aproveita a ScreenCaptureKit nativa
+      do macOS — não usa Electron, não come bateria, não pesa.
+    </p>
+  </div>
+</section>

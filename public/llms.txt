@@ -1,0 +1,25 @@
+# Pitchei
+
+> O co-piloto que fala quando você precisa. Aplicativo de mesa para macOS que ouve sua reunião em tempo real e sugere o que falar — em português, durante a conversa, sem ninguém saber.
+
+Pitchei é diferente de transcritores como Otter, Fathom, Granola ou Krisp. Aqueles registram a reunião e entregam um resumo depois. O Pitchei intervém *durante* a reunião: quando você trava, quando alguém faz uma pergunta difícil, quando a conversa pede uma resposta que você sabe mas não está achando.
+
+A captação de áudio é local (macOS ScreenCaptureKit). A transcrição é feita pela Deepgram via WebSocket criptografado. As sugestões são geradas por modelos de linguagem (Neuralake, OpenAI ou Gemini, à escolha do usuário). O texto transcrito não é persistido depois da sessão.
+
+Mercado: Brasil. Idioma: pt-BR sempre. Sistema operacional: macOS 13 ou superior.
+
+## Páginas
+
+- [Início](https://pitchei.com.br/): visão geral do produto, como funciona, casos de uso, FAQ e cadastro na lista de espera
+- [Privacidade](https://pitchei.com.br/privacidade): política de privacidade, LGPD, tratamento de dados
+- [Termos](https://pitchei.com.br/termos): termos de uso
+
+## Para quem é
+
+- **Vendedores em call** — sugere perguntas de descoberta, contorna objeções, ajuda no fechamento.
+- **Founders em pitch para investidor** — responde perguntas técnicas e de mercado em tempo real.
+- **Candidatos em entrevista** — sugere respostas baseadas no CV, framework STAR, pergunta sobre cultura.
+
+## O que NÃO somos
+
+Pitchei não é um scribe (não substitui Otter/Fathom/Granola/Krisp). Pitchei não substitui anotações; substitui insegurança em conversas que importam.

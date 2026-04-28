@@ -1,0 +1,94 @@
+/*
+ * Pitchei design tokens — espelho de ~/Desktop/programming/pitchei/src/styles/tokens.css
+ * Fonte de verdade do brand é o app. Mudanças aqui só pra acompanhar o app.
+ *
+ * Regras duras (de AGENTS/04-styling-and-brand.md):
+ *  - Sem #000 e sem #FFF.
+ *  - Speech bubble laranja sempre Pitch Orange.
+ *  - --color-flame é reservado para indicador live/recording. Não usar como hover geral.
+ *  - Sem emoji no produto.
+ *  - pt-BR sempre.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,700;1,9..144,900&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Caveat:wght@700&display=swap");
+
+:root {
+  /* Surfaces */
+  --color-ink: #1c0f09;
+  --color-ink-muted: rgba(28, 15, 9, 0.72);
+  --color-ink-soft: rgba(28, 15, 9, 0.56);
+  --color-ink-faint: rgba(28, 15, 9, 0.12);
+  --color-paper: #f7f3ee;
+  --color-paper-muted: #efe9e1;
+  --color-smoke: #c8bfb5;
+  --color-smoke-soft: #d9d2c8;
+
+  /* Brand */
+  --color-orange: #e85d26;
+  --color-orange-hover: #d14f1c;
+  --color-orange-active: #b8431a;
+  --color-orange-soft: rgba(232, 93, 38, 0.12);
+  --color-flame: #ff7a45; /* live/recording only */
+  --color-flame-hover: #f26a35;
+  --color-amber: #ffb347;
+  --color-amber-hover: #f2a133;
+
+  /* Semantic (light surface defaults) */
+  --bg: var(--color-paper);
+  --fg: var(--color-ink);
+
+  /* Type */
+  --ff-display: "Fraunces", ui-serif, Georgia, serif;
+  --ff-body: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --ff-script: "Caveat", cursive;
+
+  /* Shadows */
+  --shadow-card: 0 4px 16px rgba(28, 15, 9, 0.08);
+  --shadow-glow: 0 0 0 4px rgba(232, 93, 38, 0.2);
+  --shadow-glow-flame: 0 0 0 4px rgba(255, 122, 69, 0.25);
+  --shadow-overlay:
+    0 24px 64px rgba(28, 15, 9, 0.32), inset 0 1px 0 rgba(247, 243, 238, 0.06);
+}
+
+[data-surface="overlay"] {
+  --bg: var(--color-ink);
+  --fg: var(--color-paper);
+}
+
+/* Reset bordering on box-sizing handled by Tailwind preflight; only globals here */
+html {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--ff-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--ff-display);
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: var(--color-orange);
+  color: var(--color-paper);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

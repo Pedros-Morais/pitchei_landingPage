@@ -1,0 +1,13 @@
+{
+  "name": "Pitchei",
+  "short_name": "Pitchei",
+  "description": "O co-piloto que fala quando você precisa.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F3EE",
+  "theme_color": "#1C0F09",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" }
+  ]
+}
