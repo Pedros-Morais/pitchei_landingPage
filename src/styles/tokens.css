@@ -55,13 +55,9 @@
   --fg: var(--color-paper);
 }
 
-/* Reset bordering on box-sizing handled by Tailwind preflight; only globals here */
+/* Tailwind preflight cuida de reset; aqui ficam só os hooks que a preflight não cobre. */
+
 html {
-  background: var(--bg);
-  color: var(--fg);
-  font-family: var(--ff-body);
-  font-size: 16px;
-  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }

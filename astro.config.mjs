@@ -14,7 +14,7 @@ export default defineConfig({
     defaultStrategy: "viewport",
   },
   integrations: [
-    tailwind({ applyBaseStyles: false }),
+    tailwind(),
     sitemap({
       changefreq: "weekly",
       priority: 0.7,
