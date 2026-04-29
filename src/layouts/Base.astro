@@ -5,6 +5,8 @@ import { ClientRouter } from "astro:transitions";
 import SEO from "~/components/SEO.astro";
 import Nav from "~/components/Nav.astro";
 import Footer from "~/components/Footer.astro";
+import Cursor from "~/components/Cursor.astro";
+import SectionRail from "~/components/SectionRail.astro";
 import { SITE } from "~/lib/site";
 
 type Props = {
@@ -49,12 +51,15 @@ const props = Astro.props;
       <slot />
     </main>
     <Footer />
+    <SectionRail />
+    <Cursor />
 
     <script>
       import "~/scripts/lenis.ts";
       import "~/scripts/reveal.ts";
       import "~/scripts/waitlist-form.ts";
       import "~/scripts/hero-3d-loader.ts";
+      import "~/scripts/insane-loader.ts";
     </script>
   </body>
 </html>

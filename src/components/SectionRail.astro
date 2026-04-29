@@ -1,0 +1,27 @@
+---
+const sections = [
+  { target: "section[aria-labelledby='hero-titulo']", label: "INÍCIO" },
+  { target: "#para-quem", label: "PARA QUEM" },
+  { target: "#como-funciona", label: "COMO FUNCIONA" },
+  { target: "#privacidade", label: "PRIVACIDADE" },
+  { target: "#faq", label: "FAQ" },
+];
+---
+
+<aside class="section-rail" aria-label="Navegação por seção">
+  <ul class="section-rail-list">
+    {sections.map((s) => (
+      <li>
+        <button
+          type="button"
+          data-rail-dot
+          data-target={s.target}
+          data-label={s.label}
+          class="section-rail-dot"
+          aria-label={`Ir para ${s.label.toLowerCase()}`}
+        ></button>
+      </li>
+    ))}
+  </ul>
+  <span class="section-rail-label" aria-hidden="true"></span>
+</aside>
