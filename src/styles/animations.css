@@ -1,0 +1,457 @@
+/*
+ * Pitchei landing — animation utility layer
+ * GPU-only (transform/opacity). Respects prefers-reduced-motion globally.
+ *
+ * Patterns:
+ *   data-reveal              → element fades + slides up when in viewport
+ *   data-reveal="left"       → slides in from left
+ *   data-reveal-stagger      → all direct children stagger reveal (--stagger ms)
+ *   data-revealed="true"     → set by IntersectionObserver to fire animation
+ */
+
+/* ----- reveal-on-scroll ---------------------------------------------------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-reveal="left"] {
+  transform: translateX(-24px);
+}
+
+[data-reveal="right"] {
+  transform: translateX(24px);
+}
+
+[data-reveal="scale"] {
+  transform: scale(0.96);
+}
+
+[data-revealed="true"] {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+[data-reveal-stagger] > * {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+[data-reveal-stagger][data-revealed="true"] > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-reveal-stagger][data-revealed="true"] > *:nth-child(1)  { transition-delay: 0ms; }
+[data-reveal-stagger][data-revealed="true"] > *:nth-child(2)  { transition-delay: 60ms; }
+[data-reveal-stagger][data-revealed="true"] > *:nth-child(3)  { transition-delay: 120ms; }
+[data-reveal-stagger][data-revealed="true"] > *:nth-child(4)  { transition-delay: 180ms; }
+[data-reveal-stagger][data-revealed="true"] > *:nth-child(5)  { transition-delay: 240ms; }
+[data-reveal-stagger][data-revealed="true"] > *:nth-child(6)  { transition-delay: 300ms; }
+[data-reveal-stagger][data-revealed="true"] > *:nth-child(7)  { transition-delay: 360ms; }
+[data-reveal-stagger][data-revealed="true"] > *:nth-child(8)  { transition-delay: 420ms; }
+[data-reveal-stagger][data-revealed="true"] > *:nth-child(9)  { transition-delay: 480ms; }
+[data-reveal-stagger][data-revealed="true"] > *:nth-child(10) { transition-delay: 540ms; }
+
+/* ----- scroll progress bar ------------------------------------------------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  transform-origin: 0 0;
+  transform: scaleX(var(--scroll, 0));
+  background: linear-gradient(90deg, #e85d26 0%, #ff7a45 50%, #ffb347 100%);
+  z-index: 50;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* ----- hero h1 line reveal ------------------------------------------------- */
+.hero-line {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: hero-line-in 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hero-line:nth-child(1) { animation-delay: 240ms; }
+.hero-line:nth-child(2) { animation-delay: 360ms; }
+.hero-line:nth-child(3) { animation-delay: 480ms; }
+
+@keyframes hero-line-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-fala {
+  display: inline-block;
+  animation: glow-pulse 4s ease-in-out infinite;
+  animation-delay: 1.4s;
+}
+
+/* ----- hero CTA + meta entrance ------------------------------------------- */
+.hero-meta { animation: fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) 100ms both; }
+.hero-sub { animation: fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) 700ms both; }
+.hero-cta { animation: fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) 850ms both; }
+.hero-foot { animation: fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) 1000ms both; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ----- HUD perspective enter ---------------------------------------------- */
+.hud-enter {
+  animation: hud-enter 1100ms cubic-bezier(0.22, 1, 0.36, 1) 600ms both;
+  transform-style: preserve-3d;
+}
+@keyframes hud-enter {
+  0% {
+    opacity: 0;
+    transform: perspective(1200px) rotateY(8deg) rotateX(2deg) translateY(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1200px) rotateY(0) rotateX(0) translateY(0);
+  }
+}
+
+/* ----- HUD background orbs ------------------------------------------------ */
+.orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* ----- HUD scene loop (3 cenas × 8s = 24s) -------------------------------- */
+.hud-scene {
+  position: absolute;
+  inset: 60px 20px 20px 20px;
+  opacity: 0;
+  pointer-events: none;
+}
+.hud-scene-1 { animation: hud-scene-loop 24s ease-in-out 0s infinite both; }
+.hud-scene-2 { animation: hud-scene-loop 24s ease-in-out 8s infinite both; }
+.hud-scene-3 { animation: hud-scene-loop 24s ease-in-out 16s infinite both; }
+
+@keyframes hud-scene-loop {
+  0%, 1%       { opacity: 0; transform: translateY(8px); }
+  3%           { opacity: 1; transform: translateY(0); }
+  30%          { opacity: 1; }
+  33%          { opacity: 0; transform: translateY(-8px); }
+  100%         { opacity: 0; transform: translateY(-8px); }
+}
+
+/* speaker label + transcript container fade-in inside scene */
+.hud-speaker {
+  opacity: 0;
+  animation: hud-fade-in 400ms ease-out 200ms forwards;
+}
+
+.hud-typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  width: 0;
+  animation: hud-typewriter 2400ms steps(38, end) 600ms forwards;
+}
+
+@keyframes hud-typewriter {
+  to { width: 100%; }
+}
+
+.hud-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.05em;
+  background: #e85d26;
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: caret-blink 800ms steps(2, end) infinite;
+  opacity: 0;
+}
+.hud-caret-on {
+  animation:
+    hud-caret-show 0ms 600ms forwards,
+    caret-blink 800ms steps(2, end) infinite 600ms,
+    hud-caret-hide 0ms 3500ms forwards;
+}
+@keyframes hud-caret-show { to { opacity: 1; } }
+@keyframes hud-caret-hide { to { opacity: 0; } }
+
+@keyframes caret-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* thinking dots */
+.hud-thinking {
+  opacity: 0;
+  animation: hud-fade-in-out 1000ms ease 3300ms forwards;
+}
+.hud-thinking-dot {
+  animation: dot-cascade 1200ms ease-in-out infinite;
+}
+.hud-thinking-dot:nth-child(2) { animation-delay: 200ms; }
+.hud-thinking-dot:nth-child(3) { animation-delay: 400ms; }
+
+@keyframes dot-cascade {
+  0%, 80%, 100% { opacity: 0.3; transform: translateY(0); }
+  40% { opacity: 1; transform: translateY(-3px); }
+}
+
+@keyframes hud-fade-in {
+  to { opacity: 1; }
+}
+@keyframes hud-fade-in-out {
+  0%, 100% { opacity: 0; }
+  20%, 80% { opacity: 1; }
+}
+
+/* suggestion */
+.hud-suggestion {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: hud-suggestion-in 600ms cubic-bezier(0.22, 1, 0.36, 1) 4200ms forwards;
+}
+@keyframes hud-suggestion-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* action buttons stagger */
+.hud-action {
+  opacity: 0;
+  transform: translateY(6px);
+  animation: hud-action-in 400ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hud-action:nth-child(1) { animation-delay: 4900ms; }
+.hud-action:nth-child(2) { animation-delay: 5050ms; }
+.hud-action:nth-child(3) { animation-delay: 5200ms; }
+
+@keyframes hud-action-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* HUD ambient: card sheen pass once per loop */
+.hud-card {
+  position: relative;
+  overflow: hidden;
+}
+.hud-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(247, 243, 238, 0.06) 50%,
+    transparent 100%
+  );
+  animation: hud-card-sheen 24s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes hud-card-sheen {
+  0%, 30%, 100% { transform: translateX(-100%); opacity: 0; }
+  35% { opacity: 0.6; }
+  60% { transform: translateX(400%); opacity: 0; }
+}
+
+/* ----- shine sweep on button hover ---------------------------------------- */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(247, 243, 238, 0.35) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  transition: left 1100ms ease-out;
+}
+.btn-shine:hover::after,
+.btn-shine:focus-visible::after {
+  left: 220%;
+}
+
+/* ----- FAQ accordion smooth height --------------------------------------- */
+@supports (interpolate-size: allow-keywords) {
+  :root { interpolate-size: allow-keywords; }
+  details::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition: block-size 320ms cubic-bezier(0.22, 1, 0.36, 1), content-visibility 320ms allow-discrete;
+  }
+  details[open]::details-content {
+    block-size: auto;
+  }
+}
+
+/* fallback: grid-rows trick */
+.faq-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+details[open] .faq-body {
+  grid-template-rows: 1fr;
+}
+.faq-body-inner {
+  overflow: hidden;
+}
+
+/* ----- digit-roll counter (Como Funciona) -------------------------------- */
+.digit-roll {
+  display: inline-flex;
+  height: 1em;
+  overflow: hidden;
+  vertical-align: bottom;
+  line-height: 1;
+}
+.digit-roll-track {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(0);
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--digit-delay, 0ms);
+}
+.digit-roll[data-target="0"] .digit-roll-track { transform: translateY(0); }
+.digit-roll[data-target="1"] .digit-roll-track { transform: translateY(-10%); }
+.digit-roll[data-target="2"] .digit-roll-track { transform: translateY(-20%); }
+.digit-roll[data-target="3"] .digit-roll-track { transform: translateY(-30%); }
+.digit-roll[data-target="4"] .digit-roll-track { transform: translateY(-40%); }
+.digit-roll[data-target="5"] .digit-roll-track { transform: translateY(-50%); }
+.digit-roll[data-target="6"] .digit-roll-track { transform: translateY(-60%); }
+.digit-roll[data-target="7"] .digit-roll-track { transform: translateY(-70%); }
+.digit-roll[data-target="8"] .digit-roll-track { transform: translateY(-80%); }
+.digit-roll[data-target="9"] .digit-roll-track { transform: translateY(-90%); }
+
+/* the trick: only animate when parent has data-revealed */
+[data-revealed="true"] .digit-roll[data-target="1"] .digit-roll-track { transform: translateY(-10%); }
+[data-revealed="true"] .digit-roll[data-target="2"] .digit-roll-track { transform: translateY(-20%); }
+[data-revealed="true"] .digit-roll[data-target="3"] .digit-roll-track { transform: translateY(-30%); }
+.digit-roll-track > span {
+  height: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ----- magnetic gradient (Personas) -------------------------------------- */
+.magnetic-glow {
+  --mouse-x: 50%;
+  --mouse-y: 0%;
+  position: relative;
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.magnetic-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    520px circle at var(--mouse-x) var(--mouse-y),
+    rgba(232, 93, 38, 0.18),
+    transparent 45%
+  );
+  opacity: 0;
+  transition: opacity 320ms ease-out;
+  pointer-events: none;
+}
+.magnetic-glow:hover::before { opacity: 1; }
+.magnetic-glow:hover {
+  transform: translateY(-4px);
+}
+
+/* ----- CTA submit explosion ---------------------------------------------- */
+.boom-host {
+  position: relative;
+}
+.boom-host[data-boom="true"] .boom-dot {
+  animation: boom-dot 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.boom-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: #ff7a45;
+  opacity: 0;
+  pointer-events: none;
+}
+.boom-dot:nth-child(1) { --bx: -56px; --by: -34px; }
+.boom-dot:nth-child(2) { --bx: 0px;   --by: -52px; }
+.boom-dot:nth-child(3) { --bx: 56px;  --by: -34px; }
+.boom-dot:nth-child(4) { --bx: -56px; --by: 24px;  }
+.boom-dot:nth-child(5) { --bx: 56px;  --by: 24px;  }
+
+@keyframes boom-dot {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+  20% { opacity: 1; }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--bx)), calc(-50% + var(--by))) scale(0.7);
+  }
+}
+
+/* ----- Como Funciona connector line ------------------------------------- */
+.how-line {
+  stroke-dasharray: 6 4;
+  stroke-dashoffset: 200;
+  animation: draw-line 1500ms cubic-bezier(0.22, 1, 0.36, 1) 200ms forwards;
+}
+[data-revealed="true"] .how-line { animation-play-state: running; }
+
+@keyframes draw-line {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ----- prefers-reduced-motion: hard reset -------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  [data-reveal-stagger] > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .hud-scene-1, .hud-scene-2, .hud-scene-3 {
+    animation: none !important;
+  }
+  .hud-scene-1 { opacity: 1 !important; }
+  .scroll-progress { display: none; }
+}

@@ -31,7 +31,7 @@ const personas = [
   aria-labelledby="personas-titulo"
 >
   <div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
-    <div class="max-w-3xl">
+    <div class="max-w-3xl" data-reveal-stagger>
       <p class="text-sm font-semibold uppercase tracking-wider text-orange">
         Para quem é
       </p>
@@ -47,16 +47,16 @@ const personas = [
       </p>
     </div>
 
-    <div class="mt-14 grid gap-6 md:grid-cols-2">
+    <div class="mt-14 grid gap-6 md:grid-cols-2" data-reveal-stagger>
       {personas.map((p) => (
-        <article class="group relative flex flex-col overflow-hidden rounded-2xl border border-paper/10 bg-paper/[0.03] p-8 transition-colors hover:bg-paper/[0.05]">
-          <div
-            aria-hidden="true"
-            class="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full opacity-50 transition-opacity group-hover:opacity-70"
-            style="background: radial-gradient(circle, rgba(232,93,38,0.18) 0%, transparent 70%);"
-          ></div>
-          <span class="relative inline-flex w-fit rounded-full border border-orange/30 bg-orange/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-orange">
+        <article class="magnetic-glow group relative flex flex-col overflow-hidden rounded-2xl border border-paper/10 bg-paper/[0.03] p-8 transition-colors hover:bg-paper/[0.05] hover:border-paper/20">
+          <span class="relative inline-flex w-fit overflow-hidden rounded-full border border-orange/30 bg-orange/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-orange">
             {p.tag}
+            <span
+              aria-hidden="true"
+              class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100"
+              style="background: linear-gradient(115deg, transparent 30%, rgba(232,93,38,0.4) 50%, transparent 70%); animation: sheen 900ms ease-out;"
+            ></span>
           </span>
           <h3 class="relative mt-5 font-display text-2xl font-bold text-paper">
             {p.titulo}

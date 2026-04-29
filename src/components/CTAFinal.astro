@@ -1,7 +1,6 @@
 ---
-// Cadastro = waitlist. O `action` é um placeholder até decidirmos backend
-// (Supabase, Formspree, ou rota Astro `prerender = false`). Mantém HTML semântico
-// para que o form seja indexável e funcional sem JS.
+// Cadastro = waitlist. O `action` é placeholder até decidirmos backend
+// (Supabase, Formspree, ou rota Astro `prerender = false`).
 ---
 
 <section
@@ -9,60 +8,94 @@
   class="relative overflow-hidden border-b border-paper/10"
   aria-labelledby="cadastro-titulo"
 >
-  <div
-    aria-hidden="true"
-    class="pointer-events-none absolute inset-0 -z-10"
-    style="background:
-      radial-gradient(ellipse 70% 60% at 50% 50%, rgba(232,93,38,0.18) 0%, transparent 65%),
-      radial-gradient(ellipse 50% 40% at 80% 20%, rgba(255,179,71,0.12) 0%, transparent 70%);"
-  ></div>
+  {/* Slow-orbiting gradient orbs */}
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10">
+    <div
+      class="orb animate-orbit-slow-cw"
+      style="
+        top: 5%; left: 10%;
+        width: 500px; height: 500px;
+        background: radial-gradient(circle, rgba(232,93,38,0.20) 0%, transparent 60%);
+      "
+    ></div>
+    <div
+      class="orb animate-orbit-slow-ccw"
+      style="
+        bottom: 0%; right: 10%;
+        width: 460px; height: 460px;
+        background: radial-gradient(circle, rgba(255,179,71,0.16) 0%, transparent 60%);
+      "
+    ></div>
+    <div
+      class="orb animate-breath"
+      style="
+        top: 30%; left: 40%;
+        width: 380px; height: 380px;
+        background: radial-gradient(circle, rgba(255,122,69,0.14) 0%, transparent 65%);
+      "
+    ></div>
+  </div>
 
-  <div class="mx-auto max-w-4xl px-6 py-24 text-center md:py-32">
+  <div class="mx-auto max-w-4xl px-6 py-24 text-center md:py-32" data-reveal-stagger>
     <p class="text-sm font-semibold uppercase tracking-wider text-orange">
       Lista de espera
     </p>
     <h2
       id="cadastro-titulo"
-      class="mt-3 font-display text-4xl font-black leading-tight text-paper md:text-6xl"
+      class="relative mt-3 inline-block font-display text-4xl font-black leading-tight text-paper md:text-6xl"
     >
       Os primeiros 100 entram no beta.
+      <span
+        aria-hidden="true"
+        class="pointer-events-none absolute inset-0"
+        style="background: linear-gradient(115deg, transparent 30%, rgba(232,93,38,0.18) 50%, transparent 70%); background-clip: text; -webkit-background-clip: text; color: transparent; animation: sheen 1400ms ease-out 400ms both;"
+      >Os primeiros 100 entram no beta.</span>
     </h2>
     <p class="mx-auto mt-5 max-w-2xl text-lg text-paper/70 md:text-xl">
       Cadastre seu email e a gente te chama assim que abrir uma vaga. Sem
       spam. Você pode sair quando quiser.
     </p>
 
-    <form
-      action="https://formspree.io/f/REPLACE_ME"
-      method="POST"
-      class="mx-auto mt-10 flex w-full max-w-xl flex-col gap-3 sm:flex-row"
-    >
-      <label class="sr-only" for="email-cadastro">Email</label>
-      <input
-        id="email-cadastro"
-        type="email"
-        name="email"
-        required
-        autocomplete="email"
-        placeholder="seu@email.com"
-        class="flex-1 rounded-full border border-paper/15 bg-paper/5 px-6 py-3.5 text-base text-paper placeholder:text-paper/40 focus:border-orange focus:bg-paper/[0.07] focus:outline-none focus:ring-2 focus:ring-orange/50"
-      />
-      <input type="hidden" name="origem" value="landing-pt-br" />
-      <input
-        type="text"
-        name="_gotcha"
-        tabindex="-1"
-        autocomplete="off"
-        class="hidden"
-        aria-hidden="true"
-      />
-      <button
-        type="submit"
-        class="inline-flex items-center justify-center rounded-full bg-orange px-7 py-3.5 text-base font-semibold text-paper shadow-glow transition-colors hover:bg-orange-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper"
+    <div data-boom-host class="boom-host mx-auto mt-10 w-full max-w-xl">
+      <form
+        action="https://formspree.io/f/REPLACE_ME"
+        method="POST"
+        class="flex w-full flex-col gap-3 sm:flex-row"
       >
-        Quero entrar
-      </button>
-    </form>
+        <label class="sr-only" for="email-cadastro">Email</label>
+        <input
+          id="email-cadastro"
+          type="email"
+          name="email"
+          required
+          autocomplete="email"
+          placeholder="seu@email.com"
+          class="flex-1 rounded-full border border-paper/15 bg-paper/5 px-6 py-3.5 text-base text-paper placeholder:text-paper/40 transition-all focus:border-orange focus:bg-paper/[0.07] focus:shadow-glow focus:outline-none"
+        />
+        <input type="hidden" name="origem" value="landing-pt-br" />
+        <input
+          type="text"
+          name="_gotcha"
+          tabindex="-1"
+          autocomplete="off"
+          class="hidden"
+          aria-hidden="true"
+        />
+        <button
+          type="submit"
+          class="btn-shine inline-flex items-center justify-center rounded-full bg-orange px-7 py-3.5 text-base font-semibold text-paper shadow-glow-soft transition-colors hover:bg-orange-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper"
+        >
+          Quero entrar
+        </button>
+      </form>
+      {/* Submit boom particles */}
+      <span aria-hidden="true" class="boom-dot"></span>
+      <span aria-hidden="true" class="boom-dot"></span>
+      <span aria-hidden="true" class="boom-dot"></span>
+      <span aria-hidden="true" class="boom-dot"></span>
+      <span aria-hidden="true" class="boom-dot"></span>
+    </div>
+
     <p class="mt-4 text-xs text-paper/50">
       A gente respeita LGPD. Email só pra te avisar do beta — nada além disso.
     </p>

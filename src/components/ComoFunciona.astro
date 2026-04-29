@@ -1,21 +1,24 @@
 ---
 const passos = [
   {
-    n: "01",
+    n: ["0", "1"],
     titulo: "Você abre o Pitchei e entra na sua reunião",
     desc: "Pitchei roda em segundo plano no macOS. Captura o áudio do sistema (o que o outro lado fala) e do microfone (você), localmente. Não gera link, não entra na call, ninguém vê.",
   },
   {
-    n: "02",
+    n: ["0", "2"],
     titulo: "Transcrição em tempo real, em português",
     desc: "Cada frase é convertida em texto pela Deepgram via WebSocket criptografado. A latência é de menos de 1 segundo. O texto fica em memória durante a sessão e é descartado depois.",
   },
   {
-    n: "03",
+    n: ["0", "3"],
     titulo: "Sugestões aparecem só quando importam",
     desc: "Quando o outro termina de falar, ou quando você silencia por um instante, o Pitchei pensa e mostra uma sugestão glanceável. Você usa, troca por outra, ou ignora — em meio segundo.",
   },
 ];
+
+// digit roll: render a stack 0..9 inside .digit-roll-track per digit
+const digits = "0123456789".split("");
 ---
 
 <section
@@ -26,11 +29,11 @@ const passos = [
   <div
     aria-hidden="true"
     class="pointer-events-none absolute inset-0 -z-10"
-    style="background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(232,93,38,0.08) 0%, transparent 70%);"
+    style="background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(232,93,38,0.10) 0%, transparent 70%);"
   ></div>
 
   <div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
-    <div class="max-w-3xl">
+    <div class="max-w-3xl" data-reveal-stagger>
       <p class="text-sm font-semibold uppercase tracking-wider text-orange">
         Como funciona
       </p>
@@ -42,12 +45,40 @@ const passos = [
       </h2>
     </div>
 
-    <ol class="mt-14 grid gap-8 md:grid-cols-3">
+    {/* SVG connector — only on desktop */}
+    <svg
+      aria-hidden="true"
+      class="pointer-events-none absolute left-1/2 top-1/2 hidden h-1 w-full max-w-3xl -translate-x-1/2 md:block"
+      style="margin-top: 80px;"
+      viewBox="0 0 1000 4"
+      preserveAspectRatio="none"
+    >
+      <path
+        d="M 0 2 L 1000 2"
+        stroke="rgba(232, 93, 38, 0.35)"
+        stroke-width="2"
+        class="how-line"
+      ></path>
+    </svg>
+
+    <ol class="relative mt-14 grid gap-8 md:grid-cols-3" data-reveal-stagger>
       {passos.map((p) => (
-        <li class="relative flex flex-col rounded-2xl border border-paper/10 bg-paper/[0.03] p-8 transition-colors hover:bg-paper/[0.05]">
-          <span class="font-display text-5xl font-black text-orange">
-            {p.n}
-          </span>
+        <li class="relative flex flex-col rounded-2xl border border-paper/10 bg-paper/[0.03] p-8 transition-colors hover:bg-paper/[0.05] hover:border-paper/20">
+          <div class="font-display text-5xl font-black leading-none text-orange">
+            {p.n.map((d, i) => (
+              <span
+                class="digit-roll"
+                data-target={d}
+                style={`--digit-delay: ${i * 80}ms;`}
+                aria-hidden="true"
+              >
+                <span class="digit-roll-track">
+                  {digits.map((d2) => <span>{d2}</span>)}
+                </span>
+              </span>
+            ))}
+            <span class="sr-only">{p.n.join("")}</span>
+          </div>
           <h3 class="mt-4 font-display text-xl font-bold text-paper">
             {p.titulo}
           </h3>
@@ -56,7 +87,7 @@ const passos = [
       ))}
     </ol>
 
-    <p class="mt-10 max-w-2xl text-sm text-paper/50">
+    <p class="mt-10 max-w-2xl text-sm text-paper/50" data-reveal>
       Construído com Tauri, Rust e React. Aproveita a ScreenCaptureKit nativa
       do macOS — não usa Electron, não come bateria, não pesa.
     </p>

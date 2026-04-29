@@ -8,7 +8,7 @@ import { FAQ_ITEMS } from "~/lib/faq";
   aria-labelledby="faq-titulo"
 >
   <div class="mx-auto max-w-4xl px-6 py-20 md:py-28">
-    <div class="max-w-2xl">
+    <div class="max-w-2xl" data-reveal-stagger>
       <p class="text-sm font-semibold uppercase tracking-wider text-orange">
         Perguntas frequentes
       </p>
@@ -20,20 +20,27 @@ import { FAQ_ITEMS } from "~/lib/faq";
       </h2>
     </div>
 
-    <div class="mt-12 divide-y divide-paper/10 overflow-hidden rounded-2xl border border-paper/10 bg-paper/[0.03]">
+    <div
+      class="mt-12 divide-y divide-paper/10 overflow-hidden rounded-2xl border border-paper/10 bg-paper/[0.03]"
+      data-reveal-stagger
+    >
       {FAQ_ITEMS.map((item, i) => (
-        <details class="group" open={i === 0}>
-          <summary class="flex cursor-pointer items-center justify-between gap-4 px-6 py-5 font-display text-lg font-bold text-paper marker:hidden hover:bg-paper/[0.04] [&::-webkit-details-marker]:hidden">
-            {item.question}
+        <details class="group transition-colors open:bg-paper/[0.04]" open={i === 0}>
+          <summary class="flex cursor-pointer items-center justify-between gap-4 px-6 py-5 font-display text-lg font-bold text-paper marker:hidden hover:bg-paper/[0.02] [&::-webkit-details-marker]:hidden">
+            <span class="transition-colors group-open:text-orange">{item.question}</span>
             <span
               aria-hidden="true"
-              class="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-paper/15 text-paper/70 transition-transform group-open:rotate-45 group-open:border-orange/40 group-open:text-orange"
+              class="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-paper/15 text-paper/70 transition-all duration-300 group-open:rotate-45 group-open:border-orange/40 group-open:text-orange group-open:bg-orange/10"
             >
               +
             </span>
           </summary>
-          <div class="px-6 pb-6 pt-1 text-base leading-relaxed text-paper/70">
-            {item.answer}
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              <div class="px-6 pb-6 pt-1 text-base leading-relaxed text-paper/70">
+                {item.answer}
+              </div>
+            </div>
           </div>
         </details>
       ))}
