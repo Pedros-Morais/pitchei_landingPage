@@ -66,6 +66,18 @@ body {
   min-height: 100vh;
 }
 
+/* Anchored sections land below the sticky nav. */
+:where(section[id], main[id]) {
+  scroll-margin-top: 80px;
+}
+
+/* Strong focus rings everywhere. */
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: 2px solid #e85d26;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
 h1,
 h2,
 h3,

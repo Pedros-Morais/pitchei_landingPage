@@ -1,24 +1,21 @@
 ---
 const passos = [
   {
-    n: ["0", "1"],
+    n: "01",
     titulo: "Você abre o Pitchei e entra na sua reunião",
     desc: "Pitchei roda em segundo plano no macOS. Captura o áudio do sistema (o que o outro lado fala) e do microfone (você), localmente. Não gera link, não entra na call, ninguém vê.",
   },
   {
-    n: ["0", "2"],
+    n: "02",
     titulo: "Transcrição em tempo real, em português",
     desc: "Cada frase é convertida em texto pela Deepgram via WebSocket criptografado. A latência é de menos de 1 segundo. O texto fica em memória durante a sessão e é descartado depois.",
   },
   {
-    n: ["0", "3"],
+    n: "03",
     titulo: "Sugestões aparecem só quando importam",
     desc: "Quando o outro termina de falar, ou quando você silencia por um instante, o Pitchei pensa e mostra uma sugestão glanceável. Você usa, troca por outra, ou ignora — em meio segundo.",
   },
 ];
-
-// digit roll: render a stack 0..9 inside .digit-roll-track per digit
-const digits = "0123456789".split("");
 ---
 
 <section
@@ -61,24 +58,17 @@ const digits = "0123456789".split("");
       ></path>
     </svg>
 
-    <ol class="relative mt-14 grid gap-8 md:grid-cols-3" data-reveal-stagger>
-      {passos.map((p) => (
+    <ol class="relative mt-14 grid gap-8 md:grid-cols-3" data-reveal data-reveal-stagger>
+      {passos.map((p, i) => (
         <li class="relative flex flex-col rounded-2xl border border-paper/10 bg-paper/[0.03] p-8 transition-colors hover:bg-paper/[0.05] hover:border-paper/20">
-          <div class="font-display text-5xl font-black leading-none text-orange">
-            {p.n.map((d, i) => (
-              <span
-                class="digit-roll"
-                data-target={d}
-                style={`--digit-delay: ${i * 80}ms;`}
-                aria-hidden="true"
-              >
-                <span class="digit-roll-track">
-                  {digits.map((d2) => <span>{d2}</span>)}
-                </span>
-              </span>
-            ))}
-            <span class="sr-only">{p.n.join("")}</span>
-          </div>
+          <span
+            class="step-numeral font-display text-5xl font-black leading-none tracking-tight text-orange"
+            style={`--step-delay: ${i * 120}ms;`}
+            aria-hidden="true"
+          >
+            {p.n}
+          </span>
+          <span class="sr-only">Passo {p.n}.</span>
           <h3 class="mt-4 font-display text-xl font-bold text-paper">
             {p.titulo}
           </h3>

@@ -1,0 +1,27 @@
+---
+const items = [
+  "Tauri + Rust",
+  "Deepgram",
+  "macOS nativo",
+  "pt-BR sempre",
+  "LGPD por padrão",
+];
+---
+
+<section
+  class="relative overflow-hidden border-b border-paper/10 bg-paper/[0.02]"
+  aria-label="Tecnologias e princípios"
+>
+  <div class="mx-auto max-w-6xl px-6 py-8" data-reveal>
+    <ul class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 md:gap-x-12">
+      {items.map((it, i) => (
+        <li class="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-paper/55 md:text-[13px]">
+          {i > 0 && (
+            <span aria-hidden="true" class="hidden h-1 w-1 rounded-full bg-paper/20 md:inline-block"></span>
+          )}
+          {it}
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

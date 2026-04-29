@@ -323,41 +323,24 @@ details[open] .faq-body {
   overflow: hidden;
 }
 
-/* ----- digit-roll counter (Como Funciona) -------------------------------- */
-.digit-roll {
-  display: inline-flex;
-  height: 1em;
-  overflow: hidden;
-  vertical-align: bottom;
-  line-height: 1;
+/* ----- step numeral (Como Funciona) -------------------------------------- */
+/* Clip-path wipe reveal — left to right. Glyph-metric independent. */
+.step-numeral {
+  display: inline-block;
+  font-variant-numeric: tabular-nums lining-nums;
+  clip-path: inset(0 100% 0 0);
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    clip-path 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 600ms ease-out,
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--step-delay, 0ms);
 }
-.digit-roll-track {
-  display: flex;
-  flex-direction: column;
+[data-revealed="true"] .step-numeral {
+  clip-path: inset(0 0 0 0);
+  opacity: 1;
   transform: translateY(0);
-  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
-  transition-delay: var(--digit-delay, 0ms);
-}
-.digit-roll[data-target="0"] .digit-roll-track { transform: translateY(0); }
-.digit-roll[data-target="1"] .digit-roll-track { transform: translateY(-10%); }
-.digit-roll[data-target="2"] .digit-roll-track { transform: translateY(-20%); }
-.digit-roll[data-target="3"] .digit-roll-track { transform: translateY(-30%); }
-.digit-roll[data-target="4"] .digit-roll-track { transform: translateY(-40%); }
-.digit-roll[data-target="5"] .digit-roll-track { transform: translateY(-50%); }
-.digit-roll[data-target="6"] .digit-roll-track { transform: translateY(-60%); }
-.digit-roll[data-target="7"] .digit-roll-track { transform: translateY(-70%); }
-.digit-roll[data-target="8"] .digit-roll-track { transform: translateY(-80%); }
-.digit-roll[data-target="9"] .digit-roll-track { transform: translateY(-90%); }
-
-/* the trick: only animate when parent has data-revealed */
-[data-revealed="true"] .digit-roll[data-target="1"] .digit-roll-track { transform: translateY(-10%); }
-[data-revealed="true"] .digit-roll[data-target="2"] .digit-roll-track { transform: translateY(-20%); }
-[data-revealed="true"] .digit-roll[data-target="3"] .digit-roll-track { transform: translateY(-30%); }
-.digit-roll-track > span {
-  height: 1em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* ----- magnetic gradient (Personas) -------------------------------------- */

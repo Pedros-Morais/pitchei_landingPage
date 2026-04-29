@@ -65,22 +65,11 @@ function initMagneticGlow() {
   });
 }
 
-function initBoomOnSubmit() {
-  document.querySelectorAll<HTMLElement>("[data-boom-host]").forEach((host) => {
-    const form = host.querySelector("form");
-    if (!form) return;
-    form.addEventListener("submit", () => {
-      host.setAttribute("data-boom", "true");
-      setTimeout(() => host.removeAttribute("data-boom"), 800);
-    });
-  });
-}
-
 function boot() {
   initReveal();
   initScrollProgress();
   initMagneticGlow();
-  initBoomOnSubmit();
+  // boom is fired by waitlist-form on success only
 }
 
 if (document.readyState === "loading") {
