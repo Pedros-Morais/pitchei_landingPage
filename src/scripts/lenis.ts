@@ -1,12 +1,22 @@
 /*
  * Lenis smooth scroll. ~4KB. Disabled when prefers-reduced-motion is set.
+ *
+ * Drives its own rAF by default. When insane.ts mounts (GSAP), it calls
+ * pauseRaf() and takes over via gsap.ticker (single driver). Cleanup
+ * calls resumeRaf().
  */
 
 import Lenis from "lenis";
 
+type LenisRafControl = {
+  pauseRaf: () => void;
+  resumeRaf: () => void;
+};
+
 declare global {
   interface Window {
     __pitcheiLenis?: Lenis;
+    __pitcheiLenisCtrl?: LenisRafControl;
   }
 }
 
@@ -22,11 +32,27 @@ function init() {
   });
   window.__pitcheiLenis = lenis;
 
+  let rafId = 0;
+  let paused = false;
   function raf(time: number) {
+    if (paused) return;
     lenis.raf(time);
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
   }
-  requestAnimationFrame(raf);
+  rafId = requestAnimationFrame(raf);
+
+  window.__pitcheiLenisCtrl = {
+    pauseRaf() {
+      if (paused) return;
+      paused = true;
+      cancelAnimationFrame(rafId);
+    },
+    resumeRaf() {
+      if (!paused) return;
+      paused = false;
+      rafId = requestAnimationFrame(raf);
+    },
+  };
 
   // Keep anchor scrolls smooth via Lenis
   document.addEventListener("click", (e) => {

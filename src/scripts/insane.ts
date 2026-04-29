@@ -22,16 +22,24 @@ export function mountInsane(): Cleanup {
   const cleanups: Cleanup[] = [];
 
   // ---------- 1. Lenis ↔ ScrollTrigger bridge ----------
+  // CRITICAL: pause Lenis's own rAF first. Otherwise lenis.raf is called
+  // by both lenis.ts's loop AND gsap.ticker — causing scroll jitter and
+  // doubled scroll deltas.
   const lenis = window.__pitcheiLenis;
-  if (lenis) {
+  const lenisCtrl = window.__pitcheiLenisCtrl;
+  if (lenis && lenisCtrl) {
+    lenisCtrl.pauseRaf();
+
     const onLenisScroll = () => ScrollTrigger.update();
     lenis.on("scroll", onLenisScroll);
     const tickerFn = (time: number) => lenis.raf(time * 1000);
     gsap.ticker.add(tickerFn);
     gsap.ticker.lagSmoothing(0);
+
     cleanups.push(() => {
       lenis.off("scroll", onLenisScroll);
       gsap.ticker.remove(tickerFn);
+      lenisCtrl.resumeRaf();
     });
   }
 
@@ -239,6 +247,11 @@ export function mountInsane(): Cleanup {
     // Initial active
     setActive(0);
   }
+
+  // ---------- refresh ScrollTrigger now that everything is set up ----------
+  // Forces re-measurement with current layout (after font load, mounted DOM).
+  // Without this, pin start/end can be stale when mountInsane runs late.
+  ScrollTrigger.refresh();
 
   // ---------- master cleanup ----------
   return () => {
