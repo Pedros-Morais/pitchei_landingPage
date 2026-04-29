@@ -39,6 +39,6 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     question: "Pitchei substitui um Otter ou um Granola?",
     answer:
-      "Não. Otter, Fathom e Granola são transcritores: gravam e entregam o resumo depois. Pitchei é um co-piloto: entrega valor durante a reunião, com sugestões em tempo real. Os dois podem rodar juntos sem conflito.",
+      "Não. Otter, Fathom e Granola são transcritores: gravam e entregam o resumo depois. Pitchei é um parceiro: entrega valor durante a reunião, com sugestões em tempo real. Os dois podem rodar juntos sem conflito.",
   },
 ];
