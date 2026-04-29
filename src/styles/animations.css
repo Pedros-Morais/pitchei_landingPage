@@ -112,17 +112,67 @@
 /* ----- HUD perspective enter ---------------------------------------------- */
 .hud-enter {
   animation: hud-enter 1100ms cubic-bezier(0.22, 1, 0.36, 1) 600ms both;
-  transform-style: preserve-3d;
 }
 @keyframes hud-enter {
   0% {
     opacity: 0;
-    transform: perspective(1200px) rotateY(8deg) rotateX(2deg) translateY(28px);
+    transform: translateY(28px);
   }
   100% {
     opacity: 1;
-    transform: perspective(1200px) rotateY(0) rotateX(0) translateY(0);
+    transform: translateY(0);
   }
+}
+
+/* ----- HUD 3D card stack (active when JS mounts) ------------------------- */
+[data-hud-3d-root] {
+  --rx: 0deg;
+  --ry: 0deg;
+  --depth: 0;
+  perspective: 1400px;
+  perspective-origin: 50% 35%;
+  transform-style: preserve-3d;
+}
+
+[data-hud-3d-root][data-hud-3d-active] [data-hud-front],
+[data-hud-3d-root][data-hud-3d-active] [data-hud-ghost] {
+  transition: transform 90ms linear, opacity 600ms ease-out;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+[data-hud-3d-root][data-hud-3d-active] [data-hud-front] {
+  position: relative;
+  transform: rotateX(var(--rx)) rotateY(var(--ry))
+    translateZ(calc(var(--depth) * 60px));
+  z-index: 3;
+}
+
+[data-hud-3d-root][data-hud-3d-active] [data-hud-ghost="mid"] {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  transform: rotateX(calc(var(--rx) * 0.7)) rotateY(calc(var(--ry) * 0.7))
+    translate3d(-12px, -14px, calc(-110px + var(--depth) * -50px));
+  opacity: calc(0.35 - var(--depth) * 0.18);
+}
+
+[data-hud-3d-root][data-hud-3d-active] [data-hud-ghost="back"] {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  transform: rotateX(calc(var(--rx) * 0.5)) rotateY(calc(var(--ry) * 0.5))
+    translate3d(-22px, -26px, calc(-220px + var(--depth) * -90px));
+  opacity: calc(0.18 - var(--depth) * 0.18);
+}
+
+.hud-ghost-fade-in {
+  animation: hud-ghost-fade 900ms ease-out 100ms both;
+}
+@keyframes hud-ghost-fade {
+  from { opacity: 0; }
+  to {} /* opacity computed by stack rule above */
 }
 
 /* ----- HUD background orbs ------------------------------------------------ */
