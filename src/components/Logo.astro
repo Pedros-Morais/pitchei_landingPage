@@ -1,9 +1,24 @@
 ---
+/*
+ * Pitchei wordmark — hand-lettered SVG do Brand Guide v2.
+ * ViewBox 0 0 300 80 (ratio 3.75:1). Speech bubble laranja é o brand mark.
+ * Swoosh opcional via withSwoosh.
+ *
+ * variants:
+ *   default     — bubble laranja, wordmark paper, swoosh laranja (para superfícies escuras)
+ *   on-orange   — tudo paper, swoosh paper transparente (para fundos laranja)
+ *   light       — wordmark ink, bubble laranja, swoosh laranja (para fundos claros)
+ *   icon-only   — só símbolo P + bubble (use withWordmark={false})
+ */
+
+type Variant = "default" | "on-orange" | "light";
+
 type Props = {
-  variant?: "default" | "mono-paper" | "mono-ink";
+  variant?: Variant;
   height?: number;
   class?: string;
   withWordmark?: boolean;
+  withSwoosh?: boolean;
   ariaLabel?: string;
 };
 
@@ -12,64 +27,108 @@ const {
   height = 32,
   class: className = "",
   withWordmark = true,
+  withSwoosh = true,
   ariaLabel = "Pitchei",
 } = Astro.props;
 
-const stroke =
-  variant === "mono-paper"
-    ? "#F7F3EE"
-    : variant === "mono-ink"
-      ? "#1C0F09"
-      : "#1C0F09";
-const bubble = variant === "mono-paper" || variant === "mono-ink" ? stroke : "#E85D26";
+const palette = {
+  default:   { stroke: "#F7F3EE", bubble: "#E85D26", swoosh: "#E85D26", swooshOpacity: "0.8" },
+  "on-orange": { stroke: "#F7F3EE", bubble: "#F7F3EE", swoosh: "#F7F3EE", swooshOpacity: "0.5" },
+  light:     { stroke: "#1C0F09", bubble: "#E85D26", swoosh: "#E85D26", swooshOpacity: "0.85" },
+}[variant];
+
+const wordmarkRatio = 3.75; // 300/80
+const iconRatio = 1; // 60/60
+const width = withWordmark ? Math.round(height * wordmarkRatio) : Math.round(height * iconRatio);
 ---
 
 {withWordmark ? (
   <svg
     role="img"
     aria-label={ariaLabel}
-    viewBox="0 0 240 64"
+    viewBox="0 0 300 80"
+    width={width}
     height={height}
     class={className}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <ellipse cx="38" cy="10" rx="6" ry="6" fill={bubble} />
-    <path d="M33 16 L38 24 L44 16 Z" fill={bubble} />
+    {/* Speech bubble — the brand mark */}
+    <ellipse cx="105" cy="10" rx="10" ry="10" fill={palette.bubble} />
+    <path d="M100 18 L105 26 L111 18" fill={palette.bubble} />
+
+    {/* P */}
     <path
-      d="M14 56 L14 22 C14 22 14 16 22 16 C30 16 35 21 35 30 C35 39 30 43 22 43 L14 43"
-      stroke={stroke}
-      stroke-width="5"
+      d="M18 65 L18 18 C18 18 18 13 25 13 C32 13 37 17 37 27 C37 37 32 40 25 40 L18 40"
+      stroke={palette.stroke}
+      stroke-width="6"
       stroke-linecap="round"
       stroke-linejoin="round"
       fill="none"
     />
-    <text
-      x="60"
-      y="50"
-      font-family="Fraunces, serif"
-      font-weight="900"
-      font-size="38"
-      fill={stroke}
-      letter-spacing="-1"
-    >itchei</text>
+
+    {/* i */}
+    <path d="M48 40 L48 65" stroke={palette.stroke} stroke-width="6" stroke-linecap="round" />
+    <circle cx="48" cy="26" r="4" fill={palette.bubble} />
+
+    {/* T */}
+    <path d="M62 16 L88 16" stroke={palette.stroke} stroke-width="6" stroke-linecap="round" />
+    <path d="M75 16 L75 65" stroke={palette.stroke} stroke-width="6" stroke-linecap="round" />
+
+    {/* C */}
+    <path
+      d="M116 29 C113 21 108 16 99 16 C90 16 84 26 84 42 C84 58 90 67 99 67 C108 67 113 62 116 54"
+      stroke={palette.stroke}
+      stroke-width="6"
+      stroke-linecap="round"
+      fill="none"
+    />
+
+    {/* H */}
+    <path d="M126 16 L126 65" stroke={palette.stroke} stroke-width="6" stroke-linecap="round" />
+    <path d="M126 42 L152 42" stroke={palette.stroke} stroke-width="6" stroke-linecap="round" />
+    <path d="M152 16 L152 65" stroke={palette.stroke} stroke-width="6" stroke-linecap="round" />
+
+    {/* E */}
+    <path d="M166 16 L166 65" stroke={palette.stroke} stroke-width="6" stroke-linecap="round" />
+    <path d="M166 16 L190 16" stroke={palette.stroke} stroke-width="6" stroke-linecap="round" />
+    <path d="M166 42 L186 42" stroke={palette.stroke} stroke-width="6" stroke-linecap="round" />
+    <path d="M166 65 L190 65" stroke={palette.stroke} stroke-width="6" stroke-linecap="round" />
+
+    {/* I */}
+    <path d="M204 40 L204 65" stroke={palette.stroke} stroke-width="6" stroke-linecap="round" />
+    <circle cx="204" cy="26" r="4" fill={palette.bubble} />
+
+    {/* Swoosh decorativo final — "energy tail" */}
+    {withSwoosh && (
+      <path
+        d="M218 65 C232 65 250 54 260 42 C268 33 271 23 265 16"
+        stroke={palette.swoosh}
+        stroke-width="4"
+        stroke-linecap="round"
+        fill="none"
+        opacity={palette.swooshOpacity}
+      />
+    )}
   </svg>
 ) : (
   <svg
     role="img"
     aria-label={ariaLabel}
-    viewBox="0 0 56 64"
+    viewBox="0 0 60 60"
+    width={height}
     height={height}
     class={className}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <ellipse cx="38" cy="10" rx="6" ry="6" fill={bubble} />
-    <path d="M33 16 L38 24 L44 16 Z" fill={bubble} />
+    {/* Icon mark — só P + speech bubble como ponto do "i" */}
+    <ellipse cx="38" cy="8" rx="9" ry="9" fill={palette.bubble} />
+    <path d="M33 15 L38 23 L44 15" fill={palette.bubble} />
     <path
-      d="M14 56 L14 22 C14 22 14 16 22 16 C30 16 35 21 35 30 C35 39 30 43 22 43 L14 43"
-      stroke={stroke}
-      stroke-width="5"
+      d="M12 52 L12 14 C12 14 12 8 20 8 C28 8 33 13 33 24 C33 35 28 39 20 39 L12 39"
+      stroke={palette.stroke}
+      stroke-width="5.5"
       stroke-linecap="round"
       stroke-linejoin="round"
       fill="none"
