@@ -3,28 +3,31 @@ import HudMockup from "./HudMockup.astro";
 ---
 
 <section
-  class="relative overflow-hidden border-b border-ink-faint"
+  class="relative overflow-hidden border-b border-paper/10"
   aria-labelledby="hero-titulo"
 >
   <div
     aria-hidden="true"
     class="pointer-events-none absolute inset-0 -z-10"
-    style="background: radial-gradient(circle at 20% -10%, rgba(232,93,38,0.10) 0%, transparent 55%), radial-gradient(circle at 90% 10%, rgba(255,179,71,0.08) 0%, transparent 55%);"
+    style="background:
+      radial-gradient(ellipse 80% 60% at 15% -10%, rgba(232,93,38,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 95% 20%, rgba(255,179,71,0.10) 0%, transparent 65%),
+      radial-gradient(ellipse 70% 40% at 50% 110%, rgba(255,122,69,0.08) 0%, transparent 70%);"
   ></div>
 
   <div class="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:py-28 lg:grid-cols-12">
     <div class="lg:col-span-7">
-      <p class="mb-6 inline-flex items-center gap-2 rounded-full border border-ink-faint bg-paper px-3 py-1 text-xs font-medium uppercase tracking-wider text-ink-muted">
+      <p class="mb-6 inline-flex items-center gap-2 rounded-full border border-paper/15 bg-paper/5 px-3 py-1 text-xs font-medium uppercase tracking-wider text-paper/70">
         <span class="inline-block h-1.5 w-1.5 rounded-full bg-orange"></span>
         Em desenvolvimento — beta fechado em maio
       </p>
       <h1
         id="hero-titulo"
-        class="font-display text-5xl font-black leading-[1.05] text-ink md:text-6xl lg:text-7xl"
+        class="font-display text-5xl font-black leading-[1.05] text-paper md:text-6xl lg:text-7xl"
       >
         O co-piloto que <em class="font-display italic text-orange">fala</em> quando você precisa.
       </h1>
-      <p class="mt-6 max-w-xl text-lg leading-relaxed text-ink-muted md:text-xl">
+      <p class="mt-6 max-w-xl text-lg leading-relaxed text-paper/75 md:text-xl">
         Pitchei ouve sua reunião em tempo real e sugere o que dizer — em
         português, durante a conversa, sem ninguém saber. Para quando você
         sabe a resposta, mas não está achando.
@@ -32,18 +35,18 @@ import HudMockup from "./HudMockup.astro";
       <div class="mt-10 flex flex-col gap-3 sm:flex-row">
         <a
           href="#cadastro"
-          class="inline-flex items-center justify-center rounded-full bg-ink px-7 py-3.5 text-base font-semibold text-paper transition-colors hover:bg-ink/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange"
+          class="inline-flex items-center justify-center rounded-full bg-orange px-7 py-3.5 text-base font-semibold text-paper shadow-glow transition-colors hover:bg-orange-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper"
         >
           Entrar na lista de espera
         </a>
         <a
           href="#como-funciona"
-          class="inline-flex items-center justify-center rounded-full border border-ink-faint px-7 py-3.5 text-base font-semibold text-ink transition-colors hover:bg-paper-muted"
+          class="inline-flex items-center justify-center rounded-full border border-paper/20 px-7 py-3.5 text-base font-semibold text-paper transition-colors hover:bg-paper/5"
         >
           Ver como funciona
         </a>
       </div>
-      <p class="mt-6 text-sm text-ink-soft">
+      <p class="mt-6 text-sm text-paper/50">
         macOS 13 ou superior · sem cartão · cancela quando quiser
       </p>
     </div>

@@ -20,9 +20,15 @@ const passos = [
 
 <section
   id="como-funciona"
-  class="border-b border-ink-faint bg-paper-muted"
+  class="relative border-b border-paper/10"
   aria-labelledby="como-titulo"
 >
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 -z-10"
+    style="background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(232,93,38,0.08) 0%, transparent 70%);"
+  ></div>
+
   <div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
     <div class="max-w-3xl">
       <p class="text-sm font-semibold uppercase tracking-wider text-orange">
@@ -30,7 +36,7 @@ const passos = [
       </p>
       <h2
         id="como-titulo"
-        class="mt-3 font-display text-4xl font-black leading-tight text-ink md:text-5xl"
+        class="mt-3 font-display text-4xl font-black leading-tight text-paper md:text-5xl"
       >
         Três passos. Menos de um segundo da fala à sugestão.
       </h2>
@@ -38,19 +44,19 @@ const passos = [
 
     <ol class="mt-14 grid gap-8 md:grid-cols-3">
       {passos.map((p) => (
-        <li class="relative flex flex-col rounded-2xl border border-ink-faint bg-paper p-8 shadow-card">
+        <li class="relative flex flex-col rounded-2xl border border-paper/10 bg-paper/[0.03] p-8 transition-colors hover:bg-paper/[0.05]">
           <span class="font-display text-5xl font-black text-orange">
             {p.n}
           </span>
-          <h3 class="mt-4 font-display text-xl font-bold text-ink">
+          <h3 class="mt-4 font-display text-xl font-bold text-paper">
             {p.titulo}
           </h3>
-          <p class="mt-3 text-sm leading-relaxed text-ink-muted">{p.desc}</p>
+          <p class="mt-3 text-sm leading-relaxed text-paper/65">{p.desc}</p>
         </li>
       ))}
     </ol>
 
-    <p class="mt-10 max-w-2xl text-sm text-ink-soft">
+    <p class="mt-10 max-w-2xl text-sm text-paper/50">
       Construído com Tauri, Rust e React. Aproveita a ScreenCaptureKit nativa
       do macOS — não usa Electron, não come bateria, não pesa.
     </p>

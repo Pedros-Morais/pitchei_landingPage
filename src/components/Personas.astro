@@ -27,7 +27,7 @@ const personas = [
 
 <section
   id="para-quem"
-  class="border-b border-ink-faint"
+  class="border-b border-paper/10"
   aria-labelledby="personas-titulo"
 >
   <div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
@@ -37,11 +37,11 @@ const personas = [
       </p>
       <h2
         id="personas-titulo"
-        class="mt-3 font-display text-4xl font-black leading-tight text-ink md:text-5xl"
+        class="mt-3 font-display text-4xl font-black leading-tight text-paper md:text-5xl"
       >
         Para conversas que importam, em português.
       </h2>
-      <p class="mt-5 text-lg text-ink-muted">
+      <p class="mt-5 text-lg text-paper/70">
         Pitchei nasceu para o profissional brasileiro que vende, pitcha e
         negocia em pt-BR. Sem traduzir o que importa.
       </p>
@@ -49,15 +49,20 @@ const personas = [
 
     <div class="mt-14 grid gap-6 md:grid-cols-2">
       {personas.map((p) => (
-        <article class="flex flex-col rounded-2xl border border-ink-faint bg-paper p-8 shadow-card">
-          <span class="inline-flex w-fit rounded-full bg-orange-soft px-3 py-1 text-xs font-bold uppercase tracking-wider text-orange">
+        <article class="group relative flex flex-col overflow-hidden rounded-2xl border border-paper/10 bg-paper/[0.03] p-8 transition-colors hover:bg-paper/[0.05]">
+          <div
+            aria-hidden="true"
+            class="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full opacity-50 transition-opacity group-hover:opacity-70"
+            style="background: radial-gradient(circle, rgba(232,93,38,0.18) 0%, transparent 70%);"
+          ></div>
+          <span class="relative inline-flex w-fit rounded-full border border-orange/30 bg-orange/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-orange">
             {p.tag}
           </span>
-          <h3 class="mt-5 font-display text-2xl font-bold text-ink">
+          <h3 class="relative mt-5 font-display text-2xl font-bold text-paper">
             {p.titulo}
           </h3>
-          <p class="mt-3 text-base text-ink-muted">{p.bullet}</p>
-          <ul class="mt-6 space-y-3 text-sm text-ink-muted">
+          <p class="relative mt-3 text-base text-paper/70">{p.bullet}</p>
+          <ul class="relative mt-6 space-y-3 text-sm text-paper/65">
             {p.cenas.map((c) => (
               <li class="flex gap-3">
                 <span aria-hidden="true" class="mt-1 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-orange"></span>

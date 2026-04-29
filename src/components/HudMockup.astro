@@ -4,20 +4,22 @@ const { class: className = "" } = Astro.props;
 ---
 
 <div
-  data-surface="overlay"
   class:list={[
-    "relative w-full max-w-xl overflow-hidden rounded-2xl bg-ink p-5 text-paper shadow-overlay",
+    "relative w-full max-w-xl overflow-hidden rounded-2xl border border-paper/10 p-5 text-paper shadow-overlay",
     className,
   ]}
+  style="background: linear-gradient(180deg, #2A1810 0%, #1C0F09 100%);"
   aria-hidden="true"
 >
   <div class="flex items-center gap-2 text-xs">
     <span class="relative inline-flex h-2 w-2">
-      <span class="absolute inline-flex h-full w-full animate-pulse-soft rounded-full" style="background: #FF7A45"></span>
+      <span
+        class="absolute inline-flex h-full w-full animate-pulse-soft rounded-full"
+        style="background: #FF7A45"></span>
       <span class="relative inline-flex h-2 w-2 rounded-full" style="background: #FF7A45"></span>
     </span>
     <span class="font-medium tracking-wide text-paper/70">Pitchei · Ao vivo</span>
-    <span class="ml-auto font-mono text-[11px] text-paper/50">12:34</span>
+    <span class="ml-auto font-mono text-[11px] text-paper/40">12:34</span>
   </div>
 
   <p class="mt-4 font-display text-lg font-semibold leading-snug text-paper">
@@ -49,5 +51,9 @@ const { class: className = "" } = Astro.props;
     </button>
   </div>
 
-  <div class="absolute -bottom-16 -right-16 h-48 w-48 rounded-full" style="background: radial-gradient(circle, rgba(232,93,38,0.28) 0%, transparent 70%)"></div>
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute -bottom-16 -right-16 h-48 w-48 rounded-full"
+    style="background: radial-gradient(circle, rgba(232,93,38,0.32) 0%, transparent 70%);">
+  </div>
 </div>

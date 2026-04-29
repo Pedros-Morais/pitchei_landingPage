@@ -21,7 +21,7 @@ const garantias = [
 
 <section
   id="privacidade"
-  class="border-b border-ink-faint"
+  class="border-b border-paper/10"
   aria-labelledby="privacidade-titulo"
 >
   <div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
@@ -32,18 +32,18 @@ const garantias = [
         </p>
         <h2
           id="privacidade-titulo"
-          class="mt-3 font-display text-4xl font-black leading-tight text-ink md:text-5xl"
+          class="mt-3 font-display text-4xl font-black leading-tight text-paper md:text-5xl"
         >
           Sua reunião sai de você. E volta para você. Pronto.
         </h2>
-        <p class="mt-5 text-lg text-ink-muted">
+        <p class="mt-5 text-lg text-paper/70">
           Pitchei foi feito para conversas confidenciais — vendas, pitch,
           negociação. Tratamos privacidade como requisito de produto, não
           como aviso jurídico no rodapé.
         </p>
         <a
           href="/privacidade"
-          class="mt-6 inline-flex items-center gap-2 text-base font-semibold text-orange transition-colors hover:text-orange-hover"
+          class="mt-6 inline-flex items-center gap-2 text-base font-semibold text-orange transition-colors hover:text-flame"
         >
           Ler política completa
           <span aria-hidden="true">→</span>
@@ -52,9 +52,9 @@ const garantias = [
 
       <ul class="grid gap-4 sm:grid-cols-2 lg:col-span-7">
         {garantias.map((g) => (
-          <li class="rounded-2xl border border-ink-faint bg-paper-muted p-6">
-            <h3 class="font-display text-lg font-bold text-ink">{g.titulo}</h3>
-            <p class="mt-2 text-sm text-ink-muted">{g.desc}</p>
+          <li class="rounded-2xl border border-paper/10 bg-paper/[0.03] p-6">
+            <h3 class="font-display text-lg font-bold text-paper">{g.titulo}</h3>
+            <p class="mt-2 text-sm text-paper/65">{g.desc}</p>
           </li>
         ))}
       </ul>

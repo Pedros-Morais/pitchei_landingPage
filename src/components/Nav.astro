@@ -2,23 +2,27 @@
 import Logo from "./Logo.astro";
 ---
 
-<header class="sticky top-0 z-40 border-b border-ink-faint bg-paper/80 backdrop-blur-md">
+<header class="sticky top-0 z-40 border-b border-paper/10 bg-ink/85 backdrop-blur-md">
   <nav
     aria-label="Principal"
     class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"
   >
-    <a href="/" class="flex items-center gap-2 transition-opacity hover:opacity-80" aria-label="Pitchei — página inicial">
-      <Logo height={28} />
+    <a
+      href="/"
+      class="flex items-center gap-2 transition-opacity hover:opacity-80"
+      aria-label="Pitchei — página inicial"
+    >
+      <Logo height={28} variant="mono-paper" />
     </a>
-    <div class="hidden items-center gap-8 text-sm font-medium text-ink-muted md:flex">
-      <a href="#como-funciona" class="transition-colors hover:text-ink">Como funciona</a>
-      <a href="#para-quem" class="transition-colors hover:text-ink">Para quem é</a>
-      <a href="#privacidade" class="transition-colors hover:text-ink">Privacidade</a>
-      <a href="#faq" class="transition-colors hover:text-ink">FAQ</a>
+    <div class="hidden items-center gap-8 text-sm font-medium text-paper/70 md:flex">
+      <a href="#como-funciona" class="transition-colors hover:text-paper">Como funciona</a>
+      <a href="#para-quem" class="transition-colors hover:text-paper">Para quem é</a>
+      <a href="#privacidade" class="transition-colors hover:text-paper">Privacidade</a>
+      <a href="#faq" class="transition-colors hover:text-paper">FAQ</a>
     </div>
     <a
       href="#cadastro"
-      class="inline-flex items-center rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-paper transition-colors hover:bg-ink/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange"
+      class="inline-flex items-center rounded-full bg-orange px-5 py-2.5 text-sm font-semibold text-paper transition-colors hover:bg-orange-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper"
     >
       Entrar na lista
     </a>
