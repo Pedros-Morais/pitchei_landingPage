@@ -34,7 +34,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     question: "Que modelo de IA o Pitchei usa?",
     answer:
-      "Você escolhe. Pitchei conecta com sua chave do Neuralake, OpenAI ou Gemini. Não passamos seus dados por um servidor proprietário — você controla qual modelo gera as sugestões.",
+      "A gente escolhe por você. Neuralake é o nosso fornecedor principal de IA — combina latência baixa, qualidade em português e infraestrutura independente. OpenAI e Google Gemini ficam como redundância automática. Você não configura API key, não escolhe provider, só conversa. Nenhum modelo treina com sua reunião.",
   },
   {
     question: "Pitchei substitui um Otter ou um Granola?",

@@ -1,10 +1,10 @@
 ---
 const items = [
-  "Tauri + Rust",
-  "Deepgram",
-  "macOS nativo",
-  "pt-BR sempre",
-  "LGPD por padrão",
+  { label: "IA por Neuralake", emphasis: true },
+  { label: "Transcrição Deepgram" },
+  { label: "Tauri + Rust" },
+  { label: "macOS nativo" },
+  { label: "LGPD por padrão" },
 ];
 ---
 
@@ -15,11 +15,19 @@ const items = [
   <div class="mx-auto max-w-6xl px-6 py-8" data-reveal>
     <ul class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 md:gap-x-12">
       {items.map((it, i) => (
-        <li class="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-paper/55 md:text-[13px]">
+        <li
+          class:list={[
+            "flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] md:text-[13px]",
+            it.emphasis ? "text-orange" : "text-paper/55",
+          ]}
+        >
           {i > 0 && (
             <span aria-hidden="true" class="hidden h-1 w-1 rounded-full bg-paper/20 md:inline-block"></span>
           )}
-          {it}
+          {it.emphasis && (
+            <span aria-hidden="true" class="inline-block h-1.5 w-1.5 rounded-full bg-orange shadow-[0_0_0_3px_rgba(232,93,38,0.18)]"></span>
+          )}
+          {it.label}
         </li>
       ))}
     </ul>

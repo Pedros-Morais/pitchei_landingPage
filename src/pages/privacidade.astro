@@ -50,9 +50,10 @@ const jsonLd = breadcrumbSchema([
         </li>
         <li>
           <strong class="text-paper">Sugestões geradas:</strong> produzidas
-          pelo modelo de linguagem que você escolher (Neuralake, OpenAI ou
-          Gemini), usando a chave de API que você fornece. Não passam por
-          servidor proprietário do Pitchei.
+          pelos nossos fornecedores de IA. Neuralake é o principal — com
+          OpenAI e Google Gemini como redundância automática. Você não
+          fornece API key, não escolhe provider. Nenhum modelo treina com
+          sua reunião.
         </li>
         <li>
           <strong class="text-paper">Email da lista de espera:</strong> usado
@@ -96,9 +97,14 @@ const jsonLd = breadcrumbSchema([
           em tempo real. Áudio enviado por WebSocket criptografado.
         </li>
         <li>
-          <strong class="text-paper">Provedor de LLM (escolha do usuário)</strong>
-           — Neuralake, OpenAI ou Google (Gemini). Texto da transcrição enviado
-          para gerar sugestões.
+          <strong class="text-paper">Neuralake (principal)</strong> —
+          fornecedor primário de IA. Texto da transcrição enviado para
+          gerar sugestões em pt-BR. Sem treino de modelo com seus dados.
+        </li>
+        <li>
+          <strong class="text-paper">OpenAI / Google Gemini (redundância)</strong>
+           — usados automaticamente em caso de instabilidade do principal.
+          Mesmo contrato de não-treinamento.
         </li>
         <li>
           <strong class="text-paper">Supabase</strong> — autenticação e

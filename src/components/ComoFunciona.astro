@@ -43,22 +43,6 @@ const passos = [
       </h2>
     </div>
 
-    {/* SVG connector — only on desktop */}
-    <svg
-      aria-hidden="true"
-      class="pointer-events-none absolute left-1/2 top-1/2 hidden h-1 w-full max-w-3xl -translate-x-1/2 md:block"
-      style="margin-top: 80px;"
-      viewBox="0 0 1000 4"
-      preserveAspectRatio="none"
-    >
-      <path
-        d="M 0 2 L 1000 2"
-        stroke="rgba(232, 93, 38, 0.35)"
-        stroke-width="2"
-        class="how-line"
-      ></path>
-    </svg>
-
     <ol class="relative mt-14 grid gap-8 md:grid-cols-3" data-reveal data-reveal-stagger>
       {passos.map((p, i) => (
         <li class="relative flex flex-col rounded-2xl border border-paper/10 bg-paper/[0.03] p-8 transition-colors hover:bg-paper/[0.05] hover:border-paper/20">

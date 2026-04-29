@@ -4,7 +4,7 @@
 
 Pitchei é diferente de transcritores como Otter, Fathom, Granola ou Krisp. Aqueles registram a reunião e entregam um resumo depois. Pitchei fica do seu lado *durante* a reunião: quando você trava, quando alguém faz uma pergunta difícil, quando a conversa pede uma resposta que você sabe mas não está achando.
 
-A captação de áudio é local (macOS ScreenCaptureKit). A transcrição é feita pela Deepgram via WebSocket criptografado. As sugestões são geradas por modelos de linguagem (Neuralake, OpenAI ou Gemini, à escolha do usuário). O texto transcrito não é persistido depois da sessão.
+A captação de áudio é local (macOS ScreenCaptureKit). A transcrição é feita pela Deepgram via WebSocket criptografado. As sugestões são geradas por modelos de linguagem — Neuralake como fornecedor principal, com OpenAI e Google Gemini como redundância automática. O usuário não escolhe provider nem fornece API key; o Pitchei cuida de toda a orquestração. Nenhum modelo treina com a conversa do usuário. O texto transcrito não é persistido depois da sessão.
 
 Mercado: Brasil. Idioma: pt-BR sempre. Sistema operacional: macOS 13 ou superior.
 
