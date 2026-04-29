@@ -80,3 +80,5 @@ if (document.readyState === "loading") {
 
 // re-run after Astro page transitions
 document.addEventListener("astro:page-load", boot);
+
+export {};

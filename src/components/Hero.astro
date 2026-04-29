@@ -73,8 +73,43 @@ import HudMockup from "./HudMockup.astro";
     </div>
 
     <div class="relative flex justify-center lg:col-span-5 lg:justify-end">
-      <div class="hud-enter">
-        <HudMockup />
+      <div
+        data-hud-3d-root
+        class="relative w-full max-w-xl"
+        style="min-height: 360px; perspective: 1200px;"
+      >
+        <div data-hud-front class="hud-enter">
+          <HudMockup />
+        </div>
+
+        {/* Ghost cards: hidden until 3D mounts */}
+        <div
+          data-hud-ghost="mid"
+          class="pointer-events-none absolute inset-0 hidden rounded-2xl border border-paper/8 p-5 opacity-0"
+          style="background: linear-gradient(180deg, rgba(42,24,16,0.85) 0%, rgba(28,15,9,0.85) 100%); filter: blur(4px);"
+          aria-hidden="true"
+        >
+          <div class="flex items-center gap-2 text-xs text-paper/40">
+            <span class="inline-block h-1.5 w-1.5 rounded-full" style="background: #FF7A45"></span>
+            <span class="font-medium tracking-wide">Pitchei · Ao vivo</span>
+          </div>
+          <div
+            data-ghost-line
+            class="mt-4 font-display text-base text-paper/40"
+          >…</div>
+        </div>
+
+        <div
+          data-hud-ghost="back"
+          class="pointer-events-none absolute inset-0 hidden rounded-2xl border border-paper/8 opacity-0"
+          style="background: rgba(28,15,9,0.85); filter: blur(8px);"
+          aria-hidden="true"
+        >
+          <div class="p-5">
+            <div class="h-1.5 w-1.5 rounded-full" style="background: #FF7A45"></div>
+            <div data-ghost-line class="mt-4 h-3 w-3/4 rounded-full bg-paper/10"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
