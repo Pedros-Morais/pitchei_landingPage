@@ -16,9 +16,14 @@ Mercado: Brasil. Idioma: pt-BR sempre. Sistema operacional: macOS 13 ou superior
 
 ## Para quem é
 
-- **Vendedores em call** — sugere perguntas de descoberta, contorna objeções, ajuda no fechamento.
-- **Founders em pitch para investidor** — responde perguntas técnicas e de mercado em tempo real.
-- **Candidatos em entrevista** — sugere respostas baseadas no CV, framework STAR, pergunta sobre cultura.
+Pitchei é horizontal — pensado pra qualquer profissional brasileiro que tem reuniões onde a próxima frase importa. Não é um produto de nicho.
+
+Cenários cobertos hoje:
+
+- **Reuniões comerciais** — calls com cliente, kickoff, renegociação, follow-up. Pitchei sugere reframe pra valor, perguntas que destravam, lembretes de follow-up.
+- **Apresentações de alto risco** — pitch pra investidor, defesa de projeto, comitê, banca, design review. Pitchei traz números do briefing, ângulos de diferenciação, justificativas técnicas em tempo real.
+- **Entrevistas e avaliações** — entrevista de vaga, performance review, conversa de promoção. Pitchei sugere respostas no método STAR, exemplos do seu CV, ranges salariais que você configurou antes.
+- **Conversas difíceis em qualquer área** — designer defendendo briefing, advogada em call de cliente, médica em consulta complexa, gerente apresentando resultado, professor em banca. Se a conversa pesa e é em pt-BR, Pitchei encaixa.
 
 ## O que NÃO somos
 

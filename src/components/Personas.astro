@@ -1,25 +1,36 @@
 ---
 const personas = [
   {
-    tag: "Vendas",
-    titulo: "Para quem vende em call",
+    tag: "Reuniões",
+    titulo: "Quando você está vendendo, atendendo ou negociando",
     bullet:
-      "Sugere perguntas de descoberta, contorna objeções comuns e oferece próximos passos no fechamento.",
+      "Calls com cliente, kickoff, renegociação, follow-up difícil — qualquer reunião onde a próxima frase pesa.",
     cenas: [
-      "Cliente fala em preço; Pitchei sugere a reframe pra valor.",
+      "Cliente fala em preço; Pitchei sugere o reframe pra valor.",
       "Conversa esfria; Pitchei propõe a pergunta que abre a próxima oportunidade.",
       "Final da call; Pitchei lembra de pedir o follow-up com data.",
     ],
   },
   {
-    tag: "Pitch",
-    titulo: "Para founders em pitch",
+    tag: "Apresentações",
+    titulo: "Quando alguém vai te perguntar algo difícil",
     bullet:
-      "Responde dúvidas técnicas e de mercado em tempo real, com base no que você já configurou sobre a empresa.",
+      "Pitch pra investidor, defesa de projeto, comitê, banca, design review — você fala e te perguntam coisa que precisa de número, exemplo ou ângulo na hora.",
     cenas: [
       "Investidor pergunta de TAM; Pitchei traz o número certo do seu briefing.",
-      "Pergunta sobre concorrência; Pitchei sugere o ângulo de diferenciação.",
-      "Você trava; Pitchei devolve o pitch para o slide seguinte.",
+      "Diretor questiona timeline; Pitchei sugere a justificativa com base no escopo.",
+      "Você trava; Pitchei devolve o argumento pro próximo slide.",
+    ],
+  },
+  {
+    tag: "Entrevistas",
+    titulo: "Quando precisa lembrar a melhor versão de si",
+    bullet:
+      "Entrevista de vaga, performance review, conversa com chefe sobre promoção. Pressão alta, memória ruim, e a resposta certa estava ali.",
+    cenas: [
+      "Pergunta comportamental; Pitchei sugere resposta no método STAR.",
+      "Pergunta sobre cultura; Pitchei traz seu exemplo concreto na hora.",
+      "Recrutador pede pretensão salarial; Pitchei dá o range que você definiu antes.",
     ],
   },
 ];
@@ -42,14 +53,21 @@ const personas = [
         Para conversas que importam, em português.
       </h2>
       <p class="mt-5 text-lg text-paper/70">
-        Pitchei nasceu para o profissional brasileiro que vende, pitcha e
-        negocia em pt-BR. Sem traduzir o que importa.
+        Pitchei é pra qualquer reunião que pesa. Designer defendendo um
+        briefing, advogada em call de cliente, founder em pitch, candidato em
+        entrevista, gerente apresentando resultado pro comitê. Se a próxima
+        frase importa, Pitchei tá do seu lado.
       </p>
     </div>
 
-    <div class="mt-14 grid gap-6 md:grid-cols-2" data-reveal-stagger>
+    <div class="mt-14 grid gap-6 md:grid-cols-3" data-reveal-stagger>
       {personas.map((p) => (
-        <article class="magnetic-glow group relative flex flex-col overflow-hidden rounded-2xl border border-paper/10 bg-paper/[0.03] p-8 transition-colors hover:bg-paper/[0.05] hover:border-paper/20">
+        <article class="magnetic-glow group relative flex flex-col overflow-hidden rounded-2xl border border-paper/10 bg-paper/[0.03] p-7 transition-colors hover:bg-paper/[0.05] hover:border-paper/20">
+          <div
+            aria-hidden="true"
+            class="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full opacity-50 transition-opacity group-hover:opacity-70"
+            style="background: radial-gradient(circle, rgba(232,93,38,0.18) 0%, transparent 70%);"
+          ></div>
           <span class="relative inline-flex w-fit overflow-hidden rounded-full border border-orange/30 bg-orange/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-orange">
             {p.tag}
             <span
@@ -58,10 +76,10 @@ const personas = [
               style="background: linear-gradient(115deg, transparent 30%, rgba(232,93,38,0.4) 50%, transparent 70%); animation: sheen 900ms ease-out;"
             ></span>
           </span>
-          <h3 class="relative mt-5 font-display text-2xl font-bold text-paper">
+          <h3 class="relative mt-5 font-display text-xl font-bold leading-snug text-paper">
             {p.titulo}
           </h3>
-          <p class="relative mt-3 text-base text-paper/70">{p.bullet}</p>
+          <p class="relative mt-3 text-sm text-paper/70">{p.bullet}</p>
           <ul class="relative mt-6 space-y-3 text-sm text-paper/65">
             {p.cenas.map((c) => (
               <li class="flex gap-3">
@@ -73,5 +91,11 @@ const personas = [
         </article>
       ))}
     </div>
+
+    <p class="mt-12 max-w-3xl text-sm text-paper/55" data-reveal>
+      Não fala sua área? Pitchei não foi pensado pra um nicho — foi pensado
+      pra qualquer reunião onde você quer estar mais bem preparado em
+      tempo real.
+    </p>
   </div>
 </section>
