@@ -1,13 +1,15 @@
 ---
 import Logo from "./Logo.astro";
+import FooterColumn from "./FooterColumn.astro";
 import { SITE } from "~/lib/site";
+import { FOOTER_GROUPS } from "~/lib/footer-links";
 
 const year = new Date().getFullYear();
 ---
 
 <footer class="bg-ink/80">
-  <div class="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-4">
-    <div class="md:col-span-2">
+  <div class="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-2 md:gap-16">
+    <div>
       <Logo height={28} />
       <p class="mt-4 max-w-md text-sm text-paper/65">
         {SITE.tagline}. Aplicativo de mesa para macOS, em português, que
@@ -17,26 +19,8 @@ const year = new Date().getFullYear();
         Feito no Brasil · pt-BR · macOS 13+
       </p>
     </div>
-    <div>
-      <h2 class="text-xs font-semibold uppercase tracking-wider text-paper/50">
-        Produto
-      </h2>
-      <ul class="mt-4 space-y-2 text-sm text-paper/70">
-        <li><a href="#como-funciona" class="transition-colors hover:text-paper">Como funciona</a></li>
-        <li><a href="#para-quem" class="transition-colors hover:text-paper">Para quem é</a></li>
-        <li><a href="#faq" class="transition-colors hover:text-paper">Perguntas frequentes</a></li>
-        <li><a href="#cadastro" class="transition-colors hover:text-paper">Lista de espera</a></li>
-      </ul>
-    </div>
-    <div>
-      <h2 class="text-xs font-semibold uppercase tracking-wider text-paper/50">
-        Legal
-      </h2>
-      <ul class="mt-4 space-y-2 text-sm text-paper/70">
-        <li><a href="/privacidade" class="transition-colors hover:text-paper">Privacidade</a></li>
-        <li><a href="/termos" class="transition-colors hover:text-paper">Termos de uso</a></li>
-        <li><a href={`mailto:${SITE.email}`} class="transition-colors hover:text-paper">{SITE.email}</a></li>
-      </ul>
+    <div class="grid grid-cols-2 gap-10">
+      {FOOTER_GROUPS.map((group) => <FooterColumn group={group} />)}
     </div>
   </div>
   <div class="border-t border-paper/10">

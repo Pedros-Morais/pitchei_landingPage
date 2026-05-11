@@ -4,22 +4,25 @@ const { class: className = "" } = Astro.props;
 
 const scenes = [
   {
-    speaker: "Interlocutor",
+    label: "Reunião",
+    speaker: "Cliente",
     transcript: "o ROI do projeto fechou em quanto?",
     suggestion:
       "Faz sentido revisitar com base nos números que você mencionou antes de fecharmos?",
   },
   {
+    label: "Pitch",
     speaker: "Investidor",
     transcript: "qual o seu TAM no mercado brasileiro?",
     suggestion:
       "R$ 12B em SaaS B2B no Brasil — atacamos primeiro a densidade de founders em São Paulo.",
   },
   {
-    speaker: "Cliente",
-    transcript: "tô achando o preço meio salgado…",
+    label: "Entrevista",
+    speaker: "Recrutador",
+    transcript: "qual sua maior fraqueza profissional?",
     suggestion:
-      "Se eu te mostrasse que o ROI cobre o custo no segundo mês, faria sentido?",
+      "Tenho dificuldade em delegar sem antes alinhar o critério — venho usando 1:1s curtos pra resolver.",
   },
 ];
 ---
@@ -42,6 +45,22 @@ const scenes = [
     </span>
     <span class="font-medium tracking-wide text-paper/70">Pitchei · Ao vivo</span>
     <span class="ml-auto font-mono text-[11px] text-paper/40">12:34</span>
+  </div>
+
+  {/* Chips — only visible in tap/voice mode (CSS-gated) */}
+  <div class="hud-chips" role="tablist" aria-label="Escolha um cenário de demo">
+    {scenes.map((s, i) => (
+      <button
+        type="button"
+        class="hud-chip"
+        role="tab"
+        data-hud-chip
+        data-scene-index={i}
+        aria-pressed={i === 0 ? "true" : "false"}
+      >
+        {s.label}
+      </button>
+    ))}
   </div>
 
   {/* 3 stacked scenes — animation-delay offsets them in time */}
@@ -100,6 +119,26 @@ const scenes = [
       </div>
     </div>
   ))}
+
+  {/* Voice demo overlay — populated by voice-demo.ts at runtime */}
+  <div class="hud-voice" data-hud-voice aria-live="polite">
+    <div class="hud-voice-status" data-hud-voice-status>
+      <span class="hud-voice-waveform" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </span>
+      <span data-hud-voice-status-text>Ouvindo…</span>
+    </div>
+    <div class="hud-voice-transcript" data-hud-voice-transcript></div>
+    <div class="hud-voice-suggestion" data-hud-voice-suggestion>
+      <div class="hud-voice-suggestion-speaker" data-hud-voice-suggestion-speaker>Pitchei sugere</div>
+      <div class="hud-voice-suggestion-text" data-hud-voice-suggestion-text></div>
+      <div class="mt-3 flex gap-2">
+        <button type="button" data-hud-voice-retry tabindex="-1" class="hud-action rounded-full bg-orange px-3 py-1.5 text-[11px] font-semibold text-paper" style="opacity: 1; transform: none; animation: none;">Tentar outra</button>
+        <button type="button" data-hud-voice-dismiss tabindex="-1" class="hud-action rounded-full border border-paper/15 px-3 py-1.5 text-[11px] font-medium text-paper/80" style="opacity: 1; transform: none; animation: none;">Fechar</button>
+      </div>
+    </div>
+    <div class="hud-voice-hint">Áudio processado no seu navegador. Nada é enviado.</div>
+  </div>
 
   {/* Ambient orange radial glow */}
   <div

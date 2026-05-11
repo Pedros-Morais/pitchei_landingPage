@@ -138,6 +138,10 @@ module.exports = {
       maxWidth: {
         prose: "68ch",
       },
+      fontSize: {
+        hero: ["clamp(2rem, 7.2vw, 4.5rem)", { lineHeight: "1.05", letterSpacing: "-0.01em" }],
+        "hero-sub": ["clamp(1rem, 2.4vw, 1.25rem)", { lineHeight: "1.55" }],
+      },
     },
   },
   plugins: [],

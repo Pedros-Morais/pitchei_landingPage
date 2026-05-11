@@ -1,0 +1,25 @@
+---
+import type { FooterGroup } from "~/lib/footer-links";
+
+type Props = { group: FooterGroup };
+const { group } = Astro.props;
+---
+
+<div>
+  <h2 class="text-xs font-semibold uppercase tracking-wider text-paper/50">
+    {group.heading}
+  </h2>
+  <ul class="mt-4 space-y-2 text-sm text-paper/70">
+    {group.links.map((link) => (
+      <li>
+        <a
+          href={link.href}
+          rel={link.rel}
+          class="transition-colors hover:text-paper"
+        >
+          {link.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>

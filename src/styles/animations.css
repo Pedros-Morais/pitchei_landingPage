@@ -661,6 +661,228 @@ html.cursor-on summary {
   }
 }
 
+/* ----- HUD tap-to-cycle mode (mobile + reduced-motion fallback) ---------- */
+.hud-chips {
+  position: relative;
+  z-index: 5;
+  display: none;
+  gap: 6px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+.hud-chip {
+  appearance: none;
+  border: 1px solid rgba(247, 243, 238, 0.14);
+  background: rgba(247, 243, 238, 0.04);
+  color: rgba(247, 243, 238, 0.7);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 6px 11px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition:
+    background 200ms ease-out,
+    border-color 200ms ease-out,
+    color 200ms ease-out,
+    transform 200ms ease-out;
+  touch-action: manipulation;
+}
+.hud-chip:hover,
+.hud-chip:focus-visible {
+  background: rgba(247, 243, 238, 0.08);
+  color: rgba(247, 243, 238, 0.95);
+  outline: none;
+}
+.hud-chip[aria-pressed="true"] {
+  background: rgba(232, 93, 38, 0.16);
+  border-color: rgba(232, 93, 38, 0.55);
+  color: #f7f3ee;
+}
+
+/* In tap mode: show chips, kill the CSS loop, control scenes via data-active-scene */
+[data-hud-3d-root][data-hud-mode="tap"] .hud-chips { display: inline-flex; }
+
+[data-hud-3d-root][data-hud-mode="tap"] .hud-scene {
+  inset: 96px 18px 18px 18px;
+  animation: none !important;
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 280ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+[data-hud-3d-root][data-hud-mode="tap"][data-active-scene="0"] .hud-scene-1,
+[data-hud-3d-root][data-hud-mode="tap"][data-active-scene="1"] .hud-scene-2,
+[data-hud-3d-root][data-hud-mode="tap"][data-active-scene="2"] .hud-scene-3 {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* In tap mode, inner animations always complete (no timer delays) */
+[data-hud-3d-root][data-hud-mode="tap"] .hud-typewriter {
+  width: 100%;
+  animation: none;
+}
+[data-hud-3d-root][data-hud-mode="tap"] .hud-speaker,
+[data-hud-3d-root][data-hud-mode="tap"] .hud-suggestion,
+[data-hud-3d-root][data-hud-mode="tap"] .hud-action {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+[data-hud-3d-root][data-hud-mode="tap"] .hud-thinking { display: none; }
+
+/* When GSAP takes over (scroll mode) on desktop: hide chips */
+[data-hud-3d-root][data-scene-mode="scroll"] .hud-chips { display: none !important; }
+
+/* ----- HUD voice demo mode ------------------------------------------------ */
+.hud-voice {
+  position: absolute;
+  inset: 96px 18px 18px 18px;
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 4;
+  pointer-events: none;
+}
+[data-hud-3d-root][data-hud-mode="voice"] .hud-scene { opacity: 0 !important; }
+[data-hud-3d-root][data-hud-mode="voice"] .hud-voice { display: flex; }
+[data-hud-3d-root][data-hud-mode="voice"] .hud-chips { display: inline-flex; }
+
+.hud-voice-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ff7a45;
+}
+.hud-voice-waveform {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 16px;
+}
+.hud-voice-waveform span {
+  display: block;
+  width: 3px;
+  background: #ff7a45;
+  border-radius: 2px;
+  animation: voice-wave 800ms ease-in-out infinite;
+}
+.hud-voice-waveform span:nth-child(1) { animation-delay: 0ms;  height: 50%; }
+.hud-voice-waveform span:nth-child(2) { animation-delay: 80ms;  height: 80%; }
+.hud-voice-waveform span:nth-child(3) { animation-delay: 160ms; height: 60%; }
+.hud-voice-waveform span:nth-child(4) { animation-delay: 240ms; height: 95%; }
+.hud-voice-waveform span:nth-child(5) { animation-delay: 320ms; height: 70%; }
+@keyframes voice-wave {
+  0%, 100% { transform: scaleY(0.4); }
+  50%      { transform: scaleY(1); }
+}
+
+.hud-voice-transcript {
+  font-family: "Fraunces", ui-serif, serif;
+  font-size: 17px;
+  line-height: 1.3;
+  color: rgba(247, 243, 238, 0.92);
+  min-height: 1.3em;
+}
+.hud-voice-suggestion {
+  margin-top: 4px;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(232, 93, 38, 0.22);
+  background: rgba(232, 93, 38, 0.06);
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 380ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 380ms cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: auto;
+}
+.hud-voice-suggestion[data-shown="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hud-voice-suggestion-speaker {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #e85d26;
+}
+.hud-voice-suggestion-text {
+  margin-top: 6px;
+  font-family: "Fraunces", ui-serif, serif;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #f7f3ee;
+}
+.hud-voice-hint {
+  font-size: 10px;
+  color: rgba(247, 243, 238, 0.4);
+  letter-spacing: 0.02em;
+}
+
+/* Mic CTA button */
+.btn-mic {
+  position: relative;
+}
+.btn-mic[data-listening="true"] {
+  background: rgba(232, 93, 38, 0.18);
+  border-color: rgba(232, 93, 38, 0.55) !important;
+  color: #f7f3ee !important;
+}
+.btn-mic[data-listening="true"]::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(232, 93, 38, 0.6);
+  animation: mic-pulse 1.4s ease-out infinite;
+}
+@keyframes mic-pulse {
+  0%   { transform: scale(0.94); opacity: 0.8; }
+  100% { transform: scale(1.22); opacity: 0; }
+}
+
+/* ----- Mobile responsive: orbs, HUD, hero-line ------------------------- */
+@media (max-width: 640px) {
+  .orb {
+    /* Reduce GPU cost from huge blurs on small screens */
+    transform: scale(0.5);
+    transform-origin: center;
+    filter: blur(60px);
+  }
+  /* H1 reveal: do it all-at-once on mobile (line splits get awkward when text wraps) */
+  .hero-line {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  #hero-titulo {
+    animation: fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) 240ms both;
+  }
+  /* HUD: drop the locked aspect-ratio and tall min-height */
+  .hud-card {
+    aspect-ratio: auto !important;
+    min-height: 280px !important;
+  }
+  [data-hud-3d-root] {
+    min-height: 0 !important;
+  }
+  /* In tap mode at small screens, scene gets a comfortable inset */
+  [data-hud-3d-root][data-hud-mode="tap"] .hud-scene {
+    inset: 92px 16px 16px 16px;
+  }
+  .hud-voice {
+    inset: 92px 16px 16px 16px;
+  }
+}
+
 /* ----- prefers-reduced-motion: hard reset -------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -684,6 +906,14 @@ html.cursor-on summary {
   }
   .hud-scene-1 { opacity: 1 !important; }
   .scroll-progress { display: none; }
+
+  .hud-voice-waveform span,
+  .btn-mic[data-listening="true"]::before {
+    animation: none !important;
+  }
+  .hud-voice-suggestion {
+    transition: none !important;
+  }
 
   .cursor-dot,
   .cursor-ring,
