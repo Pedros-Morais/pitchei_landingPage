@@ -1,0 +1,67 @@
+---
+const WORDS = [
+  // métricas SaaS / financeiras que travam
+  "TAM",
+  "CAC",
+  "LTV",
+  "CHURN",
+  "EBITDA",
+  "BURN",
+  "RUNWAY",
+  "MOAT",
+  "MRR",
+  "PAYBACK",
+  // dados que travam (factuais)
+  "POPULAÇÃO",
+  "FATURAMENTO",
+  "MARGEM",
+  "CRESCIMENTO",
+  // momentos de reunião
+  "PREÇO",
+  "PRAZO",
+  "CONCORRENTE",
+  "FRAQUEZA",
+  "OBJEÇÃO",
+  "DEADLINE",
+];
+---
+
+<section
+  class="relative overflow-hidden border-b border-paper/10"
+  aria-label="Palavras que a Pitchei escuta"
+>
+  <div class="mx-auto max-w-6xl px-6 py-16 md:py-24" data-reveal>
+    <p
+      class="mb-6 text-xs font-semibold uppercase tracking-[0.18em] text-orange md:text-[13px]"
+    >
+      O que a IA escuta
+    </p>
+    <h2
+      class="max-w-2xl font-display text-3xl font-black leading-[1.1] text-paper md:text-4xl lg:text-5xl"
+    >
+      As palavras que decidem a reunião — e a sua resposta.
+    </h2>
+    <p class="mt-4 max-w-xl text-base text-paper/65 md:text-lg">
+      Pitchei reconhece o gatilho na frase do outro lado e devolve uma fala
+      pronta, no seu tom, em português.
+    </p>
+
+    <div
+      class="mt-10 overflow-hidden rounded-2xl border border-paper/10 bg-ink-gradient shadow-overlay md:mt-14"
+    >
+      <canvas
+        data-particle-text
+        data-words={JSON.stringify(WORDS)}
+        class="block w-full"
+        style="aspect-ratio: 2 / 1;"
+        aria-hidden="true"></canvas>
+      <noscript>
+        <div
+          class="flex aspect-[2/1] items-center justify-center text-center font-display text-4xl font-black text-paper/40"
+        >
+          {WORDS.join(" · ")}
+        </div>
+      </noscript>
+    </div>
+  </div>
+</section>
