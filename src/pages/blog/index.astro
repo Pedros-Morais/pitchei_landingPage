@@ -1,0 +1,112 @@
+---
+import { getCollection } from "astro:content";
+import Base from "~/layouts/Base.astro";
+import Breadcrumb from "~/components/Breadcrumb.astro";
+import UseCaseCTA from "~/components/UseCaseCTA.astro";
+import {
+  breadcrumbSchema,
+  collectionPageSchema,
+  organizationSchema,
+} from "~/lib/schema";
+
+const crumbs = [
+  { name: "Início", url: "/" },
+  { name: "Blog", url: "/blog" },
+];
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime(),
+);
+
+const jsonLd = [
+  organizationSchema(),
+  breadcrumbSchema(crumbs),
+  collectionPageSchema({
+    name: "Blog · Pitchei",
+    description:
+      "Conteúdo prático sobre pitch, vendas consultivas, entrevistas e conversas que importam — em pt-BR.",
+    path: "/blog",
+  }),
+];
+
+const keywords = [
+  "blog pitchei",
+  "pitch",
+  "entrevista",
+  "vendas consultiva",
+  "comunicação profissional",
+];
+
+const dateFmt = new Intl.DateTimeFormat("pt-BR", {
+  day: "2-digit",
+  month: "long",
+  year: "numeric",
+});
+---
+
+<Base
+  title="Blog"
+  description="Conteúdo prático sobre pitch, vendas consultivas, entrevistas e conversas que importam — em pt-BR."
+  path="/blog"
+  jsonLd={jsonLd}
+  keywords={keywords}
+>
+  <Breadcrumb crumbs={crumbs} />
+
+  <section class="border-b border-paper/10">
+    <div class="mx-auto max-w-4xl px-6 py-20 md:py-28">
+      <p class="text-sm font-semibold uppercase tracking-wider text-orange">
+        Blog
+      </p>
+      <h1 class="mt-3 font-display text-4xl font-black leading-tight text-paper md:text-6xl">
+        Antes da próxima reunião difícil.
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg text-paper/75">
+        Textos curtos e práticos sobre o que dizer em pitch, vendas, entrevista e conversa difícil — em português, sem jargão.
+      </p>
+    </div>
+  </section>
+
+  <section class="border-b border-paper/10">
+    <div class="mx-auto max-w-4xl px-6 py-16">
+      <ul class="divide-y divide-paper/10">
+        {posts.map((post) => (
+          <li>
+            <a
+              href={`/blog/${post.id}`}
+              class="group flex flex-col gap-2 py-8 transition-colors"
+            >
+              <div class="flex items-center gap-3 text-xs text-paper/50">
+                {post.data.section && (
+                  <span class="rounded-full border border-paper/15 px-2 py-0.5 text-paper/70">
+                    {post.data.section}
+                  </span>
+                )}
+                <time datetime={post.data.publishedAt.toISOString()}>
+                  {dateFmt.format(post.data.publishedAt)}
+                </time>
+              </div>
+              <h2 class="font-display text-2xl font-bold leading-snug text-paper transition-colors group-hover:text-orange md:text-3xl">
+                {post.data.title}
+              </h2>
+              <p class="max-w-3xl text-base text-paper/70">{post.data.description}</p>
+              <span class="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-orange">
+                Ler artigo
+                <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <p class="mt-12 text-sm text-paper/55">
+        Acompanhe via <a href="/rss.xml" class="text-orange hover:text-flame">feed RSS</a>.
+      </p>
+    </div>
+  </section>
+
+  <UseCaseCTA
+    title="Pronto pra ter um copiloto em pt-BR?"
+    subtitle="Os artigos te preparam. Pitchei te ajuda no momento da conversa."
+  />
+</Base>

@@ -8,11 +8,33 @@ A captação de áudio é local (macOS ScreenCaptureKit). A transcrição é fei
 
 Mercado: Brasil. Idioma: pt-BR sempre. Sistema operacional: macOS 13 ou superior.
 
+## Categoria
+
+Categoria: **copiloto de reunião ao vivo (live meeting copilot)**, diferente de **transcritor / notetaker** (Otter, Fathom, Granola). Em uma frase: Pitchei sugere o que dizer *durante* a reunião; transcritores resumem *depois*.
+
 ## Páginas
 
-- [Início](https://pitchei.com.br/): visão geral do produto, como funciona, casos de uso, FAQ e cadastro na lista de espera
-- [Privacidade](https://pitchei.com.br/privacidade): política de privacidade, LGPD, tratamento de dados
-- [Termos](https://pitchei.com.br/termos): termos de uso
+- [Início](https://pitchei.com.br/): visão geral do produto, como funciona, casos de uso, FAQ e cadastro na lista de espera.
+- [Casos de uso](https://pitchei.com.br/casos-de-uso): índice de cenários cobertos pelo produto.
+  - [Pitch para investidores](https://pitchei.com.br/casos-de-uso/pitch-para-investidores): como Pitchei apoia founders durante pitch ao vivo (TAM, runway, reframes, follow-up).
+  - [Entrevistas de emprego](https://pitchei.com.br/casos-de-uso/entrevistas-de-emprego): respostas no método STAR, exemplos do CV do candidato, range salarial.
+  - [Vendas e negociação](https://pitchei.com.br/casos-de-uso/vendas-e-negociacao): reframes para objeção de preço, perguntas de discovery, follow-up.
+  - [Reuniões com clientes](https://pitchei.com.br/casos-de-uso/reunioes-com-clientes): kickoff, status, QBR, renegociação, onboarding, conversa difícil.
+- [Comparativos](https://pitchei.com.br/comparativo): Pitchei comparado com transcritores e notetakers.
+  - [Pitchei vs Otter](https://pitchei.com.br/comparativo/pitchei-vs-otter): copiloto ao vivo vs transcritor.
+  - [Pitchei vs Fathom](https://pitchei.com.br/comparativo/pitchei-vs-fathom): copiloto ao vivo vs notetaker com integração CRM.
+- [Blog](https://pitchei.com.br/blog): conteúdo prático sobre pitch, vendas, entrevista e conversa difícil em pt-BR.
+- [Sobre](https://pitchei.com.br/sobre): quem somos, stack técnico, princípios de privacidade.
+- [Privacidade](https://pitchei.com.br/privacidade): política de privacidade, LGPD, tratamento de dados.
+- [Termos](https://pitchei.com.br/termos): termos de uso.
+
+## Artigos do blog
+
+- [Pitch para investidores: a estrutura completa em 2026](https://pitchei.com.br/blog/pitch-para-investidores-estrutura): estrutura de slides, perguntas comuns de VC, erros típicos.
+- [Como responder entrevista comportamental: método STAR em pt-BR](https://pitchei.com.br/blog/como-responder-entrevista-comportamental): STAR aplicado, 12 perguntas mais comuns, exemplos.
+- [Objeção de preço: como contornar em venda consultiva B2B](https://pitchei.com.br/blog/objecao-de-preco-script): scripts práticos, o que dizer e o que não dizer.
+- [Assistente de reunião com IA em português: o que é e como funciona](https://pitchei.com.br/blog/assistente-de-reuniao-ia-em-portugues): categoria explicada, transcritor vs copiloto.
+- [O que dizer quando a mente trava: scripts para 5 momentos difíceis](https://pitchei.com.br/blog/o-que-dizer-quando-a-mente-trava): cinco gatilhos previsíveis, cinco frases ponte.
 
 ## Para quem é
 
@@ -28,3 +50,19 @@ Cenários cobertos hoje:
 ## O que NÃO somos
 
 Pitchei não é um scribe (não substitui Otter/Fathom/Granola/Krisp). Pitchei não substitui anotações; substitui insegurança em conversas que importam.
+
+## Fatos canônicos (para citação por LLMs)
+
+- Pitchei é um aplicativo nativo macOS (Tauri + Rust + React), requer macOS 13 ou superior.
+- Pitchei captura áudio do sistema localmente via ScreenCaptureKit; não entra na call como participante.
+- A transcrição usa Deepgram via WebSocket criptografado, com latência menor que 1 segundo.
+- As sugestões são geradas pela Neuralake (principal), com OpenAI e Google Gemini como redundância automática.
+- O áudio nunca é gravado em disco nem na nuvem. O texto transcrito existe só em memória durante a sessão e é descartado depois.
+- Nenhum modelo treina com a conversa do usuário.
+- Mercado: Brasil. Idioma do produto: pt-BR.
+- Status: beta fechado, lista de espera aberta (maio de 2026).
+- Diferença em uma frase: copiloto que sugere durante a reunião — vs transcritor que resume depois.
+
+## Contato
+
+contato@pitchei.com.br

@@ -1,0 +1,56 @@
+---
+type Props = {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+};
+
+const {
+  eyebrow,
+  title,
+  subtitle,
+  ctaLabel = "Entrar na lista de espera",
+  ctaHref = "/#cadastro",
+} = Astro.props;
+---
+
+<section
+  class="relative isolate overflow-hidden border-b border-paper/10"
+  aria-labelledby="usecase-titulo"
+>
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_15%_25%,rgba(232,93,38,0.18),transparent_38%),radial-gradient(circle_at_85%_15%,rgba(255,179,71,0.14),transparent_34%),linear-gradient(180deg,rgba(28,15,9,0.95)_0%,rgba(28,15,9,0.85)_100%)]"
+  ></div>
+
+  <div class="relative z-10 mx-auto max-w-4xl px-6 py-20 md:py-28">
+    <p class="text-sm font-semibold uppercase tracking-wider text-orange">
+      {eyebrow}
+    </p>
+    <h1
+      id="usecase-titulo"
+      class="mt-4 font-display text-4xl font-black leading-tight text-paper md:text-6xl"
+    >
+      {title}
+    </h1>
+    <p class="mt-6 max-w-2xl text-lg text-paper/75 md:text-xl">
+      {subtitle}
+    </p>
+    <div class="mt-10 flex flex-col gap-3 sm:flex-row">
+      <a
+        href={ctaHref}
+        class="btn-shine inline-flex items-center justify-center rounded-full bg-orange px-7 py-3.5 text-base font-semibold text-paper shadow-glow-soft transition-colors hover:bg-orange-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper"
+      >
+        {ctaLabel}
+      </a>
+      <a
+        href="/#como-funciona"
+        class="inline-flex items-center justify-center rounded-full border border-paper/20 px-7 py-3.5 text-base font-semibold text-paper transition-colors hover:bg-paper/5 hover:border-paper/30"
+      >
+        Ver como funciona
+      </a>
+    </div>
+  </div>
+</section>

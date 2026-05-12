@@ -1,0 +1,151 @@
+---
+import Base from "~/layouts/Base.astro";
+import Breadcrumb from "~/components/Breadcrumb.astro";
+import UseCaseHero from "~/components/UseCaseHero.astro";
+import UseCaseFAQ from "~/components/UseCaseFAQ.astro";
+import UseCaseCTA from "~/components/UseCaseCTA.astro";
+import {
+  breadcrumbSchema,
+  faqSchema,
+  softwareApplicationSchema,
+  organizationSchema,
+} from "~/lib/schema";
+import type { FAQItem } from "~/lib/schema";
+
+const crumbs = [
+  { name: "Início", url: "/" },
+  { name: "Casos de uso", url: "/casos-de-uso" },
+  { name: "Reuniões com clientes", url: "/casos-de-uso/reunioes-com-clientes" },
+];
+
+const faq: FAQItem[] = [
+  {
+    question: "O que é um assistente de reunião com IA?",
+    answer:
+      "É uma ferramenta que escuta sua reunião ao vivo e te ajuda durante a conversa. Transcritores como Otter, Fathom e Granola geram resumo depois. Um assistente de reunião com IA como o Pitchei faz mais: sugere o que dizer no momento — uma resposta, uma pergunta, um reframe — enquanto a reunião acontece.",
+  },
+  {
+    question: "Funciona em Google Meet, Zoom, Microsoft Teams?",
+    answer:
+      "Sim. Pitchei captura o áudio do sistema no macOS via ScreenCaptureKit, então qualquer plataforma que toque áudio no seu Mac é coberta: Google Meet, Zoom, Microsoft Teams, Slack Huddles, FaceTime, ligações por celular pareado, Around, Whereby. Não depende de integração específica.",
+  },
+  {
+    question: "Pitchei substitui ata de reunião?",
+    answer:
+      "Não. Pitchei não foi feito pra registro. Se você quer ata, transcrição salva ou resumo enviado por email, use Otter, Fathom ou Granola — eles fazem bem isso. Pitchei é pra você ser melhor durante a conversa: substitui insegurança, não substitui anotações.",
+  },
+  {
+    question: "Posso usar em call de kickoff, status, QBR?",
+    answer:
+      "Sim. Em kickoffs, ele te lembra do escopo combinado quando o cliente menciona algo fora. Em status, traz o número de adoção/satisfação do briefing pra fundamentar discussão. Em QBR, sugere a próxima ação concreta quando a conversa fica filosófica demais.",
+  },
+  {
+    question: "Como Pitchei se compara com Granola e Otter?",
+    answer:
+      "Granola e Otter gravam, transcrevem e entregam resumo depois — ótimos para documentação. Pitchei roda ao vivo: sugere a próxima frase em tempo real, em português. Os dois podem rodar juntos: Otter pra registrar, Pitchei pra te ajudar a conduzir.",
+  },
+];
+
+const jsonLd = [
+  organizationSchema(),
+  softwareApplicationSchema(),
+  breadcrumbSchema(crumbs),
+  faqSchema(faq),
+];
+
+const keywords = [
+  "assistente de reunião com IA",
+  "copiloto de reunião em português",
+  "IA para reunião",
+  "reunião com cliente",
+  "kickoff cliente",
+  "QBR",
+  "Google Meet IA",
+  "Zoom IA",
+];
+---
+
+<Base
+  title="Assistente de reunião com IA em português"
+  description="Pitchei é o copiloto que sugere a próxima frase em qualquer reunião com cliente — kickoff, status, QBR, renegociação — em pt-BR, durante a call, sem ninguém saber."
+  path="/casos-de-uso/reunioes-com-clientes"
+  jsonLd={jsonLd}
+  keywords={keywords}
+>
+  <Breadcrumb crumbs={crumbs} />
+
+  <UseCaseHero
+    eyebrow="Caso de uso · Reuniões com clientes"
+    title="Reuniões com clientes: assistente de reunião com IA em português."
+    subtitle="Kickoff, status, follow-up, QBR, renegociação. Pitchei sugere a frase certa em pt-BR durante a call — sem entrar na reunião, sem o cliente perceber."
+  />
+
+  <section class="border-b border-paper/10" aria-labelledby="por-que-reuniao">
+    <div class="mx-auto max-w-4xl px-6 py-20">
+      <p class="text-sm font-semibold uppercase tracking-wider text-orange">
+        Por que reunião com cliente cansa
+      </p>
+      <h2 id="por-que-reuniao" class="mt-3 font-display text-3xl font-black leading-tight text-paper md:text-4xl">
+        Você conduz quatro calls por dia. Cada uma com um contexto diferente.
+      </h2>
+      <div class="mt-8 space-y-5 text-lg leading-relaxed text-paper/75">
+        <p>
+          Reunião com cliente vive de contexto. Quem é a pessoa, qual a dor declarada, o que combinamos da última vez, qual a próxima entrega prometida. Em uma só, dá pra lembrar. Em quatro por dia, com quatro times diferentes, vira ginástica mental.
+        </p>
+        <p>
+          O custo é sutil mas real: <strong class="text-paper">você passa metade da call procurando informação que já existe no seu CRM</strong> em vez de conduzir a conversa. O cliente percebe. Você termina o dia exausto, com sensação de que não foi tão bem quanto poderia.
+        </p>
+        <p>
+          Pitchei foi feito pra ser memória contextual em tempo real. Você cola um briefing curto por cliente (uma vez). Durante a call, quando ele faz uma pergunta, Pitchei devolve a informação do briefing dele — sem você abrir CRM, sem você procurar.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-paper/10" aria-labelledby="momentos">
+    <div class="mx-auto max-w-5xl px-6 py-20">
+      <p class="text-sm font-semibold uppercase tracking-wider text-orange">
+        Onde Pitchei encaixa
+      </p>
+      <h2 id="momentos" class="mt-3 font-display text-3xl font-black leading-tight text-paper md:text-4xl">
+        Cinco tipos de reunião com cliente, um copiloto.
+      </h2>
+      <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <article class="rounded-2xl border border-paper/10 bg-paper/[0.03] p-7">
+          <h3 class="font-display text-xl font-bold text-paper">Kickoff</h3>
+          <p class="mt-3 text-sm leading-relaxed text-paper/65">Lembra do escopo combinado quando o cliente menciona algo fora. Sugere a frase pra realinhar sem soar defensivo.</p>
+        </article>
+        <article class="rounded-2xl border border-paper/10 bg-paper/[0.03] p-7">
+          <h3 class="font-display text-xl font-bold text-paper">Status semanal</h3>
+          <p class="mt-3 text-sm leading-relaxed text-paper/65">Traz o número de adoção ou métrica do briefing pra fundamentar a discussão. Sugere a próxima ação com responsável e data.</p>
+        </article>
+        <article class="rounded-2xl border border-paper/10 bg-paper/[0.03] p-7">
+          <h3 class="font-display text-xl font-bold text-paper">QBR</h3>
+          <p class="mt-3 text-sm leading-relaxed text-paper/65">Conecta resultado do trimestre à dor declarada lá atrás. Sugere a história que mostra valor — não só slides de número.</p>
+        </article>
+        <article class="rounded-2xl border border-paper/10 bg-paper/[0.03] p-7">
+          <h3 class="font-display text-xl font-bold text-paper">Renegociação</h3>
+          <p class="mt-3 text-sm leading-relaxed text-paper/65">Quando cliente pede desconto na renovação, Pitchei traz o ROI entregue no ciclo anterior, em vez de você ceder no reflexo.</p>
+        </article>
+        <article class="rounded-2xl border border-paper/10 bg-paper/[0.03] p-7">
+          <h3 class="font-display text-xl font-bold text-paper">Onboarding</h3>
+          <p class="mt-3 text-sm leading-relaxed text-paper/65">Cliente novo pergunta sobre setup, integração, equipe. Pitchei devolve a resposta padrão da sua empresa, com o tom certo.</p>
+        </article>
+        <article class="rounded-2xl border border-paper/10 bg-paper/[0.03] p-7">
+          <h3 class="font-display text-xl font-bold text-paper">Conversa difícil</h3>
+          <p class="mt-3 text-sm leading-relaxed text-paper/65">Crítica recebida, incidente discutido, escopo questionado. Pitchei sugere a frase que reconhece, contextualiza e propõe próxima ação.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <UseCaseFAQ
+    title="Sobre Pitchei em reuniões com clientes"
+    items={faq}
+  />
+
+  <UseCaseCTA
+    title="Conduza cada call como se fosse a primeira do dia."
+    subtitle="Times de CSM, account managers e consultores no beta. Acesso gratuito na primeira coorte."
+  />
+</Base>

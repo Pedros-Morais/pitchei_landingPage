@@ -1,0 +1,179 @@
+---
+import Base from "~/layouts/Base.astro";
+import Breadcrumb from "~/components/Breadcrumb.astro";
+import UseCaseHero from "~/components/UseCaseHero.astro";
+import UseCaseFAQ from "~/components/UseCaseFAQ.astro";
+import UseCaseCTA from "~/components/UseCaseCTA.astro";
+import {
+  breadcrumbSchema,
+  faqSchema,
+  softwareApplicationSchema,
+  organizationSchema,
+} from "~/lib/schema";
+import type { FAQItem } from "~/lib/schema";
+
+const crumbs = [
+  { name: "Início", url: "/" },
+  { name: "Casos de uso", url: "/casos-de-uso" },
+  { name: "Vendas e negociação", url: "/casos-de-uso/vendas-e-negociacao" },
+];
+
+const faq: FAQItem[] = [
+  {
+    question: "Pitchei substitui um Otter ou Gong para times de vendas?",
+    answer:
+      "Não. Gong e Otter analisam a call depois — geram resumo, scoring, coaching offline. Pitchei trabalha durante a call: sugere a frase de reframe quando o cliente fala em preço, propõe a próxima pergunta de discovery quando a conversa esfria, lembra de pedir o follow-up no fim. Os dois podem rodar juntos.",
+  },
+  {
+    question: "Funciona para venda consultiva enterprise?",
+    answer:
+      "Sim — e é onde ele brilha mais. Em venda consultiva você precisa ancorar valor, lidar com objeção técnica e fazer perguntas de descoberta de alta qualidade. Pitchei traz pontos do briefing do cliente (segmento, dor declarada, decisor envolvido) durante a conversa, sem você abrir CRM no meio da call.",
+  },
+  {
+    question: "Posso pré-carregar contexto sobre o cliente antes da call?",
+    answer:
+      "Sim. Antes da reunião você cola um resumo: empresa, persona do contato, dor declarada, estágio do funil, decisores envolvidos, contas comparáveis fechadas. Durante a call, quando o cliente pergunta de ROI ou cita um concorrente, Pitchei devolve o ângulo mais relevante baseado nesse briefing.",
+  },
+  {
+    question: "Como Pitchei ajuda a contornar objeção de preço?",
+    answer:
+      "Quando o cliente diz \"tá caro\", Pitchei não responde \"vou ver desconto\". Ele sugere o reframe pra valor: relembra o ROI declarado no discovery, traz o número de TCO comparável, ou propõe a pergunta que reabre o diagnóstico — \"caro em relação a que alternativa?\". A frase já vem pronta em pt-BR.",
+  },
+  {
+    question: "Funciona com Salesforce, HubSpot, RD Station?",
+    answer:
+      "Pitchei não integra direto com CRM hoje — você cola o contexto do deal manualmente antes da call. Integrações nativas com Salesforce, HubSpot e RD Station estão no roadmap.",
+  },
+];
+
+const jsonLd = [
+  organizationSchema(),
+  softwareApplicationSchema(),
+  breadcrumbSchema(crumbs),
+  faqSchema(faq),
+];
+
+const keywords = [
+  "vendas consultivas",
+  "objeção de preço",
+  "como contornar objeção",
+  "ferramentas para vendas",
+  "negociação comercial",
+  "discovery call",
+  "venda enterprise",
+  "assistente de vendas IA",
+];
+---
+
+<Base
+  title="Vendas e negociação: copiloto durante a call"
+  description="Pitchei sugere reframes pra valor, perguntas de descoberta e respostas a objeção em tempo real durante a call comercial. Em português, sem o cliente saber."
+  path="/casos-de-uso/vendas-e-negociacao"
+  jsonLd={jsonLd}
+  keywords={keywords}
+>
+  <Breadcrumb crumbs={crumbs} />
+
+  <UseCaseHero
+    eyebrow="Caso de uso · Vendas e negociação"
+    title="Vendas e negociação: contorne objeções em tempo real."
+    subtitle="Cliente fala em preço, Pitchei sugere o reframe pra valor. Conversa esfria, Pitchei propõe a próxima pergunta. Final da call, lembra do follow-up com data. Durante a reunião, em pt-BR."
+  />
+
+  <section class="border-b border-paper/10" aria-labelledby="por-que-vendas">
+    <div class="mx-auto max-w-4xl px-6 py-20">
+      <p class="text-sm font-semibold uppercase tracking-wider text-orange">
+        Por que vendas é um esporte de tempo real
+      </p>
+      <h2 id="por-que-vendas" class="mt-3 font-display text-3xl font-black leading-tight text-paper md:text-4xl">
+        O playbook está no Notion. Mas a objeção veio agora.
+      </h2>
+      <div class="mt-8 space-y-5 text-lg leading-relaxed text-paper/75">
+        <p>
+          Você tem o método. SPIN, MEDDIC, Challenger, qualquer um. Você leu, você treinou no role-play da última segunda. Aí o cliente fala "olha, achei caro" e o playbook vira pó porque o que vem na sua cabeça é "vou ver com o time se consigo um desconto".
+        </p>
+        <p>
+          A diferença entre vendedor mediano e top performer não é conhecimento. É o que sai da boca <strong class="text-paper">no segundo seguinte à objeção</strong>. Top performers têm a frase pronta. Os outros precisam de mais cinco segundos — que o cliente usa pra reforçar a objeção.
+        </p>
+        <p>
+          Pitchei te dá esses cinco segundos antes do cliente. Quando ele cita preço, concorrente, prazo ou risco, Pitchei já te devolve o reframe certo, conectado ao seu próprio playbook — que você cadastrou uma vez.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-paper/10" aria-labelledby="como-resolve-vendas">
+    <div class="mx-auto max-w-5xl px-6 py-20">
+      <p class="text-sm font-semibold uppercase tracking-wider text-orange">
+        Como Pitchei te apoia na call comercial
+      </p>
+      <h2 id="como-resolve-vendas" class="mt-3 font-display text-3xl font-black leading-tight text-paper md:text-4xl">
+        Três momentos críticos. Três sugestões certas.
+      </h2>
+      <ol class="mt-12 grid gap-6 md:grid-cols-3">
+        <li class="rounded-2xl border border-paper/10 bg-paper/[0.03] p-7">
+          <span class="font-display text-4xl font-black text-orange">01</span>
+          <h3 class="mt-3 font-display text-xl font-bold text-paper">Discovery que destrava</h3>
+          <p class="mt-3 text-sm leading-relaxed text-paper/65">
+            Conversa esfria, prospect só responde curto. Pitchei sugere a pergunta aberta certa — sobre dor real, sobre custo do status quo, sobre quem mais sofre com o problema.
+          </p>
+        </li>
+        <li class="rounded-2xl border border-paper/10 bg-paper/[0.03] p-7">
+          <span class="font-display text-4xl font-black text-orange">02</span>
+          <h3 class="mt-3 font-display text-xl font-bold text-paper">Objeção de preço</h3>
+          <p class="mt-3 text-sm leading-relaxed text-paper/65">
+            "Tá caro." Pitchei traz o reframe pra valor com o ROI declarado no discovery, sem cair em desconto reflexo.
+          </p>
+        </li>
+        <li class="rounded-2xl border border-paper/10 bg-paper/[0.03] p-7">
+          <span class="font-display text-4xl font-black text-orange">03</span>
+          <h3 class="mt-3 font-display text-xl font-bold text-paper">Fechamento e follow-up</h3>
+          <p class="mt-3 text-sm leading-relaxed text-paper/65">
+            Final da call. Pitchei lembra de pedir next step com data e responsável — não "depois a gente alinha".
+          </p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="border-b border-paper/10" aria-labelledby="exemplo-vendas">
+    <div class="mx-auto max-w-4xl px-6 py-20">
+      <p class="text-sm font-semibold uppercase tracking-wider text-orange">
+        Exemplo: objeção de preço em venda B2B
+      </p>
+      <h2 id="exemplo-vendas" class="mt-3 font-display text-3xl font-black leading-tight text-paper md:text-4xl">
+        De "tá caro" pra "vamos comparar valor".
+      </h2>
+      <div class="mt-10 space-y-4 rounded-2xl border border-paper/10 bg-paper/[0.03] p-8">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-paper/45">Cliente</span>
+          <p class="mt-1 text-paper/85">
+            "Olha, comparado com [concorrente], vocês estão 30% acima. Não consigo aprovar internamente nesse valor."
+          </p>
+        </div>
+        <div class="border-t border-paper/10 pt-4">
+          <span class="text-xs font-semibold uppercase tracking-wider text-orange">Sugestão do Pitchei</span>
+          <p class="mt-1 text-paper/85">
+            "Faz sentido olhar comparativo. Quando vocês citaram a dor de [X] no discovery, o custo declarado era [valor anual]. A diferença de 30% pro [concorrente] cobre [funcionalidade específica do seu produto que ataca essa dor]. Posso te mostrar o TCO em 12 meses considerando esse fator?"
+          </p>
+        </div>
+        <div class="border-t border-paper/10 pt-4">
+          <span class="text-xs font-semibold uppercase tracking-wider text-paper/45">Você responde</span>
+          <p class="mt-1 text-paper/85">
+            Com o número do briefing dele, sem improvisar desconto.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <UseCaseFAQ
+    title="Sobre Pitchei em vendas e negociação"
+    items={faq}
+  />
+
+  <UseCaseCTA
+    title="Suba o seu close rate sem mudar de playbook."
+    subtitle="Times de venda consultiva no beta. Acesso gratuito na primeira coorte em troca de feedback estruturado."
+  />
+</Base>

@@ -1,0 +1,98 @@
+---
+import Base from "~/layouts/Base.astro";
+import Breadcrumb from "~/components/Breadcrumb.astro";
+import UseCaseCTA from "~/components/UseCaseCTA.astro";
+import {
+  breadcrumbSchema,
+  collectionPageSchema,
+  organizationSchema,
+} from "~/lib/schema";
+
+const crumbs = [
+  { name: "Início", url: "/" },
+  { name: "Comparativos", url: "/comparativo" },
+];
+
+const comparativos = [
+  {
+    href: "/comparativo/pitchei-vs-otter",
+    title: "Pitchei vs Otter",
+    desc: "Copiloto ao vivo vs transcritor tradicional. Quando usar cada um.",
+  },
+  {
+    href: "/comparativo/pitchei-vs-fathom",
+    title: "Pitchei vs Fathom",
+    desc: "Copiloto ao vivo vs notetaker com integração CRM. Diferenças e complementaridade.",
+  },
+];
+
+const jsonLd = [
+  organizationSchema(),
+  breadcrumbSchema(crumbs),
+  collectionPageSchema({
+    name: "Comparativos · Pitchei",
+    description:
+      "Pitchei comparado com transcritores e notetakers populares: Otter, Fathom.",
+    path: "/comparativo",
+  }),
+];
+
+const keywords = [
+  "pitchei vs otter",
+  "pitchei vs fathom",
+  "alternativa otter",
+  "alternativa fathom",
+  "comparativo transcritor reunião",
+];
+---
+
+<Base
+  title="Comparativos"
+  description="Pitchei comparado com outras ferramentas de reunião — Otter, Fathom. Quando escolher cada um."
+  path="/comparativo"
+  jsonLd={jsonLd}
+  keywords={keywords}
+>
+  <Breadcrumb crumbs={crumbs} />
+
+  <section class="border-b border-paper/10">
+    <div class="mx-auto max-w-4xl px-6 py-20 md:py-28">
+      <p class="text-sm font-semibold uppercase tracking-wider text-orange">
+        Comparativos
+      </p>
+      <h1 class="mt-3 font-display text-4xl font-black leading-tight text-paper md:text-6xl">
+        Onde Pitchei encaixa no seu stack.
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg text-paper/75">
+        Comparativos honestos entre Pitchei e as principais ferramentas de reunião. Não é briga — é mapa de quando usar o quê.
+      </p>
+    </div>
+  </section>
+
+  <section class="border-b border-paper/10">
+    <div class="mx-auto max-w-6xl px-6 py-20">
+      <div class="grid gap-6 md:grid-cols-2">
+        {comparativos.map((c) => (
+          <a
+            href={c.href}
+            class="group rounded-2xl border border-paper/10 bg-paper/[0.03] p-8 transition-all hover:border-orange/40 hover:bg-paper/[0.05]"
+          >
+            <h2 class="font-display text-2xl font-bold text-paper group-hover:text-orange md:text-3xl">
+              {c.title}
+            </h2>
+            <p class="mt-3 text-base text-paper/70">{c.desc}</p>
+            <span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-orange">
+              Ver comparativo
+              <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <UseCaseCTA
+    title="Quer testar Pitchei junto do seu stack atual?"
+    subtitle="Pitchei roda em paralelo a qualquer transcritor. Entre na lista de espera."
+  />
+</Base>

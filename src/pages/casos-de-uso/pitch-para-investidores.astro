@@ -1,0 +1,179 @@
+---
+import Base from "~/layouts/Base.astro";
+import Breadcrumb from "~/components/Breadcrumb.astro";
+import UseCaseHero from "~/components/UseCaseHero.astro";
+import UseCaseFAQ from "~/components/UseCaseFAQ.astro";
+import UseCaseCTA from "~/components/UseCaseCTA.astro";
+import {
+  breadcrumbSchema,
+  faqSchema,
+  softwareApplicationSchema,
+  organizationSchema,
+} from "~/lib/schema";
+import type { FAQItem } from "~/lib/schema";
+
+const crumbs = [
+  { name: "Início", url: "/" },
+  { name: "Casos de uso", url: "/casos-de-uso" },
+  { name: "Pitch para investidores", url: "/casos-de-uso/pitch-para-investidores" },
+];
+
+const faq: FAQItem[] = [
+  {
+    question: "Pitchei substitui um pitch deck?",
+    answer:
+      "Não. Pitch deck é o material visual. Pitchei é o copiloto que fala com você durante a apresentação ao vivo — quando o investidor faz uma pergunta de TAM, CAC, runway ou roadmap, e você precisa da resposta na hora, em português, sem perder o ritmo.",
+  },
+  {
+    question: "O investidor percebe que estou usando Pitchei no pitch?",
+    answer:
+      "Não. Pitchei roda local no seu Mac, não entra na call como participante e não emite áudio. O overlay com a sugestão aparece só na sua tela — invisível para quem está do outro lado, seja Zoom, Meet ou Teams.",
+  },
+  {
+    question: "Funciona com pitch em inglês para investidor gringo?",
+    answer:
+      "Hoje Pitchei é otimizado para pt-BR, com sugestões em português natural. Pitches em inglês estão no roadmap, mas ainda não suportados oficialmente. Se você apresenta para fundos brasileiros ou para LPs que falam português, Pitchei já cobre.",
+  },
+  {
+    question: "Posso pré-carregar dados do meu deck no Pitchei?",
+    answer:
+      "Sim. Antes do pitch você cola seu briefing — TAM, SAM, SOM, runway atual, comparáveis, números de tração. Durante a reunião, quando o investidor perguntar, o Pitchei traz o número exato do seu próprio material, sem você ter que procurar.",
+  },
+  {
+    question: "Quanto custa para founders?",
+    answer:
+      "A primeira coorte de design partners (founders incluídos) tem acesso gratuito ao beta em troca de feedback. O modelo de preço definitivo ainda está sendo desenhado, mas terá tier acessível para founders pré-Série A.",
+  },
+];
+
+const jsonLd = [
+  organizationSchema(),
+  softwareApplicationSchema(),
+  breadcrumbSchema(crumbs),
+  faqSchema(faq),
+];
+
+const keywords = [
+  "pitch para investidores",
+  "como fazer pitch",
+  "pitch deck IA",
+  "pitch em português",
+  "founder pitch",
+  "apresentação para VC",
+  "assistente de pitch",
+];
+---
+
+<Base
+  title="Pitch para investidores com IA"
+  description="Pitchei é o copiloto que fala com você durante o pitch para investidores. Sugestões em português, em tempo real, no momento em que o VC pergunta TAM, CAC ou runway."
+  path="/casos-de-uso/pitch-para-investidores"
+  jsonLd={jsonLd}
+  keywords={keywords}
+>
+  <Breadcrumb crumbs={crumbs} />
+
+  <UseCaseHero
+    eyebrow="Caso de uso · Founders"
+    title="Pitch para investidores: o copiloto que fala com você na sala."
+    subtitle="Quando o VC pergunta TAM, runway ou diferencial competitivo, Pitchei traz o número do seu briefing antes de você travar. Em português, durante o pitch, sem ninguém saber."
+  />
+
+  <section class="border-b border-paper/10" aria-labelledby="por-que-importa">
+    <div class="mx-auto max-w-4xl px-6 py-20">
+      <p class="text-sm font-semibold uppercase tracking-wider text-orange">
+        Por que pitch trava founders
+      </p>
+      <h2 id="por-que-importa" class="mt-3 font-display text-3xl font-black leading-tight text-paper md:text-4xl">
+        Você decorou tudo. E aí veio a pergunta que não estava no deck.
+      </h2>
+      <div class="mt-8 space-y-5 text-lg leading-relaxed text-paper/75">
+        <p>
+          Pitch para investidores não é sobre slides. É sobre os <strong class="text-paper">90 segundos depois de cada slide</strong> — quando o sócio do fundo te interrompe pra perguntar de CAC, de churn, de comparável internacional, e a resposta certa está na sua cabeça em algum lugar, mas não sai.
+        </p>
+        <p>
+          O custo é alto. Um momento de hesitação em frente a um partner de fundo Série A vira "o cara não conhece o próprio negócio" no debrief interno. Não importa que você sabia. Importa o que saiu.
+        </p>
+        <p>
+          Pitchei foi feito pra esse intervalo. Você cola o briefing antes — TAM, SAM, métricas de tração, comparáveis — e durante o pitch, quando o investidor pergunta, o Pitchei te devolve o número do seu próprio material, com a frase pronta, em português.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-paper/10" aria-labelledby="como-resolve">
+    <div class="mx-auto max-w-5xl px-6 py-20">
+      <p class="text-sm font-semibold uppercase tracking-wider text-orange">
+        Como Pitchei te apoia no pitch
+      </p>
+      <h2 id="como-resolve" class="mt-3 font-display text-3xl font-black leading-tight text-paper md:text-4xl">
+        Três coisas que ele faz durante a reunião com o VC.
+      </h2>
+      <ol class="mt-12 grid gap-6 md:grid-cols-3">
+        <li class="rounded-2xl border border-paper/10 bg-paper/[0.03] p-7">
+          <span class="font-display text-4xl font-black text-orange">01</span>
+          <h3 class="mt-3 font-display text-xl font-bold text-paper">Traz o número certo do seu briefing</h3>
+          <p class="mt-3 text-sm leading-relaxed text-paper/65">
+            VC pergunta de TAM: Pitchei devolve o valor exato que você anotou antes, formatado em pt-BR. Sem aproximação, sem "deixa eu ver aqui".
+          </p>
+        </li>
+        <li class="rounded-2xl border border-paper/10 bg-paper/[0.03] p-7">
+          <span class="font-display text-4xl font-black text-orange">02</span>
+          <h3 class="mt-3 font-display text-xl font-bold text-paper">Sugere o reframe quando o ângulo aperta</h3>
+          <p class="mt-3 text-sm leading-relaxed text-paper/65">
+            Pergunta de "por que agora?" ou de "qual é o moat?" Pitchei propõe a resposta que conecta seu diferencial à tese do fundo, com base no que você definiu como narrativa.
+          </p>
+        </li>
+        <li class="rounded-2xl border border-paper/10 bg-paper/[0.03] p-7">
+          <span class="font-display text-4xl font-black text-orange">03</span>
+          <h3 class="mt-3 font-display text-xl font-bold text-paper">Lembra o follow-up no fim</h3>
+          <p class="mt-3 text-sm leading-relaxed text-paper/65">
+            Final do pitch, ansiedade no auge. Pitchei sugere a frase de fechamento que pede next step com data — não "depois a gente alinha".
+          </p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="border-b border-paper/10" aria-labelledby="exemplo">
+    <div class="mx-auto max-w-4xl px-6 py-20">
+      <p class="text-sm font-semibold uppercase tracking-wider text-orange">
+        Exemplo: pitch de Série Seed
+      </p>
+      <h2 id="exemplo" class="mt-3 font-display text-3xl font-black leading-tight text-paper md:text-4xl">
+        Como uma pergunta vira uma resposta sólida.
+      </h2>
+      <div class="mt-10 space-y-4 rounded-2xl border border-paper/10 bg-paper/[0.03] p-8">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-paper/45">Investidor</span>
+          <p class="mt-1 text-paper/85">"Qual o TAM realista no Brasil para o que vocês fazem? E qual a fatia que vocês conseguem capturar nos próximos 24 meses?"</p>
+        </div>
+        <div class="border-t border-paper/10 pt-4">
+          <span class="text-xs font-semibold uppercase tracking-wider text-orange">Sugestão do Pitchei</span>
+          <p class="mt-1 text-paper/85">
+            "TAM no Brasil é <strong class="text-paper">R$ 4,2 bi</strong>, com base nos dados que cruzamos da [fonte do seu briefing]. SAM endereçável nos próximos 24 meses é <strong class="text-paper">R$ 380 mi</strong> — concentrado em [segmento] em [região]. Nossa meta de captura é 8% do SAM até o fim do horizonte, dado o pipeline atual."
+          </p>
+        </div>
+        <div class="border-t border-paper/10 pt-4">
+          <span class="text-xs font-semibold uppercase tracking-wider text-paper/45">Você fala</span>
+          <p class="mt-1 text-paper/85">
+            A frase, com os números corretos do seu próprio deck. Sem tirar o olho do investidor.
+          </p>
+        </div>
+      </div>
+      <p class="mt-6 text-sm text-paper/55">
+        Pitchei não inventa números — ele te devolve os números que você mesmo cadastrou. O ganho é tempo de resposta e confiança.
+      </p>
+    </div>
+  </section>
+
+  <UseCaseFAQ
+    title="Sobre Pitchei em pitches para fundos"
+    items={faq}
+  />
+
+  <UseCaseCTA
+    title="Faça o próximo pitch com um copiloto."
+    subtitle="A primeira coorte de design partners inclui founders em rodada Pre-Seed e Seed. Acesso gratuito ao beta em troca de feedback."
+  />
+</Base>

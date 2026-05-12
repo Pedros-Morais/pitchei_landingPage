@@ -1,0 +1,192 @@
+---
+import Base from "~/layouts/Base.astro";
+import Breadcrumb from "~/components/Breadcrumb.astro";
+import CompareTable from "~/components/CompareTable.astro";
+import UseCaseCTA from "~/components/UseCaseCTA.astro";
+import UseCaseFAQ from "~/components/UseCaseFAQ.astro";
+import {
+  articleSchema,
+  breadcrumbSchema,
+  faqSchema,
+  organizationSchema,
+} from "~/lib/schema";
+import type { FAQItem } from "~/lib/schema";
+
+const crumbs = [
+  { name: "Início", url: "/" },
+  { name: "Comparativos", url: "/comparativo" },
+  { name: "Pitchei vs Fathom", url: "/comparativo/pitchei-vs-fathom" },
+];
+
+const rows = [
+  {
+    criterion: "Categoria",
+    competitor: "Meeting recorder + AI notetaker",
+    pitchei: "Copiloto ao vivo em pt-BR",
+  },
+  {
+    criterion: "Quando entrega valor",
+    competitor: "Depois da reunião (resumo, action items, CRM sync)",
+    pitchei: "Durante a reunião (sugestão glanceável em tempo real)",
+  },
+  {
+    criterion: "Integrações CRM",
+    competitor: "Salesforce, HubSpot, Close, Pipedrive nativas",
+    pitchei: "Briefing colado manualmente (CRM no roadmap)",
+  },
+  {
+    criterion: "Idioma de produto",
+    competitor: "Inglês como primeira língua",
+    pitchei: "pt-BR como primeira língua",
+  },
+  {
+    criterion: "Postura na reunião",
+    competitor: "Bot 'Fathom' aparece como participante na call",
+    pitchei: "Roda local no Mac, ninguém vê",
+  },
+  {
+    criterion: "Foco do produto",
+    competitor: "Reuniões comerciais de SDR/AE/CSM",
+    pitchei: "Qualquer reunião onde a próxima frase pesa",
+  },
+  {
+    criterion: "Privacidade",
+    competitor: "Áudio e transcrição armazenados na nuvem",
+    pitchei: "Áudio nunca gravado; texto descartado pós-sessão",
+  },
+];
+
+const faq: FAQItem[] = [
+  {
+    question: "Pitchei concorre com Fathom?",
+    answer:
+      "Não diretamente. Fathom é um notetaker — grava, transcreve, gera resumo e sincroniza com CRM depois. Pitchei é um copiloto ao vivo — sugere o que dizer durante a call. Os dois podem coexistir: Fathom registra, Pitchei te ajuda a conduzir.",
+  },
+  {
+    question: "Posso usar Pitchei em vez do Fathom para meu time comercial?",
+    answer:
+      "Se o problema é falta de registro automático e sync com Salesforce, Fathom resolve melhor. Se o problema é vendedor travando em objeção de preço ou perdendo discovery por falta de pergunta certa, Pitchei resolve melhor. Times consultivos B2B costumam querer os dois.",
+  },
+  {
+    question: "Fathom é melhor para call de SDR?",
+    answer:
+      "Para o trabalho administrativo do SDR (registrar, taggar, gerar follow-up), sim. Para o trabalho de conversa (lidar com objeção, levantar dor, qualificar), Pitchei é mais direto — sugere a frase no momento, não depois.",
+  },
+  {
+    question: "E em call em português, qual é melhor?",
+    answer:
+      "Fathom funciona em português, mas o produto e as sugestões pós-call são pensados em inglês primeiro. Pitchei foi feito em pt-BR — tom, expressões, contexto brasileiro de venda consultiva. Em call em português, isso aparece na qualidade da sugestão.",
+  },
+];
+
+const pageTitle = "Pitchei vs Fathom: comparativo honesto";
+const pageDescription =
+  "Pitchei (copiloto ao vivo em pt-BR) vs Fathom (notetaker com integração CRM). Quando usar cada um, integrações, privacidade e idioma.";
+
+const jsonLd = [
+  organizationSchema(),
+  breadcrumbSchema(crumbs),
+  articleSchema({
+    headline: pageTitle,
+    description: pageDescription,
+    path: "/comparativo/pitchei-vs-fathom",
+    datePublished: "2026-05-11",
+    keywords: [
+      "pitchei vs fathom",
+      "alternativa fathom",
+      "notetaker reunião",
+    ],
+  }),
+  faqSchema(faq),
+];
+
+const keywords = [
+  "pitchei vs fathom",
+  "alternativa fathom",
+  "fathom em português",
+  "notetaker reunião",
+  "copiloto reunião vs notetaker",
+];
+---
+
+<Base
+  title={pageTitle}
+  description={pageDescription}
+  path="/comparativo/pitchei-vs-fathom"
+  type="article"
+  jsonLd={jsonLd}
+  keywords={keywords}
+  article={{
+    publishedTime: "2026-05-11",
+    section: "Comparativos",
+    tags: ["pitchei", "fathom", "notetaker", "venda consultiva"],
+  }}
+>
+  <Breadcrumb crumbs={crumbs} />
+
+  <article class="mx-auto max-w-4xl px-6 py-20 md:py-28">
+    <p class="text-sm font-semibold uppercase tracking-wider text-orange">
+      Comparativo
+    </p>
+    <h1 class="mt-3 font-display text-4xl font-black leading-tight text-paper md:text-6xl">
+      Pitchei vs Fathom: o que faz cada um.
+    </h1>
+    <p class="mt-3 text-sm text-paper/50">Atualizado em 11 de maio de 2026.</p>
+
+    <div class="mt-10 rounded-2xl border border-orange/30 bg-orange/[0.04] p-6">
+      <p class="text-xs font-bold uppercase tracking-wider text-orange">TL;DR</p>
+      <ul class="mt-3 space-y-2 text-paper/85">
+        <li>• <strong class="text-paper">Fathom</strong> registra, transcreve e sincroniza a call com seu CRM depois.</li>
+        <li>• <strong class="text-paper">Pitchei</strong> te ajuda durante a call: sugere a frase, o reframe, a pergunta — em pt-BR.</li>
+        <li>• Para registro automático e ops comercial, Fathom. Para condução em tempo real, Pitchei.</li>
+        <li>• Em venda consultiva B2B, muitos times usam os dois.</li>
+      </ul>
+    </div>
+
+    <div class="mt-12 space-y-6 text-lg leading-relaxed text-paper/75">
+      <h2 class="mt-12 font-display text-3xl font-black leading-tight text-paper">Categorias diferentes</h2>
+      <p>
+        Fathom é um <strong class="text-paper">notetaker</strong> — entra na sua call, grava, transcreve e gera resumo com action items, integrando direto no CRM. É excelente em reduzir o trabalho administrativo pós-call.
+      </p>
+      <p>
+        Pitchei é um <strong class="text-paper">copiloto ao vivo</strong> — sugere o que dizer enquanto você fala. É focado na qualidade da conversa enquanto ela acontece, não no registro depois.
+      </p>
+    </div>
+
+    <h2 class="mt-16 font-display text-3xl font-black leading-tight text-paper">Comparativo lado a lado</h2>
+    <div class="mt-8">
+      <CompareTable competitorName="Fathom" rows={rows} />
+    </div>
+
+    <h2 class="mt-16 font-display text-3xl font-black leading-tight text-paper">Quando escolher Fathom</h2>
+    <ul class="mt-6 space-y-3 text-lg text-paper/75">
+      <li>• Seu time comercial precisa de gravação automática e action items no CRM.</li>
+      <li>• Você lidera um time de SDRs e quer coaching offline com base em playback.</li>
+      <li>• Suas calls são majoritariamente em inglês.</li>
+      <li>• Você quer integração nativa com Salesforce, HubSpot ou Close.</li>
+    </ul>
+
+    <h2 class="mt-16 font-display text-3xl font-black leading-tight text-paper">Quando escolher Pitchei</h2>
+    <ul class="mt-6 space-y-3 text-lg text-paper/75">
+      <li>• Você vende, atende ou negocia em pt-BR — e a próxima frase importa.</li>
+      <li>• Você prefere não colocar bot na call.</li>
+      <li>• Você quer um reframe pra valor <em>no momento</em>, não como sugestão de melhoria depois.</li>
+      <li>• Conversas confidenciais que não podem ser gravadas ainda assim precisam de apoio.</li>
+    </ul>
+
+    <h2 class="mt-16 font-display text-3xl font-black leading-tight text-paper">Times consultivos: vale ter os dois</h2>
+    <p class="mt-6 text-lg text-paper/75">
+      Em venda consultiva enterprise — onde uma call vale R$ 50 mil em ARR e cinco objeções diferentes podem aparecer em 45 minutos — vale ter Fathom rodando para registro e Pitchei rodando para condução. Eles não conflitam: Fathom é bot na call, Pitchei é overlay no seu Mac.
+    </p>
+  </article>
+
+  <UseCaseFAQ
+    title="Perguntas comuns sobre Pitchei vs Fathom"
+    items={faq}
+  />
+
+  <UseCaseCTA
+    title="Veja Pitchei na próxima call comercial."
+    subtitle="Acesso ao beta gratuito na primeira coorte de design partners."
+  />
+</Base>

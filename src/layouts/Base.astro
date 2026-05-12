@@ -17,9 +17,18 @@ type Props = {
   type?: "website" | "article";
   noindex?: boolean;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  article?: {
+    publishedTime?: string;
+    modifiedTime?: string;
+    author?: string;
+    section?: string;
+    tags?: string[];
+  };
+  keywords?: string[];
 };
 
 const props = Astro.props;
+const canonical = new URL(props.path ?? "/", SITE.url).toString();
 ---
 
 <!doctype html>
@@ -33,6 +42,8 @@ const props = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="alternate" hreflang="pt-BR" href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={canonical} />
     <meta name="color-scheme" content="dark" />
     <SEO {...props} />
     <ClientRouter fallback="swap" />

@@ -2,7 +2,7 @@
 import Base from "~/layouts/Base.astro";
 import Hero from "~/components/Hero.astro";
 import TrustBand from "~/components/TrustBand.astro";
-import ParticleText from "~/components/ParticleText.astro";
+import PitcheiEmAcao from "~/components/PitcheiEmAcao.astro";
 import ProblemaVsScribe from "~/components/ProblemaVsScribe.astro";
 import Personas from "~/components/Personas.astro";
 import ComoFunciona from "~/components/ComoFunciona.astro";
@@ -14,15 +14,49 @@ import {
   softwareApplicationSchema,
   faqSchema,
   webSiteSchema,
+  howToSchema,
 } from "~/lib/schema";
 import { FAQ_ITEMS } from "~/lib/faq";
 import { SITE } from "~/lib/site";
+
+const howTo = howToSchema({
+  name: "Como o Pitchei sugere o que dizer durante uma reunião",
+  description:
+    "Três passos para receber sugestões em tempo real em português enquanto você fala em uma reunião no Mac.",
+  totalTime: "PT1M",
+  steps: [
+    {
+      name: "Abra o Pitchei antes da reunião",
+      text: "Pitchei roda em segundo plano no macOS, captura o áudio do sistema e do microfone localmente. Não entra na call e ninguém vê.",
+    },
+    {
+      name: "Fale normalmente — Pitchei transcreve em pt-BR",
+      text: "Cada frase é convertida em texto em menos de 1 segundo, via WebSocket criptografado. O texto fica em memória e é descartado depois da sessão.",
+    },
+    {
+      name: "Use, troque ou ignore a sugestão",
+      text: "Quando o outro lado termina de falar, Pitchei mostra uma sugestão glanceável. Você decide em meio segundo se usa, pede outra ou ignora.",
+    },
+  ],
+});
 
 const jsonLd = [
   organizationSchema(),
   webSiteSchema(),
   softwareApplicationSchema(),
   faqSchema(FAQ_ITEMS),
+  howTo,
+];
+
+const keywords = [
+  "pitchei",
+  "assistente de reunião com IA",
+  "copiloto de reunião em português",
+  "IA para reunião",
+  "pitch para investidores",
+  "respostas para entrevista de emprego",
+  "ferramenta para vendas e negociação",
+  "macOS",
 ];
 ---
 
@@ -31,10 +65,11 @@ const jsonLd = [
   description={SITE.shortDescription}
   path="/"
   jsonLd={jsonLd}
+  keywords={keywords}
 >
   <Hero />
   <TrustBand />
-  <ParticleText />
+  <PitcheiEmAcao />
   <ProblemaVsScribe />
   <Personas />
   <ComoFunciona />

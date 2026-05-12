@@ -1,0 +1,215 @@
+---
+const cases = [
+  {
+    id: "tecnica",
+    icon: "code",
+    label: "Entrevista técnica",
+    context:
+      "Você está em uma entrevista técnica e o entrevistador faz uma pergunta profunda sobre arquitetura.",
+    heard:
+      "Como você desenharia um sistema multi-região para 50 milhões de eventos por segundo, sem perder dados, mantendo ordenação por usuário e p99 abaixo de 200ms?",
+    suggestion:
+      "Eu começaria separando ingestão, durabilidade e serving. Usaria um log particionado por userId para preservar ordenação local, replicação assíncrona entre regiões com quorum dentro da região primária e retenção de 30 dias em storage barato para replay. Durante partições, priorizaria disponibilidade de ingestão com escrita local e reconciliação posterior, assumindo consistência eventual nas visões agregadas. Para o p99, manteria materializações incrementais por janela em memória e snapshots frequentes, deixando correções tardias passarem por um fluxo de backfill idempotente.",
+  },
+  {
+    id: "vendas",
+    icon: "phone",
+    label: "Cold call",
+    context:
+      "Você está numa primeira conversa com um lead que ainda não entendeu por que deveria continuar ouvindo.",
+    heard:
+      "Sinceramente, já usamos ferramentas demais. O que vocês fazem de diferente para justificar mais uma solução?",
+    suggestion:
+      "Faz sentido. A diferença é que a Pitchei não entra como mais uma tela para preencher depois da call. Ela acompanha a conversa em tempo real e ajuda você a responder objeções no momento exato, com contexto do que acabou de ser dito.",
+  },
+  {
+    id: "ceo",
+    icon: "screen",
+    label: "CEO apresentando",
+    context:
+      "Você está apresentando a empresa para investidores e precisa responder sem perder autoridade.",
+    heard:
+      "Qual é o risco real de uma big tech copiar isso e comprimir sua margem em poucos meses?",
+    suggestion:
+      "O risco existe, mas nosso diferencial está na execução do workflow, não só no modelo. Estamos focados no momento ao vivo da reunião, com baixa latência, privacidade e sugestões acionáveis. Isso cria dados de uso e aprendizado do contexto que são difíceis de copiar apenas lançando uma feature genérica.",
+  },
+  {
+    id: "ingles",
+    icon: "globe",
+    label: "Call em inglês",
+    context:
+      "Você está numa call em inglês e precisa responder com naturalidade sem travar na formulação.",
+    heard:
+      "Can you walk me through how your product handles privacy during live meetings?",
+    suggestion:
+      "Absolutely. Pitchei listens only to the meeting audio needed for real-time suggestions, processes it in streaming, and does not join the call as a visible participant. The goal is to help the user answer better without storing the meeting as a recording.",
+  },
+];
+
+const iconPath: Record<string, string> = {
+  code: "M16 18l6-6-6-6M8 6l-6 6 6 6",
+  phone:
+    "M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.91.33 1.8.63 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.2a2 2 0 0 1 2.11-.45c.85.3 1.74.51 2.65.63A2 2 0 0 1 22 16.92z",
+  screen: "M3 4h18v12H3zM8 21h8M12 16v5",
+  globe:
+    "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20",
+};
+---
+
+<section
+  id="pitchei-em-acao"
+  class="relative overflow-hidden border-b border-paper/10 bg-[linear-gradient(180deg,#050302_0%,#0d0704_52%,#1c0f09_100%)]"
+  aria-labelledby="pitchei-em-acao-titulo"
+>
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(232,93,38,0.16),transparent_34%),radial-gradient(circle_at_20%_70%,rgba(255,179,71,0.08),transparent_28%)]"
+  ></div>
+
+  <div class="relative mx-auto max-w-6xl px-5 py-20 sm:px-6 md:py-28">
+    <div class="mx-auto max-w-4xl text-center" data-reveal>
+      <p
+        class="mx-auto inline-flex rounded-full border border-paper/10 bg-paper/[0.07] px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-paper/75"
+      >
+        Casos de uso
+      </p>
+      <h2
+        id="pitchei-em-acao-titulo"
+        class="mt-7 font-display text-4xl font-black leading-tight text-paper sm:text-5xl lg:text-6xl"
+      >
+        Veja a Pitchei em ação
+      </h2>
+    </div>
+
+    <div
+      class="mt-12 flex gap-3 overflow-x-auto pb-2 sm:justify-center"
+      role="tablist"
+      aria-label="Casos de uso da Pitchei"
+      data-action-tabs
+    >
+      {
+        cases.map((item, index) => (
+          <button
+            type="button"
+            role="tab"
+            aria-selected={index === 0 ? "true" : "false"}
+            aria-controls={`pitchei-case-${item.id}`}
+            id={`pitchei-tab-${item.id}`}
+            data-action-tab={item.id}
+            class={`inline-flex shrink-0 items-center gap-2 rounded-full border px-5 py-3 text-sm font-semibold transition-colors md:text-base ${
+              index === 0
+                ? "border-paper bg-paper text-ink"
+                : "border-paper/10 bg-paper/[0.02] text-paper/45 hover:border-paper/20 hover:text-paper/70"
+            }`}
+          >
+            <svg
+              class="h-4 w-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d={iconPath[item.icon]}></path>
+            </svg>
+            {item.label}
+          </button>
+        ))
+      }
+    </div>
+
+    <div
+      class="mx-auto mt-10 max-w-5xl rounded-[1.5rem] border border-paper/10 bg-[linear-gradient(180deg,rgba(247,243,238,0.075),rgba(247,243,238,0.025))] p-5 shadow-overlay backdrop-blur-overlay sm:p-7 md:p-10"
+      data-action-panels
+      data-reveal
+    >
+      {
+        cases.map((item, index) => (
+          <article
+            id={`pitchei-case-${item.id}`}
+            role="tabpanel"
+            aria-labelledby={`pitchei-tab-${item.id}`}
+            data-action-panel={item.id}
+            class={index === 0 ? "block" : "hidden"}
+          >
+            <div class="grid gap-4 border-b border-paper/10 pb-7 sm:grid-cols-[24px_1fr] sm:gap-6">
+              <svg
+                class="mt-1 h-5 w-5 text-orange"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d={iconPath[item.icon]}></path>
+              </svg>
+              <p class="max-w-3xl text-lg leading-relaxed text-paper/55 md:text-xl">
+                {item.context}
+              </p>
+            </div>
+
+            <div class="mt-7">
+              <p class="text-xs font-black uppercase tracking-[0.18em] text-paper/35">
+                Eles disseram:
+              </p>
+              <blockquote class="mt-4 max-w-4xl font-display text-2xl italic leading-relaxed text-paper/72 md:text-3xl">
+                “{item.heard}”
+              </blockquote>
+            </div>
+
+            <div class="mt-8 rounded-2xl border border-orange/45 bg-[linear-gradient(180deg,rgba(232,93,38,0.12),rgba(28,15,9,0.32))] p-6 shadow-[0_0_42px_rgba(232,93,38,0.12)] sm:p-8">
+              <p class="inline-flex items-center gap-3 text-xs font-black uppercase tracking-[0.18em] text-orange">
+                <span class="h-2 w-2 rounded-full bg-orange shadow-[0_0_18px_rgba(232,93,38,0.9)]"></span>
+                Diga isso:
+              </p>
+              <p class="mt-5 max-w-4xl text-xl leading-relaxed text-paper md:text-2xl">
+                {item.suggestion}
+              </p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  const setupActionDemo = (root: Document | HTMLElement = document) => {
+    const tabs = Array.from(root.querySelectorAll<HTMLButtonElement>("[data-action-tab]"));
+    const panels = Array.from(root.querySelectorAll<HTMLElement>("[data-action-panel]"));
+
+    tabs.forEach((tab) => {
+      if (tab.dataset.bound === "true") return;
+      tab.dataset.bound = "true";
+
+      tab.addEventListener("click", () => {
+        const selected = tab.dataset.actionTab;
+
+        tabs.forEach((candidate) => {
+          const active = candidate.dataset.actionTab === selected;
+          candidate.setAttribute("aria-selected", String(active));
+          candidate.classList.toggle("border-paper", active);
+          candidate.classList.toggle("bg-paper", active);
+          candidate.classList.toggle("text-ink", active);
+          candidate.classList.toggle("border-paper/10", !active);
+          candidate.classList.toggle("bg-paper/[0.02]", !active);
+          candidate.classList.toggle("text-paper/45", !active);
+          candidate.classList.toggle("hover:border-paper/20", !active);
+          candidate.classList.toggle("hover:text-paper/70", !active);
+        });
+
+        panels.forEach((panel) => {
+          panel.classList.toggle("hidden", panel.dataset.actionPanel !== selected);
+          panel.classList.toggle("block", panel.dataset.actionPanel === selected);
+        });
+      });
+    });
+  };
+
+  setupActionDemo();
+  document.addEventListener("astro:page-load", () => setupActionDemo());
+</script>

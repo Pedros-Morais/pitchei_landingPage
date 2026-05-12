@@ -1,0 +1,43 @@
+---
+type Row = { competitor: string; pitchei: string; criterion?: string };
+
+type Props = {
+  competitorName: string;
+  rows: Row[];
+};
+
+const { competitorName, rows } = Astro.props;
+const hasCriterion = rows.some((r) => r.criterion);
+const cols = hasCriterion ? "grid-cols-[1fr_1fr_1fr]" : "grid-cols-2";
+---
+
+<div class="relative overflow-hidden rounded-2xl border border-paper/10 bg-paper/[0.03] shadow-overlay">
+  <div class={`grid border-b border-paper/10 bg-paper/[0.03] ${cols}`}>
+    {hasCriterion && (
+      <div class="px-6 py-4 text-sm font-semibold uppercase tracking-wider text-paper/50">
+        Critério
+      </div>
+    )}
+    <div class="px-6 py-4 text-sm font-semibold uppercase tracking-wider text-paper/50">
+      {competitorName}
+    </div>
+    <div class="border-l border-paper/10 px-6 py-4 text-sm font-semibold uppercase tracking-wider text-orange">
+      Pitchei
+    </div>
+  </div>
+  {rows.map((row) => (
+    <div class={`grid border-b border-paper/10 last:border-b-0 ${cols}`}>
+      {hasCriterion && (
+        <div class="px-6 py-5 text-sm font-semibold text-paper/70 md:text-base">
+          {row.criterion}
+        </div>
+      )}
+      <div class="px-6 py-5 text-sm text-paper/60 md:text-base">
+        {row.competitor}
+      </div>
+      <div class="border-l border-paper/10 px-6 py-5 text-sm font-medium text-paper md:text-base">
+        {row.pitchei}
+      </div>
+    </div>
+  ))}
+</div>

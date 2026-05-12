@@ -1,0 +1,36 @@
+---
+type Props = {
+  title: string;
+  subtitle?: string;
+};
+
+const { title, subtitle } = Astro.props;
+---
+
+<section class="relative overflow-hidden border-b border-paper/10" aria-labelledby="usecase-cta-titulo">
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 -z-10"
+    style="background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(232,93,38,0.14) 0%, transparent 70%);"
+  ></div>
+  <div class="mx-auto max-w-4xl px-6 py-20 text-center md:py-24">
+    <h2
+      id="usecase-cta-titulo"
+      class="font-display text-3xl font-black leading-tight text-paper md:text-5xl"
+    >
+      {title}
+    </h2>
+    {subtitle && (
+      <p class="mx-auto mt-5 max-w-2xl text-lg text-paper/70">{subtitle}</p>
+    )}
+    <a
+      href="/#cadastro"
+      class="btn-shine mt-8 inline-flex items-center justify-center rounded-full bg-orange px-8 py-4 text-base font-semibold text-paper shadow-glow-soft transition-colors hover:bg-orange-hover"
+    >
+      Entrar na lista de espera
+    </a>
+    <p class="mt-4 text-xs text-paper/50">
+      macOS 13+ · sem cartão · sem spam
+    </p>
+  </div>
+</section>

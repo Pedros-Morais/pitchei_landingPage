@@ -1,0 +1,42 @@
+---
+import type { FAQItem } from "~/lib/schema";
+
+type Props = {
+  title?: string;
+  items: FAQItem[];
+};
+
+const { title = "Perguntas frequentes", items } = Astro.props;
+---
+
+<section class="border-b border-paper/10" aria-labelledby="usecase-faq-titulo">
+  <div class="mx-auto max-w-4xl px-6 py-20 md:py-24">
+    <p class="text-sm font-semibold uppercase tracking-wider text-orange">
+      FAQ
+    </p>
+    <h2
+      id="usecase-faq-titulo"
+      class="mt-3 font-display text-3xl font-black leading-tight text-paper md:text-4xl"
+    >
+      {title}
+    </h2>
+    <div class="mt-10 divide-y divide-paper/10 overflow-hidden rounded-2xl border border-paper/10 bg-paper/[0.03]">
+      {items.map((item, i) => (
+        <details class="group transition-colors open:bg-paper/[0.04]" open={i === 0}>
+          <summary class="flex cursor-pointer items-center justify-between gap-4 px-6 py-5 font-display text-lg font-bold text-paper marker:hidden hover:bg-paper/[0.02] [&::-webkit-details-marker]:hidden">
+            <span class="transition-colors group-open:text-orange">{item.question}</span>
+            <span
+              aria-hidden="true"
+              class="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-paper/15 text-paper/70 transition-all duration-300 group-open:rotate-45 group-open:border-orange/40 group-open:text-orange group-open:bg-orange/10"
+            >
+              +
+            </span>
+          </summary>
+          <div class="px-6 pb-6 pt-1 text-base leading-relaxed text-paper/70">
+            {item.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

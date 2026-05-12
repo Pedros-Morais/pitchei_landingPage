@@ -1,0 +1,197 @@
+---
+import Base from "~/layouts/Base.astro";
+import Breadcrumb from "~/components/Breadcrumb.astro";
+import CompareTable from "~/components/CompareTable.astro";
+import UseCaseCTA from "~/components/UseCaseCTA.astro";
+import UseCaseFAQ from "~/components/UseCaseFAQ.astro";
+import {
+  articleSchema,
+  breadcrumbSchema,
+  faqSchema,
+  organizationSchema,
+} from "~/lib/schema";
+import type { FAQItem } from "~/lib/schema";
+
+const crumbs = [
+  { name: "Início", url: "/" },
+  { name: "Comparativos", url: "/comparativo" },
+  { name: "Pitchei vs Otter", url: "/comparativo/pitchei-vs-otter" },
+];
+
+const rows = [
+  {
+    criterion: "Quando entrega valor",
+    competitor: "Depois da reunião (resumo, ata, action items)",
+    pitchei: "Durante a reunião (sugestão em tempo real)",
+  },
+  {
+    criterion: "O que faz com o áudio",
+    competitor: "Grava e armazena",
+    pitchei: "Processa em streaming e descarta",
+  },
+  {
+    criterion: "Idioma de origem",
+    competitor: "Inglês (suporte a português em expansão)",
+    pitchei: "pt-BR como primeira língua",
+  },
+  {
+    criterion: "Postura na reunião",
+    competitor: "Bot entra na call como participante",
+    pitchei: "Roda local no Mac, não entra na call",
+  },
+  {
+    criterion: "Para que serve",
+    competitor: "Documentação, busca em histórico, action items",
+    pitchei: "Performance ao vivo: pitch, vendas, entrevista",
+  },
+  {
+    criterion: "Plataformas",
+    competitor: "macOS, Windows, web, mobile",
+    pitchei: "macOS 13+ (Windows no roadmap)",
+  },
+  {
+    criterion: "Modelo",
+    competitor: "Freemium + tiers pagos",
+    pitchei: "Beta gratuito; modelo de preço em definição",
+  },
+];
+
+const faq: FAQItem[] = [
+  {
+    question: "Pitchei substitui o Otter?",
+    answer:
+      "Não. Otter é um transcritor — você usa ele se precisa de ata, resumo automático e busca no histórico das reuniões. Pitchei é um copiloto ao vivo — você usa ele se precisa de ajuda durante a conversa para vender, fazer pitch ou responder em entrevista. Eles resolvem problemas diferentes e podem rodar juntos.",
+  },
+  {
+    question: "Posso usar Otter e Pitchei na mesma reunião?",
+    answer:
+      "Sim. Otter entra na call como bot e grava. Pitchei roda local no seu Mac e te ajuda em tempo real. Não há conflito técnico — você só tem que comunicar a gravação aos outros participantes conforme as regras da sua empresa e da LGPD.",
+  },
+  {
+    question: "Qual deles funciona melhor em português?",
+    answer:
+      "Pitchei foi feito em pt-BR de origem — sugestões saem em português natural, não tradução literal. Otter melhorou bastante o suporte a português nos últimos anos, mas ainda é uma feature secundária ao produto principal em inglês.",
+  },
+  {
+    question: "Quanto custa cada um?",
+    answer:
+      "Otter tem um plano gratuito limitado e tiers a partir de US$ 9-10/mês. Pitchei está em beta fechado e tem modelo de preço sendo definido — a primeira coorte de design partners tem acesso gratuito.",
+  },
+];
+
+const pageTitle = "Pitchei vs Otter: qual escolher em 2026";
+const pageDescription =
+  "Comparativo honesto entre Pitchei (copiloto de reunião ao vivo em pt-BR) e Otter (transcritor com resumo automático). Quando usar cada um, preços, idioma e formato.";
+
+const jsonLd = [
+  organizationSchema(),
+  breadcrumbSchema(crumbs),
+  articleSchema({
+    headline: pageTitle,
+    description: pageDescription,
+    path: "/comparativo/pitchei-vs-otter",
+    datePublished: "2026-05-11",
+    keywords: [
+      "pitchei vs otter",
+      "alternativa otter em português",
+      "comparativo otter pitchei",
+    ],
+  }),
+  faqSchema(faq),
+];
+
+const keywords = [
+  "pitchei vs otter",
+  "alternativa otter em português",
+  "otter ai português",
+  "comparativo transcritor reunião",
+  "copiloto vs transcritor",
+];
+---
+
+<Base
+  title={pageTitle}
+  description={pageDescription}
+  path="/comparativo/pitchei-vs-otter"
+  type="article"
+  jsonLd={jsonLd}
+  keywords={keywords}
+  article={{
+    publishedTime: "2026-05-11",
+    section: "Comparativos",
+    tags: ["pitchei", "otter", "transcritor", "assistente de reunião"],
+  }}
+>
+  <Breadcrumb crumbs={crumbs} />
+
+  <article class="mx-auto max-w-4xl px-6 py-20 md:py-28">
+    <p class="text-sm font-semibold uppercase tracking-wider text-orange">
+      Comparativo
+    </p>
+    <h1 class="mt-3 font-display text-4xl font-black leading-tight text-paper md:text-6xl">
+      Pitchei vs Otter: qual escolher em 2026.
+    </h1>
+    <p class="mt-3 text-sm text-paper/50">Atualizado em 11 de maio de 2026.</p>
+
+    <div class="mt-10 rounded-2xl border border-orange/30 bg-orange/[0.04] p-6">
+      <p class="text-xs font-bold uppercase tracking-wider text-orange">TL;DR</p>
+      <ul class="mt-3 space-y-2 text-paper/85">
+        <li>• <strong class="text-paper">Otter</strong> é um transcritor: grava, transcreve e entrega resumo depois da reunião.</li>
+        <li>• <strong class="text-paper">Pitchei</strong> é um copiloto ao vivo: sugere o que dizer durante a conversa, em pt-BR, sem entrar na call.</li>
+        <li>• Use Otter se quer ata e busca em histórico. Use Pitchei se quer ajuda em tempo real para pitch, vendas ou entrevista.</li>
+        <li>• Eles resolvem problemas diferentes — podem rodar juntos.</li>
+      </ul>
+    </div>
+
+    <div class="mt-12 space-y-6 text-lg leading-relaxed text-paper/75">
+      <h2 class="mt-12 font-display text-3xl font-black leading-tight text-paper">A diferença em uma frase</h2>
+      <p>
+        <strong class="text-paper">Otter</strong> entrega valor <em>depois</em> da reunião — um resumo bem feito, com action items e busca em histórico. <strong class="text-paper">Pitchei</strong> entrega valor <em>durante</em> — uma sugestão de fala no momento em que você precisa, em português.
+      </p>
+      <p>
+        Não é uma briga entre os dois. É uma decisão sobre qual problema você quer resolver: <strong class="text-paper">documentação</strong> ou <strong class="text-paper">performance</strong>.
+      </p>
+    </div>
+
+    <h2 class="mt-16 font-display text-3xl font-black leading-tight text-paper">Comparativo lado a lado</h2>
+    <div class="mt-8">
+      <CompareTable competitorName="Otter" rows={rows} />
+    </div>
+
+    <h2 class="mt-16 font-display text-3xl font-black leading-tight text-paper">Quando escolher Otter</h2>
+    <ul class="mt-6 space-y-3 text-lg text-paper/75">
+      <li>• Você quer ata automática de reuniões para buscar depois.</li>
+      <li>• Seu time precisa de action items extraídos e enviados automaticamente.</li>
+      <li>• Você roda em Windows ou no navegador.</li>
+      <li>• Suas reuniões são majoritariamente em inglês.</li>
+    </ul>
+
+    <h2 class="mt-16 font-display text-3xl font-black leading-tight text-paper">Quando escolher Pitchei</h2>
+    <ul class="mt-6 space-y-3 text-lg text-paper/75">
+      <li>• Você tem reuniões em pt-BR onde a próxima frase pesa — pitch, vendas, entrevista, QBR difícil.</li>
+      <li>• Você quer ajuda <em>durante</em> a call, não depois.</li>
+      <li>• Você não quer um bot entrando na reunião como participante.</li>
+      <li>• Você usa macOS 13+ como ferramenta principal.</li>
+    </ul>
+
+    <h2 class="mt-16 font-display text-3xl font-black leading-tight text-paper">Pode usar os dois?</h2>
+    <p class="mt-6 text-lg text-paper/75">
+      Sim. Muitos times usam Otter (ou Fathom, ou Granola) para registrar, e Pitchei para conduzir. Otter entra na call como participante e grava. Pitchei roda no seu Mac e te sugere o que dizer. Eles não competem por áudio nem por tela.
+    </p>
+
+    <h2 class="mt-16 font-display text-3xl font-black leading-tight text-paper">E privacidade?</h2>
+    <p class="mt-6 text-lg text-paper/75">
+      Otter armazena gravação e transcrição na nuvem deles. Pitchei não armazena áudio em lugar nenhum — processa em tempo real via WebSocket criptografado e descarta o texto depois da sessão. Se você lida com conversas confidenciais que não podem ser arquivadas, isso é um diferencial relevante. <a href="/privacidade" class="text-orange hover:text-flame">Ler política completa</a>.
+    </p>
+  </article>
+
+  <UseCaseFAQ
+    title="Perguntas comuns sobre Pitchei vs Otter"
+    items={faq}
+  />
+
+  <UseCaseCTA
+    title="Quer testar Pitchei sem trocar nada do seu setup?"
+    subtitle="O beta roda em paralelo a qualquer transcritor. Entre na lista de espera."
+  />
+</Base>
