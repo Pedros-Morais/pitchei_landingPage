@@ -34,6 +34,20 @@ const canonical = new URL(props.path ?? "/", SITE.url).toString();
 <!doctype html>
 <html lang={SITE.locale} class="scroll-smooth">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PFZS1F8F9R"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-PFZS1F8F9R");
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
