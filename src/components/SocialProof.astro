@@ -1,0 +1,123 @@
+---
+/*
+ * Social proof — honest for a pre-launch product.
+ *
+ * Nothing here is fabricated:
+ *  - `testimonials` is EMPTY by default. The quote grid only renders once you
+ *    add REAL quotes from design partners. Fill each entry with a real person
+ *    (or clearly-consented anonymized role) — do not invent names.
+ *  - `waitlistCount` is null by default and only renders when set to a REAL
+ *    number (wire it to the Supabase `waitlist` count, or hardcode a true value).
+ *
+ * Until you have real quotes, the section shows a truthful "early access /
+ * design partner" credibility block instead.
+ */
+
+type Testimonial = {
+  quote: string;
+  author: string; // real name or consented "Cargo, Empresa"
+  role: string;
+};
+
+// TODO: substituir por depoimentos REAIS de design partners antes do launch.
+// Exemplo de formato:
+// { quote: "Fechei a call sem travar uma vez.", author: "Ana R.", role: "Head de Vendas" }
+const testimonials: Testimonial[] = [];
+
+// TODO: definir com o número REAL da lista de espera (ou null para esconder).
+const waitlistCount = null as number | null;
+
+const pillars = [
+  {
+    titulo: "Beta fechado, por convite",
+    texto:
+      "Os primeiros 100 moldam o produto com feedback direto. Vagas limitadas, sem fila anônima.",
+  },
+  {
+    titulo: "pt-BR de verdade",
+    texto:
+      "Sotaque, gíria e contexto de negócio brasileiro. Feito no Brasil, para quem fecha reunião em português.",
+  },
+  {
+    titulo: "Privacidade primeiro",
+    texto:
+      "Nada é gravado. O áudio é processado em tempo real e o texto é descartado quando a sessão acaba.",
+  },
+];
+
+const hasTestimonials = testimonials.length > 0;
+---
+
+<section
+  id="prova-social"
+  class="border-b border-paper/10"
+  aria-labelledby="prova-social-titulo"
+>
+  <div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+    <div class="max-w-3xl" data-reveal-stagger>
+      <p class="text-sm font-semibold uppercase tracking-wider text-orange">
+        {hasTestimonials ? "Quem já usou" : "Primeiros usuários"}
+      </p>
+      <h2
+        id="prova-social-titulo"
+        data-h2-split
+        class="mt-3 font-display text-4xl font-black leading-tight text-paper md:text-5xl"
+      >
+        {hasTestimonials
+          ? "Gente que não trava mais na hora certa."
+          : "Construído com quem vive reunião de verdade."}
+      </h2>
+      <p class="mt-5 text-lg text-paper/70">
+        {hasTestimonials
+          ? "Profissionais que entraram no beta fechado e passaram a ter a resposta certa na ponta da língua."
+          : "Pitchei está em beta fechado, sendo moldado por design partners que dependem de reunião todo dia — vendas, pitch, entrevista e negociação."}
+      </p>
+    </div>
+
+    {hasTestimonials ? (
+      <div class="mt-14 grid gap-6 md:grid-cols-3" data-reveal-stagger>
+        {testimonials.map((t) => (
+          <figure class="magnetic-glow relative flex flex-col rounded-2xl border border-paper/10 bg-paper/[0.03] p-7">
+            <blockquote class="relative flex-1 font-display text-lg leading-snug text-paper">
+              “{t.quote}”
+            </blockquote>
+            <figcaption class="mt-6 text-sm">
+              <span class="font-semibold text-paper">{t.author}</span>
+              <span class="block text-paper/55">{t.role}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    ) : (
+      <div class="mt-14 grid gap-6 md:grid-cols-3" data-reveal-stagger>
+        {pillars.map((p) => (
+          <article class="magnetic-glow group relative flex flex-col overflow-hidden rounded-2xl border border-paper/10 bg-paper/[0.03] p-7 transition-colors hover:border-paper/20">
+            <div
+              aria-hidden="true"
+              class="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full opacity-40 transition-opacity group-hover:opacity-60"
+              style="background: radial-gradient(circle, rgba(232,93,38,0.16) 0%, transparent 70%);"
+            ></div>
+            <h3 class="relative font-display text-xl font-bold leading-snug text-paper">
+              {p.titulo}
+            </h3>
+            <p class="relative mt-3 text-sm text-paper/70">{p.texto}</p>
+          </article>
+        ))}
+      </div>
+    )}
+
+    {waitlistCount !== null && (
+      <p class="mt-12 flex items-center gap-3 text-sm text-paper/60" data-reveal>
+        <span aria-hidden="true" class="inline-flex -space-x-2">
+          <span class="inline-block h-6 w-6 rounded-full border border-ink bg-orange/70"></span>
+          <span class="inline-block h-6 w-6 rounded-full border border-ink bg-amber/70"></span>
+          <span class="inline-block h-6 w-6 rounded-full border border-ink bg-flame/70"></span>
+        </span>
+        <span>
+          <strong class="font-semibold text-paper">{waitlistCount.toLocaleString("pt-BR")}</strong>
+          profissionais já na lista de espera.
+        </span>
+      </p>
+    )}
+  </div>
+</section>

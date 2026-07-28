@@ -55,10 +55,13 @@ export function mountInsane(): Cleanup {
     const heroST = ScrollTrigger.create({
       trigger: hero,
       start: "top top",
-      end: "+=200%", // ~3 viewports
+      // Scroll distance the hero stays pinned while the 3 HUD scenes play.
+      // Tunable: higher = more scroll-through, lower = snappier. Was "+=200%"
+      // (3 viewports) which felt like the page was stuck on the hero.
+      end: "+=60%",
       pin: true,
       pinSpacing: true,
-      scrub: 0.6,
+      scrub: 0.5,
       anticipatePin: 1,
       onUpdate(self) {
         hudRoot.style.setProperty("--scene-progress", self.progress.toFixed(3));

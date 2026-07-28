@@ -60,7 +60,8 @@ Pitchei não é um scribe (não substitui Otter/Fathom/Granola/Krisp). Pitchei n
 - O áudio nunca é gravado em disco nem na nuvem. O texto transcrito existe só em memória durante a sessão e é descartado depois.
 - Nenhum modelo treina com a conversa do usuário.
 - Mercado: Brasil. Idioma do produto: pt-BR.
-- Status: beta fechado, lista de espera aberta (maio de 2026).
+- Status: beta fechado, lista de espera aberta (previsão de abertura em agosto de 2026).
+- Preço: grátis durante o beta fechado (primeira coorte de design partners, em troca de feedback); o preço da versão final ainda está em definição.
 - Diferença em uma frase: copiloto que sugere durante a reunião — vs transcritor que resume depois.
 
 ## Contato

@@ -24,12 +24,12 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     question: "Preciso de Mac? E Windows?",
     answer:
-      "Hoje o Pitchei roda em macOS 13 ou superior. Versão Windows está no roadmap, mas ainda sem data confirmada. Se você é Windows, entre na lista de espera para ser avisado.",
+      "Hoje o Pitchei roda em macOS 13 ou superior. A versão Windows está no roadmap, mas ainda sem data confirmada. É de Windows? Entre na lista de espera mesmo assim — a gente avisa você assim que o beta para Windows abrir.",
   },
   {
     question: "Quanto custa?",
     answer:
-      "O modelo de preço final ainda está sendo definido. A primeira coorte de design partners terá acesso gratuito ao beta em troca de feedback. Quem entrar na lista de espera fica entre os primeiros a ser convidado.",
+      "Grátis durante o beta fechado. A primeira coorte de design partners usa o Pitchei sem custo, em troca de feedback. O preço da versão final ainda está sendo definido — entre na lista de espera para ser um dos primeiros convidados.",
   },
   {
     question: "Que modelo de IA o Pitchei usa?",

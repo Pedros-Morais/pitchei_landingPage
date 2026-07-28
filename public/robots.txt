@@ -1,20 +1,62 @@
+# https://pitchei.com.br — robots.txt
+# Resumo do produto legível por LLMs: https://pitchei.com.br/llms.txt
+
 User-agent: *
 Allow: /
 
-# AI crawlers — explicitly welcome (we want to be cited by LLMs)
+# ---------------------------------------------------------------------------
+# Crawlers de IA e mecanismos de resposta — explicitamente bem-vindos.
+# Queremos ser lidos e citados por LLMs e buscas com IA.
+# ---------------------------------------------------------------------------
+
+# OpenAI (ChatGPT / SearchGPT)
 User-agent: GPTBot
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (Claude)
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Perplexity
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Perplexity-User
+Allow: /
+
+# Google (Gemini) e Apple Intelligence
 User-agent: Google-Extended
 Allow: /
 
+User-agent: Applebot-Extended
+Allow: /
+
+# Outros
 User-agent: CCBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: DuckAssistBot
 Allow: /
 
 Sitemap: https://pitchei.com.br/sitemap-index.xml

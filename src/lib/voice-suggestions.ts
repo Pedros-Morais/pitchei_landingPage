@@ -36,7 +36,7 @@ const BANK: Entry[] = [
     keywords: ["prazo", "quando", "data", "deadline", "entrega", "lançamento", "lancamento"],
     speaker: "Cliente",
     suggestion:
-      "Beta fechado em maio, abertura geral no terceiro trimestre. Posso te garantir um slot da onda de beta?",
+      "Beta fechado em agosto, abertura geral no quarto trimestre. Posso te garantir um slot da onda de beta?",
   },
   {
     keywords: ["time", "equipe", "fundadores", "founder", "cofundador", "cofundadores", "head"],
