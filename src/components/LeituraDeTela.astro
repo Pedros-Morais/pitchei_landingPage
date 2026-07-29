@@ -1,0 +1,156 @@
+---
+const features = [
+  {
+    icon: "M3 4h18v12H3zM8 21h8M12 16v5",
+    titulo: "Captura sob demanda",
+    desc: "Aperte o atalho e o Pitchei lê a janela ativa — um print único, na hora. Nada é gravado nem enviado sem você pedir.",
+  },
+  {
+    icon: "M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z",
+    titulo: "Entende o contexto",
+    desc: "Código, planilhas, e-mails, slides ou a pergunta de uma entrevista. Ele lê o que está na tela e cruza com o que foi dito na conversa.",
+  },
+  {
+    icon: "M13 2 3 14h7l-1 8 10-12h-7l1-8z",
+    titulo: "Responde na hora",
+    desc: "A resposta aparece na mesma janela glanceável do áudio. Você usa, pede outra ou ignora — em meio segundo.",
+  },
+];
+---
+
+<section
+  id="le-a-tela"
+  class="relative overflow-hidden border-b border-paper/10"
+  aria-labelledby="le-a-tela-titulo"
+>
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 -z-10"
+    style="background: radial-gradient(ellipse 70% 50% at 80% 20%, rgba(232,93,38,0.10) 0%, transparent 70%);"
+  ></div>
+
+  <div class="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:py-28 lg:grid-cols-2 lg:gap-16">
+    {/* Copy */}
+    <div data-reveal-stagger>
+      <p class="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-orange">
+        <span class="inline-block h-1.5 w-1.5 rounded-full bg-orange"></span>
+        Novo · Visão de tela
+      </p>
+      <h2
+        id="le-a-tela-titulo"
+        data-h2-split
+        class="mt-3 font-display text-4xl font-black leading-tight text-paper md:text-5xl"
+      >
+        Não é só ouvir. Ele lê a sua tela e responde.
+      </h2>
+      <p class="mt-5 text-lg text-paper/70">
+        Além de escutar a conversa, o Pitchei enxerga o que aparece na sua
+        tela — uma pergunta compartilhada, um trecho de código, uma planilha,
+        um contrato. Um atalho e ele lê o contexto e devolve a resposta certa,
+        na hora.
+      </p>
+
+      <ul class="mt-9 grid gap-6" data-reveal-stagger>
+        {features.map((f) => (
+          <li class="flex gap-4">
+            <span
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-orange/25 bg-orange/[0.08] text-orange"
+              aria-hidden="true"
+            >
+              <svg
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d={f.icon}></path>
+              </svg>
+            </span>
+            <div>
+              <h3 class="font-display text-lg font-bold text-paper">{f.titulo}</h3>
+              <p class="mt-1 text-sm leading-relaxed text-paper/65">{f.desc}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+
+      <p class="mt-9 max-w-xl text-sm text-paper/50">
+        Usa a ScreenCaptureKit nativa do macOS. A imagem é processada na hora
+        e descartada — nunca vira histórico.
+      </p>
+    </div>
+
+    {/* Visual mock */}
+    <div class="relative" data-reveal>
+      <div
+        aria-hidden="true"
+        class="pointer-events-none absolute -inset-6 -z-10 rounded-[2rem]"
+        style="background: radial-gradient(circle at 50% 40%, rgba(232,93,38,0.14), transparent 70%);"
+      ></div>
+
+      {/* macOS-style shared-screen window */}
+      <div
+        class="overflow-hidden rounded-2xl border border-paper/10 shadow-overlay"
+        style="background: linear-gradient(180deg, #2A1810 0%, #1C0F09 100%);"
+        aria-hidden="true"
+      >
+        <div class="flex items-center gap-2 border-b border-paper/10 bg-paper/[0.03] px-4 py-3">
+          <span class="h-2.5 w-2.5 rounded-full bg-[#FF5F57]"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-[#28C840]"></span>
+          <span class="ml-3 text-[11px] font-medium tracking-wide text-paper/45">
+            Tela compartilhada — Entrevista técnica
+          </span>
+        </div>
+
+        <div class="p-5">
+          <p class="text-[10px] font-semibold uppercase tracking-[0.16em] text-paper/40">
+            Na tela
+          </p>
+          <div class="mt-3 rounded-xl border border-paper/10 bg-paper/[0.03] p-4 font-mono text-[13px] leading-relaxed text-paper/80">
+            <span class="text-paper/40">// Given an array, return the length of the</span><br />
+            <span class="text-paper/40">// longest subarray with sum ≤ k.</span><br />
+            <span class="text-orange">function</span> <span class="text-paper">maxLen</span>(nums, k) &#123; ... &#125;
+          </div>
+        </div>
+      </div>
+
+      {/* Pitchei answer overlay */}
+      <div
+        class="relative -mt-6 ml-auto w-[90%] rounded-2xl border border-orange/45 p-5 shadow-[0_0_42px_rgba(232,93,38,0.16)] backdrop-blur-overlay"
+        style="background: linear-gradient(180deg, rgba(232,93,38,0.12), rgba(28,15,9,0.82));"
+        aria-hidden="true"
+      >
+        <div class="flex items-center gap-2 text-xs">
+          <span class="relative inline-flex h-2 w-2">
+            <span class="absolute inline-flex h-full w-full animate-pulse-soft rounded-full" style="background: #FF7A45"></span>
+            <span class="relative inline-flex h-2 w-2 rounded-full" style="background: #FF7A45"></span>
+          </span>
+          <span class="font-semibold uppercase tracking-[0.16em] text-orange">
+            Pitchei leu a tela
+          </span>
+        </div>
+        <p class="mt-3 text-sm leading-relaxed text-paper md:text-base">
+          Use dois ponteiros com uma janela deslizante: expanda à direita
+          somando <code class="font-mono text-orange">nums[r]</code>, e encolha
+          pela esquerda enquanto a soma passar de <code class="font-mono text-orange">k</code>.
+          O maior <code class="font-mono text-orange">r − l + 1</code> é a resposta. O(n).
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="rounded-full bg-orange px-3 py-1.5 text-[11px] font-semibold text-paper">
+            Usar resposta
+          </span>
+          <span class="rounded-full border border-paper/15 px-3 py-1.5 text-[11px] font-medium text-paper/80">
+            Explicar melhor
+          </span>
+          <span class="rounded-full border border-paper/15 px-3 py-1.5 text-[11px] font-medium text-paper/80">
+            Dispensar
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
