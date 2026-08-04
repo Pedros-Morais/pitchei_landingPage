@@ -9,36 +9,41 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     question: "O outro lado da call sabe que estou usando o Pitchei?",
     answer:
-      "Não. Pitchei roda local no seu Mac, não entra na reunião como participante e não envia link nenhum para os outros. O overlay com as sugestões aparece apenas na sua tela.",
+      "Não. O Pitchei roda local no seu computador, não entra na reunião como participante e não envia link nenhum para os outros. O overlay com as sugestões aparece apenas na sua tela.",
   },
   {
     question: "Em que reuniões o Pitchei funciona?",
     answer:
-      "Em qualquer reunião que toque áudio no seu Mac: Google Meet, Zoom, Microsoft Teams, Slack Huddles, FaceTime, ligações por celular pareado. Pitchei captura o áudio do sistema, então não depende de integração com plataformas específicas.",
+      "Em qualquer reunião que toque áudio no seu computador: Google Meet, Zoom, Microsoft Teams, Slack Huddles, FaceTime ou ligações por celular pareado. O Pitchei captura o áudio do sistema, então não depende de integração com plataformas específicas.",
+  },
+  {
+    question: "O Pitchei consegue ler a minha tela?",
+    answer:
+      "Sim. Além de ouvir a conversa, o Pitchei lê a sua tela quando você aciona o atalho: uma pergunta compartilhada, um trecho de código, uma planilha ou um contrato. Ele entende o contexto e sugere a resposta na hora. A captura acontece só quando você pede, a imagem é processada na hora e descartada em seguida, e nunca vira histórico.",
   },
   {
     question: "Funciona em português?",
     answer:
-      "Sim. Pitchei foi feito para o profissional brasileiro. A transcrição entende sotaque e expressões em pt-BR, e as sugestões saem em português natural — não tradução literal de inglês.",
+      "Sim. O Pitchei foi feito para o profissional brasileiro. A transcrição entende sotaque e expressões em pt-BR, e as sugestões saem em português natural, sem tradução literal de inglês.",
   },
   {
-    question: "Preciso de Mac? E Windows?",
+    question: "O Pitchei funciona no Mac e no Windows?",
     answer:
-      "Hoje o Pitchei roda em macOS 13 ou superior. A versão Windows está no roadmap, mas ainda sem data confirmada. É de Windows? Entre na lista de espera mesmo assim — a gente avisa você assim que o beta para Windows abrir.",
+      "Sim. O Pitchei é um aplicativo de mesa para Mac e Windows. Você não precisa de plugin de navegador nem entra na call: basta ter o app aberto durante a reunião. Entre na lista de espera e escolha a sua plataforma quando o convite do beta chegar.",
   },
   {
     question: "Quanto custa?",
     answer:
-      "Grátis durante o beta fechado. A primeira coorte de design partners usa o Pitchei sem custo, em troca de feedback. O preço da versão final ainda está sendo definido — entre na lista de espera para ser um dos primeiros convidados.",
+      "Grátis durante o beta fechado. A primeira coorte de design partners usa o Pitchei sem custo, em troca de feedback. O preço da versão final ainda está sendo definido. Entre na lista de espera para ser um dos primeiros convidados.",
   },
   {
     question: "Que modelo de IA o Pitchei usa?",
     answer:
-      "A gente escolhe por você. Neuralake é o nosso fornecedor principal de IA — combina latência baixa, qualidade em português e infraestrutura independente. OpenAI e Google Gemini ficam como redundância automática. Você não configura API key, não escolhe provider, só conversa. Nenhum modelo treina com sua reunião.",
+      "A gente escolhe por você. Neuralake é o nosso fornecedor principal de IA, com latência baixa, qualidade em português e infraestrutura independente. OpenAI e Google Gemini ficam como redundância automática. Você não configura API key, não escolhe provider, só conversa. Nenhum modelo treina com a sua reunião.",
   },
   {
-    question: "Pitchei substitui um Otter ou um Granola?",
+    question: "O Pitchei substitui um Otter ou um Granola?",
     answer:
-      "Não. Otter, Fathom e Granola são transcritores: gravam e entregam o resumo depois. Pitchei é um parceiro: entrega valor durante a reunião, com sugestões em tempo real. Os dois podem rodar juntos sem conflito.",
+      "Não. Otter, Fathom e Granola são transcritores: gravam e entregam o resumo depois. O Pitchei é um copiloto: entrega valor durante a reunião, com sugestões em tempo real. Os dois podem rodar juntos sem conflito.",
   },
 ];

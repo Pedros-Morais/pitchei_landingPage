@@ -3,11 +3,11 @@ export const SITE = {
   domain: "pitchei.com.br",
   url: "https://pitchei.com.br",
   locale: "pt-BR",
-  tagline: "O parceiro que fala quando você precisa",
+  tagline: "Copiloto de reunião com IA, em português",
   shortDescription:
-    "Pitchei é o parceiro invisível que ouve sua reunião em tempo real e sugere o que dizer no momento certo, em português.",
+    "O Pitchei é o copiloto de reunião com IA para Mac e Windows: ouve a conversa e lê a sua tela em tempo real e sugere o que dizer em português, ao vivo e sem ninguém saber.",
   longDescription:
-    "Pitchei é um aplicativo de mesa para macOS que fica do seu lado em reuniões importantes — ouve a conversa em tempo real e sugere o que falar, em português, sem ninguém saber. Diferente de transcritores, que entregam um resumo depois, Pitchei intervém quando você trava ou precisa de uma resposta sob pressão.",
+    "O Pitchei é um aplicativo de mesa para Mac e Windows que fica do seu lado nas reuniões que importam. Ele ouve a conversa e lê a sua tela em tempo real e sugere o que dizer, em português, sem ninguém saber. Diferente de transcritores como Otter e Fathom, que só entregam o resumo depois da reunião, o Pitchei ajuda no exato momento em que você trava ou precisa de uma resposta sob pressão.",
   ogImage: "/og-default.png",
   twitter: "@pitchei",
   email: "contato@pitchei.com.br",

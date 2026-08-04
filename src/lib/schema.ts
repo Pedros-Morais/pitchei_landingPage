@@ -57,7 +57,7 @@ export function softwareApplicationSchema() {
     "@type": "SoftwareApplication",
     "@id": `${SITE.url}/#app`,
     name: SITE.name,
-    operatingSystem: "macOS 13+",
+    operatingSystem: "Windows, macOS",
     applicationCategory: "BusinessApplication",
     applicationSubCategory: "MeetingAssistant",
     description: SITE.longDescription,
@@ -68,7 +68,8 @@ export function softwareApplicationSchema() {
     featureList: [
       "Transcrição em tempo real em português",
       "Sugestões contextuais durante a reunião",
-      "Captura local via ScreenCaptureKit (macOS)",
+      "Leitura de tela sob demanda (responde ao que aparece na tela)",
+      "Captura local de áudio e tela no Mac e no Windows",
       "Latência menor que 1 segundo",
       "Sem gravação de áudio",
       "Texto descartado depois da sessão",

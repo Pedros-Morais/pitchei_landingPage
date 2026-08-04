@@ -83,7 +83,7 @@ Em time comercial B2B faz sentido ter transcritor + copiloto. Cada um cobre uma 
 - **Transcritor:** registro, action items, sync CRM, coaching offline com playback.
 - **Copiloto:** condução em tempo real, objeção, discovery, fechamento.
 
-Eles não conflitam tecnicamente — o transcritor entra na call como bot, o copiloto roda local no seu Mac.
+Eles não conflitam tecnicamente: o transcritor entra na call como bot, o copiloto roda local no seu computador.
 
 ## O que esperar de cada categoria em 2026
 
@@ -95,6 +95,6 @@ A divisão de categoria vai ficar mais nítida nos próximos 12 meses:
 
 ## Como começar
 
-Se você está em pt-BR, em macOS, e o problema que você sente é "trava na hora da resposta" — você está no público do Pitchei. <a href="/#cadastro">Entre na lista de espera</a>.
+Se você está em pt-BR, no Mac ou no Windows, e o problema que você sente é "trava na hora da resposta", você está no público do Pitchei. <a href="/#cadastro">Entre na lista de espera</a>.
 
 Se o problema é "perco tempo escrevendo ata", veja Otter ou Fathom. São excelentes.
