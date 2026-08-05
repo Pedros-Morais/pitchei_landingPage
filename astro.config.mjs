@@ -1,13 +1,41 @@
-import { readdirSync, readFileSync } from "node:fs";
+import { readdirSync, readFileSync, existsSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 
-// Last time the evergreen/marketing pages (home, casos-de-uso, comparativo,
-// sobre, privacidade, termos) changed materially. Bump this when you ship a
-// real copy/content update so <lastmod> stays honest for crawlers.
+// Fallback <lastmod> for any page whose date we can't derive from git history
+// (e.g. shallow-clone CI or a non-git deploy). Bump when you ship a real copy
+// update so it stays honest for crawlers.
 const SITE_UPDATED = "2026-08-04";
+
+const PAGES_DIR = fileURLToPath(new URL("./src/pages/", import.meta.url));
+
+// Resolve a sitemap URL path back to the .astro source file that renders it.
+function pageFileFor(path) {
+  const rel = path === "" ? "index" : path.slice(1);
+  for (const candidate of [`${rel}.astro`, `${rel}/index.astro`]) {
+    const abs = PAGES_DIR + candidate;
+    if (existsSync(abs)) return abs;
+  }
+  return null;
+}
+
+// Date of the last commit that touched a file (strict ISO 8601), or null if
+// git isn't available. Gives marketing pages a real, self-maintaining lastmod.
+function gitLastmod(absFile) {
+  try {
+    return (
+      execFileSync("git", ["log", "-1", "--format=%cI", "--", absFile], {
+        encoding: "utf8",
+        stdio: ["ignore", "pipe", "ignore"],
+      }).trim() || null
+    );
+  } catch {
+    return null;
+  }
+}
 
 // Read blog post dates from frontmatter at build time so each post gets a real
 // <lastmod> (updatedAt if present, otherwise publishedAt). No extra deps: a
@@ -35,10 +63,13 @@ const BLOG_INDEX_LASTMOD = Object.values(BLOG_LASTMOD)
   .at(-1);
 
 function lastmodFor(path) {
+  // Blog: editorial dates from frontmatter (updatedAt ?? publishedAt).
   const post = /^\/blog\/(.+)$/.exec(path);
   if (post && BLOG_LASTMOD[post[1]]) return BLOG_LASTMOD[post[1]];
   if (path === "/blog" && BLOG_INDEX_LASTMOD) return BLOG_INDEX_LASTMOD;
-  return SITE_UPDATED;
+  // Everything else: last git commit that touched the page source.
+  const file = pageFileFor(path);
+  return (file && gitLastmod(file)) || SITE_UPDATED;
 }
 
 export default defineConfig({
