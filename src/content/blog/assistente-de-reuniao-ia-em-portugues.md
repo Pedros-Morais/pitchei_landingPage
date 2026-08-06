@@ -25,7 +25,7 @@ O termo "AI meeting assistant" virou guarda-chuva pra qualquer ferramenta que to
 2. **Notetaker pessoal.** Reflect, Mem, Granola Personal. Foco em registro e busca pessoal. Menos workflow comercial, mais memória.
 3. **Copiloto ao vivo.** Categoria mais nova. Sugere o que dizer enquanto você fala. Pitchei é dessa categoria.
 
-Confundir as três é caro. Você compra Otter esperando ajuda em pitch de investidor — não é o trabalho dele. Você espera ata automática de Pitchei — também não é.
+Confundir as três é caro. Você compra Otter esperando ajuda em pitch de investidor, não é o trabalho dele. Você espera ata automática de Pitchei, também não é.
 
 ## Como funciona um transcritor
 
@@ -58,7 +58,7 @@ Limitação: <strong>não entrega resumo depois</strong>. Não é a ferramenta d
 
 A diferença não é só idioma. É tom.
 
-Otter traduzido pra português soa como Otter em inglês: ata corporativa formal, action items em bullet, vocabulário traduzido literal. Funciona pra registro — não é onde o tom mais importa.
+Otter traduzido pra português soa como Otter em inglês: ata corporativa formal, action items em bullet, vocabulário traduzido literal. Funciona pra registro, não é onde o tom mais importa.
 
 Em copiloto ao vivo, tom é o produto. Quando o cliente diz "tá caro", a sugestão que aparece na sua tela precisa soar como você falaria. Não pode ser tradução de "you should reframe the value proposition". Precisa ser <em>"faz sentido olhar comparativo. Quando vocês citaram a dor de X..."</em>.
 
@@ -91,7 +91,7 @@ A divisão de categoria vai ficar mais nítida nos próximos 12 meses:
 
 - Transcritores virando ferramenta de ops de comercial (sync CRM, coaching, scoring).
 - Copilotos ao vivo entrando em ferramenta pessoal de performance (pitch, entrevista, conversa difícil).
-- Convergência de feature do meio (resumo automático em copiloto, sugestão em transcritor) — sem que isso elimine a diferença de produto principal.
+- Convergência de feature do meio (resumo automático em copiloto, sugestão em transcritor), sem que isso elimine a diferença de produto principal.
 
 ## Como começar
 

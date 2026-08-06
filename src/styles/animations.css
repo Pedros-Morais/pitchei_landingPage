@@ -1,5 +1,5 @@
 /*
- * Pitchei landing — animation utility layer
+ * Pitchei landing, animation utility layer
  * GPU-only (transform/opacity). Respects prefers-reduced-motion globally.
  *
  * Patterns:
@@ -374,7 +374,7 @@ details[open] .faq-body {
 }
 
 /* ----- step numeral (Como Funciona) -------------------------------------- */
-/* Clip-path wipe reveal — left to right. Glyph-metric independent. */
+/* Clip-path wipe reveal, left to right. Glyph-metric independent. */
 .step-numeral {
   display: inline-block;
   font-variant-numeric: tabular-nums lining-nums;
@@ -566,7 +566,7 @@ html.cursor-on summary {
   opacity: 0 !important;
 }
 
-/* ----- Magnetic CTA — base affordance ------------------------------------ */
+/* ----- Magnetic CTA, base affordance ------------------------------------ */
 [data-magnetic] {
   display: inline-flex;
   will-change: transform;
@@ -577,7 +577,7 @@ html.cursor-on summary {
   display: inline-flex;
   overflow: hidden;
   vertical-align: top;
-  /* Words can be wider than container line — overflow only on Y axis */
+  /* Words can be wider than container line, overflow only on Y axis */
   overflow-x: visible;
   overflow-y: hidden;
   line-height: 1.05;

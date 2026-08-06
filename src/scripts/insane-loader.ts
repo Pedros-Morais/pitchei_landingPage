@@ -1,5 +1,5 @@
 /*
- * Insane animation layer loader — gate (motion-reduce + viewport + pointer + idle)
+ * Insane animation layer loader, gate (motion-reduce + viewport + pointer + idle)
  * + dynamic import do módulo GSAP. Roda no bundle inicial (~0.5KB gz).
  *
  * GSAP + ScrollTrigger entram num chunk separado, lazy-loaded.

@@ -1,5 +1,5 @@
 /*
- * HUD tap-to-cycle — chip-based scene navigation for mobile / reduced-motion.
+ * HUD tap-to-cycle, chip-based scene navigation for mobile / reduced-motion.
  *
  * Default mode is "loop" (CSS-driven timer). On screens < lg (1024px) or when
  * prefers-reduced-motion is set, we switch the root to data-hud-mode="tap" so
@@ -54,7 +54,7 @@ function boot() {
   if (!root) return;
   booted = true;
 
-  // Wire chip listeners regardless of mode — they're a no-op until tap mode is active.
+  // Wire chip listeners regardless of mode, they're a no-op until tap mode is active.
   root.querySelectorAll<HTMLButtonElement>("[data-hud-chip]").forEach((btn) => {
     btn.addEventListener("click", () => {
       const idx = Number(btn.dataset.sceneIndex ?? "0");

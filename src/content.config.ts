@@ -17,7 +17,7 @@ const blog = defineCollection({
   }),
 });
 
-// Pitch guides — a JSON-driven, structured content hub ("a arte do pitch").
+// Pitch guides, a JSON-driven, structured content hub ("a arte do pitch").
 // Each JSON file becomes a fully-optimized page at /guia-de-pitch/<id>. The
 // content is structured (not free prose) so every entry stays unique and
 // substantive AND maps directly to rich results (HowTo from `framework`,
@@ -40,7 +40,7 @@ const guias = defineCollection({
       subheading: z.string(),
     }),
     // Answer-first block ("Resposta rápida"): a direct 40-60 word answer to the
-    // page's core question. This is the primary GEO lever — LLMs lift the concise
+    // page's core question. This is the primary GEO lever, LLMs lift the concise
     // answer and it's the target of the Speakable markup.
     answer: z.string().optional(),
     tldr: z.array(z.string()).default([]),

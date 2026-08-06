@@ -1,14 +1,14 @@
 ---
 /*
- * Pitchei wordmark — hand-lettered SVG do Brand Guide v2.
+ * Pitchei wordmark, hand-lettered SVG do Brand Guide v2.
  * ViewBox 0 0 300 80 (ratio 3.75:1). Speech bubble laranja é o brand mark.
  * Swoosh opcional via withSwoosh.
  *
  * variants:
- *   default     — bubble laranja, wordmark paper, swoosh laranja (para superfícies escuras)
- *   on-orange   — tudo paper, swoosh paper transparente (para fundos laranja)
- *   light       — wordmark ink, bubble laranja, swoosh laranja (para fundos claros)
- *   icon-only   — só símbolo P + bubble (use withWordmark={false})
+ *   default, bubble laranja, wordmark paper, swoosh laranja (para superfícies escuras)
+ *   on-orange, tudo paper, swoosh paper transparente (para fundos laranja)
+ *   light, wordmark ink, bubble laranja, swoosh laranja (para fundos claros)
+ *   icon-only, só símbolo P + bubble (use withWordmark={false})
  */
 
 type Variant = "default" | "on-orange" | "light";
@@ -53,7 +53,7 @@ const width = withWordmark ? Math.round(height * wordmarkRatio) : Math.round(hei
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    {/* Speech bubble — the brand mark */}
+    {/* Speech bubble, the brand mark */}
     <ellipse cx="105" cy="10" rx="10" ry="10" fill={palette.bubble} />
     <path d="M100 18 L105 26 L111 18" fill={palette.bubble} />
 
@@ -99,7 +99,7 @@ const width = withWordmark ? Math.round(height * wordmarkRatio) : Math.round(hei
     <path d="M204 40 L204 65" stroke={palette.stroke} stroke-width="6" stroke-linecap="round" />
     <circle cx="204" cy="26" r="4" fill={palette.bubble} />
 
-    {/* Swoosh decorativo final — "energy tail" */}
+    {/* Swoosh decorativo final, "energy tail" */}
     {withSwoosh && (
       <path
         d="M218 65 C232 65 250 54 260 42 C268 33 271 23 265 16"
@@ -122,7 +122,7 @@ const width = withWordmark ? Math.round(height * wordmarkRatio) : Math.round(hei
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    {/* Icon mark — só P + speech bubble como ponto do "i" */}
+    {/* Icon mark, só P + speech bubble como ponto do "i" */}
     <ellipse cx="38" cy="8" rx="9" ry="9" fill={palette.bubble} />
     <path d="M33 15 L38 23 L44 15" fill={palette.bubble} />
     <path

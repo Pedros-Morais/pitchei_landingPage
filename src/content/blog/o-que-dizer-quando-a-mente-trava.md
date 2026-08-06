@@ -1,6 +1,6 @@
 ---
 title: "O que dizer quando a mente trava: scripts para 5 momentos difíceis"
-description: "Scripts em pt-BR para 5 situações em que profissionais travam — pergunta inesperada, crítica recebida, objeção dura, silêncio incômodo, fechamento. Para reuniões em que você sabia e não saiu."
+description: "Scripts em pt-BR para 5 situações em que profissionais travam, pergunta inesperada, crítica recebida, objeção dura, silêncio incômodo, fechamento. Para reuniões em que você sabia e não saiu."
 publishedAt: 2026-05-11
 section: "Performance"
 tags: ["conversa difícil", "performance", "scripts", "comunicação"]
@@ -11,7 +11,7 @@ keywords:
   - "scripts conversa difícil"
   - "como responder sob pressão"
 tldr:
-  - "Travar é mecânica — não é falta de conhecimento. Tem cinco gatilhos previsíveis e cinco scripts curtos pra cada."
+  - "Travar é mecânica, não é falta de conhecimento. Tem cinco gatilhos previsíveis e cinco scripts curtos pra cada."
   - "A pior reação é tentar 'pensar mais rápido'. A melhor é ganhar 4 segundos com uma frase ponte."
   - "Frases ponte funcionam porque dão tempo ao cérebro sem soar fraco."
   - "Pratique cinco frases-curinga. Em 90% dos travamentos, uma delas funciona."
@@ -31,7 +31,7 @@ A reação típica é tentar pensar mais rápido. Não funciona. O cérebro sob 
 
 O que funciona é uma frase ponte: 4-7 segundos de fala que dá tempo ao cérebro reorganizar.
 
-## Script 1 — Pergunta inesperada
+## Script 1, Pergunta inesperada
 
 Gatilho: alguém pergunta algo que você não esperava, e o silêncio começa a pesar.
 
@@ -41,14 +41,14 @@ Frase ponte:
 
 O que faz:
 - Reconhece a pergunta (não ignora).
-- Anuncia que vai pensar (não é silêncio constrangedor — é silêncio com propósito).
+- Anuncia que vai pensar (não é silêncio constrangedor, é silêncio com propósito).
 - Compra exatamente o tempo que você precisa.
 
 Variantes:
-- "Essa eu não tenho na ponta da língua — me dá um segundo pra puxar a versão completa?"
+- "Essa eu não tenho na ponta da língua, me dá um segundo pra puxar a versão completa?"
 - "Posso reformular pra ter certeza que tô respondendo a pergunta certa?"
 
-## Script 2 — Crítica recebida em público
+## Script 2, Crítica recebida em público
 
 Gatilho: alguém te critica em frente a outras pessoas. Cérebro quer defender, dizer "não foi assim", justificar.
 
@@ -64,7 +64,7 @@ O que faz:
 Variantes:
 - "Anotei. Posso te procurar depois pra entender melhor o caso específico que você tá pensando?"
 
-## Script 3 — Objeção dura
+## Script 3, Objeção dura
 
 Gatilho: cliente fala "tá caro" / "não dá pra fechar nesse valor" / "vi outro que faz a mesma coisa por metade".
 
@@ -74,12 +74,12 @@ Frase ponte:
 
 O que faz:
 - Não rebate. Pergunta antes.
-- Repete a objeção em palavras dele — sinal de que escutou.
+- Repete a objeção em palavras dele, sinal de que escutou.
 - Devolve três opções de comparação que separam o problema real (valor, budget, concorrente, ou negociação).
 
 Já tem texto completo sobre isso no <a href="/blog/objecao-de-preco-script">script para objeção de preço</a>.
 
-## Script 4 — Silêncio incômodo
+## Script 4, Silêncio incômodo
 
 Gatilho: você termina de falar, o outro lado fica em silêncio. Sua tendência é continuar falando pra preencher.
 
@@ -94,7 +94,7 @@ Se você precisar dizer algo depois de 6-8 segundos de silêncio:
 
 > "Sem pressa. Tô curioso pra ouvir o que tá vindo na sua cabeça sobre isso."
 
-## Script 5 — Fechamento que precisa de coragem
+## Script 5, Fechamento que precisa de coragem
 
 Gatilho: final da reunião, você sabe que precisa pedir o próximo passo concreto, e sai com "depois a gente alinha".
 
@@ -104,8 +104,8 @@ Frase ponte:
 
 O que faz:
 - Pede compromisso com data (não "em breve").
-- Oferece o caminho de fallback (segundo encontro) — reduz fricção pro outro lado.
-- Termina com pergunta — devolve a iniciativa.
+- Oferece o caminho de fallback (segundo encontro), reduz fricção pro outro lado.
+- Termina com pergunta, devolve a iniciativa.
 
 ## Como praticar frases ponte
 
@@ -119,10 +119,10 @@ Decorar não funciona. Praticar em voz alta funciona.
 
 ## Como Pitchei encaixa
 
-Você prepara as frases. Pitchei te lembra qual usar — em pt-BR, no momento exato em que o gatilho aparece, sem você ter que procurar.
+Você prepara as frases. Pitchei te lembra qual usar, em pt-BR, no momento exato em que o gatilho aparece, sem você ter que procurar.
 
 Veja como funciona na <a href="/">página principal</a> ou em qualquer <a href="/casos-de-uso">caso de uso específico</a>.
 
 ## Fechamento
 
-Travar em conversa difícil é mecânica do cérebro sob pressão. A saída não é pensar mais rápido — é ter uma frase ponte que compra 4 segundos. Cinco frases cobrem 90% dos travamentos típicos.
+Travar em conversa difícil é mecânica do cérebro sob pressão. A saída não é pensar mais rápido, é ter uma frase ponte que compra 4 segundos. Cinco frases cobrem 90% dos travamentos típicos.

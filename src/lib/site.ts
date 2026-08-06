@@ -11,10 +11,10 @@ export const SITE = {
   ogImage: "/og-default.png",
   twitter: "@pitchei",
   email: "contato@pitchei.com.br",
-  // Official profiles for entity SEO — these flow into schema.org `sameAs`
+  // Official profiles for entity SEO, these flow into schema.org `sameAs`
   // (organizationSchema), which is how Google builds the Knowledge Panel and how
   // AI engines disambiguate "Pitchei" as an entity. Add a URL here ONLY when the
-  // profile actually exists — `sameAs` pointing at 404s hurts trust.
+  // profile actually exists, `sameAs` pointing at 404s hurts trust.
   // Recommended to create/claim, then paste below: LinkedIn company page,
   // Crunchbase, Product Hunt, G2/Capterra, YouTube, Instagram, Wikidata.
   profiles: [

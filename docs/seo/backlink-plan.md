@@ -1,8 +1,8 @@
-# Plano de backlinks — Pitchei
+# Plano de backlinks, Pitchei
 
 **Por que isto é um documento separado do hub de conteúdo:** criar páginas no seu
 próprio site **não gera backlinks**. Backlinks são links de *outros domínios* para o
-seu — é o que aumenta a autoridade do domínio e faz suas páginas (inclusive o
+seu, é o que aumenta a autoridade do domínio e faz suas páginas (inclusive o
 `/guia-de-pitch`) subirem no Google. Conteúdo bom é o que *atrai* esses links; este
 plano é como conquistá-los ativamente.
 
@@ -32,7 +32,7 @@ Transforme parte do conteúdo em algo que as pessoas *querem* citar:
 ### 3. Guest posts e colaborações
 - Escreva artigos convidados para blogs de **vendas, startups, carreira** em pt-BR,
   linkando para o guia relevante (não para a home genérica).
-- Co-marketing com ferramentas **complementares** (CRM, agenda, produtividade) —
+- Co-marketing com ferramentas **complementares** (CRM, agenda, produtividade), 
   troca de conteúdo/menção, não troca de link em massa.
 
 ### 4. Diretórios e reviews (base, uma vez)
@@ -54,7 +54,7 @@ Alta relevância para SaaS, faça uma vez:
 - ❌ **Troca de links em massa** ("linko você se você me linka") em escala.
 - ❌ **Comment/forum spam** e assinaturas com link em fóruns.
 - ❌ Diretórios de baixa qualidade / link farms.
-Esses são exatamente os "backdoor links" a evitar — o Google desprioriza ou penaliza,
+Esses são exatamente os "backdoor links" a evitar, o Google desprioriza ou penaliza,
 e a queda atinge o domínio inteiro.
 
 ## Métrica
@@ -63,7 +63,7 @@ Search Console (Links → sites com mais links) + uma ferramenta (Ahrefs/Semrush
 tier). Meta realista: crescimento constante de domínios *relevantes*, não picos.
 
 ## Sequência sugerida
-1. Publicar 8–10 guias sólidos (ativo linkável base).
+1. Publicar 8-10 guias sólidos (ativo linkável base).
 2. Rodar 1 pesquisa própria → 1 página de "relatório" linkável.
-3. Diretórios/reviews (item 4) — uma vez.
+3. Diretórios/reviews (item 4), uma vez.
 4. Digital PR + guest posts contínuos usando o relatório e os guias.

@@ -72,7 +72,7 @@ contato@pitchei.com.br
 
 ---
 
-# Pitchei — English
+# Pitchei, English
 
 > This section mirrors the Portuguese content above for LLMs and AI answer engines that reason in English. The product itself is Portuguese-only (pt-BR) and targets the Brazilian market.
 

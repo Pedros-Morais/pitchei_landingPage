@@ -1,6 +1,6 @@
 {
   "title": "Como fazer um bom pitch: estrutura, exemplos e erros a evitar",
-  "description": "O guia completo para montar um pitch que convence — a estrutura em 5 partes, um exemplo real e os erros que derrubam a sua fala. Em português.",
+  "description": "O guia completo para montar um pitch que convence: a estrutura em 5 partes, um exemplo real e os erros que derrubam a sua fala. Em português.",
   "publishedAt": "2026-08-05",
   "category": "Fundamentos",
   "order": 1,
@@ -14,12 +14,12 @@
   "hero": {
     "eyebrow": "Guia de pitch",
     "heading": "Como fazer um bom pitch",
-    "subheading": "Um bom pitch não é sobre falar bonito — é sobre conduzir alguém do \"não entendi\" ao \"quero isso\" no menor tempo possível. Aqui está a estrutura que funciona, com exemplo e os erros mais comuns."
+    "subheading": "Um bom pitch não é sobre falar bonito. É sobre conduzir alguém do \"não entendi\" ao \"quero isso\" no menor tempo possível. Aqui está a estrutura que funciona, com exemplo e os erros mais comuns."
   },
-  "answer": "Um bom pitch responde a três perguntas em sequência: o que é, por que importa e o que você quer que a pessoa faça. Comece pelo problema (não pela solução), sustente com uma prova concreta e termine sempre com um pedido claro — a próxima etapa que você quer conquistar.",
+  "answer": "Um bom pitch responde a três perguntas em sequência: o que é, por que importa e o que você quer que a pessoa faça. Comece pelo problema (não pela solução), sustente com uma prova concreta e termine sempre com um pedido claro: a próxima etapa que você quer conquistar.",
   "tldr": [
     "Todo pitch responde a três perguntas: o que é, por que importa e o que você quer que eu faça.",
-    "Comece pelo problema, não pela solução — é o problema que prende a atenção.",
+    "Comece pelo problema, não pela solução, é o problema que prende a atenção.",
     "Prova concreta e números valem mais que adjetivos.",
     "Termine sempre com um pedido claro (o call to action)."
   ],
@@ -27,14 +27,14 @@
     {
       "heading": "O que é um pitch (e o que não é)",
       "paragraphs": [
-        "Um pitch é uma fala curta e estruturada com um objetivo específico: conseguir a próxima etapa. Pode ser uma reunião, um investimento, um sim para um projeto ou uma venda. Não é uma apresentação institucional nem um currículo falado — é persuasão com hora para acabar.",
+        "Um pitch é uma fala curta e estruturada com um objetivo específico: conseguir a próxima etapa. Pode ser uma reunião, um investimento, um sim para um projeto ou uma venda. Não é uma apresentação institucional nem um currículo falado, é persuasão com hora para acabar.",
         "A diferença entre um pitch e uma conversa comum é a intenção. Você sabe aonde quer chegar antes de abrir a boca, e cada frase serve para levar a pessoa até lá."
       ]
     },
     {
       "heading": "Por que a maioria dos pitches falha",
       "paragraphs": [
-        "O erro mais comum não é falta de conteúdo — é excesso. Quem está inseguro tende a explicar tudo, e o ouvinte se perde. Um bom pitch corta sem dó o que não é essencial para a decisão que você quer provocar.",
+        "O erro mais comum não é falta de conteúdo, é excesso. Quem está inseguro tende a explicar tudo, e o ouvinte se perde. Um bom pitch corta sem dó o que não é essencial para a decisão que você quer provocar.",
         "O segundo erro é começar pela solução. \"Somos um app que...\" não gera interesse porque o ouvinte ainda não sente o problema. Sem tensão, não há atenção."
       ]
     },
@@ -57,7 +57,7 @@
     "steps": [
       {
         "name": "Gancho",
-        "text": "Abra com uma frase que cria tensão ou curiosidade — um dado surpreendente, uma pergunta ou uma dor reconhecível. Você tem poucos segundos para merecer os próximos."
+        "text": "Abra com uma frase que cria tensão ou curiosidade, um dado surpreendente, uma pergunta ou uma dor reconhecível. Você tem poucos segundos para merecer os próximos."
       },
       {
         "name": "Problema",
@@ -65,7 +65,7 @@
       },
       {
         "name": "Solução",
-        "text": "Agora, e só agora, apresente o que você faz — em uma frase clara, sem jargão. A solução deve encaixar exatamente no problema que você acabou de descrever."
+        "text": "Agora, e só agora, apresente o que você faz, em uma frase clara, sem jargão. A solução deve encaixar exatamente no problema que você acabou de descrever."
       },
       {
         "name": "Prova",
@@ -80,7 +80,7 @@
   "story": {
     "title": "Exemplo: o mesmo pitch, antes e depois",
     "context": "Uma fundadora de uma ferramenta de agendamento tinha 30 segundos com um investidor num evento.",
-    "quote": "Antes: \"Criamos uma plataforma completa de produtividade com IA para equipes.\" Depois: \"Times de vendas perdem 8 horas por semana remarcando reuniões. A gente automatiza isso em um clique — três clientes já cortaram esse tempo pela metade. Você tem 15 minutos essa semana?\"",
+    "quote": "Antes: \"Criamos uma plataforma completa de produtividade com IA para equipes.\" Depois: \"Times de vendas perdem 8 horas por semana remarcando reuniões. A gente automatiza isso em um clique, três clientes já cortaram esse tempo pela metade. Você tem 15 minutos essa semana?\"",
     "lesson": "A segunda versão começa pela dor, traz número, prova e termina com um pedido. Mesma empresa, resultado oposto."
   },
   "mistakes": [

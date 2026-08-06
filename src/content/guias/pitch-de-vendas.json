@@ -1,6 +1,6 @@
 {
   "title": "Pitch de vendas: como conduzir o cliente à decisão",
-  "description": "Como estruturar um pitch de vendas que parte da dor do cliente, prova valor e trata objeções — sem soar como vendedor insistente. Em português.",
+  "description": "Como estruturar um pitch de vendas que parte da dor do cliente, prova valor e trata objeções sem soar como vendedor insistente. Em português.",
   "publishedAt": "2026-08-05",
   "category": "Situações",
   "order": 5,
@@ -14,20 +14,20 @@
   "hero": {
     "eyebrow": "Guia de pitch",
     "heading": "Pitch de vendas",
-    "subheading": "Um bom pitch de vendas não empurra o produto — conduz o cliente do problema dele até a conclusão de que a sua solução é a saída óbvia. Veja a estrutura e como tratar objeções."
+    "subheading": "Um bom pitch de vendas não empurra o produto: conduz o cliente do problema dele até a conclusão de que a sua solução é a saída óbvia. Veja a estrutura e como tratar objeções."
   },
-  "answer": "Um pitch de vendas eficaz começa pela dor do cliente (não pelo produto), faz perguntas de descoberta antes de apresentar, mostra só os benefícios ligados àquela dor, prova com um caso real e termina com um próximo passo pequeno e concreto — um teste ou reunião. Objeção é interesse com dúvida, não um não.",
+  "answer": "Um pitch de vendas eficaz começa pela dor do cliente (não pelo produto), faz perguntas de descoberta antes de apresentar, mostra só os benefícios ligados àquela dor, prova com um caso real e termina com um próximo passo pequeno e concreto: um teste ou reunião. Objeção é interesse com dúvida, não um \"não\".",
   "tldr": [
     "Venda a solução para a dor do cliente, não as features do produto.",
     "Faça perguntas antes de apresentar: descubra a dor real primeiro.",
     "Prova (caso, número) pesa mais que qualquer adjetivo.",
-    "Objeção não é 'não' — é pedido de mais informação."
+    "Objeção não é 'não', é pedido de mais informação."
   ],
   "sections": [
     {
       "heading": "Comece pela dor, não pelo produto",
       "paragraphs": [
-        "O erro clássico do pitch de vendas é abrir listando o que o produto faz. O cliente só se importa com features depois de sentir que você entende o problema dele. Comece nomeando a dor de forma concreta — de preferência com uma pergunta que faça o cliente confirmá-la."
+        "O erro clássico do pitch de vendas é abrir listando o que o produto faz. O cliente só se importa com features depois de sentir que você entende o problema dele. Comece nomeando a dor de forma concreta, de preferência com uma pergunta que faça o cliente confirmá-la."
       ]
     },
     {
@@ -66,8 +66,8 @@
   "story": {
     "title": "Exemplo: tratando a objeção de preço",
     "context": "O cliente diz 'está caro' no meio da call.",
-    "quote": "'Entendo. Caro comparado a quê? Hoje vocês gastam 8 horas por semana nisso — a R$ X a hora, dá R$ Y por mês. A ferramenta custa menos que isso e devolve o tempo. Faz sentido rodarmos um teste de 14 dias antes de decidir?'",
-    "lesson": "A objeção virou uma conta e um próximo passo pequeno. Não brigou com o 'não' — reformulou o valor."
+    "quote": "'Entendo. Caro comparado a quê? Hoje vocês gastam 8 horas por semana nisso, a R$ X a hora, dá R$ Y por mês. A ferramenta custa menos que isso e devolve o tempo. Faz sentido rodarmos um teste de 14 dias antes de decidir?'",
+    "lesson": "A objeção virou uma conta e um próximo passo pequeno. Não brigou com o 'não', reformulou o valor."
   },
   "mistakes": [
     {

@@ -48,7 +48,7 @@ async function ensureWidget(): Promise<string | null> {
   if (!window.hcaptcha) return null;
   if (widgetId) return widgetId;
 
-  // Hidden container — invisible captcha doesn't render UI unless challenged.
+  // Hidden container, invisible captcha doesn't render UI unless challenged.
   let container = document.getElementById("hcaptcha-host");
   if (!container) {
     container = document.createElement("div");

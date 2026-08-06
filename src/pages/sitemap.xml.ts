@@ -5,7 +5,7 @@ import { SITE } from "~/lib/site";
 // named `sitemap.xml`. Crawlers (and Google Search Console) probe the
 // well-known `/sitemap.xml` path by convention, which would 404. This endpoint
 // serves that path as a sitemap index delegating to the auto-generated
-// `sitemap-0.xml`, so we don't duplicate the URL/lastmod/priority logic — it
+// `sitemap-0.xml`, so we don't duplicate the URL/lastmod/priority logic, it
 // stays in sync with the integration on every build.
 export const GET: APIRoute = () => {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

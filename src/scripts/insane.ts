@@ -23,7 +23,7 @@ export function mountInsane(): Cleanup {
 
   // ---------- 1. Lenis ↔ ScrollTrigger bridge ----------
   // CRITICAL: pause Lenis's own rAF first. Otherwise lenis.raf is called
-  // by both lenis.ts's loop AND gsap.ticker — causing scroll jitter and
+  // by both lenis.ts's loop AND gsap.ticker, causing scroll jitter and
   // doubled scroll deltas.
   const lenis = window.__pitcheiLenis;
   const lenisCtrl = window.__pitcheiLenisCtrl;

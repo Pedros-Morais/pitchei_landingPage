@@ -11,7 +11,7 @@ keywords:
   - "como contornar objeção"
   - "negociação B2B"
 tldr:
-  - "Objeção de preço quase nunca é sobre preço — é sobre valor não percebido."
+  - "Objeção de preço quase nunca é sobre preço, é sobre valor não percebido."
   - "A pior resposta possível: 'vou ver desconto'. Reduz margem e reforça que o produto não vale o ticket."
   - "A melhor resposta: reframe pra valor com número do discovery, depois pergunta de calibração."
   - "Se o cliente fechou a porta, abra outra: pergunte qual seria o cenário em que faria sentido."
@@ -21,7 +21,7 @@ tldr:
 
 Em venda consultiva B2B no Brasil, 70% dos negócios qualificados ouvem alguma versão de "tá caro" em algum momento. É previsível. O que ainda surpreende é quantos vendedores experientes desmoronam quando ouvem.
 
-A resposta-reflexo — <em>"vou ver com o time se consigo um desconto"</em> — faz três coisas ruins ao mesmo tempo:
+A resposta-reflexo, <em>"vou ver com o time se consigo um desconto"</em>, faz três coisas ruins ao mesmo tempo:
 
 1. Reduz a margem do deal.
 2. Reforça pra o cliente que o produto não vale o preço cheio.
@@ -37,9 +37,9 @@ Quando um decisor B2B diz "tá caro", ele está dizendo uma de cinco coisas. Apr
 2. **Não tenho budget aprovado** (problema de timing)
 3. **Concorrente cotou menor** (problema de diferenciação)
 4. **Não consigo defender internamente** (problema de munição interna)
-5. **Estou negociando** (problema de tática — vai pedir mesmo se fechar)
+5. **Estou negociando** (problema de tática, vai pedir mesmo se fechar)
 
-Cada uma pede uma resposta diferente. Tratar todas como (5) — assumindo que é só negociação — perde o sinal real.
+Cada uma pede uma resposta diferente. Tratar todas como (5), assumindo que é só negociação, perde o sinal real.
 
 ## A pergunta que separa o sinal do ruído
 
@@ -47,13 +47,13 @@ A melhor primeira reação a "tá caro" é uma pergunta calma:
 
 > "Faz sentido olhar comparativo. Quando você diz que tá caro, você compara com [concorrente X], com [alternativa do tipo Y], ou com não fazer nada?"
 
-Em uma frase você descobre se é (3) — concorrente cotou menor —, se é (1) — não vê valor —, ou se é (5) — quer negociar.
+Em uma frase você descobre se é (3), concorrente cotou menor, se é (1), não vê valor, ou se é (5), quer negociar.
 
 Não tem como fazer a resposta certa sem essa pergunta primeiro.
 
 ## Reframe pra valor (com número do discovery)
 
-Quando o sinal é (1) — não vê valor proporcional —, a resposta é reframe pra valor usando os números que o próprio cliente declarou no discovery.
+Quando o sinal é (1), não vê valor proporcional, a resposta é reframe pra valor usando os números que o próprio cliente declarou no discovery.
 
 > Cliente: "Olha, [valor anual] tá fora do que conseguimos justificar pra solução desse tipo."
 >
@@ -63,11 +63,11 @@ Note o que essa resposta faz:
 
 - Não rebate o preço. Reposiciona a discussão.
 - Usa o número que o <strong>cliente declarou</strong>. Não o seu número.
-- Termina com uma pergunta — devolve a iniciativa.
+- Termina com uma pergunta, devolve a iniciativa.
 
 ## Quando é munição interna (4), monte a ponte
 
-Se o sinal é (4) — cliente vê valor, mas não consegue defender internamente —, a resposta muda. Você não precisa convencer ele. Precisa <strong>armar ele</strong> pra ele convencer o chefe dele.
+Se o sinal é (4), cliente vê valor, mas não consegue defender internamente, a resposta muda. Você não precisa convencer ele. Precisa <strong>armar ele</strong> pra ele convencer o chefe dele.
 
 > "Entendi. O que ajudaria você defender isso pro [CFO/diretor/comitê]? Posso preparar um one-pager com TCO, payback estimado e cases comparáveis. Em 24h. Você indica os ângulos que vão pesar mais lá dentro?"
 
@@ -83,17 +83,17 @@ Você converteu um "não" em <strong>um critério de retomada</strong>. Daqui a 
 
 ## O que NÃO dizer
 
-- "Posso ver com o time se consigo um desconto" — sem entender qual é o sinal.
-- "Esse preço é fixo, não tem como reduzir" — fecha conversa antes da hora.
-- "Você sabe que muito cliente nosso paga mais" — defensivo, soa arrogante.
-- "Eu também acho meio caro" — destrói confiança.
-- "Vamos fazer uma POC gratuita pra você ver o valor" — só ofereça se já tava na régua de qualificação.
+- "Posso ver com o time se consigo um desconto", sem entender qual é o sinal.
+- "Esse preço é fixo, não tem como reduzir", fecha conversa antes da hora.
+- "Você sabe que muito cliente nosso paga mais", defensivo, soa arrogante.
+- "Eu também acho meio caro", destrói confiança.
+- "Vamos fazer uma POC gratuita pra você ver o valor", só ofereça se já tava na régua de qualificação.
 
 ## Como Pitchei te ajuda no momento
 
 No segundo seguinte ao "tá caro", o cérebro do vendedor médio vai pra desconto. O cérebro do top performer vai pra reframe + pergunta. A diferença é prática.
 
-Pitchei te dá a resposta pronta — com o número do discovery do <strong>seu próprio briefing</strong> — no segundo em que a objeção aparece. Você não decora; você usa.
+Pitchei te dá a resposta pronta, com o número do discovery do <strong>seu próprio briefing</strong>, no segundo em que a objeção aparece. Você não decora; você usa.
 
 Veja como funciona no <a href="/casos-de-uso/vendas-e-negociacao">caso de uso de vendas e negociação</a>.
 

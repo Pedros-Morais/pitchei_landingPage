@@ -1,5 +1,5 @@
 /*
- * Hero 3D loader — gate de motion-reduce + viewport + idle, depois dynamic import
+ * Hero 3D loader, gate de motion-reduce + viewport + idle, depois dynamic import
  * do módulo Three.js. Roda no bundle inicial (~0.5KB gz). Three.js entra
  * num chunk separado, lazy-loaded.
  */

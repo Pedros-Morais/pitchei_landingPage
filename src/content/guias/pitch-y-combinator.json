@@ -1,0 +1,125 @@
+{
+  "title": "Pitch estilo Y Combinator: o método YC para investidores",
+  "description": "O método de pitch da Y Combinator aplicado em português: o one-liner claro, o deck de ~10 slides, as perguntas que derrubam founders e como responder sob pressão.",
+  "publishedAt": "2026-08-05",
+  "category": "Situações",
+  "order": 8,
+  "keywords": [
+    "pitch y combinator",
+    "método yc",
+    "pitch yc",
+    "como fazer pitch para investidores",
+    "one-liner yc",
+    "entrevista y combinator"
+  ],
+  "hero": {
+    "eyebrow": "Guia de pitch",
+    "heading": "Pitch estilo Y Combinator",
+    "subheading": "A Y Combinator formou milhares de startups e tem um jeito próprio de ensinar founders a se apresentar: clareza acima de persuasão. Este guia adapta o método YC para o seu pitch a investidores, em português."
+  },
+  "answer": "O método YC de pitch prioriza clareza, não persuasão: comece por um one-liner que qualquer pessoa entende, use tração e crescimento como prova e responda às perguntas dos investidores de forma direta e com números. A ideia central da Y Combinator é 'make something people want', então o pitch gira em torno de evidência de que as pessoas querem o seu produto.",
+  "tldr": [
+    "O método YC valoriza clareza acima de persuasão: se o investidor se confunde, ele diz não.",
+    "Todo pitch YC começa por um one-liner claro, sem jargão nem hype.",
+    "Investidor pergunta duas coisas: o quão grande isso pode ficar e por que acreditar em você.",
+    "A entrevista da YC é curta e direta. Treine responder em uma frase, com número, sem rodeio."
+  ],
+  "sections": [
+    {
+      "heading": "O princípio YC: clareza, não persuasão",
+      "paragraphs": [
+        "A Y Combinator ensina que o objetivo do pitch não é convencer, é ser entendido. Um investidor confuso não investe. Por isso o método YC ataca o jargão, o hype e as frases genéricas: cada slide e cada resposta precisa ser legível para alguém que nunca ouviu falar da sua empresa.",
+        "Na prática, isso significa trocar 'plataforma revolucionária de produtividade com IA' por uma frase concreta que diz o que você faz e para quem. Um investidor decide nos primeiros minutos se vale a pena continuar ouvindo, então a clareza da abertura é o que compra a atenção para o resto."
+      ]
+    },
+    {
+      "heading": "As duas perguntas que todo investidor faz",
+      "paragraphs": [
+        "Por trás de qualquer pergunta de VC existem duas dúvidas centrais que a YC costuma destacar: o quão grande isso pode ficar e por que acreditar em você e no seu time. A primeira é sobre potencial de crescimento; a segunda é sobre credibilidade.",
+        "Todo o seu pitch deve alimentar essas duas respostas. Tração e taxa de crescimento respondem à primeira. Conhecimento profundo do problema, do mercado e dos seus números responde à segunda."
+      ]
+    },
+    {
+      "heading": "O one-liner: a frase que abre tudo",
+      "paragraphs": [
+        "O one-liner é a peça mais importante do método YC. É a frase que você usa na inscrição, no primeiro slide e sempre que alguém pergunta o que você faz. Ele precisa dizer, sem adjetivo, o que a empresa faz e para quem."
+      ],
+      "bullets": [
+        "Fórmula simples: '[Empresa] ajuda [público] a [resultado] com [como].'",
+        "Sem hype: nada de 'revolucionário', 'disruptivo' ou 'líder de mercado'.",
+        "Teste: alguém de fora consegue repetir a frase de volta corretamente?"
+      ]
+    },
+    {
+      "heading": "As cinco perguntas que mais derrubam um pitch",
+      "paragraphs": [
+        "No estilo YC, a diferença entre um bom e um mau pitch aparece no Q&A, não nos slides. Cinco perguntas derrubam a maioria dos founders. Tenha a resposta pronta, curta e com número:"
+      ],
+      "bullets": [
+        "TAM realista: qual o tamanho de mercado de verdade, com fonte, e não um número inflado?",
+        "CAC e LTV: quanto custa adquirir um cliente e quanto ele vale ao longo do tempo? Saiba de cabeça.",
+        "Por que agora: o que mudou no mundo que torna isso possível ou urgente hoje?",
+        "Defensibilidade: o que impede um concorrente de copiar em seis meses?",
+        "Time: por que vocês são as pessoas certas para resolver este problema?"
+      ]
+    }
+  ],
+  "framework": {
+    "name": "O deck de seed no estilo YC, em 9 slides",
+    "description": "A sequência de slides que a Y Combinator costuma recomendar para uma rodada seed. Um slide, uma ideia.",
+    "steps": [
+      { "name": "Título e one-liner", "text": "Nome da empresa e a frase que diz o que você faz e para quem, sem jargão." },
+      { "name": "Problema", "text": "A dor concreta que você resolve, específica o bastante para o investidor reconhecer." },
+      { "name": "Solução / como funciona", "text": "O que você faz e, de preferência, uma imagem ou demo mostrando o produto real." },
+      { "name": "Tração", "text": "A prova de que as pessoas querem: usuários, receita e, acima de tudo, a taxa de crescimento." },
+      { "name": "Insight único", "text": "O que você entende sobre o problema que os outros não entendem. A sua vantagem injusta." },
+      { "name": "Mercado", "text": "O tamanho da oportunidade, com números de fonte. Mostre que pode ficar grande." },
+      { "name": "Modelo de negócio", "text": "Como você ganha dinheiro e a economia por cliente." },
+      { "name": "Time", "text": "Por que essas pessoas são as certas para este problema." },
+      { "name": "O pedido", "text": "Quanto você está captando e o que isso destrava nos próximos 12 a 18 meses." }
+    ]
+  },
+  "story": {
+    "title": "Exemplo: um one-liner antes e depois do filtro YC",
+    "context": "Uma startup de cobrança para pequenas clínicas.",
+    "quote": "Antes: 'Somos uma plataforma completa de gestão financeira inteligente para o setor de saúde.' Depois: 'A gente ajuda clínicas pequenas a receberem de convênios em dias, não em meses.'",
+    "lesson": "A segunda frase diz para quem, o problema e o resultado, sem um único adjetivo. É isso que a YC chama de legibilidade."
+  },
+  "mistakes": [
+    {
+      "title": "Vender hype em vez de clareza",
+      "detail": "Adjetivos como 'revolucionário' e 'disruptivo' são ruído. O método YC treina founders a cortá-los."
+    },
+    {
+      "title": "Não saber os próprios números",
+      "detail": "Na entrevista da YC, não ter CAC, LTV, crescimento ou churn na ponta da língua derruba a credibilidade na hora."
+    },
+    {
+      "title": "Responder com rodeio no Q&A",
+      "detail": "O formato da YC é rápido e direto. Responda a pergunta feita, em uma frase, e pare. Divagar custa mais que um slide feio."
+    },
+    {
+      "title": "One-liner genérico",
+      "detail": "Se a sua primeira frase serve para dez empresas diferentes, ela não serve para a sua."
+    }
+  ],
+  "faq": [
+    {
+      "question": "O que é a Y Combinator?",
+      "answer": "A Y Combinator é uma das aceleradoras de startups mais conhecidas do mundo, criada em 2005, que investe em empresas em estágio inicial e as orienta durante um programa de alguns meses. Boa parte do que se ensina hoje sobre pitch para investidores vem do método dela."
+    },
+    {
+      "question": "Como é a entrevista da Y Combinator?",
+      "answer": "É curta, de cerca de dez minutos, e direta. Os sócios fazem perguntas rápidas e esperam respostas objetivas, em uma ou duas frases, com números na ponta da língua. Divagar ou tentar 'vender' em vez de responder costuma prejudicar. A preparação recomendada é treinar respostas curtas, não decorar um discurso."
+    },
+    {
+      "question": "Qual a estrutura de pitch que a YC recomenda?",
+      "answer": "Um deck enxuto, em torno de 9 a 10 slides, com uma ideia por slide: título e one-liner, problema, solução, tração, insight único, mercado, modelo de negócio, time e o pedido. O foco é clareza e prova de crescimento, não design."
+    },
+    {
+      "question": "O que é o one-liner no método YC?",
+      "answer": "É a frase única que descreve o que a sua empresa faz, para quem e com que resultado, sem jargão nem adjetivo. Ela abre o pitch e a inscrição. A regra prática: se alguém de fora não consegue repeti-la corretamente, ela ainda não está clara."
+    }
+  ],
+  "related": ["pitch-deck", "como-fazer-um-pitch", "tipos-de-pitch"]
+}

@@ -1,5 +1,5 @@
 /*
- * HUD 3D stack — pure CSS 3D + tiny JS controller (~1KB).
+ * HUD 3D stack, pure CSS 3D + tiny JS controller (~1KB).
  *
  * No Three.js needed. We layer 3 cards with translateZ(), and a small
  * controller updates 4 CSS custom props on the root from mouse + scroll:

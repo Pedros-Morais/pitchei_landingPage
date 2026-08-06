@@ -14,7 +14,7 @@
   "hero": {
     "eyebrow": "Guia de pitch",
     "heading": "Pitch deck",
-    "subheading": "Investidor vê centenas de decks e decide em minutos. Um bom pitch deck não conta tudo — conta o essencial, na ordem que responde às perguntas dele antes de ele fazê-las."
+    "subheading": "Investidor vê centenas de decks e decide em minutos. Um bom pitch deck não conta tudo: conta o essencial, na ordem que responde às perguntas dele antes de ele fazê-las."
   },
   "answer": "Um pitch deck tem de 10 a 12 slides, nesta ordem: problema, solução, mercado, produto, tração, modelo de negócio, concorrência, time e o pedido de captação. Cada slide traz uma ideia e um número; o deck abre a reunião, não a substitui. Investidor olha principalmente para tração e time.",
   "tldr": [
@@ -33,7 +33,7 @@
     {
       "heading": "Menos slides, mais foco",
       "paragraphs": [
-        "Dez a doze slides cobrem o que um investidor precisa numa primeira reunião. O objetivo do deck não é fechar o cheque — é conquistar a próxima conversa e o pedido de due diligence."
+        "Dez a doze slides cobrem o que um investidor precisa numa primeira reunião. O objetivo do deck não é fechar o cheque, é conquistar a próxima conversa e o pedido de due diligence."
       ]
     }
   ],
@@ -43,7 +43,7 @@
     "steps": [
       { "name": "Problema", "text": "A dor que você resolve, grande e real. Slide de abertura." },
       { "name": "Solução", "text": "O que você faz, em uma frase e uma imagem, encaixando no problema." },
-      { "name": "Mercado (TAM/SAM/SOM)", "text": "O tamanho da oportunidade, com números de fonte — não chute." },
+      { "name": "Mercado (TAM/SAM/SOM)", "text": "O tamanho da oportunidade, com números de fonte, não chute." },
       { "name": "Produto", "text": "Como funciona, de preferência com uma tela ou demo." },
       { "name": "Tração", "text": "A prova de que está funcionando: usuários, receita, crescimento." },
       { "name": "Modelo de negócio", "text": "Como você ganha dinheiro e a economia por cliente." },
@@ -90,5 +90,5 @@
       "answer": "Tração e time. Tração prova que funciona; time prova que vocês vão executar. Ambos com números e fatos, não adjetivos."
     }
   ],
-  "related": ["como-fazer-um-pitch", "tipos-de-pitch", "como-comecar-um-pitch"]
+  "related": ["pitch-y-combinator", "como-fazer-um-pitch", "tipos-de-pitch"]
 }

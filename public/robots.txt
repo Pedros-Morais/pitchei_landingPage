@@ -1,11 +1,11 @@
-# https://pitchei.com.br — robots.txt
+# https://pitchei.com.br, robots.txt
 # Resumo do produto legível por LLMs: https://pitchei.com.br/llms.txt
 
 User-agent: *
 Allow: /
 
 # ---------------------------------------------------------------------------
-# Crawlers de IA e mecanismos de resposta — explicitamente bem-vindos.
+# Crawlers de IA e mecanismos de resposta, explicitamente bem-vindos.
 # Queremos ser lidos e citados por LLMs e buscas com IA.
 # ---------------------------------------------------------------------------
 

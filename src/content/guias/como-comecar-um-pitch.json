@@ -14,9 +14,9 @@
   "hero": {
     "eyebrow": "Guia de pitch",
     "heading": "Como começar um pitch",
-    "subheading": "A abertura é a parte mais importante do pitch: se os primeiros segundos não prendem, o resto não é ouvido. Aqui estão seis ganchos que funcionam — e como escolher o certo."
+    "subheading": "A abertura é a parte mais importante do pitch: se os primeiros segundos não prendem, o resto não é ouvido. Aqui estão seis ganchos que funcionam e como escolher o certo."
   },
-  "answer": "Comece um pitch com um gancho que cria tensão ou curiosidade — um dado surpreendente, uma pergunta direta ou uma micro-história — e que leve direto ao problema que você resolve. Nunca abra com 'nós somos uma empresa que...' nem com pedidos de desculpa. Vale decorar só a primeira frase, que é a que mais pesa.",
+  "answer": "Comece um pitch com um gancho que cria tensão ou curiosidade (um dado surpreendente, uma pergunta direta ou uma micro-história) e que leve direto ao problema que você resolve. Nunca abra com 'nós somos uma empresa que...' nem com pedidos de desculpa. Vale decorar só a primeira frase, que é a que mais pesa.",
   "tldr": [
     "Você tem poucos segundos para merecer os próximos. O gancho é tudo.",
     "Nunca abra com 'nós somos uma empresa que...'.",
@@ -33,7 +33,7 @@
     {
       "heading": "Como escolher o gancho",
       "paragraphs": [
-        "Escolha pelo efeito: quer chocar? Use um dado. Quer engajar? Faça uma pergunta. Quer criar identificação? Conte uma micro-história. O gancho tem que levar direto ao problema que você vai resolver — um gancho bonito que não conecta com o tema confunde."
+        "Escolha pelo efeito: quer chocar? Use um dado. Quer engajar? Faça uma pergunta. Quer criar identificação? Conte uma micro-história. O gancho tem que levar direto ao problema que você vai resolver, um gancho bonito que não conecta com o tema confunde."
       ]
     }
   ],
@@ -90,7 +90,7 @@
   "faq": [
     {
       "question": "Como começar um pitch?",
-      "answer": "Comece com um gancho que crie tensão ou curiosidade — um dado surpreendente, uma pergunta direta ou uma micro-história — e que leve direto ao problema que você resolve. Evite abrir se apresentando."
+      "answer": "Comece com um gancho que crie tensão ou curiosidade, um dado surpreendente, uma pergunta direta ou uma micro-história, e que leve direto ao problema que você resolve. Evite abrir se apresentando."
     },
     {
       "question": "O que não dizer no começo de um pitch?",

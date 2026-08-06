@@ -1,6 +1,6 @@
 ---
 title: "Como responder entrevista comportamental: método STAR em pt-BR"
-description: "Guia prático em português para responder perguntas comportamentais em entrevistas de emprego — método STAR aplicado, exemplos reais e os erros típicos que custam a vaga."
+description: "Guia prático em português para responder perguntas comportamentais em entrevistas de emprego, método STAR aplicado, exemplos reais e os erros típicos que custam a vaga."
 publishedAt: 2026-05-11
 section: "Carreira"
 tags: ["entrevista", "STAR", "carreira", "comportamental"]
@@ -11,7 +11,7 @@ keywords:
   - "respostas para entrevista"
   - "entrevista de emprego"
 tldr:
-  - "Entrevista comportamental cobra exemplos estruturados — não opinião."
+  - "Entrevista comportamental cobra exemplos estruturados, não opinião."
   - "STAR (Situação, Tarefa, Ação, Resultado) é o padrão; cada parte tem 20-25 segundos."
   - "Erro #1: começar pela ação. O recrutador precisa do contexto primeiro."
   - "Tenha 5-6 histórias cobrindo as 12 perguntas mais comuns. Reusa em qualquer entrevista."
@@ -31,16 +31,16 @@ A pergunta "me conte uma situação em que..." testa três coisas ao mesmo tempo
 
 STAR existe há 30 anos e continua sendo o que recrutador procura porque organiza a resposta em <strong>uma sequência que ele consegue avaliar</strong>:
 
-- **S — Situação:** o contexto. Quem, quando, onde, o que estava em jogo.
-- **T — Tarefa:** o que você precisava fazer especificamente. Seu papel, não o do time.
-- **A — Ação:** o que <em>você</em> fez. Em primeira pessoa, no singular.
-- **R — Resultado:** o que aconteceu. Número quando possível.
+- **S, Situação:** o contexto. Quem, quando, onde, o que estava em jogo.
+- **T, Tarefa:** o que você precisava fazer especificamente. Seu papel, não o do time.
+- **A, Ação:** o que <em>você</em> fez. Em primeira pessoa, no singular.
+- **R, Resultado:** o que aconteceu. Número quando possível.
 
 Cada parte tem 20-25 segundos. Total da resposta: 90 segundos a 2 minutos. Mais que isso, o recrutador desconecta.
 
 ## A armadilha do "a gente"
 
-A maioria das respostas comportamentais ruins não falha por falta de conteúdo — falha por excesso de <strong>"a gente"</strong>.
+A maioria das respostas comportamentais ruins não falha por falta de conteúdo, falha por excesso de <strong>"a gente"</strong>.
 
 > "A gente tinha um problema. A gente decidiu fazer X. A gente conseguiu Y."
 
@@ -77,7 +77,7 @@ Cinco a seis histórias bem-elaboradas cobrem todas essas. <strong>Mesma histór
 >
 > **Tarefa:** Era responsabilidade minha o go/no-go. Se errasse, custo direto de 300 mil reais e atraso de 6 semanas.
 >
-> **Ação:** Estabeleci três critérios irredutíveis: SLA acima de 99.9%, suporte em horário comercial Brasil e contrato com saída sem multa. Falei com dois clientes-âncora dos dois fornecedores — não os indicados pelo vendedor, os que achei no LinkedIn. Priorizei evidência qualitativa em cima de brochure.
+> **Ação:** Estabeleci três critérios irredutíveis: SLA acima de 99.9%, suporte em horário comercial Brasil e contrato com saída sem multa. Falei com dois clientes-âncora dos dois fornecedores, não os indicados pelo vendedor, os que achei no LinkedIn. Priorizei evidência qualitativa em cima de brochure.
 >
 > **Resultado:** Escolha rodou 14 meses sem incidente crítico, custo 18% menor que a primeira cotação. Documentei o framework e ele foi reusado em outras três decisões de fornecedor no time.
 
@@ -89,7 +89,7 @@ Se a pergunta é "me conte uma vez em que você liderou um time grande" e você 
 
 A saída honesta:
 
-> "Liderança formal de time grande eu não tenho ainda. Mas tive [exemplo análogo de liderança sem autoridade ou de coordenação cross-funcional] — funcionou assim..."
+> "Liderança formal de time grande eu não tenho ainda. Mas tive [exemplo análogo de liderança sem autoridade ou de coordenação cross-funcional], funcionou assim..."
 
 Pivota pra o que você tem. Mostra autoconhecimento, que é uma sinal forte por si só.
 

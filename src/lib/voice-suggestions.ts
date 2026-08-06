@@ -18,19 +18,19 @@ const BANK: Entry[] = [
     keywords: ["roi", "retorno", "payback", "recupera"],
     speaker: "Cliente",
     suggestion:
-      "Posso revisar com você os números do payback antes de fecharmos — quer ver de hoje pra trás 6 meses?",
+      "Posso revisar com você os números do payback antes de fecharmos, quer ver de hoje pra trás 6 meses?",
   },
   {
     keywords: ["tam", "mercado", "tamanho", "endereçavel", "endereçável", "addressable"],
     speaker: "Investidor",
     suggestion:
-      "R$ 12B em SaaS B2B no Brasil — atacamos primeiro a densidade de founders em São Paulo e expandimos por cidade.",
+      "R$ 12B em SaaS B2B no Brasil, atacamos primeiro a densidade de founders em São Paulo e expandimos por cidade.",
   },
   {
     keywords: ["concorrente", "concorrência", "competidor", "competição", "rival", "comparado"],
     speaker: "Investidor",
     suggestion:
-      "Os concorrentes resolvem o ‘depois da reunião’. A gente resolve o ‘durante’ — é onde o valor está.",
+      "Os concorrentes resolvem o ‘depois da reunião’. A gente resolve o ‘durante’, é onde o valor está.",
   },
   {
     keywords: ["prazo", "quando", "data", "deadline", "entrega", "lançamento", "lancamento"],
@@ -54,7 +54,7 @@ const BANK: Entry[] = [
     keywords: ["case", "exemplo", "cliente", "usando", "usou", "depoimento"],
     speaker: "Cliente",
     suggestion:
-      "Posso te conectar com um founder que usou no fechamento do Series A — ele topa um papo de 15 min.",
+      "Posso te conectar com um founder que usou no fechamento do Series A, ele topa um papo de 15 min.",
   },
   {
     keywords: ["risco", "preocupado", "preocupação", "preocupacao", "medo", "receio", "inseguro"],
@@ -72,13 +72,13 @@ const BANK: Entry[] = [
     keywords: ["fraqueza", "ponto fraco", "defeito", "fragilidade"],
     speaker: "Recrutador",
     suggestion:
-      "Tenho dificuldade em delegar sem antes alinhar o critério — uso 1:1s curtos com checkpoints pra resolver.",
+      "Tenho dificuldade em delegar sem antes alinhar o critério, uso 1:1s curtos com checkpoints pra resolver.",
   },
   {
     keywords: ["força", "forca", "ponto forte", "qualidade", "destaque"],
     speaker: "Recrutador",
     suggestion:
-      "Levar problemas vagos a uma decisão executável em até 48h — exemplo concreto que posso te dar agora?",
+      "Levar problemas vagos a uma decisão executável em até 48h, exemplo concreto que posso te dar agora?",
   },
   {
     keywords: ["objetivo", "objetivos", "meta", "metas", "expectativa", "espera"],
@@ -90,7 +90,7 @@ const BANK: Entry[] = [
     keywords: ["pensar", "pensando", "depois", "te retorno", "te respondo", "talvez"],
     speaker: "Cliente",
     suggestion:
-      "Sem problema. O que falta pra você decidir — é número, é gente envolvida, ou é prioridade?",
+      "Sem problema. O que falta pra você decidir, é número, é gente envolvida, ou é prioridade?",
   },
 ];
 

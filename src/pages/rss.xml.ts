@@ -20,7 +20,7 @@ export const GET: APIRoute = async () => {
   type Post = (typeof posts)[number];
   const effectiveDate = (p: Post) => p.data.updatedAt ?? p.data.publishedAt;
 
-  // Newest content change across the feed — a stable, cache-friendly
+  // Newest content change across the feed, a stable, cache-friendly
   // lastBuildDate instead of "now" (which changes on every request).
   const lastBuild = posts.length
     ? new Date(Math.max(...posts.map((p) => effectiveDate(p).getTime())))

@@ -1,5 +1,5 @@
 /*
- * Voice demo — Web Speech API, PT-BR.
+ * Voice demo, Web Speech API, PT-BR.
  *
  * Tap the mic CTA → recognition.start() (browser prompts mic permission once)
  * → live transcript renders in the HUD → keyword match → suggestion fades in.
@@ -7,7 +7,7 @@
  * Feature-detected. Hidden on Firefox / older Safari. Falls back to tap-mode
  * if permission is denied or no match is found.
  *
- * Nothing leaves the device — everything is local browser recognition.
+ * Nothing leaves the device, everything is local browser recognition.
  */
 
 import { shouldRequireCaptcha, suggestFromAI } from "../lib/voice-client";
@@ -162,14 +162,14 @@ function startListening(root: HTMLElement, triggerBtn: HTMLButtonElement) {
       showSuggestion(
         root,
         "Pitchei",
-        "Sem problema — toque nos chips acima pra explorar cenários ou entre na lista de espera.",
+        "Sem problema, toque nos chips acima pra explorar cenários ou entre na lista de espera.",
       );
     } else if (err === "no-speech") {
       setStatus(root, "Não ouvi nada", false);
       showSuggestion(
         root,
         "Pitchei",
-        "Tente de novo — pode falar baixinho, eu pego.",
+        "Tente de novo, pode falar baixinho, eu pego.",
       );
     } else {
       setStatus(root, "Algo deu errado", false);
@@ -216,14 +216,14 @@ function startListening(root: HTMLElement, triggerBtn: HTMLButtonElement) {
       showSuggestion(
         root,
         "Pitchei",
-        "Você passou de 5 demos na última hora — entre na lista de espera pra usar de verdade durante reuniões.",
+        "Você passou de 5 demos na última hora, entre na lista de espera pra usar de verdade durante reuniões.",
       );
     } else if (result.reason === "captcha-required") {
       setStatus(root, "Confirma que é humano?", false);
       showSuggestion(
         root,
         "Pitchei",
-        "Detectamos muitas demos rápidas. Tente de novo em alguns minutos — ou entre na lista de espera.",
+        "Detectamos muitas demos rápidas. Tente de novo em alguns minutos, ou entre na lista de espera.",
       );
     } else {
       // network / config / ai-error → local fallback

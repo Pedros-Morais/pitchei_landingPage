@@ -1,5 +1,5 @@
 /*
- * Waitlist form handler — wires the CTA form to Supabase.
+ * Waitlist form handler, wires the CTA form to Supabase.
  * Loading / success / error states com mensagens em pt-BR.
  * Re-armado após cada astro:page-load (View Transitions).
  */

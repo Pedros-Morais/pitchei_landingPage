@@ -1,5 +1,5 @@
 /*
- * Particle text effect — vanilla TS port (no React, no shadcn).
+ * Particle text effect, vanilla TS port (no React, no shadcn).
  *
  * Renders text via offscreen canvas, samples its pixels, and animates a
  * particle for each sampled point toward its target. Words cycle on a
@@ -136,7 +136,7 @@ class Particle {
 }
 
 function scatterFromCenter(cx: number, cy: number, mag: number): Vec {
-  // Random direction × magnitude — drives killed particles outward.
+  // Random direction × magnitude, drives killed particles outward.
   const angle = Math.random() * Math.PI * 2;
   return { x: cx + Math.cos(angle) * mag, y: cy + Math.sin(angle) * mag };
 }
@@ -206,7 +206,7 @@ function nextWord(c: CanvasController, word: string): void {
   const step = PIXEL_STEP * 4;
   for (let i = 0; i < pixels.length; i += step) coords.push(i);
 
-  // Fisher–Yates to scramble the assignment so particles move in fluidly
+  // Fisher, Yates to scramble the assignment so particles move in fluidly
   for (let i = coords.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [coords[i], coords[j]] = [coords[j]!, coords[i]!];
