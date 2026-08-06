@@ -1,0 +1,103 @@
+{
+  "title": "Tipos de pitch: qual usar em cada situação",
+  "description": "Elevator pitch, pitch deck, pitch de vendas, pitch pessoal: o que muda entre eles e como escolher o formato certo para cada momento. Em português.",
+  "publishedAt": "2026-08-05",
+  "category": "Fundamentos",
+  "order": 4,
+  "keywords": [
+    "tipos de pitch",
+    "quais são os tipos de pitch",
+    "pitch deck vs elevator pitch",
+    "qual pitch usar",
+    "formatos de pitch"
+  ],
+  "hero": {
+    "eyebrow": "Guia de pitch",
+    "heading": "Tipos de pitch",
+    "subheading": "Nem todo pitch é igual. O formato certo depende de quem ouve, de quanto tempo você tem e do que você quer que aconteça em seguida. Este guia mostra os principais tipos e quando usar cada um."
+  },
+  "answer": "Os principais tipos de pitch são quatro: elevator pitch (30 segundos, para gerar interesse), pitch pessoal (você se apresentando), pitch de vendas (conduz o cliente à decisão) e pitch deck (slides para investidores). O núcleo é o mesmo — problema, solução, prova, pedido — muda a profundidade e a ênfase conforme público, tempo e objetivo.",
+  "tldr": [
+    "O tipo de pitch é definido por três coisas: público, tempo e objetivo.",
+    "Elevator pitch (30s) gera interesse; pitch de vendas conduz à decisão; pitch deck apresenta a empresa a investidores.",
+    "Você não escolhe um só — adapta o mesmo núcleo a cada formato."
+  ],
+  "sections": [
+    {
+      "heading": "O que define um tipo de pitch",
+      "paragraphs": [
+        "Antes do formato, três variáveis determinam qual pitch usar: quem está do outro lado, quanto tempo você tem e qual próxima etapa você quer provocar. Um investidor em 3 minutos, um cliente em 20, um recrutador em 1 — cada combinação pede uma versão diferente da mesma mensagem.",
+        "A boa notícia: o núcleo é sempre o mesmo (problema, solução, prova, pedido). O que muda é a profundidade e a ênfase."
+      ]
+    },
+    {
+      "heading": "Como escolher na hora",
+      "paragraphs": [
+        "Pergunte-se: a pessoa quer decidir agora ou só entender? Se é só entender, vá curto (elevator). Se é decidir e há tempo, aprofunde (vendas, deck). E sempre ajuste a prova ao que aquele público valoriza."
+      ],
+      "bullets": [
+        "Networking / abertura → elevator pitch",
+        "Investidor com tempo → pitch deck",
+        "Cliente avaliando compra → pitch de vendas",
+        "Você se apresentando → pitch pessoal"
+      ]
+    }
+  ],
+  "framework": {
+    "name": "Os principais tipos de pitch",
+    "description": "Quatro formatos, do mais curto ao mais completo, com o objetivo de cada um.",
+    "steps": [
+      {
+        "name": "Elevator pitch",
+        "text": "30 a 60 segundos. Objetivo: gerar interesse e ganhar a próxima conversa. Usado em networking e aberturas."
+      },
+      {
+        "name": "Pitch pessoal",
+        "text": "Você se apresentando: quem é, o que resolve, prova rápida. Usado em entrevistas e rodadas de apresentação."
+      },
+      {
+        "name": "Pitch de vendas",
+        "text": "Conduz um cliente da dor à decisão de compra. Mais longo, interativo, com tratamento de objeções."
+      },
+      {
+        "name": "Pitch deck",
+        "text": "Apresentação com slides para investidores: problema, solução, mercado, tração, time e pedido de captação."
+      }
+    ]
+  },
+  "story": {
+    "title": "Exemplo: o mesmo negócio, três pitches",
+    "context": "Uma startup de logística de última milha.",
+    "quote": "No evento: 'A gente corta em 40% o tempo de entrega de última milha.' Para o cliente: '...veja como fizemos isso para a Loja X, com número e prazo.' Para o investidor: '...e o mercado de última milha no Brasil é de R$ Y bi, crescendo Z% ao ano.'",
+    "lesson": "Mesmo núcleo, ênfase diferente. O erro é usar o pitch de investidor com um cliente — ou vice-versa."
+  },
+  "mistakes": [
+    {
+      "title": "Usar o formato errado para o público",
+      "detail": "Falar de mercado e captação para um cliente que só quer resolver uma dor afasta a venda."
+    },
+    {
+      "title": "Pitch deck virar leitura de slides",
+      "detail": "Slide é apoio; o pitch é você falando. Não leia o slide em voz alta."
+    },
+    {
+      "title": "Elevator pitch longo demais",
+      "detail": "Se o formato curto vira 3 minutos, deixou de ser elevator pitch."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Quantos tipos de pitch existem?",
+      "answer": "Não há número fixo, mas os mais usados são quatro: elevator pitch, pitch pessoal, pitch de vendas e pitch deck (para investidores). O que muda entre eles é público, tempo e objetivo."
+    },
+    {
+      "question": "Qual a diferença entre pitch deck e elevator pitch?",
+      "answer": "O elevator pitch é uma fala curta (30 a 60 segundos) para gerar interesse. O pitch deck é uma apresentação com slides, mais longa, para investidores avaliarem a empresa a fundo."
+    },
+    {
+      "question": "Preciso de um pitch diferente para cada situação?",
+      "answer": "O núcleo é o mesmo (problema, solução, prova, pedido). Você adapta profundidade e ênfase ao público e ao tempo, não reescreve do zero."
+    }
+  ],
+  "related": ["como-fazer-um-pitch", "elevator-pitch", "pitch-deck"]
+}

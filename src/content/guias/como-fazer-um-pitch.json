@@ -1,0 +1,123 @@
+{
+  "title": "Como fazer um bom pitch: estrutura, exemplos e erros a evitar",
+  "description": "O guia completo para montar um pitch que convence — a estrutura em 5 partes, um exemplo real e os erros que derrubam a sua fala. Em português.",
+  "publishedAt": "2026-08-05",
+  "category": "Fundamentos",
+  "order": 1,
+  "keywords": [
+    "como fazer um pitch",
+    "estrutura de pitch",
+    "o que é pitch",
+    "exemplo de pitch",
+    "dicas de pitch"
+  ],
+  "hero": {
+    "eyebrow": "Guia de pitch",
+    "heading": "Como fazer um bom pitch",
+    "subheading": "Um bom pitch não é sobre falar bonito — é sobre conduzir alguém do \"não entendi\" ao \"quero isso\" no menor tempo possível. Aqui está a estrutura que funciona, com exemplo e os erros mais comuns."
+  },
+  "answer": "Um bom pitch responde a três perguntas em sequência: o que é, por que importa e o que você quer que a pessoa faça. Comece pelo problema (não pela solução), sustente com uma prova concreta e termine sempre com um pedido claro — a próxima etapa que você quer conquistar.",
+  "tldr": [
+    "Todo pitch responde a três perguntas: o que é, por que importa e o que você quer que eu faça.",
+    "Comece pelo problema, não pela solução — é o problema que prende a atenção.",
+    "Prova concreta e números valem mais que adjetivos.",
+    "Termine sempre com um pedido claro (o call to action)."
+  ],
+  "sections": [
+    {
+      "heading": "O que é um pitch (e o que não é)",
+      "paragraphs": [
+        "Um pitch é uma fala curta e estruturada com um objetivo específico: conseguir a próxima etapa. Pode ser uma reunião, um investimento, um sim para um projeto ou uma venda. Não é uma apresentação institucional nem um currículo falado — é persuasão com hora para acabar.",
+        "A diferença entre um pitch e uma conversa comum é a intenção. Você sabe aonde quer chegar antes de abrir a boca, e cada frase serve para levar a pessoa até lá."
+      ]
+    },
+    {
+      "heading": "Por que a maioria dos pitches falha",
+      "paragraphs": [
+        "O erro mais comum não é falta de conteúdo — é excesso. Quem está inseguro tende a explicar tudo, e o ouvinte se perde. Um bom pitch corta sem dó o que não é essencial para a decisão que você quer provocar.",
+        "O segundo erro é começar pela solução. \"Somos um app que...\" não gera interesse porque o ouvinte ainda não sente o problema. Sem tensão, não há atenção."
+      ]
+    },
+    {
+      "heading": "Como adaptar o pitch ao contexto",
+      "paragraphs": [
+        "O mesmo produto tem pitches diferentes para um investidor, um cliente e um recrutador. O investidor quer tamanho de mercado e retorno; o cliente quer resolver uma dor; o recrutador quer ver impacto. Antes de montar a fala, defina o que a pessoa do outro lado precisa ouvir para dizer sim."
+      ],
+      "bullets": [
+        "Investidor: problema grande, mercado grande, tração e time.",
+        "Cliente: dor específica, resultado concreto, prova de que funciona.",
+        "Entrevista: contexto, sua ação, resultado medível (método STAR)."
+      ]
+    }
+  ],
+  "framework": {
+    "name": "A estrutura de um pitch em 5 partes",
+    "description": "Cinco blocos que, nesta ordem, conduzem alguém do desconhecimento à decisão.",
+    "totalTime": "PT2M",
+    "steps": [
+      {
+        "name": "Gancho",
+        "text": "Abra com uma frase que cria tensão ou curiosidade — um dado surpreendente, uma pergunta ou uma dor reconhecível. Você tem poucos segundos para merecer os próximos."
+      },
+      {
+        "name": "Problema",
+        "text": "Descreva a dor de forma concreta e específica: quem sente, quando dói, quanto custa. É aqui que o ouvinte pensa \"isso sou eu\"."
+      },
+      {
+        "name": "Solução",
+        "text": "Agora, e só agora, apresente o que você faz — em uma frase clara, sem jargão. A solução deve encaixar exatamente no problema que você acabou de descrever."
+      },
+      {
+        "name": "Prova",
+        "text": "Sustente com evidência: números, um caso real, um nome conhecido, um resultado. Adjetivos não convencem; fatos sim."
+      },
+      {
+        "name": "Pedido",
+        "text": "Feche com um call to action único e claro. O que você quer que aconteça agora? Uma reunião, um teste, um sim. Sem pedido, o pitch morre no ar."
+      }
+    ]
+  },
+  "story": {
+    "title": "Exemplo: o mesmo pitch, antes e depois",
+    "context": "Uma fundadora de uma ferramenta de agendamento tinha 30 segundos com um investidor num evento.",
+    "quote": "Antes: \"Criamos uma plataforma completa de produtividade com IA para equipes.\" Depois: \"Times de vendas perdem 8 horas por semana remarcando reuniões. A gente automatiza isso em um clique — três clientes já cortaram esse tempo pela metade. Você tem 15 minutos essa semana?\"",
+    "lesson": "A segunda versão começa pela dor, traz número, prova e termina com um pedido. Mesma empresa, resultado oposto."
+  },
+  "mistakes": [
+    {
+      "title": "Falar de features antes da dor",
+      "detail": "Ninguém liga para o que seu produto faz até sentir o problema que ele resolve."
+    },
+    {
+      "title": "Usar jargão para parecer sofisticado",
+      "detail": "Se o ouvinte precisa traduzir, você perdeu. Clareza vence esperteza."
+    },
+    {
+      "title": "Não ter um pedido",
+      "detail": "Terminar com \"então é isso\" desperdiça toda a atenção que você construiu. Sempre peça a próxima etapa."
+    },
+    {
+      "title": "Ensaiar demais e soar robótico",
+      "detail": "Saiba a estrutura de cor, não o texto palavra por palavra. Naturalidade convence mais que decoreba."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Quanto tempo deve durar um pitch?",
+      "answer": "Depende do contexto, mas a regra é: o mais curto possível para provocar a próxima etapa. Um elevator pitch tem 30 segundos; um pitch para investidores costuma ter de 2 a 5 minutos; um pitch de vendas se estende conforme a conversa. Em todos os casos, cada frase precisa justificar sua existência."
+    },
+    {
+      "question": "Devo decorar o pitch?",
+      "answer": "Decore a estrutura e as frases-chave (o gancho e o pedido), não o texto inteiro. Isso mantém a fala natural e permite adaptar ao que a pessoa responde."
+    },
+    {
+      "question": "Como começar um pitch?",
+      "answer": "Comece por um gancho que crie tensão: um dado surpreendente, uma pergunta direta ou uma dor que o ouvinte reconhece. Nunca comece por \"nós somos uma empresa que...\"."
+    },
+    {
+      "question": "Qual a diferença entre pitch e apresentação?",
+      "answer": "Uma apresentação informa; um pitch pede uma decisão. O pitch tem um objetivo único e termina com um call to action."
+    }
+  ],
+  "related": ["elevator-pitch", "storytelling-no-pitch"]
+}

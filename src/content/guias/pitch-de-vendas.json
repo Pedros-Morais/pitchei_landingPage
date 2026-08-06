@@ -1,0 +1,105 @@
+{
+  "title": "Pitch de vendas: como conduzir o cliente à decisão",
+  "description": "Como estruturar um pitch de vendas que parte da dor do cliente, prova valor e trata objeções — sem soar como vendedor insistente. Em português.",
+  "publishedAt": "2026-08-05",
+  "category": "Situações",
+  "order": 5,
+  "keywords": [
+    "pitch de vendas",
+    "como fazer um pitch de vendas",
+    "pitch de vendas exemplo",
+    "apresentação de vendas",
+    "como vender uma ideia"
+  ],
+  "hero": {
+    "eyebrow": "Guia de pitch",
+    "heading": "Pitch de vendas",
+    "subheading": "Um bom pitch de vendas não empurra o produto — conduz o cliente do problema dele até a conclusão de que a sua solução é a saída óbvia. Veja a estrutura e como tratar objeções."
+  },
+  "answer": "Um pitch de vendas eficaz começa pela dor do cliente (não pelo produto), faz perguntas de descoberta antes de apresentar, mostra só os benefícios ligados àquela dor, prova com um caso real e termina com um próximo passo pequeno e concreto — um teste ou reunião. Objeção é interesse com dúvida, não um não.",
+  "tldr": [
+    "Venda a solução para a dor do cliente, não as features do produto.",
+    "Faça perguntas antes de apresentar: descubra a dor real primeiro.",
+    "Prova (caso, número) pesa mais que qualquer adjetivo.",
+    "Objeção não é 'não' — é pedido de mais informação."
+  ],
+  "sections": [
+    {
+      "heading": "Comece pela dor, não pelo produto",
+      "paragraphs": [
+        "O erro clássico do pitch de vendas é abrir listando o que o produto faz. O cliente só se importa com features depois de sentir que você entende o problema dele. Comece nomeando a dor de forma concreta — de preferência com uma pergunta que faça o cliente confirmá-la."
+      ]
+    },
+    {
+      "heading": "Descoberta antes de apresentação",
+      "paragraphs": [
+        "Antes de apresentar, pergunte. Quanto o problema custa hoje? O que já tentaram? Quem decide? As respostas dizem exatamente qual parte da sua solução enfatizar. Vendedor que fala 80% do tempo vende menos que o que ouve."
+      ]
+    }
+  ],
+  "framework": {
+    "name": "Estrutura de um pitch de vendas",
+    "description": "Cinco passos que levam da dor à decisão, com espaço para a conversa acontecer.",
+    "steps": [
+      {
+        "name": "Abertura com a dor",
+        "text": "Nomeie o problema do cliente de forma concreta e confirme com uma pergunta: 'Vocês perdem quanto tempo com isso hoje?'"
+      },
+      {
+        "name": "Descoberta",
+        "text": "Pergunte para entender custo, tentativas anteriores e quem decide. Ajuste o resto do pitch às respostas."
+      },
+      {
+        "name": "Solução sob medida",
+        "text": "Apresente só as partes da solução que resolvem a dor confirmada. Uma frase por benefício, sempre ligada à dor."
+      },
+      {
+        "name": "Prova",
+        "text": "Mostre um caso parecido com o dele: contexto, o que mudou, resultado medível."
+      },
+      {
+        "name": "Próximo passo claro",
+        "text": "Proponha uma etapa concreta e pequena: um teste, uma POC, uma reunião com quem decide."
+      }
+    ]
+  },
+  "story": {
+    "title": "Exemplo: tratando a objeção de preço",
+    "context": "O cliente diz 'está caro' no meio da call.",
+    "quote": "'Entendo. Caro comparado a quê? Hoje vocês gastam 8 horas por semana nisso — a R$ X a hora, dá R$ Y por mês. A ferramenta custa menos que isso e devolve o tempo. Faz sentido rodarmos um teste de 14 dias antes de decidir?'",
+    "lesson": "A objeção virou uma conta e um próximo passo pequeno. Não brigou com o 'não' — reformulou o valor."
+  },
+  "mistakes": [
+    {
+      "title": "Falar mais que ouvir",
+      "detail": "Quem domina a fala perde a informação que faria a venda. Pergunte e escute."
+    },
+    {
+      "title": "Apresentar features irrelevantes",
+      "detail": "Cada benefício precisa se ligar a uma dor que o cliente confirmou."
+    },
+    {
+      "title": "Encarar objeção como rejeição",
+      "detail": "Objeção é interesse com dúvida. Responda com dado e proponha um passo menor."
+    },
+    {
+      "title": "Não definir o próximo passo",
+      "detail": "Terminar sem uma ação concreta deixa a venda esfriar."
+    }
+  ],
+  "faq": [
+    {
+      "question": "O que é um pitch de vendas?",
+      "answer": "É a fala estruturada que conduz um cliente da percepção da dor até a decisão de comprar. Diferente de uma apresentação institucional, ele é interativo e termina com um próximo passo concreto."
+    },
+    {
+      "question": "Como começar um pitch de vendas?",
+      "answer": "Comece pela dor do cliente, não pelo produto. Nomeie o problema de forma concreta e confirme com uma pergunta antes de apresentar qualquer solução."
+    },
+    {
+      "question": "Como responder 'está caro'?",
+      "answer": "Transforme preço em custo comparado: quanto o problema custa hoje versus o preço da solução. Depois proponha um passo pequeno (teste ou POC) para reduzir o risco da decisão."
+    }
+  ],
+  "related": ["como-fazer-um-pitch", "tipos-de-pitch", "como-comecar-um-pitch"]
+}

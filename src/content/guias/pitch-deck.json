@@ -1,0 +1,94 @@
+{
+  "title": "Pitch deck: a estrutura de slides que investidor lê",
+  "description": "Os slides essenciais de um pitch deck, na ordem certa, e o que cada um precisa responder para o investidor marcar a próxima reunião. Em português.",
+  "publishedAt": "2026-08-05",
+  "category": "Formatos",
+  "order": 6,
+  "keywords": [
+    "pitch deck",
+    "estrutura de pitch deck",
+    "slides de pitch deck",
+    "pitch deck para investidores",
+    "como montar um pitch deck"
+  ],
+  "hero": {
+    "eyebrow": "Guia de pitch",
+    "heading": "Pitch deck",
+    "subheading": "Investidor vê centenas de decks e decide em minutos. Um bom pitch deck não conta tudo — conta o essencial, na ordem que responde às perguntas dele antes de ele fazê-las."
+  },
+  "answer": "Um pitch deck tem de 10 a 12 slides, nesta ordem: problema, solução, mercado, produto, tração, modelo de negócio, concorrência, time e o pedido de captação. Cada slide traz uma ideia e um número; o deck abre a reunião, não a substitui. Investidor olha principalmente para tração e time.",
+  "tldr": [
+    "10 a 12 slides bastam. O deck abre a reunião, não a substitui.",
+    "Ordem importa: problema e mercado antes de solução e time.",
+    "Um número forte por slide vale mais que um slide cheio.",
+    "O último slide é o pedido: quanto você capta e para quê."
+  ],
+  "sections": [
+    {
+      "heading": "O deck não é o pitch",
+      "paragraphs": [
+        "O pitch deck é o apoio visual da sua fala, não um documento para ser lido em voz alta. Cada slide tem uma ideia e um número. Se o investidor consegue entender tudo sem você, o deck está textual demais."
+      ]
+    },
+    {
+      "heading": "Menos slides, mais foco",
+      "paragraphs": [
+        "Dez a doze slides cobrem o que um investidor precisa numa primeira reunião. O objetivo do deck não é fechar o cheque — é conquistar a próxima conversa e o pedido de due diligence."
+      ]
+    }
+  ],
+  "framework": {
+    "name": "Os slides essenciais de um pitch deck",
+    "description": "A sequência que responde às perguntas do investidor na ordem em que ele as faz.",
+    "steps": [
+      { "name": "Problema", "text": "A dor que você resolve, grande e real. Slide de abertura." },
+      { "name": "Solução", "text": "O que você faz, em uma frase e uma imagem, encaixando no problema." },
+      { "name": "Mercado (TAM/SAM/SOM)", "text": "O tamanho da oportunidade, com números de fonte — não chute." },
+      { "name": "Produto", "text": "Como funciona, de preferência com uma tela ou demo." },
+      { "name": "Tração", "text": "A prova de que está funcionando: usuários, receita, crescimento." },
+      { "name": "Modelo de negócio", "text": "Como você ganha dinheiro e a economia por cliente." },
+      { "name": "Concorrência", "text": "Quem mais resolve isso e por que você é diferente." },
+      { "name": "Time", "text": "Por que essas pessoas são as certas para este problema." },
+      { "name": "O pedido (ask)", "text": "Quanto você capta, para quê e o que isso destrava." }
+    ]
+  },
+  "story": {
+    "title": "Exemplo: o slide de tração que muda a reunião",
+    "context": "Uma startup SaaS com 8 meses de operação.",
+    "quote": "Em vez de 'temos boa tração', o slide mostrava: 'R$ 40k de MRR, +18% ao mês nos últimos 6 meses, churn de 2%.' Três números e um gráfico subindo.",
+    "lesson": "Investidor não compra adjetivo ('boa tração'). Compra uma curva subindo com números que ele pode conferir."
+  },
+  "mistakes": [
+    {
+      "title": "Deck com texto demais",
+      "detail": "Se o slide é um parágrafo, o investidor lê e para de ouvir você."
+    },
+    {
+      "title": "Mercado inflado sem fonte",
+      "detail": "Um TAM sem fonte crível derruba sua credibilidade no slide seguinte."
+    },
+    {
+      "title": "Esconder a concorrência",
+      "detail": "Dizer 'não temos concorrentes' sinaliza que você não entende o mercado."
+    },
+    {
+      "title": "Terminar sem o ask",
+      "detail": "O último slide precisa dizer quanto você capta e para quê."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Quantos slides deve ter um pitch deck?",
+      "answer": "Entre 10 e 12 na primeira reunião. O deck serve para abrir a conversa, não para cobrir tudo; detalhes vão para a due diligence."
+    },
+    {
+      "question": "Qual a ordem dos slides de um pitch deck?",
+      "answer": "Uma ordem que funciona: problema, solução, mercado, produto, tração, modelo de negócio, concorrência, time e o pedido de captação. Problema e mercado vêm antes de solução e time."
+    },
+    {
+      "question": "O que o investidor mais olha no deck?",
+      "answer": "Tração e time. Tração prova que funciona; time prova que vocês vão executar. Ambos com números e fatos, não adjetivos."
+    }
+  ],
+  "related": ["como-fazer-um-pitch", "tipos-de-pitch", "como-comecar-um-pitch"]
+}

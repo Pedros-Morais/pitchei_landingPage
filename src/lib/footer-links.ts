@@ -33,6 +33,7 @@ export const FOOTER_GROUPS: FooterGroup[] = [
   {
     heading: "Recursos",
     links: [
+      { label: "Guia de pitch", href: "/guia-de-pitch" },
       { label: "Blog", href: "/blog" },
       { label: "Pitchei vs Otter", href: "/comparativo/pitchei-vs-otter" },
       { label: "Pitchei vs Fathom", href: "/comparativo/pitchei-vs-fathom" },

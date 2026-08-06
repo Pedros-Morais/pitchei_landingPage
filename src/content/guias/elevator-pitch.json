@@ -1,0 +1,99 @@
+{
+  "title": "Elevator pitch: como se apresentar em 30 segundos (com modelo)",
+  "description": "O que é um elevator pitch, o modelo de 4 frases para montar o seu e exemplos prontos para adaptar. Em português, direto ao ponto.",
+  "publishedAt": "2026-08-05",
+  "category": "Formatos",
+  "order": 2,
+  "keywords": [
+    "elevator pitch",
+    "o que é elevator pitch",
+    "exemplo de elevator pitch",
+    "pitch de 30 segundos",
+    "como se apresentar rápido"
+  ],
+  "hero": {
+    "eyebrow": "Guia de pitch",
+    "heading": "Elevator pitch em 30 segundos",
+    "subheading": "O elevator pitch é a versão mais curta e mais difícil do seu pitch: apresentar quem você é e o que resolve no tempo de uma viagem de elevador. Aqui está o modelo."
+  },
+  "answer": "Um elevator pitch é uma apresentação de 30 a 60 segundos (cerca de 4 frases) feita para gerar interesse, não para fechar negócio. Ele diz quem você ajuda, o problema que resolve e o seu diferencial, e termina com um gancho — uma pergunta ou convite para continuar a conversa.",
+  "tldr": [
+    "Um elevator pitch cabe em 30 a 60 segundos — cerca de 4 frases.",
+    "Ele responde: quem você é, o que resolve, para quem e qual o próximo passo.",
+    "Não é para fechar negócio — é para conquistar os próximos 10 minutos.",
+    "Adapte o final ao objetivo: um pedido de reunião, um cartão, um teste."
+  ],
+  "sections": [
+    {
+      "heading": "O que é um elevator pitch",
+      "paragraphs": [
+        "O nome vem da ideia de que você deveria conseguir apresentar sua ideia no tempo de uma viagem de elevador — 30 a 60 segundos. É o formato usado em eventos, apresentações rápidas, networking e sempre que alguém pergunta \"e você, com o que trabalha?\".",
+        "O objetivo do elevator pitch não é fechar nada. É gerar interesse suficiente para ganhar a próxima conversa. Pense nele como um trailer, não como o filme inteiro."
+      ]
+    },
+    {
+      "heading": "Quando usar (e quando não)",
+      "paragraphs": [
+        "Use em networking, eventos, rodadas rápidas de apresentação e no começo de uma reunião para dar contexto. Evite forçar um elevator pitch quando a pessoa quer profundidade — nesse caso, ele vira só a abertura, e você aprofunda a partir das perguntas dela."
+      ]
+    }
+  ],
+  "framework": {
+    "name": "O modelo de elevator pitch em 4 frases",
+    "description": "Quatro frases que cabem em menos de um minuto e cobrem tudo que o ouvinte precisa para querer saber mais.",
+    "totalTime": "PT1M",
+    "steps": [
+      {
+        "name": "Quem você é / o que faz",
+        "text": "Uma frase que posiciona: \"Eu ajudo [público] a [resultado].\" Evite o cargo; foque no valor."
+      },
+      {
+        "name": "O problema que você resolve",
+        "text": "A dor específica do seu público. É o que faz a pessoa se identificar ou lembrar de alguém que vive aquilo."
+      },
+      {
+        "name": "Como você resolve (o diferencial)",
+        "text": "O que você faz de diferente, em linguagem simples. Uma frase, sem jargão."
+      },
+      {
+        "name": "O gancho para continuar",
+        "text": "Termine abrindo a porta: uma pergunta, um convite para conversar ou uma prova rápida que gera curiosidade."
+      }
+    ]
+  },
+  "story": {
+    "title": "Exemplo de elevator pitch pronto",
+    "context": "Um profissional de dados num evento de tecnologia, respondendo \"com o que você trabalha?\".",
+    "quote": "\"Sabe quando o time de marketing pede um relatório e ele demora dois dias para chegar? Eu ajudo empresas a montarem painéis que respondem isso em segundos. Fiz isso para três e-commerces e o time parou de depender de planilha. Vocês já têm algo assim rodando?\"",
+    "lesson": "Em quatro frases: valor, problema, prova e uma pergunta que reabre a conversa. Nenhuma palavra desperdiçada."
+  },
+  "mistakes": [
+    {
+      "title": "Começar pelo cargo",
+      "detail": "\"Sou analista de dados sênior\" não diz nada ao ouvinte. Diga o que você resolve para ele."
+    },
+    {
+      "title": "Querer explicar tudo",
+      "detail": "Elevator pitch não é para caber sua vida inteira. É para provocar a próxima pergunta."
+    },
+    {
+      "title": "Esquecer o gancho final",
+      "detail": "Sem uma pergunta ou convite no fim, a conversa esfria e o momento passa."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Quantas palavras tem um elevator pitch?",
+      "answer": "Em torno de 75 a 150 palavras, o equivalente a 30 a 60 segundos falados. Se passar disso, você provavelmente está explicando demais."
+    },
+    {
+      "question": "Elevator pitch e pitch são a mesma coisa?",
+      "answer": "Não. O elevator pitch é a versão mais curta, feita para gerar interesse rápido. Um pitch completo — para investidores ou vendas — é mais longo e leva à decisão. Veja o guia de como fazer um bom pitch para a estrutura completa."
+    },
+    {
+      "question": "Como terminar um elevator pitch?",
+      "answer": "Com um gancho: uma pergunta que reabre a conversa, um convite para uma reunião ou uma prova curta que desperta curiosidade. Nunca termine no vazio."
+    }
+  ],
+  "related": ["como-fazer-um-pitch", "storytelling-no-pitch"]
+}

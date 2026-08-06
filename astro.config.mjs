@@ -62,11 +62,41 @@ const BLOG_INDEX_LASTMOD = Object.values(BLOG_LASTMOD)
   .sort()
   .at(-1);
 
+// Pitch guides are JSON-driven and rendered by a dynamic route, so pageFileFor
+// can't map each slug to a source file. Read their editorial dates straight
+// from the JSON (updatedAt ?? publishedAt) to keep <lastmod> honest per guide.
+const GUIA_DIR = new URL("./src/content/guias/", import.meta.url);
+
+function readGuiaLastmod() {
+  const dir = fileURLToPath(GUIA_DIR);
+  if (!existsSync(dir)) return {};
+  const map = {};
+  for (const file of readdirSync(dir)) {
+    if (!file.endsWith(".json")) continue;
+    const slug = file.replace(/\.json$/, "");
+    try {
+      const data = JSON.parse(readFileSync(new URL(file, GUIA_DIR), "utf8"));
+      const iso = String(data.updatedAt || data.publishedAt || "").trim();
+      if (iso) map[slug] = iso;
+    } catch {
+      // Malformed JSON: skip; the page falls back to SITE_UPDATED.
+    }
+  }
+  return map;
+}
+
+const GUIA_LASTMOD = readGuiaLastmod();
+const GUIA_INDEX_LASTMOD = Object.values(GUIA_LASTMOD).sort().at(-1);
+
 function lastmodFor(path) {
   // Blog: editorial dates from frontmatter (updatedAt ?? publishedAt).
   const post = /^\/blog\/(.+)$/.exec(path);
   if (post && BLOG_LASTMOD[post[1]]) return BLOG_LASTMOD[post[1]];
   if (path === "/blog" && BLOG_INDEX_LASTMOD) return BLOG_INDEX_LASTMOD;
+  // Pitch guides: editorial dates from the JSON (updatedAt ?? publishedAt).
+  const guia = /^\/guia-de-pitch\/(.+)$/.exec(path);
+  if (guia && GUIA_LASTMOD[guia[1]]) return GUIA_LASTMOD[guia[1]];
+  if (path === "/guia-de-pitch" && GUIA_INDEX_LASTMOD) return GUIA_INDEX_LASTMOD;
   // Everything else: last git commit that touched the page source.
   const file = pageFileFor(path);
   return (file && gitLastmod(file)) || SITE_UPDATED;
@@ -95,6 +125,8 @@ export default defineConfig({
           item.priority = 1.0;
           item.changefreq = "daily";
         } else if (/^\/(casos-de-uso|comparativo)/.test(path)) {
+          item.priority = 0.8;
+        } else if (/^\/guia-de-pitch/.test(path)) {
           item.priority = 0.8;
         } else if (path === "/sobre") {
           item.priority = 0.7;

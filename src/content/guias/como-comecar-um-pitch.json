@@ -1,0 +1,105 @@
+{
+  "title": "Como começar um pitch: 6 ganchos que prendem a atenção",
+  "description": "Os primeiros segundos decidem se vão te ouvir. Seis tipos de gancho para abrir um pitch, com exemplos, e o erro que faz a atenção morrer. Em português.",
+  "publishedAt": "2026-08-05",
+  "category": "Técnicas",
+  "order": 7,
+  "keywords": [
+    "como começar um pitch",
+    "gancho de pitch",
+    "abertura de pitch",
+    "como iniciar uma apresentação",
+    "frases para começar um pitch"
+  ],
+  "hero": {
+    "eyebrow": "Guia de pitch",
+    "heading": "Como começar um pitch",
+    "subheading": "A abertura é a parte mais importante do pitch: se os primeiros segundos não prendem, o resto não é ouvido. Aqui estão seis ganchos que funcionam — e como escolher o certo."
+  },
+  "answer": "Comece um pitch com um gancho que cria tensão ou curiosidade — um dado surpreendente, uma pergunta direta ou uma micro-história — e que leve direto ao problema que você resolve. Nunca abra com 'nós somos uma empresa que...' nem com pedidos de desculpa. Vale decorar só a primeira frase, que é a que mais pesa.",
+  "tldr": [
+    "Você tem poucos segundos para merecer os próximos. O gancho é tudo.",
+    "Nunca abra com 'nós somos uma empresa que...'.",
+    "Bons ganchos criam tensão: um dado, uma pergunta, uma história.",
+    "Escolha o gancho pela emoção que quer provocar."
+  ],
+  "sections": [
+    {
+      "heading": "Por que a abertura decide o pitch",
+      "paragraphs": [
+        "A atenção é maior no começo e cai rápido. Se você gastar os primeiros segundos com apresentação formal ('meu nome é, trabalho na, somos uma empresa que...'), desperdiça o pico de atenção com informação que não cria interesse. O gancho existe para converter esse pico em curiosidade."
+      ]
+    },
+    {
+      "heading": "Como escolher o gancho",
+      "paragraphs": [
+        "Escolha pelo efeito: quer chocar? Use um dado. Quer engajar? Faça uma pergunta. Quer criar identificação? Conte uma micro-história. O gancho tem que levar direto ao problema que você vai resolver — um gancho bonito que não conecta com o tema confunde."
+      ]
+    }
+  ],
+  "framework": {
+    "name": "Seis ganchos para abrir um pitch",
+    "description": "Tipos de abertura que criam tensão ou curiosidade nos primeiros segundos.",
+    "steps": [
+      {
+        "name": "Dado surpreendente",
+        "text": "Um número que quebra a expectativa: 'Times de vendas perdem 8 horas por semana só remarcando reuniões.'"
+      },
+      {
+        "name": "Pergunta direta",
+        "text": "Uma pergunta que o público responde mentalmente 'sim': 'Quantas vezes você travou ao falar de preço?'"
+      },
+      {
+        "name": "Micro-história",
+        "text": "Um personagem e um conflito em duas frases. Cria identificação imediata."
+      },
+      {
+        "name": "Afirmação provocativa",
+        "text": "Uma frase que contraria o senso comum e faz o público querer entender o porquê."
+      },
+      {
+        "name": "Cenário 'imagine'",
+        "text": "Leve o público a visualizar a situação: 'Imagine fechar a reunião sem aquele te mando depois.'"
+      },
+      {
+        "name": "Contraste antes/depois",
+        "text": "Mostre o mundo com e sem o problema em uma única frase."
+      }
+    ]
+  },
+  "story": {
+    "title": "Exemplo: mesma ideia, com e sem gancho",
+    "context": "Abertura de um pitch de uma ferramenta de reuniões.",
+    "quote": "Sem gancho: 'Olá, somos a Pitchei, um copiloto de reunião com IA.' Com gancho: 'Você já travou quando o cliente perguntou o preço e o silêncio custou a venda? A gente resolve exatamente esse segundo.'",
+    "lesson": "A segunda abre com uma dor reconhecível e uma pergunta. A primeira gasta o pico de atenção com um crachá."
+  },
+  "mistakes": [
+    {
+      "title": "Abrir se apresentando",
+      "detail": "Nome e empresa podem esperar. Comece pela dor ou pela curiosidade."
+    },
+    {
+      "title": "Gancho que não conecta",
+      "detail": "Uma abertura chamativa que não leva ao seu tema confunde e quebra a confiança."
+    },
+    {
+      "title": "Pedir desculpas ou se diminuir",
+      "detail": "'Desculpa, vou ser rápido' ou 'não sou muito bom nisso' derruba a atenção antes de você começar."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Como começar um pitch?",
+      "answer": "Comece com um gancho que crie tensão ou curiosidade — um dado surpreendente, uma pergunta direta ou uma micro-história — e que leve direto ao problema que você resolve. Evite abrir se apresentando."
+    },
+    {
+      "question": "O que não dizer no começo de um pitch?",
+      "answer": "Evite 'nós somos uma empresa que...', pedidos de desculpa ('vou ser breve', 'não sou bom nisso') e apresentações formais longas. Elas gastam o pico de atenção sem gerar interesse."
+    },
+    {
+      "question": "Preciso decorar a abertura?",
+      "answer": "Vale decorar só a primeira frase (o gancho), porque é a que mais pesa e a que costuma travar por nervosismo. O resto, saiba pela estrutura."
+    }
+  ],
+  "related": ["como-fazer-um-pitch", "storytelling-no-pitch", "pitch-de-vendas"]
+}

@@ -26,7 +26,7 @@ export function organizationSchema() {
       "Sales enablement",
       "Interview preparation",
     ],
-    sameAs: ["https://twitter.com/pitchei", "https://x.com/pitchei"],
+    sameAs: [...SITE.profiles],
     contactPoint: [
       {
         "@type": "ContactPoint",
@@ -231,5 +231,46 @@ export function collectionPageSchema(opts: {
     url: `${SITE.url}${opts.path}`,
     inLanguage: SITE.locale,
     isPartOf: { "@id": `${SITE.url}/#website` },
+  } as const;
+}
+
+// Enumerates the items of a hub/listing page so search + AI engines can read the
+// set as an ordered list (helps them surface "the guides on X").
+export function itemListSchema(opts: {
+  name: string;
+  description?: string;
+  path: string;
+  items: { name: string; path: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: opts.name,
+    ...(opts.description ? { description: opts.description } : {}),
+    url: `${SITE.url}${opts.path}`,
+    inLanguage: SITE.locale,
+    numberOfItems: opts.items.length,
+    itemListElement: opts.items.map((it, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: it.name,
+      url: it.path.startsWith("http") ? it.path : `${SITE.url}${it.path}`,
+    })),
+  } as const;
+}
+
+// Marks which parts of a page are safe to read aloud (voice assistants / answer
+// engines). Point cssSelectors at the concise answer + FAQ blocks.
+export function speakableSchema(opts: { path: string; cssSelectors: string[] }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE.url}${opts.path}#webpage`,
+    url: `${SITE.url}${opts.path}`,
+    inLanguage: SITE.locale,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: opts.cssSelectors,
+    },
   } as const;
 }

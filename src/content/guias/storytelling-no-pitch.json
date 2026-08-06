@@ -1,0 +1,99 @@
+{
+  "title": "Storytelling no pitch: como usar histórias para convencer",
+  "description": "Por que histórias convencem mais que dados soltos e como estruturar uma boa história dentro do seu pitch — com arco narrativo e exemplo. Em português.",
+  "publishedAt": "2026-08-05",
+  "category": "Técnicas",
+  "order": 3,
+  "keywords": [
+    "storytelling no pitch",
+    "como contar histórias",
+    "história de pitch",
+    "narrativa persuasiva",
+    "pitch com storytelling"
+  ],
+  "hero": {
+    "eyebrow": "Guia de pitch",
+    "heading": "Storytelling no pitch",
+    "subheading": "As pessoas esquecem números, mas lembram histórias. Boas histórias de pitch não são enfeite — são a forma mais eficiente de fazer alguém sentir o problema antes de você oferecer a solução."
+  },
+  "answer": "Storytelling no pitch é usar uma história curta — com contexto, conflito, virada e resultado — para fazer o ouvinte sentir o problema antes de você oferecer a solução. Funciona porque o cérebro lembra de histórias e esquece dados soltos. Use um personagem concreto e mantenha a narrativa a serviço da mensagem.",
+  "tldr": [
+    "Histórias ativam emoção e memória — decisões são tomadas com as duas.",
+    "Uma boa história de pitch tem arco: contexto, conflito, virada e resultado.",
+    "Use um personagem concreto (um cliente, você mesmo) para criar identificação.",
+    "A história serve à mensagem, nunca o contrário."
+  ],
+  "sections": [
+    {
+      "heading": "Por que histórias convencem",
+      "paragraphs": [
+        "Nosso cérebro é feito para narrativas. Um dado isolado é processado pela razão; uma história é vivida — o ouvinte simula a cena e sente o que o personagem sente. Por isso lembramos de histórias e esquecemos de bullet points.",
+        "Num pitch, isso é ouro: em vez de afirmar que existe um problema, você faz a pessoa senti-lo através de alguém com quem ela se identifica. Quando a solução aparece, ela já foi desejada."
+      ]
+    },
+    {
+      "heading": "Onde encaixar a história no pitch",
+      "paragraphs": [
+        "O melhor lugar para uma história costuma ser o início, no lugar do gancho e do problema: você abre com o personagem enfrentando a dor, e a solução entra como a virada. A história também funciona como prova — um caso real de cliente vale mais que uma lista de features."
+      ]
+    }
+  ],
+  "framework": {
+    "name": "O arco de uma boa história de pitch",
+    "description": "Quatro momentos que transformam um exemplo solto em uma narrativa que prende.",
+    "totalTime": "PT1M",
+    "steps": [
+      {
+        "name": "Contexto",
+        "text": "Apresente um personagem concreto e a situação normal dele. Quanto mais específico (nome, cargo, rotina), mais o ouvinte se identifica."
+      },
+      {
+        "name": "Conflito",
+        "text": "Introduza o problema que quebra a normalidade. É a tensão — o momento em que algo dá errado ou trava."
+      },
+      {
+        "name": "Virada",
+        "text": "Mostre o que mudou. Aqui entra sua solução, mas contada como parte da história, não como pitch de vendas."
+      },
+      {
+        "name": "Resultado",
+        "text": "Feche com o desfecho concreto e, se possível, medível. É a prova de que a virada funcionou."
+      }
+    ]
+  },
+  "story": {
+    "title": "Exemplo: transformando uma feature em história",
+    "context": "Uma empresa de software para reuniões quer mostrar o valor da sugestão em tempo real.",
+    "quote": "\"A Marina lidera vendas e travava toda vez que um cliente perguntava preço no meio da call. Ela gaguejava, prometia 'te mando depois' e perdia o momento. Passou a usar uma ferramenta que sugere a resposta na hora. Na semana seguinte, fechou dois contratos que antes teria adiado.\"",
+    "lesson": "Ninguém falou de \"funcionalidade de sugestão em tempo real\". A feature virou a virada de uma história — e ficou memorável."
+  },
+  "mistakes": [
+    {
+      "title": "História longa demais",
+      "detail": "Um pitch não é uma novela. Corte tudo que não serve ao ponto. Trinta segundos de história bem contada bastam."
+    },
+    {
+      "title": "Personagem genérico",
+      "detail": "\"Uma empresa\" não gera identificação. \"A Marina, que lidera vendas\" gera. Seja específico."
+    },
+    {
+      "title": "Esquecer a mensagem",
+      "detail": "A história precisa levar a uma conclusão clara. Se o ouvinte pensa \"e daí?\", faltou conectar a história ao seu pedido."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Toda história de pitch precisa ser real?",
+      "answer": "Idealmente sim — casos reais têm força de prova e você não corre risco de ser desmentido. Se usar um exemplo hipotético, deixe claro que é ilustrativo."
+    },
+    {
+      "question": "Onde colocar a história no pitch?",
+      "answer": "Normalmente no início, no lugar do gancho e do problema, para criar identificação antes da solução. Também funciona como prova, substituindo uma lista de resultados por um caso concreto."
+    },
+    {
+      "question": "Quanto tempo a história deve durar?",
+      "answer": "O suficiente para criar contexto, conflito, virada e resultado — geralmente 20 a 40 segundos. Se passar disso, provavelmente há detalhe demais."
+    }
+  ],
+  "related": ["como-fazer-um-pitch", "elevator-pitch"]
+}
