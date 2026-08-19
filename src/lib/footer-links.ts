@@ -45,6 +45,7 @@ export const FOOTER_GROUPS: FooterGroup[] = [
     links: [
       { label: "Privacidade", href: "/privacidade" },
       { label: "Termos de uso", href: "/termos" },
+      { label: "Preferências de cookies", href: "#cookie-preferences" },
       { label: SITE.email, href: `mailto:${SITE.email}` },
     ],
   },

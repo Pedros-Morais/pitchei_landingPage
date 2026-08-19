@@ -229,7 +229,14 @@ void main(){gl_Position=position;}`;
     );
   };
 
-  document
-    .querySelectorAll<HTMLCanvasElement>("[data-smoke-background]")
-    .forEach(initSmokeBackground);
+  const initAll = () => {
+    document
+      .querySelectorAll<HTMLCanvasElement>("[data-smoke-background]")
+      .forEach(initSmokeBackground);
+  };
+
+  initAll();
+  // Astro client-side transitions swap in a fresh <canvas>, which this
+  // module (already executed once) won't pick up on its own.
+  document.addEventListener("astro:page-load", initAll);
 </script>

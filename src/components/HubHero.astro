@@ -1,0 +1,24 @@
+---
+// Shared intro block for the collection index pages (blog, casos-de-uso,
+// comparativo, guia-de-pitch), previously hand-duplicated in each.
+type Props = {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+};
+const { eyebrow, title, subtitle } = Astro.props;
+---
+
+<section class="border-b border-paper/10">
+  <div class="mx-auto max-w-4xl px-6 py-20 md:py-28">
+    <p class="text-sm font-semibold uppercase tracking-wider text-orange">
+      {eyebrow}
+    </p>
+    <h1 class="mt-3 font-display text-4xl font-black leading-tight text-paper md:text-6xl">
+      {title}
+    </h1>
+    <p class="mt-6 max-w-2xl text-lg text-paper/75">
+      {subtitle}
+    </p>
+  </div>
+</section>

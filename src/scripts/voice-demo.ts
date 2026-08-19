@@ -41,6 +41,10 @@ let booted = false;
 let recognition: AnyRecognition | null = null;
 let listenTimeout: number | null = null;
 let resetTimeout: number | null = null;
+// Bumped on every startListening()/exitVoiceMode() so async work (the AI
+// suggestion fetch, a stale auto-reset timer) from a superseded session can
+// tell it's no longer current and skip updating the UI.
+let sessionId = 0;
 
 function getRecognitionCtor(): (new () => AnyRecognition) | null {
   const w = window as Window;
@@ -98,6 +102,7 @@ function hideSuggestion(root: HTMLElement) {
 }
 
 function exitVoiceMode(root: HTMLElement, triggerBtn: HTMLButtonElement) {
+  sessionId++;
   if (listenTimeout) {
     clearTimeout(listenTimeout);
     listenTimeout = null;
@@ -127,6 +132,20 @@ function startListening(root: HTMLElement, triggerBtn: HTMLButtonElement) {
   const Ctor = getRecognitionCtor();
   if (!Ctor) return;
 
+  // Starting fresh: drop any timer left over from a prior session (e.g. the
+  // user hit retry before the previous auto-reset fired) and invalidate that
+  // session's still-in-flight async work.
+  if (listenTimeout) {
+    clearTimeout(listenTimeout);
+    listenTimeout = null;
+  }
+  if (resetTimeout) {
+    clearTimeout(resetTimeout);
+    resetTimeout = null;
+  }
+  sessionId++;
+  const mySession = sessionId;
+
   enterVoiceMode(root);
   setStatus(root, "Ouvindo…", true);
   setTranscript(root, "");
@@ -155,6 +174,7 @@ function startListening(root: HTMLElement, triggerBtn: HTMLButtonElement) {
   };
 
   recognition.onerror = (ev: any) => {
+    if (mySession !== sessionId) return;
     const err = ev?.error ?? "unknown";
     if (err === "not-allowed" || err === "service-not-allowed") {
       setStatus(root, "Sem permissão de mic", false);
@@ -184,6 +204,7 @@ function startListening(root: HTMLElement, triggerBtn: HTMLButtonElement) {
   };
 
   recognition.onend = async () => {
+    if (mySession !== sessionId) return;
     setListening(triggerBtn, false);
     if (!finalTranscript.trim()) {
       return; // onerror handled it, or user just got nothing
@@ -204,6 +225,8 @@ function startListening(root: HTMLElement, triggerBtn: HTMLButtonElement) {
         result = await suggestFromAI(finalTranscript.trim(), token);
       }
     }
+    if (mySession !== sessionId) return; // superseded while we awaited the AI call
+
     if (result.ok) {
       setStatus(
         root,

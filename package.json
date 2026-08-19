@@ -10,6 +10,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "new-guide": "node scripts/new-guide.mjs",
+    "test:supabase": "node --env-file=.env scripts/test-supabase-connection.mjs",
     "check": "astro check",
     "format": "prettier --write \"**/*.{astro,ts,tsx,js,jsx,md,json,css}\""
   },
