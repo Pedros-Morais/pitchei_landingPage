@@ -3,7 +3,7 @@ import Base from "~/layouts/Base.astro";
 import { breadcrumbSchema } from "~/lib/schema";
 import { SITE } from "~/lib/site";
 
-const updated = "2026-04-28";
+const updated = "2026-08-18";
 const jsonLd = breadcrumbSchema([
   { name: "Início", url: "/" },
   { name: "Privacidade", url: "/privacidade" },
@@ -109,6 +109,13 @@ const jsonLd = breadcrumbSchema([
         <li>
           <strong class="text-paper">Supabase</strong>, autenticação e
           persistência opcional de configurações. Sem áudio, sem transcrição.
+        </li>
+        <li>
+          <strong class="text-paper">Google Analytics</strong>, métricas de
+          uso da landing page (páginas visitadas, origem do tráfego). Só
+          carrega se você aceitar no banner de cookies; sem áudio, sem
+          transcrição. Você pode mudar de ideia a qualquer momento em
+          "Preferências de cookies" no rodapé.
         </li>
       </ul>
 

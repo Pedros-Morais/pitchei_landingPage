@@ -1,4 +1,4 @@
-import { SITE } from "./site";
+import { SITE, TEAM_AUTHOR_NAME } from "./site";
 
 export type FAQItem = { question: string; answer: string };
 export type Crumb = { name: string; url: string };
@@ -190,11 +190,14 @@ export function articleSchema(opts: {
     datePublished: opts.datePublished,
     dateModified: opts.dateModified ?? opts.datePublished,
     image,
-    author: {
-      "@type": opts.authorName ? "Person" : "Organization",
-      name: opts.authorName ?? SITE.name,
-      ...(opts.authorName ? {} : { url: SITE.url }),
-    },
+    author: (() => {
+      const isNamedPerson = Boolean(opts.authorName) && opts.authorName !== TEAM_AUTHOR_NAME;
+      return {
+        "@type": isNamedPerson ? "Person" : "Organization",
+        name: opts.authorName ?? SITE.name,
+        ...(isNamedPerson ? {} : { url: SITE.url }),
+      };
+    })(),
     publisher: { "@id": `${SITE.url}/#organization` },
     ...(opts.keywords && opts.keywords.length
       ? { keywords: opts.keywords.join(", ") }

@@ -2,6 +2,8 @@
 import { getCollection } from "astro:content";
 import Base from "~/layouts/Base.astro";
 import Breadcrumb from "~/components/Breadcrumb.astro";
+import HubHero from "~/components/HubHero.astro";
+import HubCardGrid from "~/components/HubCardGrid.astro";
 import UseCaseCTA from "~/components/UseCaseCTA.astro";
 import {
   breadcrumbSchema,
@@ -18,6 +20,13 @@ const crumbs = [
 const guias = (await getCollection("guias")).sort(
   (a, b) => a.data.order - b.data.order,
 );
+
+const guiaItems = guias.map((g) => ({
+  href: `/guia-de-pitch/${g.id}`,
+  title: g.data.title,
+  desc: g.data.description,
+  badge: g.data.category,
+}));
 
 const jsonLd = [
   organizationSchema(),
@@ -58,44 +67,13 @@ const keywords = [
 >
   <Breadcrumb crumbs={crumbs} />
 
-  <section class="border-b border-paper/10">
-    <div class="mx-auto max-w-4xl px-6 py-20 md:py-28">
-      <p class="text-sm font-semibold uppercase tracking-wider text-orange">
-        Guia de pitch
-      </p>
-      <h1 class="mt-3 font-display text-4xl font-black leading-tight text-paper md:text-6xl">
-        A arte do pitch, na prática.
-      </h1>
-      <p class="mt-6 max-w-2xl text-lg text-paper/75">
-        Guias diretos sobre como convencer quando a próxima frase pesa: estrutura, formatos, storytelling e os erros que derrubam a sua fala. Em português, com exemplos prontos para adaptar.
-      </p>
-    </div>
-  </section>
+  <HubHero
+    eyebrow="Guia de pitch"
+    title="A arte do pitch, na prática."
+    subtitle="Guias diretos sobre como convencer quando a próxima frase pesa: estrutura, formatos, storytelling e os erros que derrubam a sua fala. Em português, com exemplos prontos para adaptar."
+  />
 
-  <section class="border-b border-paper/10">
-    <div class="mx-auto max-w-6xl px-6 py-20">
-      <div class="grid gap-6 md:grid-cols-2">
-        {guias.map((g) => (
-          <a
-            href={`/guia-de-pitch/${g.id}`}
-            class="group flex flex-col rounded-2xl border border-paper/10 bg-paper/[0.03] p-8 transition-all hover:border-orange/40 hover:bg-paper/[0.05]"
-          >
-            <span class="inline-flex w-fit rounded-full border border-orange/30 bg-orange/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-orange">
-              {g.data.category}
-            </span>
-            <h2 class="mt-5 font-display text-2xl font-bold text-paper group-hover:text-orange md:text-3xl">
-              {g.data.title}
-            </h2>
-            <p class="mt-3 text-base text-paper/70">{g.data.description}</p>
-            <span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-orange">
-              Ler guia
-              <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span>
-            </span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
+  <HubCardGrid items={guiaItems} ctaLabel="Ler guia" />
 
   <UseCaseCTA
     title="Pronto pra aplicar na próxima conversa?"

@@ -1,5 +1,6 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
+import { TEAM_AUTHOR_NAME } from "./lib/site";
 
 const blog = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
@@ -8,7 +9,7 @@ const blog = defineCollection({
     description: z.string(),
     publishedAt: z.coerce.date(),
     updatedAt: z.coerce.date().optional(),
-    author: z.string().default("Equipe Pitchei"),
+    author: z.string().default(TEAM_AUTHOR_NAME),
     section: z.string().optional(),
     tags: z.array(z.string()).default([]),
     keywords: z.array(z.string()).default([]),
@@ -29,7 +30,7 @@ const guias = defineCollection({
     description: z.string(),
     publishedAt: z.coerce.date(),
     updatedAt: z.coerce.date().optional(),
-    author: z.string().default("Equipe Pitchei"),
+    author: z.string().default(TEAM_AUTHOR_NAME),
     category: z.string(),
     order: z.number().default(100),
     keywords: z.array(z.string()).default([]),

@@ -1,0 +1,47 @@
+---
+// Shared card grid for collection index pages (casos-de-uso, comparativo,
+// guia-de-pitch), previously hand-duplicated with drifting classes in each.
+type CardItem = {
+  href: string;
+  title: string;
+  desc: string;
+  badge?: string;
+};
+
+type Props = {
+  items: CardItem[];
+  ctaLabel: string;
+};
+
+const { items, ctaLabel } = Astro.props;
+---
+
+<section class="border-b border-paper/10">
+  <div class="mx-auto max-w-6xl px-6 py-20">
+    <div class="grid gap-6 md:grid-cols-2">
+      {items.map((item) => (
+        <a
+          href={item.href}
+          class="group flex flex-col rounded-2xl border border-paper/10 bg-paper/[0.03] p-8 transition-all hover:border-orange/40 hover:bg-paper/[0.05]"
+        >
+          {item.badge && (
+            <span class="inline-flex w-fit rounded-full border border-orange/30 bg-orange/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-orange">
+              {item.badge}
+            </span>
+          )}
+          <h2 class:list={[
+            "font-display text-2xl font-bold text-paper group-hover:text-orange md:text-3xl",
+            item.badge && "mt-5",
+          ]}>
+            {item.title}
+          </h2>
+          <p class="mt-3 text-base text-paper/70">{item.desc}</p>
+          <span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-orange">
+            {ctaLabel}
+            <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span>
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

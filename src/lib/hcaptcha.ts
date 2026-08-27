@@ -20,6 +20,17 @@ declare global {
 let scriptPromise: Promise<void> | null = null;
 let widgetId: string | null = null;
 
+// The rendered widget is tied to a #hcaptcha-host div injected at runtime,
+// which does not reliably survive an Astro client-side page transition.
+// Drop the cached widget and its container so the next call re-renders
+// against a fresh one instead of executing against a detached iframe.
+if (typeof document !== "undefined") {
+  document.addEventListener("astro:before-preparation", () => {
+    widgetId = null;
+    document.getElementById("hcaptcha-host")?.remove();
+  });
+}
+
 export function isCaptchaConfigured(): boolean {
   return Boolean(SITE_KEY);
 }

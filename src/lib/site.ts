@@ -1,3 +1,9 @@
+// Default byline for blog posts / guides that don't credit a named human
+// author. Shared with content.config.ts (the default value) and schema.ts
+// (to know when the JSON-LD author is the team, not a person), so the two
+// never drift apart.
+export const TEAM_AUTHOR_NAME = "Equipe Pitchei";
+
 export const SITE = {
   name: "Pitchei",
   domain: "pitchei.com.br",

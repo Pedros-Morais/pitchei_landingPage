@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Base from "~/layouts/Base.astro";
 import Breadcrumb from "~/components/Breadcrumb.astro";
+import HubHero from "~/components/HubHero.astro";
 import UseCaseCTA from "~/components/UseCaseCTA.astro";
 import {
   breadcrumbSchema,
@@ -53,19 +54,11 @@ const dateFmt = new Intl.DateTimeFormat("pt-BR", {
 >
   <Breadcrumb crumbs={crumbs} />
 
-  <section class="border-b border-paper/10">
-    <div class="mx-auto max-w-4xl px-6 py-20 md:py-28">
-      <p class="text-sm font-semibold uppercase tracking-wider text-orange">
-        Blog
-      </p>
-      <h1 class="mt-3 font-display text-4xl font-black leading-tight text-paper md:text-6xl">
-        Antes da próxima reunião difícil.
-      </h1>
-      <p class="mt-6 max-w-2xl text-lg text-paper/75">
-        Textos curtos e práticos sobre o que dizer em pitch, vendas, entrevista e conversa difícil, em português, sem jargão.
-      </p>
-    </div>
-  </section>
+  <HubHero
+    eyebrow="Blog"
+    title="Antes da próxima reunião difícil."
+    subtitle="Textos curtos e práticos sobre o que dizer em pitch, vendas, entrevista e conversa difícil, em português, sem jargão."
+  />
 
   <section class="border-b border-paper/10">
     <div class="mx-auto max-w-4xl px-6 py-16">

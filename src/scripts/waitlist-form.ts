@@ -38,7 +38,6 @@ function setState(host: HTMLElement, state: FormState, msg?: string) {
 
 function reasonToMessage(
   reason: "invalid-email" | "duplicate" | "config" | "network" | "unknown",
-  fallback?: string,
 ): string {
   switch (reason) {
     case "invalid-email":
@@ -50,7 +49,7 @@ function reasonToMessage(
     case "network":
       return "Sem conexão. Tenta de novo.";
     default:
-      return fallback ?? "Algo deu errado. Tenta de novo.";
+      return "Algo deu errado. Tenta de novo.";
   }
 }
 
@@ -95,7 +94,10 @@ function attach(host: HTMLElement) {
       setTimeout(() => host.removeAttribute("data-boom"), 800);
       input.value = "";
     } else {
-      setState(host, "error", reasonToMessage(result.reason, result.message));
+      if (result.reason === "unknown" && result.message) {
+        console.error("[waitlist] join failed:", result.message);
+      }
+      setState(host, "error", reasonToMessage(result.reason));
     }
   });
 }

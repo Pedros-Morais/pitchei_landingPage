@@ -1,6 +1,8 @@
 ---
 import Base from "~/layouts/Base.astro";
 import Breadcrumb from "~/components/Breadcrumb.astro";
+import HubHero from "~/components/HubHero.astro";
+import HubCardGrid from "~/components/HubCardGrid.astro";
 import UseCaseCTA from "~/components/UseCaseCTA.astro";
 import {
   breadcrumbSchema,
@@ -18,25 +20,25 @@ const usos = [
     href: "/casos-de-uso/pitch-para-investidores",
     title: "Pitch para investidores",
     desc: "O copiloto que devolve TAM, runway e o reframe certo durante o pitch.",
-    persona: "Founders",
+    badge: "Founders",
   },
   {
     href: "/casos-de-uso/entrevistas-de-emprego",
     title: "Entrevistas de emprego",
     desc: "Respostas no método STAR com seus próprios exemplos, em pt-BR, sob pressão.",
-    persona: "Candidatos",
+    badge: "Candidatos",
   },
   {
     href: "/casos-de-uso/vendas-e-negociacao",
     title: "Vendas e negociação",
     desc: "Reframes pra valor, perguntas de discovery, follow-up sólido, em tempo real.",
-    persona: "Vendedores",
+    badge: "Vendedores",
   },
   {
     href: "/casos-de-uso/reunioes-com-clientes",
     title: "Reuniões com clientes",
     desc: "Kickoff, status, QBR, renegociação. Memória contextual ao vivo.",
-    persona: "CSMs e AMs",
+    badge: "CSMs e AMs",
   },
 ];
 
@@ -70,44 +72,13 @@ const keywords = [
 >
   <Breadcrumb crumbs={crumbs} />
 
-  <section class="border-b border-paper/10">
-    <div class="mx-auto max-w-4xl px-6 py-20 md:py-28">
-      <p class="text-sm font-semibold uppercase tracking-wider text-orange">
-        Casos de uso
-      </p>
-      <h1 class="mt-3 font-display text-4xl font-black leading-tight text-paper md:text-6xl">
-        Onde o Pitchei encaixa.
-      </h1>
-      <p class="mt-6 max-w-2xl text-lg text-paper/75">
-        Quatro tipos de conversa onde a próxima frase pesa, e onde um copiloto em português, ao vivo, muda o resultado.
-      </p>
-    </div>
-  </section>
+  <HubHero
+    eyebrow="Casos de uso"
+    title="Onde o Pitchei encaixa."
+    subtitle="Quatro tipos de conversa onde a próxima frase pesa, e onde um copiloto em português, ao vivo, muda o resultado."
+  />
 
-  <section class="border-b border-paper/10">
-    <div class="mx-auto max-w-6xl px-6 py-20">
-      <div class="grid gap-6 md:grid-cols-2">
-        {usos.map((u) => (
-          <a
-            href={u.href}
-            class="group rounded-2xl border border-paper/10 bg-paper/[0.03] p-8 transition-all hover:border-orange/40 hover:bg-paper/[0.05]"
-          >
-            <span class="inline-flex rounded-full border border-orange/30 bg-orange/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-orange">
-              {u.persona}
-            </span>
-            <h2 class="mt-5 font-display text-2xl font-bold text-paper group-hover:text-orange md:text-3xl">
-              {u.title}
-            </h2>
-            <p class="mt-3 text-base text-paper/70">{u.desc}</p>
-            <span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-orange">
-              Ver caso de uso
-              <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span>
-            </span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
+  <HubCardGrid items={usos} ctaLabel="Ver caso de uso" />
 
   <UseCaseCTA
     title="Pronto pra usar Pitchei no seu próximo momento?"
