@@ -1,0 +1,46 @@
+---
+// Oversized numbers with hairline dividers, Cluely pattern
+const stats = [
+  {
+    number: "<1s",
+    label: "da fala à sugestão",
+    detail: "Latência menor que 1 segundo entre a fala e a sugestão aparecer"
+  },
+  {
+    number: "pt-BR",
+    label: "de verdade",
+    detail: "Transcrição treinada em sotaque brasileiro e contexto local"
+  },
+  {
+    number: "0",
+    label: "bots na call",
+    detail: "Pitchei não entra na reunião. Ninguém vê, ninguém sabe."
+  }
+];
+---
+
+<section
+  class="relative overflow-hidden border-b border-paper/10 bg-paper/[0.015]"
+  aria-label="Estatísticas do produto"
+>
+  <div class="mx-auto max-w-7xl px-6 py-20 md:py-28">
+    <div class="grid gap-8 md:grid-cols-3 md:gap-0" data-reveal-stagger>
+      {stats.map((stat, i) => (
+        <div class:list={[
+          "flex flex-col items-center text-center",
+          i < stats.length - 1 && "md:border-r md:border-paper/10"
+        ]}>
+          <div class="font-display text-6xl font-black text-orange md:text-7xl lg:text-8xl">
+            {stat.number}
+          </div>
+          <div class="mt-3 text-base font-bold uppercase tracking-wider text-paper md:text-lg">
+            {stat.label}
+          </div>
+          <p class="mt-2 max-w-xs text-sm text-paper/55">
+            {stat.detail}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
