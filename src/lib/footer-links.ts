@@ -15,7 +15,7 @@ export const FOOTER_GROUPS: FooterGroup[] = [
   {
     heading: "Produto",
     links: [
-      { label: "Como funciona", href: "/#como-funciona" },
+      { label: "Como funciona", href: "/#durante-a-reuniao" },
       { label: "Para quem é", href: "/#para-quem" },
       { label: "Perguntas frequentes", href: "/#faq" },
       { label: "Lista de espera", href: "/#cadastro" },
@@ -31,12 +31,11 @@ export const FOOTER_GROUPS: FooterGroup[] = [
     ],
   },
   {
-    heading: "Recursos",
+    heading: "Compare",
     links: [
-      { label: "Guia de pitch", href: "/guia-de-pitch" },
-      { label: "Blog", href: "/blog" },
       { label: "Pitchei vs Otter", href: "/comparativo/pitchei-vs-otter" },
       { label: "Pitchei vs Fathom", href: "/comparativo/pitchei-vs-fathom" },
+      { label: "Blog", href: "/blog" },
       { label: "Sobre", href: "/sobre" },
     ],
   },

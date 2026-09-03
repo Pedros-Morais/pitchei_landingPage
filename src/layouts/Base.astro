@@ -5,8 +5,6 @@ import { ClientRouter } from "astro:transitions";
 import SEO from "~/components/SEO.astro";
 import Nav from "~/components/Nav.astro";
 import Footer from "~/components/Footer.astro";
-import Cursor from "~/components/Cursor.astro";
-import SectionRail from "~/components/SectionRail.astro";
 import CookieConsent from "~/components/CookieConsent.astro";
 import { SITE } from "~/lib/site";
 
@@ -33,7 +31,7 @@ const canonical = new URL(props.path ?? "/", SITE.url).toString();
 ---
 
 <!doctype html>
-<html lang={SITE.locale} class="scroll-smooth">
+<html lang={SITE.locale}>
   <head>
     <!-- Google Analytics loads only after consent, see CookieConsent.astro -->
     <meta charset="UTF-8" />
@@ -64,8 +62,6 @@ const canonical = new URL(props.path ?? "/", SITE.url).toString();
       <slot />
     </main>
     <Footer />
-    <SectionRail />
-    <Cursor />
     <CookieConsent />
 
     <script>

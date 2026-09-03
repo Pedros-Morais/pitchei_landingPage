@@ -1,0 +1,54 @@
+---
+// Sticky CTA pill that appears after hero, Cluely pattern
+---
+
+<div
+  data-sticky-cta
+  data-sticky-hidden="true"
+  class="fixed top-6 left-1/2 z-40 -translate-x-1/2 opacity-0 transition-opacity duration-500"
+  style="pointer-events: none;"
+>
+  <a
+    href="#cadastro"
+    class="btn-shine inline-flex items-center justify-center gap-2 rounded-full bg-orange px-6 py-3 text-sm font-semibold text-paper shadow-[0_4px_24px_rgba(232,93,38,0.28)] transition-all hover:scale-105 hover:shadow-[0_6px_32px_rgba(232,93,38,0.4)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper"
+    style="pointer-events: auto;"
+  >
+    <span class="inline-block h-1.5 w-1.5 rounded-full bg-paper"></span>
+    Entrar na lista
+  </a>
+</div>
+
+<script>
+  function initStickyCTA() {
+    const cta = document.querySelector<HTMLElement>("[data-sticky-cta]");
+    const hero = document.querySelector<HTMLElement>("section[aria-labelledby='hero-titulo']");
+    if (!cta || !hero) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            cta.dataset.stickyHidden = "true";
+            cta.style.opacity = "0";
+            cta.style.pointerEvents = "none";
+          } else {
+            cta.dataset.stickyHidden = "false";
+            cta.style.opacity = "1";
+            cta.style.pointerEvents = "auto";
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(hero);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initStickyCTA, { once: true });
+  } else {
+    initStickyCTA();
+  }
+
+  document.addEventListener("astro:page-load", initStickyCTA);
+</script>

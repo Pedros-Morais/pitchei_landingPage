@@ -1,0 +1,95 @@
+---
+import HudMockup from "./HudMockup.astro";
+
+// Two big cards showing live HUD scenarios, Cluely pattern
+---
+
+<section
+  id="durante-a-reuniao"
+  class="relative border-b border-paper/10"
+  aria-labelledby="durante-titulo"
+>
+  <div class="mx-auto max-w-7xl px-6 py-32 md:py-40">
+    <div class="mb-16" data-reveal>
+      <h2
+        id="durante-titulo"
+        class="font-display text-4xl font-black leading-tight text-paper md:text-5xl lg:text-6xl"
+      >
+        Durante a reunião
+      </h2>
+      <p class="mt-4 max-w-2xl text-lg text-paper/70">
+        Pitchei fica do seu lado nas conversas que importam. Ouve, entende e sugere em tempo real.
+      </p>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-2 lg:gap-12" data-reveal-stagger>
+      {/* Card 1: Ouve a conversa */}
+      <article class="group relative overflow-hidden rounded-3xl border border-paper/10 bg-paper/[0.02] p-8 transition-all hover:bg-paper/[0.04] md:p-10">
+        <div
+          aria-hidden="true"
+          class="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full opacity-40 transition-opacity group-hover:opacity-60"
+          style="background: radial-gradient(circle, rgba(232,93,38,0.20) 0%, transparent 65%);"
+        ></div>
+        
+        <div class="relative">
+          <h3 class="font-display text-2xl font-bold text-paper md:text-3xl">
+            Ouve a conversa
+          </h3>
+          <p class="mt-3 text-base text-paper/65 md:text-lg">
+            Transcreve o áudio da reunião em pt-BR com latência menor que 1 segundo. Entende sotaque, siglas e contexto técnico.
+          </p>
+
+          <div class="mt-8">
+            <HudMockup class="max-w-md" />
+          </div>
+        </div>
+      </article>
+
+      {/* Card 2: Sugere o que dizer */}
+      <article class="group relative overflow-hidden rounded-3xl border border-paper/10 bg-paper/[0.02] p-8 transition-all hover:bg-paper/[0.04] md:p-10">
+        <div
+          aria-hidden="true"
+          class="pointer-events-none absolute -left-20 -bottom-20 h-64 w-64 rounded-full opacity-40 transition-opacity group-hover:opacity-60"
+          style="background: radial-gradient(circle, rgba(255,179,71,0.16) 0%, transparent 65%);"
+        ></div>
+        
+        <div class="relative">
+          <h3 class="font-display text-2xl font-bold text-paper md:text-3xl">
+            Sugere o que dizer
+          </h3>
+          <p class="mt-3 text-base text-paper/65 md:text-lg">
+            Quando o outro lado termina, Pitchei mostra uma sugestão glanceável. Você decide em meio segundo: usa, pede outra ou ignora.
+          </p>
+
+          <div class="mt-8">
+            <div
+              class="rounded-2xl border border-orange/45 p-6 shadow-[0_0_42px_rgba(232,93,38,0.12)]"
+              style="background: linear-gradient(180deg, rgba(232,93,38,0.12), rgba(28,15,9,0.82));"
+            >
+              <div class="flex items-center gap-2 text-xs">
+                <span class="relative inline-flex h-2 w-2">
+                  <span class="absolute inline-flex h-full w-full animate-pulse-soft rounded-full" style="background: #FF7A45"></span>
+                  <span class="relative inline-flex h-2 w-2 rounded-full" style="background: #FF7A45"></span>
+                </span>
+                <span class="font-semibold uppercase tracking-[0.16em] text-orange">
+                  Diga isso
+                </span>
+              </div>
+              <p class="mt-3 text-base leading-relaxed text-paper md:text-lg">
+                Faz sentido revisitar com base nos números que você mencionou antes de fecharmos?
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full bg-orange px-3 py-1.5 text-xs font-semibold text-paper">
+                  Usar sugestão
+                </span>
+                <span class="rounded-full border border-paper/15 px-3 py-1.5 text-xs font-medium text-paper/80">
+                  Outra
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

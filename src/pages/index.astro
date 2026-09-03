@@ -1,14 +1,13 @@
 ---
 import Base from "~/layouts/Base.astro";
 import Hero from "~/components/Hero.astro";
+import StickyCTA from "~/components/StickyCTA.astro";
 import TrustBand from "~/components/TrustBand.astro";
-import PitcheiEmAcao from "~/components/PitcheiEmAcao.astro";
-import LeituraDeTela from "~/components/LeituraDeTela.astro";
-import ProblemaVsScribe from "~/components/ProblemaVsScribe.astro";
-import Personas from "~/components/Personas.astro";
-import SocialProof from "~/components/SocialProof.astro";
-import ComoFunciona from "~/components/ComoFunciona.astro";
-import Privacidade from "~/components/Privacidade.astro";
+import DurantaReuniaoCards from "~/components/DurantaReuniaoCards.astro";
+import LeituraDeTelaPanelNew from "~/components/LeituraDeTelaPanelNew.astro";
+import StatsRow from "~/components/StatsRow.astro";
+import ParaQuemSimple from "~/components/ParaQuemSimple.astro";
+import PrivacyBeat from "~/components/PrivacyBeat.astro";
 import FAQ from "~/components/FAQ.astro";
 import CTAFinal from "~/components/CTAFinal.astro";
 import {
@@ -72,14 +71,13 @@ const keywords = [
   keywords={keywords}
 >
   <Hero />
+  <StickyCTA />
   <TrustBand />
-  <PitcheiEmAcao />
-  <LeituraDeTela />
-  <ProblemaVsScribe />
-  <Personas />
-  <SocialProof />
-  <ComoFunciona />
-  <Privacidade />
+  <DurantaReuniaoCards />
+  <LeituraDeTelaPanelNew />
+  <StatsRow />
+  <ParaQuemSimple />
+  <PrivacyBeat />
   <FAQ />
   <CTAFinal />
 </Base>

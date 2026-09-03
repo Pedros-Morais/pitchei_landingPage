@@ -1,0 +1,46 @@
+---
+// Simple privacy beat: 3 chips, no 4-card repeat
+const privacyPoints = [
+  { label: "Áudio não gravado", icon: "M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z M19 10v2a7 7 0 0 1-14 0v-2" },
+  { label: "Texto descartado após sessão", icon: "M3 6h18 M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" },
+  { label: "LGPD por padrão", icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" }
+];
+---
+
+<section
+  class="relative overflow-hidden border-b border-paper/10"
+  aria-label="Privacidade e segurança"
+>
+  <div class="mx-auto max-w-5xl px-6 py-20 text-center md:py-28">
+    <div data-reveal>
+      <h2 class="font-display text-3xl font-black leading-tight text-paper md:text-4xl">
+        Privacidade primeiro
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-base text-paper/70">
+        O áudio nunca é gravado. O texto transcrito existe só na memória durante a sessão e é descartado depois.
+      </p>
+    </div>
+
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-4" data-reveal-stagger>
+      {privacyPoints.map((point) => (
+        <div class="inline-flex items-center gap-3 rounded-full border border-paper/15 bg-paper/[0.03] px-5 py-3 transition-all hover:bg-paper/[0.05] hover:border-paper/20">
+          <svg
+            class="h-4 w-4 text-orange"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d={point.icon}></path>
+          </svg>
+          <span class="text-sm font-semibold text-paper">
+            {point.label}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,64 @@
+---
+// Simplified Para Quem: 1 row, 3 items, bold lede + gray remainder
+const scenarios = [
+  {
+    tag: "Reuniões",
+    lede: "Vendendo, atendendo ou negociando",
+    detail: "Calls com cliente, kickoff, renegociação. Quando a próxima frase pesa."
+  },
+  {
+    tag: "Apresentações",
+    lede: "Quando vão te perguntar algo difícil",
+    detail: "Pitch para investidor, defesa de projeto, comitê. Resposta sob pressão, com número e contexto na hora."
+  },
+  {
+    tag: "Entrevistas",
+    lede: "Quando precisa lembrar a melhor versão de si",
+    detail: "Vaga, performance review, promoção. Pressão alta, memória ruim, resposta certa que estava ali."
+  }
+];
+---
+
+<section
+  id="para-quem"
+  class="relative border-b border-paper/10"
+  aria-labelledby="para-quem-titulo"
+>
+  <div class="mx-auto max-w-7xl px-6 py-32 md:py-40">
+    <div class="mb-16" data-reveal>
+      <h2
+        id="para-quem-titulo"
+        class="font-display text-4xl font-black leading-tight text-paper md:text-5xl lg:text-6xl"
+      >
+        Para quem é
+      </h2>
+      <p class="mt-4 max-w-2xl text-lg text-paper/70">
+        Horizontal. Qualquer profissional que tem reuniões onde a próxima frase importa.
+      </p>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-3" data-reveal-stagger>
+      {scenarios.map((item) => (
+        <article class="group relative overflow-hidden rounded-2xl border border-paper/10 bg-paper/[0.02] p-8 transition-all hover:bg-paper/[0.04] hover:border-paper/15">
+          <div
+            aria-hidden="true"
+            class="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full opacity-0 transition-opacity group-hover:opacity-50"
+            style="background: radial-gradient(circle, rgba(232,93,38,0.16) 0%, transparent 70%);"
+          ></div>
+          
+          <div class="relative">
+            <span class="inline-flex rounded-full border border-orange/30 bg-orange/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-orange">
+              {item.tag}
+            </span>
+            <h3 class="mt-5 font-display text-xl font-bold leading-snug text-paper">
+              {item.lede}
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-paper/65">
+              {item.detail}
+            </p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

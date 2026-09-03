@@ -1,0 +1,80 @@
+---
+// Single sentence + tilted HUD showing screen reading capability
+---
+
+<section
+  id="le-a-tela"
+  class="relative overflow-hidden border-b border-paper/10"
+  aria-labelledby="le-a-tela-titulo"
+>
+  <div class="mx-auto max-w-7xl px-6 py-32 md:py-40">
+    <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      {/* Copy */}
+      <div data-reveal>
+        <h2
+          id="le-a-tela-titulo"
+          class="font-display text-4xl font-black leading-tight text-paper md:text-5xl lg:text-6xl"
+        >
+          Ele lê a sua tela
+        </h2>
+        <p class="mt-4 max-w-xl text-lg text-paper/70 md:text-xl">
+          Além de ouvir, Pitchei enxerga o que aparece na sua tela: um código, uma planilha, uma pergunta compartilhada. Aperte o atalho e ele responde na hora.
+        </p>
+      </div>
+
+      {/* Tilted HUD visual */}
+      <div class="relative" data-reveal>
+        <div
+          aria-hidden="true"
+          class="pointer-events-none absolute -inset-12 -z-10 rounded-[3rem] opacity-60"
+          style="background: radial-gradient(circle at 60% 40%, rgba(232,93,38,0.18), transparent 70%);"
+        ></div>
+
+        {/* Screen capture window, slightly rotated */}
+        <div
+          class="overflow-hidden rounded-2xl border border-paper/10 shadow-overlay"
+          style="background: linear-gradient(180deg, #2A1810 0%, #1C0F09 100%); transform: rotate(-1.5deg);"
+        >
+          <div class="flex items-center gap-2 border-b border-paper/10 bg-paper/[0.03] px-4 py-3">
+            <span class="h-2.5 w-2.5 rounded-full bg-[#FF5F57]"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-[#28C840]"></span>
+            <span class="ml-3 text-[11px] font-medium tracking-wide text-paper/45">
+              Tela compartilhada
+            </span>
+          </div>
+
+          <div class="p-6">
+            <p class="text-[10px] font-semibold uppercase tracking-[0.16em] text-paper/40">
+              Na tela
+            </p>
+            <div class="mt-3 rounded-xl border border-paper/10 bg-paper/[0.03] p-4 font-mono text-xs leading-relaxed text-paper/80 md:text-sm">
+              <span class="text-paper/40">// Given an array, return the length of the</span><br />
+              <span class="text-paper/40">// longest subarray with sum ≤ k.</span><br />
+              <span class="text-orange">function</span> <span class="text-paper">maxLen</span>(nums, k) &#123; ... &#125;
+            </div>
+          </div>
+        </div>
+
+        {/* Pitchei answer overlay, slightly rotated opposite direction */}
+        <div
+          class="relative -mt-8 ml-auto w-[90%] rounded-2xl border border-orange/45 p-6 shadow-[0_0_42px_rgba(232,93,38,0.16)] backdrop-blur-overlay md:p-8"
+          style="background: linear-gradient(180deg, rgba(232,93,38,0.12), rgba(28,15,9,0.85)); transform: rotate(1deg);"
+        >
+          <div class="flex items-center gap-2 text-xs">
+            <span class="relative inline-flex h-2 w-2">
+              <span class="absolute inline-flex h-full w-full animate-pulse-soft rounded-full" style="background: #FF7A45"></span>
+              <span class="relative inline-flex h-2 w-2 rounded-full" style="background: #FF7A45"></span>
+            </span>
+            <span class="font-semibold uppercase tracking-[0.16em] text-orange">
+              Pitchei leu a tela
+            </span>
+          </div>
+          <p class="mt-3 text-sm leading-relaxed text-paper md:text-base">
+            Use dois ponteiros com uma janela deslizante: expanda à direita somando <code class="font-mono text-orange">nums[r]</code>, e encolha pela esquerda enquanto a soma passar de <code class="font-mono text-orange">k</code>. O maior <code class="font-mono text-orange">r − l + 1</code> é a resposta. O(n).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
