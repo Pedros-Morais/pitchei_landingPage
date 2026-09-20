@@ -927,3 +927,46 @@ html.cursor-on summary {
     cursor: auto !important;
   }
 }
+
+/* ----- Calm presentation -------------------------------------------------- */
+/*
+ * The landing deliberately ships without autonomous motion. Besides making
+ * the product easier to scan, this avoids continuous GPU and rAF work on
+ * phones. Colour and focus feedback on controls remains available.
+ */
+html { scroll-behavior: auto; }
+
+*,
+*::before,
+*::after {
+  animation: none !important;
+}
+
+[data-reveal],
+[data-reveal="left"],
+[data-reveal="right"],
+[data-reveal="scale"] {
+  opacity: 1;
+  transform: none;
+  transition: none;
+  will-change: auto;
+}
+
+[data-reveal-stagger] > * {
+  opacity: 1;
+  transform: none;
+  transition: none;
+  will-change: auto;
+}
+
+.scroll-progress { display: none; }
+
+.hero-line,
+.hero-meta,
+.hero-sub,
+.hero-cta,
+.hero-foot,
+.hud-enter {
+  opacity: 1;
+  transform: none;
+}
