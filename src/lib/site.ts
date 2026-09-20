@@ -19,7 +19,7 @@ export const SITE = {
     "O Pitchei é um aplicativo de mesa para macOS que fica do seu lado nas reuniões que importam. Ele acompanha a conversa e lê a sua tela em tempo real para sugerir o que dizer, em português. Diferente de transcritores que entregam o resumo depois da reunião, o Pitchei ajuda no exato momento em que você trava ou precisa de uma resposta sob pressão.",
   downloads: {
     macOS: {
-      url: "https://github.com/Pedros-Morais/pitchei/releases/download/v0.1.0/Pitchei-0.1.0-macOS-universal-notarized.dmg",
+      url: "https://www.pitchei.com.br/downloads/Pitchei-0.1.0-macOS-universal-notarized.dmg",
       landingPath: "/baixar",
       version: "0.1.0",
       details: "Apple Silicon e Intel · 11,9 MB",
