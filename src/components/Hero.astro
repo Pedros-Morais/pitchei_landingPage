@@ -1,6 +1,7 @@
 ---
 import HudMockup from "./HudMockup.astro";
 import PlatformBadges from "./PlatformBadges.astro";
+import AppleMark from "./AppleMark.astro";
 import { SITE } from "~/lib/site";
 
 const macDownload = SITE.downloads.macOS;
@@ -46,8 +47,9 @@ const macDownload = SITE.downloads.macOS;
           href={macDownload.url}
           target="_blank"
           rel="noreferrer"
-          class="btn-shine inline-flex w-full items-center justify-center rounded-full bg-orange px-6 py-3 text-base font-semibold text-paper shadow-glow-soft transition-colors hover:bg-orange-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper sm:w-auto md:px-7 md:py-3.5"
+          class="btn-shine inline-flex w-full items-center justify-center gap-2 rounded-full bg-orange px-6 py-3 text-base font-semibold text-paper shadow-glow-soft transition-colors hover:bg-orange-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper sm:w-auto md:px-7 md:py-3.5"
         >
+          <AppleMark class="size-4" />
           Baixar para macOS
         </a>
         <button

@@ -1,5 +1,6 @@
 ---
 import { SITE } from "~/lib/site";
+import AppleMark from "./AppleMark.astro";
 
 type Props = {
   eyebrow: string;
@@ -16,6 +17,7 @@ const {
   ctaLabel = "Baixar para macOS",
   ctaHref = SITE.downloads.macOS.url,
 } = Astro.props;
+const isMacDownload = ctaHref === SITE.downloads.macOS.url;
 ---
 
 <section
@@ -25,7 +27,8 @@ const {
   <div
     aria-hidden="true"
     class="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_15%_25%,rgba(232,93,38,0.18),transparent_38%),radial-gradient(circle_at_85%_15%,rgba(255,179,71,0.14),transparent_34%),linear-gradient(180deg,rgba(28,15,9,0.95)_0%,rgba(28,15,9,0.85)_100%)]"
-  ></div>
+  >
+  </div>
 
   <div class="relative z-10 mx-auto max-w-4xl px-6 py-20 md:py-28">
     <p class="text-sm font-semibold uppercase tracking-wider text-orange">
@@ -45,13 +48,14 @@ const {
         href={ctaHref}
         target="_blank"
         rel="noreferrer"
-        class="btn-shine inline-flex items-center justify-center rounded-full bg-orange px-7 py-3.5 text-base font-semibold text-paper shadow-glow-soft transition-colors hover:bg-orange-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper"
+        class="btn-shine inline-flex items-center justify-center gap-2 rounded-full bg-orange px-7 py-3.5 text-base font-semibold text-paper shadow-glow-soft transition-colors hover:bg-orange-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper"
       >
+        {isMacDownload && <AppleMark class="size-4" />}
         {ctaLabel}
       </a>
       <a
         href="/#como-funciona"
-        class="inline-flex items-center justify-center rounded-full border border-paper/20 px-7 py-3.5 text-base font-semibold text-paper transition-colors hover:bg-paper/5 hover:border-paper/30"
+        class="inline-flex items-center justify-center rounded-full border border-paper/20 px-7 py-3.5 text-base font-semibold text-paper transition-colors hover:border-paper/30 hover:bg-paper/5"
       >
         Ver como funciona
       </a>

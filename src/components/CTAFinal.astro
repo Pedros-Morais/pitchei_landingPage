@@ -2,6 +2,7 @@
 // Cadastro = waitlist. O `action` é placeholder até decidirmos backend
 // (Supabase, Formspree, ou rota Astro `prerender = false`).
 import { SITE } from "~/lib/site";
+import AppleMark from "./AppleMark.astro";
 
 const macDownload = SITE.downloads.macOS;
 ---
@@ -20,7 +21,8 @@ const macDownload = SITE.downloads.macOS;
         width: 500px; height: 500px;
         background: radial-gradient(circle, rgba(232,93,38,0.20) 0%, transparent 60%);
       "
-    ></div>
+    >
+    </div>
     <div
       class="orb animate-orbit-slow-ccw"
       style="
@@ -28,7 +30,8 @@ const macDownload = SITE.downloads.macOS;
         width: 460px; height: 460px;
         background: radial-gradient(circle, rgba(255,179,71,0.16) 0%, transparent 60%);
       "
-    ></div>
+    >
+    </div>
     <div
       class="orb animate-breath"
       style="
@@ -36,13 +39,12 @@ const macDownload = SITE.downloads.macOS;
         width: 380px; height: 380px;
         background: radial-gradient(circle, rgba(255,122,69,0.14) 0%, transparent 65%);
       "
-    ></div>
+    >
+    </div>
   </div>
 
   <div class="mx-auto max-w-4xl px-6 py-24 text-center md:py-32" data-reveal-stagger>
-    <p class="text-sm font-semibold uppercase tracking-wider text-orange">
-      Beta para macOS
-    </p>
+    <p class="text-sm font-semibold uppercase tracking-wider text-orange">Beta para macOS</p>
     <div class="relative mt-3 inline-block overflow-hidden rounded-md">
       <h2
         id="cadastro-titulo"
@@ -57,10 +59,11 @@ const macDownload = SITE.downloads.macOS;
       ></span>
     </div>
     <p class="mx-auto mt-5 max-w-2xl text-lg text-paper/70 md:text-xl">
-      Baixe a versão beta para macOS e receba sugestões em português enquanto
-      a conversa acontece.
+      Baixe a versão beta para macOS e receba sugestões em português enquanto a conversa acontece.
     </p>
-    <p class="mt-6 inline-flex items-center gap-2 rounded-full border border-orange/25 bg-orange/10 px-4 py-1.5 text-sm font-semibold text-orange">
+    <p
+      class="mt-6 inline-flex items-center gap-2 rounded-full border border-orange/25 bg-orange/10 px-4 py-1.5 text-sm font-semibold text-orange"
+    >
       <span aria-hidden="true" class="inline-block h-1.5 w-1.5 rounded-full bg-orange"></span>
       Apple Silicon e Intel · DMG assinado e notarizado
     </p>
@@ -69,14 +72,17 @@ const macDownload = SITE.downloads.macOS;
       href={macDownload.url}
       target="_blank"
       rel="noreferrer"
-      class="btn-shine mx-auto mt-8 inline-flex items-center justify-center rounded-full bg-orange px-7 py-3.5 text-base font-semibold text-paper shadow-glow-soft transition-colors hover:bg-orange-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper"
+      class="btn-shine mx-auto mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-orange px-7 py-3.5 text-base font-semibold text-paper shadow-glow-soft transition-colors hover:bg-orange-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper"
     >
+      <AppleMark class="size-4" />
       Baixar Pitchei para macOS
     </a>
     <p class="mt-3 text-xs text-paper/50">Versão {macDownload.version} · {macDownload.details}</p>
 
     <div class="mx-auto mt-10 max-w-xl border-t border-paper/10 pt-8">
-      <p class="text-sm font-medium text-paper/70">Quer receber novidades e saber quando o Windows chegar?</p>
+      <p class="text-sm font-medium text-paper/70">
+        Quer receber novidades e saber quando o Windows chegar?
+      </p>
     </div>
 
     <div
@@ -99,7 +105,7 @@ const macDownload = SITE.downloads.macOS;
           autocomplete="email"
           inputmode="email"
           placeholder="seu@email.com"
-          class="flex-1 rounded-full border border-paper/15 bg-paper/5 px-6 py-3.5 text-base text-paper placeholder:text-paper/40 transition-all focus:border-orange focus:bg-paper/[0.07] focus:shadow-glow focus:outline-none disabled:opacity-60"
+          class="flex-1 rounded-full border border-paper/15 bg-paper/5 px-6 py-3.5 text-base text-paper transition-all placeholder:text-paper/40 focus:border-orange focus:bg-paper/[0.07] focus:shadow-glow focus:outline-none disabled:opacity-60"
         />
         <input type="hidden" name="origem" value="landing-pt-br" />
         <input
@@ -113,7 +119,7 @@ const macDownload = SITE.downloads.macOS;
         <button
           type="submit"
           data-magnetic
-          class="btn-shine inline-flex items-center justify-center rounded-full bg-orange px-7 py-3.5 text-base font-semibold text-paper shadow-glow-soft transition-colors hover:bg-orange-hover disabled:cursor-not-allowed disabled:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper"
+          class="btn-shine inline-flex items-center justify-center rounded-full bg-orange px-7 py-3.5 text-base font-semibold text-paper shadow-glow-soft transition-colors hover:bg-orange-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper disabled:cursor-not-allowed disabled:opacity-70"
         >
           Receber novidades
         </button>
@@ -124,8 +130,9 @@ const macDownload = SITE.downloads.macOS;
         data-form-status
         role="status"
         aria-live="polite"
-        class="mt-3 min-h-[1.25rem] text-sm font-medium data-[tone=good]:text-paper data-[tone=bad]:text-flame data-[tone=muted]:text-paper/55"
-      ></p>
+        class="mt-3 min-h-[1.25rem] text-sm font-medium data-[tone=bad]:text-flame data-[tone=good]:text-paper data-[tone=muted]:text-paper/55"
+      >
+      </p>
 
       {/* Submit boom particles */}
       <span aria-hidden="true" class="boom-dot"></span>

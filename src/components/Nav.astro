@@ -1,5 +1,6 @@
 ---
 import Logo from "./Logo.astro";
+import AppleMark from "./AppleMark.astro";
 import { SITE } from "~/lib/site";
 
 const macDownload = SITE.downloads.macOS;
@@ -29,8 +30,9 @@ const macDownload = SITE.downloads.macOS;
         target="_blank"
         rel="noreferrer"
         data-magnetic
-        class="inline-flex min-h-11 items-center rounded-full bg-orange px-4 py-2 text-sm font-semibold text-paper transition-colors hover:bg-orange-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper sm:px-5"
+        class="inline-flex min-h-11 items-center gap-1.5 rounded-full bg-orange px-4 py-2 text-sm font-semibold text-paper transition-colors hover:bg-orange-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper sm:px-5"
       >
+        <AppleMark class="size-3.5" />
         <span class="sm:hidden">Baixar</span>
         <span class="hidden sm:inline">Baixar para Mac</span>
       </a>
@@ -40,19 +42,57 @@ const macDownload = SITE.downloads.macOS;
           class="flex size-11 list-none items-center justify-center rounded-full border border-paper/15 text-paper transition-colors hover:bg-paper/5 [&::-webkit-details-marker]:hidden"
           aria-label="Abrir menu principal"
         >
-          <svg class="group-open:hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <svg
+            class="group-open:hidden"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            aria-hidden="true"
+          >
             <path d="M4 7h16M4 12h16M4 17h16"></path>
           </svg>
-          <svg class="hidden group-open:block" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <svg
+            class="hidden group-open:block"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            aria-hidden="true"
+          >
             <path d="M6 6l12 12M18 6L6 18"></path>
           </svg>
         </summary>
-        <div class="absolute right-0 top-[calc(100%+0.75rem)] w-[min(19rem,calc(100vw-2.5rem))] overflow-hidden rounded-2xl border border-paper/15 bg-ink shadow-overlay">
+        <div
+          class="absolute right-0 top-[calc(100%+0.75rem)] w-[min(19rem,calc(100vw-2.5rem))] overflow-hidden rounded-2xl border border-paper/15 bg-ink shadow-overlay"
+        >
           <div class="flex flex-col p-2 text-base font-medium text-paper/75">
-            <a href="/casos-de-uso" class="rounded-xl px-4 py-3 transition-colors hover:bg-paper/5 hover:text-paper">Casos de uso</a>
-            <a href="/comparativo" class="rounded-xl px-4 py-3 transition-colors hover:bg-paper/5 hover:text-paper">Comparativos</a>
-            <a href="/blog" class="rounded-xl px-4 py-3 transition-colors hover:bg-paper/5 hover:text-paper">Blog</a>
-            <a href="/sobre" class="rounded-xl px-4 py-3 transition-colors hover:bg-paper/5 hover:text-paper">Sobre</a>
+            <a
+              href="/casos-de-uso"
+              class="rounded-xl px-4 py-3 transition-colors hover:bg-paper/5 hover:text-paper"
+              >Casos de uso</a
+            >
+            <a
+              href="/comparativo"
+              class="rounded-xl px-4 py-3 transition-colors hover:bg-paper/5 hover:text-paper"
+              >Comparativos</a
+            >
+            <a
+              href="/blog"
+              class="rounded-xl px-4 py-3 transition-colors hover:bg-paper/5 hover:text-paper"
+              >Blog</a
+            >
+            <a
+              href="/sobre"
+              class="rounded-xl px-4 py-3 transition-colors hover:bg-paper/5 hover:text-paper"
+              >Sobre</a
+            >
           </div>
         </div>
       </details>
