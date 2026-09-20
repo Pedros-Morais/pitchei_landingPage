@@ -79,3 +79,9 @@ const WORDS = [
     </div>
   </div>
 </section>
+
+<script>
+  // Scoped to this component so the ~5KB particle engine only ships on pages
+  // that actually render a <ParticleText />, not site-wide from Base.astro.
+  import "~/scripts/particle-text.ts";
+</script>

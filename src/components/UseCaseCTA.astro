@@ -1,18 +1,26 @@
 ---
+import { SITE } from "~/lib/site";
+import AppleMark from "./AppleMark.astro";
+
 type Props = {
   title: string;
   subtitle?: string;
 };
 
 const { title, subtitle } = Astro.props;
+const macDownload = SITE.downloads.macOS;
 ---
 
-<section class="relative overflow-hidden border-b border-paper/10" aria-labelledby="usecase-cta-titulo">
+<section
+  class="relative overflow-hidden border-b border-paper/10"
+  aria-labelledby="usecase-cta-titulo"
+>
   <div
     aria-hidden="true"
     class="pointer-events-none absolute inset-0 -z-10"
     style="background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(232,93,38,0.14) 0%, transparent 70%);"
-  ></div>
+  >
+  </div>
   <div class="mx-auto max-w-4xl px-6 py-20 text-center md:py-24">
     <h2
       id="usecase-cta-titulo"
@@ -20,17 +28,16 @@ const { title, subtitle } = Astro.props;
     >
       {title}
     </h2>
-    {subtitle && (
-      <p class="mx-auto mt-5 max-w-2xl text-lg text-paper/70">{subtitle}</p>
-    )}
+    {subtitle && <p class="mx-auto mt-5 max-w-2xl text-lg text-paper/70">{subtitle}</p>}
     <a
-      href="/#cadastro"
-      class="btn-shine mt-8 inline-flex items-center justify-center rounded-full bg-orange px-8 py-4 text-base font-semibold text-paper shadow-glow-soft transition-colors hover:bg-orange-hover"
+      href={macDownload.url}
+      target="_blank"
+      rel="noreferrer"
+      class="btn-shine mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-orange px-8 py-4 text-base font-semibold text-paper shadow-glow-soft transition-colors hover:bg-orange-hover"
     >
-      Entrar na lista de espera
+      <AppleMark class="size-4" />
+      Baixar para macOS
     </a>
-    <p class="mt-4 text-xs text-paper/50">
-      Mac e Windows · sem cartão · sem spam
-    </p>
+    <p class="mt-4 text-xs text-paper/50">macOS 13 ou posterior · Apple Silicon e Intel</p>
   </div>
 </section>

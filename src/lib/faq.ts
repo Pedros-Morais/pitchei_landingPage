@@ -17,11 +17,6 @@ export const FAQ_ITEMS: FAQItem[] = [
       "Em qualquer reunião que toque áudio no seu computador: Google Meet, Zoom, Microsoft Teams, Slack Huddles, FaceTime ou ligações por celular pareado. O Pitchei captura o áudio do sistema, então não depende de integração com plataformas específicas.",
   },
   {
-    question: "O Pitchei consegue ler a minha tela?",
-    answer:
-      "Sim. Além de ouvir a conversa, o Pitchei lê a sua tela quando você aciona o atalho: uma pergunta compartilhada, um trecho de código, uma planilha ou um contrato. Ele entende o contexto e sugere a resposta na hora. A captura acontece só quando você pede, a imagem é processada na hora e descartada em seguida, e nunca vira histórico.",
-  },
-  {
     question: "Funciona em português?",
     answer:
       "Sim. O Pitchei foi feito para o profissional brasileiro. A transcrição entende sotaque e expressões em pt-BR, e as sugestões saem em português natural, sem tradução literal de inglês.",
@@ -29,21 +24,11 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     question: "O Pitchei funciona no Mac e no Windows?",
     answer:
-      "Sim. O Pitchei é um aplicativo de mesa para Mac e Windows. Você não precisa de plugin de navegador nem entra na call: basta ter o app aberto durante a reunião. Entre na lista de espera e escolha a sua plataforma quando o convite do beta chegar.",
+      "A beta atual está disponível para macOS, em Apple Silicon e Intel. Você não precisa de plugin de navegador nem entra na call: basta ter o app aberto durante a reunião. A versão para Windows está em desenvolvimento; cadastre seu email para receber as novidades.",
   },
   {
     question: "Quanto custa?",
     answer:
-      "Grátis durante o beta fechado. A primeira coorte de design partners usa o Pitchei sem custo, em troca de feedback. O preço da versão final ainda está sendo definido. Entre na lista de espera para ser um dos primeiros convidados.",
-  },
-  {
-    question: "Que modelo de IA o Pitchei usa?",
-    answer:
-      "A gente escolhe por você. Neuralake é o nosso fornecedor principal de IA, com latência baixa, qualidade em português e infraestrutura independente. OpenAI e Google Gemini ficam como redundância automática. Você não configura API key, não escolhe provider, só conversa. Nenhum modelo treina com a sua reunião.",
-  },
-  {
-    question: "O Pitchei substitui um Otter ou um Granola?",
-    answer:
-      "Não. Otter, Fathom e Granola são transcritores: gravam e entregam o resumo depois. O Pitchei é um copiloto: entrega valor durante a reunião, com sugestões em tempo real. Os dois podem rodar juntos sem conflito.",
+      "A beta para macOS está disponível para download. O preço da versão final ainda está sendo definido. Cadastre seu email para receber novidades do produto e da versão para Windows.",
   },
 ];

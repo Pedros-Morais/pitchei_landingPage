@@ -27,7 +27,7 @@ uniform vec3 u_color;
 
 float rnd(vec2 p){p=fract(p*vec2(12.9898,78.233));p+=dot(p,p+34.56);return fract(p.x*p.y);}
 float noise(vec2 p){vec2 i=floor(p),f=fract(p),u=f*f*(3.-2.*f);return mix(mix(rnd(i),rnd(i+vec2(1,0)),u.x),mix(rnd(i+vec2(0,1)),rnd(i+1.),u.x),u.y);}
-float fbm(vec2 p){float t=.0,a=1.;for(int i=0;i<5;i++){t+=a*noise(p);p*=mat2(1,-1.2,.2,1.2)*2.;a*=.5;}return t;}
+float fbm(vec2 p){float t=.0,a=1.;for(int i=0;i<4;i++){t+=a*noise(p);p*=mat2(1,-1.2,.2,1.2)*2.;a*=.5;}return t;}
 
 void main(){
   vec2 uv=(FC-.5*R)/R.y;
@@ -84,7 +84,12 @@ void main(){gl_Position=position;}`;
     }
 
     updateScale() {
-      const dpr = Math.max(1, window.devicePixelRatio || 1);
+      // Smoke is soft and low-frequency, so it survives heavy downsampling.
+      // Render well below CSS resolution (never above 1x DPR) and let the GPU
+      // upscale the canvas for free. On a 2x retina hero this is ~9x fewer
+      // fragment-shader invocations per frame with no visible quality loss.
+      const RENDER_SCALE = 0.66;
+      const dpr = Math.min(window.devicePixelRatio || 1, 1) * RENDER_SCALE;
       const rect = this.canvas.getBoundingClientRect();
       const width = Math.max(1, Math.floor(rect.width * dpr));
       const height = Math.max(1, Math.floor(rect.height * dpr));
@@ -205,24 +210,74 @@ void main(){gl_Position=position;}`;
     const rgbColor = hexToRgb(canvas.dataset.smokeColor || "#E85D26");
     if (rgbColor) renderer.updateColor(rgbColor);
 
-    const handleResize = () => renderer.updateScale();
-    const resizeObserver = new ResizeObserver(handleResize);
+    // getBoundingClientRect() forces layout, so resize the drawing buffer only
+    // when the element actually changes size, never inside the render loop.
+    const resizeObserver = new ResizeObserver(() => renderer.updateScale());
     resizeObserver.observe(canvas);
-    handleResize();
+    renderer.updateScale();
 
+    const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Cap to ~30fps. Smoke drifts slowly; rendering at 60/120fps is wasted work.
+    const FRAME_INTERVAL = 1000 / 30;
     let animationFrameId = 0;
+    let lastFrame = 0;
+    let onScreen = true;
+    let running = false;
+
     const loop = (now: number) => {
-      renderer.updateScale();
+      animationFrameId = requestAnimationFrame(loop);
+      if (now - lastFrame < FRAME_INTERVAL) return;
+      lastFrame = now;
       renderer.render(now);
+    };
+
+    const start = () => {
+      if (running) return;
+      running = true;
+      lastFrame = 0;
       animationFrameId = requestAnimationFrame(loop);
     };
-    animationFrameId = requestAnimationFrame(loop);
+    const stop = () => {
+      if (!running) return;
+      running = false;
+      cancelAnimationFrame(animationFrameId);
+    };
+
+    if (reduced) {
+      // One settled frame (time > 1 so the shader fade-in is complete), no loop.
+      renderer.render(2000);
+    } else {
+      start();
+    }
+
+    // Pause when the hero scrolls out of view.
+    const io = new IntersectionObserver(
+      (entries) => {
+        onScreen = entries[0]!.isIntersecting;
+        if (reduced) return;
+        if (onScreen && !document.hidden) start();
+        else stop();
+      },
+      { threshold: 0.01 },
+    );
+    io.observe(canvas);
+
+    // Pause when the tab is backgrounded.
+    const onVisibility = () => {
+      if (reduced) return;
+      if (!document.hidden && onScreen) start();
+      else stop();
+    };
+    document.addEventListener("visibilitychange", onVisibility);
 
     document.addEventListener(
       "astro:before-swap",
       () => {
+        stop();
         resizeObserver.disconnect();
-        cancelAnimationFrame(animationFrameId);
+        io.disconnect();
+        document.removeEventListener("visibilitychange", onVisibility);
         renderer.reset();
       },
       { once: true },

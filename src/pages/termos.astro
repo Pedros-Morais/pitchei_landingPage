@@ -3,7 +3,7 @@ import Base from "~/layouts/Base.astro";
 import { breadcrumbSchema } from "~/lib/schema";
 import { SITE } from "~/lib/site";
 
-const updated = "2026-04-28";
+const updated = "2026-09-19";
 const jsonLd = breadcrumbSchema([
   { name: "Início", url: "/" },
   { name: "Termos de uso", url: "/termos" },
@@ -12,7 +12,7 @@ const jsonLd = breadcrumbSchema([
 
 <Base
   title="Termos de uso"
-  description="Termos de uso do Pitchei, o app de Mac e Windows que ouve sua reunião e sugere o que dizer em tempo real. Regras de acesso ao beta e responsabilidades."
+  description="Termos de uso do Pitchei, o app para macOS que ouve sua reunião e sugere o que dizer em tempo real. Regras de acesso ao beta e responsabilidades."
   path="/termos"
   jsonLd={jsonLd}
 >
@@ -36,8 +36,9 @@ const jsonLd = breadcrumbSchema([
 
       <h2 class="mt-10 font-display text-2xl font-bold text-paper">Cadastro</h2>
       <p>
-        A lista de espera é gratuita. O acesso ao beta é por convite e pode
-        ser revogado a qualquer momento, com aviso prévio razoável.
+        O download da beta para macOS é gratuito. A inscrição para receber
+        novidades também é gratuita. As condições de acesso ao produto podem
+        mudar com aviso prévio razoável.
       </p>
 
       <h2 class="mt-10 font-display text-2xl font-bold text-paper">

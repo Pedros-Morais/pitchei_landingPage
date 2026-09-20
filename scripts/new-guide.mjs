@@ -103,5 +103,5 @@ if (!existsSync(guiasDir)) mkdirSync(guiasDir, { recursive: true });
 writeFileSync(outPath, JSON.stringify(template, null, 2) + "\n", "utf8");
 
 console.log(`✓ Criado: src/content/guias/${slug}.json`);
-console.log(`  URL: https://pitchei.com.br/guia-de-pitch/${slug}`);
+console.log(`  URL: https://www.pitchei.com.br/guia-de-pitch/${slug}`);
 console.log("  Preencha os TODO com conteúdo real, depois rode: yarn build");

@@ -95,6 +95,6 @@ A divisão de categoria vai ficar mais nítida nos próximos 12 meses:
 
 ## Como começar
 
-Se você está em pt-BR, no Mac ou no Windows, e o problema que você sente é "trava na hora da resposta", você está no público do Pitchei. <a href="/#cadastro">Entre na lista de espera</a>.
+Se você está em pt-BR, no macOS, e o problema que você sente é "trava na hora da resposta", você está no público do Pitchei. <a href="/baixar">Baixe a beta para macOS</a>.
 
 Se o problema é "perco tempo escrevendo ata", veja Otter ou Fathom. São excelentes.

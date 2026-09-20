@@ -25,7 +25,7 @@ function init() {
   if (window.__pitcheiLenis) return;
 
   const lenis = new Lenis({
-    duration: 1.05,
+    duration: 0.5,
     easing: (t: number) => 1 - Math.pow(1 - t, 3),
     smoothWheel: true,
     touchMultiplier: 1.0,

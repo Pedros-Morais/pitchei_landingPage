@@ -8,7 +8,7 @@ import sitemap from "@astrojs/sitemap";
 // Fallback <lastmod> for any page whose date we can't derive from git history
 // (e.g. shallow-clone CI or a non-git deploy). Bump when you ship a real copy
 // update so it stays honest for crawlers.
-const SITE_UPDATED = "2026-08-04";
+const SITE_UPDATED = "2026-09-19";
 
 const PAGES_DIR = fileURLToPath(new URL("./src/pages/", import.meta.url));
 
@@ -103,7 +103,7 @@ function lastmodFor(path) {
 }
 
 export default defineConfig({
-  site: "https://pitchei.com.br",
+  site: "https://www.pitchei.com.br",
   trailingSlash: "never",
   build: {
     format: "file",
