@@ -65,14 +65,29 @@ const canonical = new URL(props.path ?? "/", SITE.url).toString();
     <CookieConsent />
 
     <script>
+      // Critical, lightweight interactivity — ships in the initial bundle.
       import "~/scripts/lenis.ts";
       import "~/scripts/reveal.ts";
       import "~/scripts/waitlist-form.ts";
       import "~/scripts/hud-tap.ts";
-      import "~/scripts/voice-demo.ts";
-      import "~/scripts/particle-text.ts";
+      // Self-lazy: these only register idle gates, the heavy chunks (Three/GSAP)
+      // are dynamically imported later and only on capable devices.
       import "~/scripts/hero-3d-loader.ts";
       import "~/scripts/insane-loader.ts";
+
+      // Voice demo pulls in Web Speech wiring plus hCaptcha/voice-client. It
+      // only matters once the user reaches for the mic, so defer it off the
+      // critical path to keep the initial bundle small.
+      const loadVoiceDemo = () => {
+        void import("~/scripts/voice-demo.ts");
+      };
+      const ric = (
+        window as {
+          requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+        }
+      ).requestIdleCallback;
+      if (ric) ric(loadVoiceDemo, { timeout: 3000 });
+      else window.setTimeout(loadVoiceDemo, 1200);
     </script>
   </body>
 </html>

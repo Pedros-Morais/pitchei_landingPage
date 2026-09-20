@@ -24,11 +24,11 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     question: "O Pitchei funciona no Mac e no Windows?",
     answer:
-      "Sim. O Pitchei é um aplicativo de mesa para Mac e Windows. Você não precisa de plugin de navegador nem entra na call: basta ter o app aberto durante a reunião. Entre na lista de espera e escolha a sua plataforma quando o convite do beta chegar.",
+      "A beta atual está disponível para macOS, em Apple Silicon e Intel. Você não precisa de plugin de navegador nem entra na call: basta ter o app aberto durante a reunião. A versão para Windows está em desenvolvimento; cadastre seu email para receber as novidades.",
   },
   {
     question: "Quanto custa?",
     answer:
-      "Grátis durante o beta fechado. A primeira coorte de design partners usa o Pitchei sem custo, em troca de feedback. O preço da versão final ainda está sendo definido. Entre na lista de espera para ser um dos primeiros convidados.",
+      "A beta para macOS está disponível para download. O preço da versão final ainda está sendo definido. Cadastre seu email para receber novidades do produto e da versão para Windows.",
   },
 ];

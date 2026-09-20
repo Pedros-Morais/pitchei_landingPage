@@ -21,7 +21,7 @@ const scenarios = [
 
 <section
   id="para-quem"
-  class="relative border-b border-paper/10"
+  class="relative border-b border-paper/10 [content-visibility:auto] [contain-intrinsic-size:auto_780px]"
   aria-labelledby="para-quem-titulo"
 >
   <div class="mx-auto max-w-7xl px-6 py-32 md:py-40">
@@ -39,7 +39,7 @@ const scenarios = [
 
     <div class="grid gap-8 md:grid-cols-3" data-reveal-stagger>
       {scenarios.map((item) => (
-        <article class="group relative overflow-hidden rounded-2xl border border-paper/10 bg-paper/[0.02] p-8 transition-all hover:bg-paper/[0.04] hover:border-paper/15">
+        <article class="group relative overflow-hidden rounded-2xl border border-paper/10 bg-paper/[0.02] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-paper/20 hover:bg-paper/[0.04]">
           <div
             aria-hidden="true"
             class="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full opacity-0 transition-opacity group-hover:opacity-50"

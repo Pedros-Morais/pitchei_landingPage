@@ -2,6 +2,9 @@
 import HudMockup from "./HudMockup.astro";
 import PlatformBadges from "./PlatformBadges.astro";
 import SmokeBackground from "./ui/spooky-smoke-animation.astro";
+import { SITE } from "~/lib/site";
+
+const macDownload = SITE.downloads.macOS;
 ---
 
 <section
@@ -51,7 +54,7 @@ import SmokeBackground from "./ui/spooky-smoke-animation.astro";
     <div class="lg:col-span-7">
       <p class="hero-meta mb-5 inline-flex items-center gap-2 rounded-full border border-paper/15 bg-paper/5 px-3 py-1 text-[11px] font-medium uppercase tracking-wider text-paper/70 sm:text-xs">
         <span class="inline-block h-1.5 w-1.5 rounded-full bg-orange"></span>
-        Beta fechado · lista de espera
+        Beta para macOS · disponível agora
       </p>
       <h1
         id="hero-titulo"
@@ -66,10 +69,12 @@ import SmokeBackground from "./ui/spooky-smoke-animation.astro";
       </p>
       <div class="hero-cta mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap md:mt-10">
         <a
-          href="#cadastro"
+          href={macDownload.url}
+          target="_blank"
+          rel="noreferrer"
           class="btn-shine inline-flex w-full items-center justify-center rounded-full bg-orange px-6 py-3 text-base font-semibold text-paper shadow-glow-soft transition-colors hover:bg-orange-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper sm:w-auto md:px-7 md:py-3.5"
         >
-          Entrar na lista de espera
+          Baixar para macOS
         </a>
         <button
           type="button"
@@ -95,9 +100,9 @@ import SmokeBackground from "./ui/spooky-smoke-animation.astro";
       <div class="hero-foot mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-paper/50 md:mt-6">
         <PlatformBadges class="gap-3 font-medium text-paper/70" />
         <span aria-hidden="true" class="h-1 w-1 rounded-full bg-paper/25"></span>
-        <span>sem cartão</span>
+        <span>{macDownload.details}</span>
         <span aria-hidden="true" class="h-1 w-1 rounded-full bg-paper/25"></span>
-        <span>cancela quando quiser</span>
+        <span>DMG assinado e notarizado</span>
       </div>
     </div>
 

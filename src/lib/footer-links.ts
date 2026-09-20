@@ -17,6 +17,7 @@ export const FOOTER_GROUPS: FooterGroup[] = [
     links: [
       { label: "Como funciona", href: "/#durante-a-reuniao" },
       { label: "Para quem é", href: "/#para-quem" },
+      { label: "Baixar para macOS", href: SITE.downloads.macOS.landingPath },
       { label: "Perguntas frequentes", href: "/#faq" },
       { label: "Lista de espera", href: "/#cadastro" },
     ],

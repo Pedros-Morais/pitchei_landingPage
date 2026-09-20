@@ -1,6 +1,9 @@
 ---
 // Cadastro = waitlist. O `action` é placeholder até decidirmos backend
 // (Supabase, Formspree, ou rota Astro `prerender = false`).
+import { SITE } from "~/lib/site";
+
+const macDownload = SITE.downloads.macOS;
 ---
 
 <section
@@ -38,14 +41,14 @@
 
   <div class="mx-auto max-w-4xl px-6 py-24 text-center md:py-32" data-reveal-stagger>
     <p class="text-sm font-semibold uppercase tracking-wider text-orange">
-      Lista de espera
+      Beta para macOS
     </p>
     <div class="relative mt-3 inline-block overflow-hidden rounded-md">
       <h2
         id="cadastro-titulo"
         class="relative font-display text-4xl font-black leading-tight text-paper md:text-6xl"
       >
-        Os primeiros 100 entram no beta.
+        Use o Pitchei na próxima reunião.
       </h2>
       <span
         aria-hidden="true"
@@ -54,19 +57,33 @@
       ></span>
     </div>
     <p class="mx-auto mt-5 max-w-2xl text-lg text-paper/70 md:text-xl">
-      Cadastre seu email e a gente te chama assim que abrir uma vaga. Sem
-      spam. Você pode sair quando quiser.
+      Baixe a versão beta para macOS e receba sugestões em português enquanto
+      a conversa acontece.
     </p>
     <p class="mt-6 inline-flex items-center gap-2 rounded-full border border-orange/25 bg-orange/10 px-4 py-1.5 text-sm font-semibold text-orange">
       <span aria-hidden="true" class="inline-block h-1.5 w-1.5 rounded-full bg-orange"></span>
-      Grátis durante o beta fechado · sem cartão
+      Apple Silicon e Intel · DMG assinado e notarizado
     </p>
+
+    <a
+      href={macDownload.url}
+      target="_blank"
+      rel="noreferrer"
+      class="btn-shine mx-auto mt-8 inline-flex items-center justify-center rounded-full bg-orange px-7 py-3.5 text-base font-semibold text-paper shadow-glow-soft transition-colors hover:bg-orange-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper"
+    >
+      Baixar Pitchei para macOS
+    </a>
+    <p class="mt-3 text-xs text-paper/50">Versão {macDownload.version} · {macDownload.details}</p>
+
+    <div class="mx-auto mt-10 max-w-xl border-t border-paper/10 pt-8">
+      <p class="text-sm font-medium text-paper/70">Quer receber novidades e saber quando o Windows chegar?</p>
+    </div>
 
     <div
       data-waitlist
       data-state="idle"
       data-boom-host
-      class="boom-host mx-auto mt-10 w-full max-w-xl"
+      class="boom-host mx-auto mt-5 w-full max-w-xl"
     >
       <form
         novalidate
@@ -98,7 +115,7 @@
           data-magnetic
           class="btn-shine inline-flex items-center justify-center rounded-full bg-orange px-7 py-3.5 text-base font-semibold text-paper shadow-glow-soft transition-colors hover:bg-orange-hover disabled:cursor-not-allowed disabled:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper"
         >
-          Quero entrar
+          Receber novidades
         </button>
       </form>
 
@@ -119,7 +136,7 @@
     </div>
 
     <p class="mt-4 text-xs text-paper/50">
-      A gente respeita LGPD. Email só para te avisar do beta, nada além disso.
+      A gente respeita LGPD. Email só para avisos de produto, nada além disso.
     </p>
   </div>
 </section>

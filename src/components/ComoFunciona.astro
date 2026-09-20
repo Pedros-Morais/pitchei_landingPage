@@ -3,7 +3,7 @@ const passos = [
   {
     n: "01",
     titulo: "Você abre o Pitchei e entra na sua reunião",
-    desc: "O Pitchei roda em segundo plano no seu computador, Mac ou Windows. Captura o áudio do sistema (o que o outro lado fala) e do microfone (você), localmente. Não gera link, não entra na call, ninguém vê.",
+    desc: "O Pitchei roda em segundo plano no seu Mac. Captura o áudio do sistema (o que o outro lado fala) e do microfone (você), localmente. Não gera link nem entra na call.",
   },
   {
     n: "02",
@@ -20,7 +20,7 @@ const passos = [
 
 <section
   id="como-funciona"
-  class="relative border-b border-paper/10"
+  class="relative border-b border-paper/10 [content-visibility:auto] [contain-intrinsic-size:auto_760px]"
   aria-labelledby="como-titulo"
 >
   <div
@@ -45,7 +45,7 @@ const passos = [
 
     <ol class="relative mt-14 grid gap-8 md:grid-cols-3" data-reveal data-reveal-stagger>
       {passos.map((p, i) => (
-        <li class="relative flex flex-col rounded-2xl border border-paper/10 bg-paper/[0.03] p-8 transition-colors hover:bg-paper/[0.05] hover:border-paper/20">
+        <li class="relative flex flex-col rounded-2xl border border-paper/10 bg-paper/[0.03] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-paper/20 hover:bg-paper/[0.05]">
           <span
             class="step-numeral font-display text-5xl font-black leading-none tracking-tight text-orange"
             style={`--step-delay: ${i * 120}ms;`}

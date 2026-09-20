@@ -47,7 +47,7 @@ const rows = [
   {
     criterion: "Plataformas",
     competitor: "macOS, Windows, web, mobile",
-    pitchei: "Mac e Windows",
+    pitchei: "macOS 13+ (Apple Silicon e Intel)",
   },
   {
     criterion: "Modelo",
@@ -75,7 +75,7 @@ const faq: FAQItem[] = [
   {
     question: "Quanto custa cada um?",
     answer:
-      "Otter tem um plano gratuito limitado e tiers a partir de US$ 9-10/mês. Pitchei está em beta fechado e tem modelo de preço sendo definido, a primeira coorte de design partners tem acesso gratuito.",
+      "Otter tem um plano gratuito limitado e tiers pagos. Pitchei está em beta para macOS; a versão 0.1.0 pode ser baixada gratuitamente e o modelo de preço futuro ainda está em definição.",
   },
 ];
 
@@ -91,6 +91,7 @@ const jsonLd = [
     description: pageDescription,
     path: "/comparativo/pitchei-vs-otter",
     datePublished: "2026-05-11",
+    dateModified: "2026-09-19",
     keywords: [
       "pitchei vs otter",
       "alternativa otter em português",
@@ -118,6 +119,7 @@ const keywords = [
   keywords={keywords}
   article={{
     publishedTime: "2026-05-11",
+    modifiedTime: "2026-09-19",
     section: "Comparativos",
     tags: ["pitchei", "otter", "transcritor", "assistente de reunião"],
   }}
@@ -131,7 +133,7 @@ const keywords = [
     <h1 class="mt-3 font-display text-4xl font-black leading-tight text-paper md:text-6xl">
       Pitchei vs Otter: qual escolher em 2026.
     </h1>
-    <p class="mt-3 text-sm text-paper/50">Atualizado em 11 de maio de 2026.</p>
+    <p class="mt-3 text-sm text-paper/50">Atualizado em 19 de setembro de 2026.</p>
 
     <div class="mt-10 rounded-2xl border border-orange/30 bg-orange/[0.04] p-6">
       <p class="text-xs font-bold uppercase tracking-wider text-orange">TL;DR</p>
@@ -171,7 +173,7 @@ const keywords = [
       <li>• Você tem reuniões em pt-BR onde a próxima frase pesa, pitch, vendas, entrevista, QBR difícil.</li>
       <li>• Você quer ajuda <em>durante</em> a call, não depois.</li>
       <li>• Você não quer um bot entrando na reunião como participante.</li>
-      <li>• Você trabalha no Mac ou no Windows e quer ajuda ao vivo.</li>
+      <li>• Você usa macOS e quer ajuda ao vivo durante a conversa.</li>
     </ul>
 
     <h2 class="mt-16 font-display text-3xl font-black leading-tight text-paper">Pode usar os dois?</h2>
@@ -192,6 +194,6 @@ const keywords = [
 
   <UseCaseCTA
     title="Quer testar Pitchei sem trocar nada do seu setup?"
-    subtitle="O beta roda em paralelo a qualquer transcritor. Entre na lista de espera."
+    subtitle="O beta para macOS roda em paralelo a qualquer transcritor."
   />
 </Base>

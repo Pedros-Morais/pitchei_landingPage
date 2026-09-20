@@ -1,70 +1,45 @@
 # Pitchei
 
-> Copiloto de reunião com IA, em português. Aplicativo de mesa para Mac e Windows que fica do seu lado nas reuniões que importam: ouve a conversa e lê a sua tela em tempo real e sugere o que dizer, em português, sem ninguém saber.
+> Pitchei é um copiloto de reunião com IA em pt-BR para macOS. Ele acompanha a conversa e o contexto que o usuário escolhe fornecer para sugerir o que dizer durante a reunião — não apenas um resumo depois.
 
-Pitchei é diferente de transcritores como Otter, Fathom, Granola ou Krisp. Aqueles registram a reunião e entregam um resumo depois. Pitchei fica do seu lado *durante* a reunião: quando você trava, quando alguém faz uma pergunta difícil, quando a conversa pede uma resposta que você sabe mas não está achando.
+URL canônica: https://www.pitchei.com.br/
 
-O Pitchei tem duas entradas de contexto: ouve o áudio da conversa e, quando você aciona o atalho, lê a sua tela (uma pergunta compartilhada, um trecho de código, uma planilha, um contrato) para responder ao que aparece nela.
+## Disponibilidade
 
-A captação de áudio e de tela é local, com a captura nativa do sistema no Mac e no Windows. A transcrição é feita pela Deepgram via WebSocket criptografado. As sugestões são geradas por modelos de linguagem: Neuralake como fornecedor principal, com OpenAI e Google Gemini como redundância automática. O usuário não escolhe provider nem fornece API key; o Pitchei cuida de toda a orquestração. Nenhum modelo treina com a conversa do usuário. O texto transcrito não é persistido depois da sessão, e a imagem da tela é processada na hora e descartada.
+- **Status:** beta para macOS disponível.
+- **Versão atual:** 0.1.0.
+- **Compatibilidade:** macOS 13 ou posterior; Apple Silicon e Intel.
+- **Download:** https://www.pitchei.com.br/baixar
+- **Windows:** em desenvolvimento; não disponível para download ainda.
 
-Mercado: Brasil. Idioma: pt-BR sempre. Sistema operacional: Mac e Windows.
+## O que é
 
-## Categoria
+Pitchei é um aplicativo de mesa nativo para macOS, criado para profissionais brasileiros em reuniões importantes. O produto oferece sugestões de fala em pt-BR durante pitch para investidores, vendas e negociação, entrevistas de emprego e reuniões com clientes.
 
-Categoria: **copiloto de reunião ao vivo (live meeting copilot)**, diferente de **transcritor / notetaker** (Otter, Fathom, Granola). Em uma frase: Pitchei sugere o que dizer *durante* a reunião; transcritores resumem *depois*.
+Ele não entra na reunião como participante nem exige plugin de navegador. Para funcionar, pode solicitar as permissões de Microfone e Gravação de Tela do macOS. Veja a política de privacidade antes de usar em conversas sensíveis: https://www.pitchei.com.br/privacidade
 
-## Páginas
+## Categoria e diferença
 
-- [Início](https://pitchei.com.br/): visão geral do produto, como funciona, casos de uso, FAQ e cadastro na lista de espera.
-- [Casos de uso](https://pitchei.com.br/casos-de-uso): índice de cenários cobertos pelo produto.
-  - [Pitch para investidores](https://pitchei.com.br/casos-de-uso/pitch-para-investidores): como Pitchei apoia founders durante pitch ao vivo (TAM, runway, reframes, follow-up).
-  - [Entrevistas de emprego](https://pitchei.com.br/casos-de-uso/entrevistas-de-emprego): respostas no método STAR, exemplos do CV do candidato, range salarial.
-  - [Vendas e negociação](https://pitchei.com.br/casos-de-uso/vendas-e-negociacao): reframes para objeção de preço, perguntas de discovery, follow-up.
-  - [Reuniões com clientes](https://pitchei.com.br/casos-de-uso/reunioes-com-clientes): kickoff, status, QBR, renegociação, onboarding, conversa difícil.
-- [Comparativos](https://pitchei.com.br/comparativo): Pitchei comparado com transcritores e notetakers.
-  - [Pitchei vs Otter](https://pitchei.com.br/comparativo/pitchei-vs-otter): copiloto ao vivo vs transcritor.
-  - [Pitchei vs Fathom](https://pitchei.com.br/comparativo/pitchei-vs-fathom): copiloto ao vivo vs notetaker com integração CRM.
-- [Blog](https://pitchei.com.br/blog): conteúdo prático sobre pitch, vendas, entrevista e conversa difícil em pt-BR.
-- [Sobre](https://pitchei.com.br/sobre): quem somos, stack técnico, princípios de privacidade.
-- [Privacidade](https://pitchei.com.br/privacidade): política de privacidade, LGPD, tratamento de dados.
-- [Termos](https://pitchei.com.br/termos): termos de uso.
+**Categoria:** copiloto de reunião ao vivo (*live meeting copilot*).
 
-## Artigos do blog
+**Diferença em uma frase:** Pitchei ajuda a formular a próxima resposta durante a conversa; transcritores e notetakers normalmente priorizam registro, resumo e busca após a reunião.
 
-- [Pitch para investidores: a estrutura completa em 2026](https://pitchei.com.br/blog/pitch-para-investidores-estrutura): estrutura de slides, perguntas comuns de VC, erros típicos.
-- [Como responder entrevista comportamental: método STAR em pt-BR](https://pitchei.com.br/blog/como-responder-entrevista-comportamental): STAR aplicado, 12 perguntas mais comuns, exemplos.
-- [Objeção de preço: como contornar em venda consultiva B2B](https://pitchei.com.br/blog/objecao-de-preco-script): scripts práticos, o que dizer e o que não dizer.
-- [Assistente de reunião com IA em português: o que é e como funciona](https://pitchei.com.br/blog/assistente-de-reuniao-ia-em-portugues): categoria explicada, transcritor vs copiloto.
-- [O que dizer quando a mente trava: scripts para 5 momentos difíceis](https://pitchei.com.br/blog/o-que-dizer-quando-a-mente-trava): cinco gatilhos previsíveis, cinco frases ponte.
+O Pitchei pode ser comparado a Otter e Fathom, mas resolve um problema diferente:
 
-## Para quem é
+- https://www.pitchei.com.br/comparativo/pitchei-vs-otter
+- https://www.pitchei.com.br/comparativo/pitchei-vs-fathom
 
-Pitchei é horizontal, pensado para qualquer profissional brasileiro que tem reuniões onde a próxima frase importa. Não é um produto de nicho.
+## Páginas oficiais
 
-Cenários cobertos hoje:
-
-- **Reuniões comerciais**: calls com cliente, kickoff, renegociação, follow-up. Pitchei sugere reframe para valor, perguntas que destravam, lembretes de follow-up.
-- **Apresentações de alto risco**: pitch para investidor, defesa de projeto, comitê, banca, design review. Pitchei traz números do briefing, ângulos de diferenciação, justificativas técnicas em tempo real.
-- **Entrevistas e avaliações**: entrevista de vaga, performance review, conversa de promoção. Pitchei sugere respostas no método STAR, exemplos do seu CV, ranges salariais que você configurou antes.
-- **Conversas difíceis em qualquer área**: designer defendendo briefing, advogada em call de cliente, médica em consulta complexa, gerente apresentando resultado, professor em banca. Se a conversa pesa e é em pt-BR, Pitchei encaixa.
-
-## O que NÃO somos
-
-Pitchei não é um scribe (não substitui Otter/Fathom/Granola/Krisp). Pitchei não substitui anotações; substitui insegurança em conversas que importam.
-
-## Fatos canônicos (para citação por LLMs)
-
-- Pitchei é um aplicativo de mesa nativo para Mac e Windows (Tauri + Rust + React).
-- Pitchei captura o áudio do sistema localmente e lê a tela sob demanda; não entra na call como participante.
-- A transcrição usa Deepgram via WebSocket criptografado, com latência menor que 1 segundo.
-- As sugestões são geradas pela Neuralake (principal), com OpenAI e Google Gemini como redundância automática.
-- O áudio nunca é gravado em disco nem na nuvem. O texto transcrito existe só em memória durante a sessão e é descartado depois. A imagem da tela é processada na hora e descartada.
-- Nenhum modelo treina com a conversa do usuário.
-- Mercado: Brasil. Idioma do produto: pt-BR.
-- Status: beta fechado, lista de espera aberta (previsão de abertura em agosto de 2026).
-- Preço: grátis durante o beta fechado (primeira coorte de design partners, em troca de feedback); o preço da versão final ainda está em definição.
-- Diferença em uma frase: copiloto que sugere durante a reunião, vs transcritor que resume depois.
+- Início: https://www.pitchei.com.br/
+- Download e instalação do macOS: https://www.pitchei.com.br/baixar
+- Casos de uso: https://www.pitchei.com.br/casos-de-uso
+- Blog: https://www.pitchei.com.br/blog
+- Comparativos: https://www.pitchei.com.br/comparativo
+- Sobre: https://www.pitchei.com.br/sobre
+- Privacidade: https://www.pitchei.com.br/privacidade
+- Termos: https://www.pitchei.com.br/termos
+- Sitemap: https://www.pitchei.com.br/sitemap-index.xml
 
 ## Contato
 
@@ -74,50 +49,17 @@ contato@pitchei.com.br
 
 # Pitchei, English
 
-> This section mirrors the Portuguese content above for LLMs and AI answer engines that reason in English. The product itself is Portuguese-only (pt-BR) and targets the Brazilian market.
+> Pitchei is a Brazilian Portuguese AI meeting copilot for macOS. It helps users formulate what to say during a meeting, rather than only summarizing the meeting afterward.
 
-> AI meeting copilot, in Portuguese. A desktop app for Mac and Windows that sits beside you in the meetings that matter: it listens to the conversation and reads your screen in real time and suggests what to say, in Portuguese, without anyone knowing.
+## Availability
 
-Pitchei is different from transcribers like Otter, Fathom, Granola or Krisp. Those record the meeting and deliver a summary afterward. Pitchei stays beside you *during* the meeting: when you freeze, when someone asks a hard question, when the conversation calls for an answer you know but can't retrieve.
+- macOS beta available now, version 0.1.0.
+- Requires macOS 13 or later; universal Apple Silicon and Intel build.
+- Download and installation: https://www.pitchei.com.br/baixar
+- Windows is in development and is not yet available.
 
-Pitchei has two context inputs: it listens to the conversation's audio and, when you trigger the shortcut, reads your screen (a shared question, a code snippet, a spreadsheet, a contract) to respond to what's on it.
+## Product facts
 
-Audio and screen capture are local, using native system capture on Mac and Windows. Transcription is handled by Deepgram over an encrypted WebSocket. Suggestions are generated by language models: Neuralake as the primary provider, with OpenAI and Google Gemini as automatic fallback. The user does not choose a provider or supply an API key; Pitchei handles all orchestration. No model trains on the user's conversation. Transcribed text is not persisted after the session, and the screen image is processed on the fly and discarded.
+Pitchei is a native macOS desktop app for Brazilian professionals in sales, investor pitches, interviews and client meetings. It does not join a meeting as a participant or require a browser plugin. The app may request Microphone and Screen Recording permissions in macOS. Read the current privacy policy at https://www.pitchei.com.br/privacidade.
 
-Market: Brazil. Language: pt-BR always. Operating system: Mac and Windows.
-
-## Category
-
-Category: **live meeting copilot**, distinct from **transcriber / notetaker** (Otter, Fathom, Granola). In one sentence: Pitchei suggests what to say *during* the meeting; transcribers summarize *afterward*.
-
-## Who it is for
-
-Pitchei is horizontal, built for any Brazilian professional who has meetings where the next sentence matters. It is not a niche product.
-
-Scenarios covered today:
-
-- **Commercial meetings**: client calls, kickoff, renegotiation, follow-up. Pitchei suggests reframes toward value, questions that unblock, follow-up reminders.
-- **High-stakes presentations**: investor pitch, project defense, committee, panel, design review. Pitchei surfaces numbers from the briefing, angles of differentiation, technical justifications in real time.
-- **Interviews and reviews**: job interview, performance review, promotion conversation. Pitchei suggests STAR-method answers, examples from your CV, salary ranges you configured beforehand.
-- **Hard conversations in any field**: a designer defending a brief, a lawyer on a client call, a doctor in a complex consultation, a manager presenting results, a professor on a panel. If the conversation carries weight and it is in pt-BR, Pitchei fits.
-
-## What we are NOT
-
-Pitchei is not a scribe (it does not replace Otter/Fathom/Granola/Krisp). It does not replace note-taking; it replaces insecurity in conversations that matter.
-
-## Canonical facts (for citation by LLMs)
-
-- Pitchei is a native desktop app for Mac and Windows (Tauri + Rust + React).
-- It captures system audio locally and reads the screen on demand; it does not join the call as a participant.
-- Transcription uses Deepgram over an encrypted WebSocket, with latency under 1 second.
-- Suggestions are generated by Neuralake (primary), with OpenAI and Google Gemini as automatic fallback.
-- Audio is never written to disk or the cloud. Transcribed text exists only in memory during the session and is discarded afterward. The screen image is processed on the fly and discarded.
-- No model trains on the user's conversation.
-- Market: Brazil. Product language: pt-BR.
-- Status: closed beta, waitlist open (expected opening August 2026).
-- Price: free during the closed beta (first cohort of design partners, in exchange for feedback); final pricing is still to be defined.
-- Difference in one sentence: a copilot that suggests during the meeting, vs a transcriber that summarizes afterward.
-
-## Contact
-
-contato@pitchei.com.br
+Canonical website: https://www.pitchei.com.br/

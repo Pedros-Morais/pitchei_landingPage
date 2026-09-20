@@ -1,5 +1,8 @@
 ---
 import Logo from "./Logo.astro";
+import { SITE } from "~/lib/site";
+
+const macDownload = SITE.downloads.macOS;
 ---
 
 <header class="sticky top-0 z-40 border-b border-paper/10 bg-ink/90 backdrop-blur-md">
@@ -22,12 +25,14 @@ import Logo from "./Logo.astro";
     </div>
     <div class="flex items-center gap-2 sm:gap-3">
       <a
-        href="/#cadastro"
+        href={macDownload.url}
+        target="_blank"
+        rel="noreferrer"
         data-magnetic
         class="inline-flex min-h-11 items-center rounded-full bg-orange px-4 py-2 text-sm font-semibold text-paper transition-colors hover:bg-orange-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper sm:px-5"
       >
-        <span class="sm:hidden">Quero entrar</span>
-        <span class="hidden sm:inline">Entrar na lista</span>
+        <span class="sm:hidden">Baixar</span>
+        <span class="hidden sm:inline">Baixar para Mac</span>
       </a>
 
       <details class="group relative md:hidden">

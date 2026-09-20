@@ -3,8 +3,10 @@ import Base from "~/layouts/Base.astro";
 import Hero from "~/components/Hero.astro";
 import StickyCTA from "~/components/StickyCTA.astro";
 import TrustBand from "~/components/TrustBand.astro";
+import ComoFunciona from "~/components/ComoFunciona.astro";
 import DurantaReuniaoCards from "~/components/DurantaReuniaoCards.astro";
 import LeituraDeTelaPanelNew from "~/components/LeituraDeTelaPanelNew.astro";
+import PitcheiEmAcao from "~/components/PitcheiEmAcao.astro";
 import StatsRow from "~/components/StatsRow.astro";
 import ParaQuemSimple from "~/components/ParaQuemSimple.astro";
 import PrivacyBeat from "~/components/PrivacyBeat.astro";
@@ -23,12 +25,12 @@ import { SITE } from "~/lib/site";
 const howTo = howToSchema({
   name: "Como o Pitchei sugere o que dizer durante uma reunião",
   description:
-    "Três passos para receber sugestões em tempo real em português enquanto você fala em uma reunião, no Mac ou no Windows.",
+    "Três passos para receber sugestões em tempo real em português enquanto você fala em uma reunião, no macOS.",
   totalTime: "PT1M",
   steps: [
     {
       name: "Abra o Pitchei antes da reunião",
-      text: "O Pitchei roda em segundo plano no seu computador, captura o áudio do sistema e do microfone localmente. Não entra na call e ninguém vê.",
+      text: "O Pitchei roda em segundo plano no seu Mac, captura o áudio do sistema e do microfone localmente. Não entra na call e ninguém vê.",
     },
     {
       name: "Fale normalmente, Pitchei transcreve em pt-BR",
@@ -59,7 +61,7 @@ const keywords = [
   "pitch para investidores",
   "respostas para entrevista de emprego",
   "ferramenta para vendas e negociação",
-  "assistente de reunião para Mac e Windows",
+  "assistente de reunião para macOS",
 ];
 ---
 
@@ -73,8 +75,10 @@ const keywords = [
   <Hero />
   <StickyCTA />
   <TrustBand />
+  <ComoFunciona />
   <DurantaReuniaoCards />
   <LeituraDeTelaPanelNew />
+  <PitcheiEmAcao />
   <StatsRow />
   <ParaQuemSimple />
   <PrivacyBeat />

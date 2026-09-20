@@ -1,0 +1,139 @@
+---
+import Base from "~/layouts/Base.astro";
+import Breadcrumb from "~/components/Breadcrumb.astro";
+import {
+  breadcrumbSchema,
+  organizationSchema,
+  softwareApplicationSchema,
+} from "~/lib/schema";
+import { SITE } from "~/lib/site";
+
+const macDownload = SITE.downloads.macOS;
+const crumbs = [
+  { name: "Início", url: "/" },
+  { name: "Baixar para macOS", url: macDownload.landingPath },
+];
+
+const jsonLd = [
+  organizationSchema(),
+  softwareApplicationSchema(),
+  breadcrumbSchema(crumbs),
+];
+
+const keywords = [
+  "baixar pitchei para mac",
+  "pitchei macos",
+  "copiloto de reunião para mac",
+  "assistente de reunião com ia macos",
+];
+---
+
+<Base
+  title="Baixar Pitchei para macOS"
+  description="Baixe Pitchei 0.1.0 para macOS: aplicativo universal para Apple Silicon e Intel, assinado e notarizado pela Apple."
+  path={macDownload.landingPath}
+  jsonLd={jsonLd}
+  keywords={keywords}
+>
+  <Breadcrumb crumbs={crumbs} />
+
+  <section class="border-b border-paper/10">
+    <div class="mx-auto max-w-4xl px-6 py-20 md:py-28">
+      <p class="text-sm font-semibold uppercase tracking-wider text-orange">
+        Beta para macOS
+      </p>
+      <h1 class="mt-3 max-w-3xl font-display text-4xl font-black leading-tight text-paper md:text-6xl">
+        Baixe o Pitchei para a sua próxima reunião.
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-paper/75">
+        O Pitchei é um copiloto de reunião em pt-BR: ele acompanha a conversa
+        e sugere o que dizer no momento em que você precisa. A versão atual é
+        universal para Macs com Apple Silicon e Intel.
+      </p>
+
+      <div class="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+        <a
+          href={macDownload.url}
+          target="_blank"
+          rel="noreferrer"
+          class="btn-shine inline-flex items-center justify-center rounded-full bg-orange px-7 py-3.5 text-base font-semibold text-paper shadow-glow-soft transition-colors hover:bg-orange-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper"
+        >
+          Baixar Pitchei para macOS
+        </a>
+        <p class="text-sm text-paper/55">
+          Versão {macDownload.version} · {macDownload.details}
+        </p>
+      </div>
+
+      <div class="mt-14 grid gap-4 sm:grid-cols-3">
+        <div class="rounded-2xl border border-paper/10 bg-paper/[0.03] p-5">
+          <p class="text-xs font-semibold uppercase tracking-wider text-paper/50">Sistema</p>
+          <p class="mt-2 font-semibold text-paper">macOS 13 ou posterior</p>
+        </div>
+        <div class="rounded-2xl border border-paper/10 bg-paper/[0.03] p-5">
+          <p class="text-xs font-semibold uppercase tracking-wider text-paper/50">Compatibilidade</p>
+          <p class="mt-2 font-semibold text-paper">Apple Silicon e Intel</p>
+        </div>
+        <div class="rounded-2xl border border-paper/10 bg-paper/[0.03] p-5">
+          <p class="text-xs font-semibold uppercase tracking-wider text-paper/50">Distribuição</p>
+          <p class="mt-2 font-semibold text-paper">Assinado e notarizado</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-paper/10">
+    <div class="mx-auto grid max-w-4xl gap-14 px-6 py-20 md:grid-cols-[1.1fr_.9fr] md:py-28">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-wider text-orange">Instalação</p>
+        <h2 class="mt-3 font-display text-3xl font-black leading-tight text-paper md:text-4xl">
+          Três passos para começar.
+        </h2>
+        <ol class="mt-8 space-y-6 text-paper/75">
+          <li class="flex gap-4">
+            <span class="flex size-7 shrink-0 items-center justify-center rounded-full bg-orange text-sm font-bold text-paper">1</span>
+            <p><strong class="text-paper">Baixe e abra o DMG.</strong> O arquivo vem diretamente da release oficial do Pitchei no GitHub.</p>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex size-7 shrink-0 items-center justify-center rounded-full bg-orange text-sm font-bold text-paper">2</span>
+            <p><strong class="text-paper">Arraste Pitchei para Aplicativos.</strong> Depois ejete o disco virtual.</p>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex size-7 shrink-0 items-center justify-center rounded-full bg-orange text-sm font-bold text-paper">3</span>
+            <p><strong class="text-paper">Abra o app e entre na sua conta.</strong> O macOS solicitará as permissões necessárias na primeira utilização.</p>
+          </li>
+        </ol>
+      </div>
+
+      <aside class="h-fit rounded-2xl border border-paper/10 bg-paper/[0.03] p-7">
+        <h2 class="font-display text-2xl font-bold text-paper">Permissões</h2>
+        <p class="mt-4 leading-relaxed text-paper/70">
+          Para acompanhar a reunião, o Pitchei pode solicitar acesso ao
+          <strong class="text-paper"> Microfone</strong> e à
+          <strong class="text-paper"> Gravação de Tela</strong>. Você pode
+          revisar ou alterar essas permissões a qualquer momento nos Ajustes
+          do Sistema do macOS.
+        </p>
+        <a href="/privacidade" class="mt-6 inline-flex text-sm font-semibold text-orange hover:text-flame">
+          Ler política de privacidade →
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  <section>
+    <div class="mx-auto max-w-4xl px-6 py-20 md:py-24">
+      <p class="text-sm font-semibold uppercase tracking-wider text-orange">Verificação</p>
+      <h2 class="mt-3 font-display text-3xl font-black leading-tight text-paper md:text-4xl">
+        Confira a integridade do arquivo.
+      </h2>
+      <p class="mt-5 max-w-2xl text-paper/70">
+        Se quiser verificar o download pelo Terminal, compare o SHA-256 abaixo
+        com o resultado de <code class="rounded bg-paper/10 px-1.5 py-0.5 text-paper">shasum -a 256 &lt;arquivo.dmg&gt;</code>.
+      </p>
+      <code class="mt-6 block overflow-x-auto rounded-xl border border-paper/10 bg-paper/[0.03] p-4 text-sm text-paper/80">
+        {macDownload.sha256}
+      </code>
+    </div>
+  </section>
+</Base>

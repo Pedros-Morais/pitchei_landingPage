@@ -99,10 +99,12 @@
 }
 
 /* ----- hero CTA + meta entrance ------------------------------------------- */
-.hero-meta { animation: fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) 100ms both; }
-.hero-sub { animation: fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) 700ms both; }
-.hero-cta { animation: fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) 850ms both; }
-.hero-foot { animation: fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) 1000ms both; }
+/* Tightened cascade: the hero now settles by ~0.9s instead of ~1.7s, so the
+   page reads as fast rather than sluggish, while keeping the staggered feel. */
+.hero-meta { animation: fade-up 600ms cubic-bezier(0.22, 1, 0.36, 1) 80ms both; }
+.hero-sub { animation: fade-up 600ms cubic-bezier(0.22, 1, 0.36, 1) 300ms both; }
+.hero-cta { animation: fade-up 600ms cubic-bezier(0.22, 1, 0.36, 1) 420ms both; }
+.hero-foot { animation: fade-up 600ms cubic-bezier(0.22, 1, 0.36, 1) 540ms both; }
 
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(12px); }
@@ -111,7 +113,7 @@
 
 /* ----- HUD perspective enter ---------------------------------------------- */
 .hud-enter {
-  animation: hud-enter 1100ms cubic-bezier(0.22, 1, 0.36, 1) 600ms both;
+  animation: hud-enter 900ms cubic-bezier(0.22, 1, 0.36, 1) 320ms both;
 }
 @keyframes hud-enter {
   0% {

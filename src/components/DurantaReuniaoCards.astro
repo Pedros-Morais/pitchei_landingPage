@@ -6,7 +6,7 @@ import HudMockup from "./HudMockup.astro";
 
 <section
   id="durante-a-reuniao"
-  class="relative border-b border-paper/10"
+  class="relative border-b border-paper/10 [content-visibility:auto] [contain-intrinsic-size:auto_1000px]"
   aria-labelledby="durante-titulo"
 >
   <div class="mx-auto max-w-7xl px-6 py-32 md:py-40">
@@ -24,7 +24,7 @@ import HudMockup from "./HudMockup.astro";
 
     <div class="grid gap-8 lg:grid-cols-2 lg:gap-12" data-reveal-stagger>
       {/* Card 1: Ouve a conversa */}
-      <article class="group relative overflow-hidden rounded-3xl border border-paper/10 bg-paper/[0.02] p-8 transition-all hover:bg-paper/[0.04] md:p-10">
+      <article class="group relative overflow-hidden rounded-3xl border border-paper/10 bg-paper/[0.02] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-paper/20 hover:bg-paper/[0.04] md:p-10">
         <div
           aria-hidden="true"
           class="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full opacity-40 transition-opacity group-hover:opacity-60"
@@ -46,7 +46,7 @@ import HudMockup from "./HudMockup.astro";
       </article>
 
       {/* Card 2: Sugere o que dizer */}
-      <article class="group relative overflow-hidden rounded-3xl border border-paper/10 bg-paper/[0.02] p-8 transition-all hover:bg-paper/[0.04] md:p-10">
+      <article class="group relative overflow-hidden rounded-3xl border border-paper/10 bg-paper/[0.02] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-paper/20 hover:bg-paper/[0.04] md:p-10">
         <div
           aria-hidden="true"
           class="pointer-events-none absolute -left-20 -bottom-20 h-64 w-64 rounded-full opacity-40 transition-opacity group-hover:opacity-60"
