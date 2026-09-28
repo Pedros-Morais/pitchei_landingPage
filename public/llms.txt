@@ -7,7 +7,7 @@ URL canônica: https://www.pitchei.com.br/
 ## Disponibilidade
 
 - **Status:** beta para macOS disponível.
-- **Versão atual:** 0.1.0.
+- **Versão atual:** 0.1.1; assinado, com notarização pendente.
 - **Compatibilidade:** macOS 13 ou posterior; Apple Silicon e Intel.
 - **Download:** https://www.pitchei.com.br/baixar
 - **Windows:** em desenvolvimento; não disponível para download ainda.
@@ -53,7 +53,7 @@ contato@pitchei.com.br
 
 ## Availability
 
-- macOS beta available now, version 0.1.0.
+- macOS beta version 0.1.1; signed, with notarization pending.
 - Requires macOS 13 or later; universal Apple Silicon and Intel build.
 - Download and installation: https://www.pitchei.com.br/baixar
 - Windows is in development and is not yet available.

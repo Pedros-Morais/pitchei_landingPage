@@ -11,6 +11,7 @@ import {
   organizationSchema,
 } from "~/lib/schema";
 import type { FAQItem } from "~/lib/schema";
+import { SITE } from "~/lib/site";
 
 const crumbs = [
   { name: "Início", url: "/" },
@@ -75,7 +76,7 @@ const faq: FAQItem[] = [
   {
     question: "Quanto custa cada um?",
     answer:
-      "Otter tem um plano gratuito limitado e tiers pagos. Pitchei está em beta para macOS; a versão 0.1.0 pode ser baixada gratuitamente e o modelo de preço futuro ainda está em definição.",
+      `Otter tem um plano gratuito limitado e tiers pagos. Pitchei está em beta para macOS; a versão ${SITE.downloads.macOS.version} pode ser baixada gratuitamente e o modelo de preço futuro ainda está em definição.`,
   },
 ];
 
